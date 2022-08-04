@@ -6,6 +6,7 @@ import { Actor, TaskRunner } from './interfaces';
 import {
   AuthTokenSubject,
   Database,
+  H5PTaskManager,
   ItemMembershipService,
   ItemMembershipTaskManager,
   ItemService,
@@ -15,9 +16,9 @@ import {
   MemberService,
   MemberTaskManager,
   PublicItemService,
+  PublicItemTaskManager,
   S3FileConfiguration,
 } from './services';
-import { PublicItemTaskManager } from './services/public/interfaces/task-manager';
 
 declare module 'fastify' {
   interface FastifyRequest {
@@ -69,6 +70,7 @@ declare module 'fastify' {
       credentials: boolean;
       maxAge: number;
     };
+
     /**
      * Verify authentication based on session cookie or auth token,
      * extract member from it, and set `request.member`.
@@ -122,9 +124,16 @@ declare module 'fastify' {
     /** File configurations
      * to be replaced with services
      */
-    file: {
+    file?: {
       s3Config?: S3FileConfiguration;
       localConfig?: LocalFileConfiguration;
+    };
+
+    /**
+     * H5P service
+     */
+    h5p?: {
+      taskManager: H5PTaskManager;
     };
   }
 }
