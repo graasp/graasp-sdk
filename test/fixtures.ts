@@ -6,4 +6,6 @@ export const MOCK_SESSIONS = [
 ];
 
 export const MOCK_ITEM_ID = '1234';
+export const MOCK_LANG = 'en';
+
 export const MOCK_HOST = 'myhost';

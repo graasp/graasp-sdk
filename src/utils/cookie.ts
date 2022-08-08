@@ -14,6 +14,7 @@ export const COOKIE_KEYS = {
   SESSION_KEY: 'session',
   STORED_SESSIONS_KEY: 'storedSessions',
   REDIRECT_URL_KEY: 'redirectUrl',
+  LANG_KEY: 'lang',
 };
 /**
  * @returns {boolean} whether the user accepted the cookies
@@ -107,6 +108,7 @@ export const isSessionExpired = (sId: string) => {
     session.createdAt + SESSION_COOKIE_EXPIRATION_DURATION_MS < Date.now(),
   );
 };
+
 /**
  * @param  {string} link link to save for further redirection
  * @param  {string} domain value for the cookie's domain
@@ -114,8 +116,21 @@ export const isSessionExpired = (sId: string) => {
 export const saveUrlForRedirection = (link: string, domain: string) => {
   Cookies.set(COOKIE_KEYS.REDIRECT_URL_KEY, link, { domain, secure: true });
 };
+
 /**
  * @returns  {string|undefined} link saved for further redirection
  */
 export const getUrlForRedirection = () =>
   Cookies.get(COOKIE_KEYS.REDIRECT_URL_KEY);
+
+/**
+ * @param  {string} lang user's lang
+ * @param  {string} domain value for the cookie's domain
+ */
+export const setLangCookie = (lang: string, domain: string) =>
+  Cookies.set(COOKIE_KEYS.LANG_KEY, lang, { domain });
+
+/**
+ * @returns  {string|undefined} user's lang
+ */
+export const getLangCookie = () => Cookies.get(COOKIE_KEYS.LANG_KEY);

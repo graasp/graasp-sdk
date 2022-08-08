@@ -1,6 +1,11 @@
 import Cookies from 'js-cookie';
 
-import { MOCK_DOMAIN, MOCK_SESSIONS, MOCK_URL } from '../../test/fixtures';
+import {
+  MOCK_DOMAIN,
+  MOCK_LANG,
+  MOCK_SESSIONS,
+  MOCK_URL,
+} from '../../test/fixtures';
 import { SESSION_COOKIE_EXPIRATION_DURATION_MS } from '../constants/constants';
 import * as cookieUtils from './cookie';
 
@@ -14,6 +19,7 @@ const {
   storeSession,
   isSessionExpired,
   removeSession,
+  setLangCookie,
 } = cookieUtils;
 
 describe('Cookie Util Tests', () => {
@@ -211,6 +217,26 @@ describe('Cookie Util Tests', () => {
       Cookies.set(COOKIE_KEYS.REDIRECT_URL_KEY, MOCK_URL);
       const res = cookieUtils.getUrlForRedirection();
       expect(res).toEqual(MOCK_URL);
+    });
+  });
+
+  describe('getLangCookie', () => {
+    // eslint-disable-next-line quotes
+    it("get user's lang in cookie", () => {
+      Cookies.set(COOKIE_KEYS.LANG_KEY, MOCK_LANG);
+      const res = cookieUtils.getLangCookie();
+      expect(res).toEqual(MOCK_LANG);
+    });
+  });
+
+  describe('setLangCookie', () => {
+    // eslint-disable-next-line quotes
+    it("save user's lang in cookie", () => {
+      const mock = jest.spyOn(Cookies, 'set');
+      setLangCookie(MOCK_LANG, MOCK_DOMAIN);
+      expect(mock).toHaveBeenCalledWith(COOKIE_KEYS.LANG_KEY, MOCK_LANG, {
+        domain: MOCK_DOMAIN,
+      });
     });
   });
 });
