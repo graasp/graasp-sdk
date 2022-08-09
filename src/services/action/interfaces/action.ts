@@ -1,14 +1,14 @@
 import { Serializable } from '../../../interfaces';
 
 export interface Action {
-  id: string;
-  memberId: string;
-  itemPath: string;
-  memberType: string;
-  itemType: string;
   actionType: string;
-  view: string;
+  createdAt: string;
   extra: Serializable;
-  // createdAt: string;
   geolocation?: Serializable;
+  id: string;
+  itemPath: string;
+  itemType: string;
+  memberId: string;
+  memberType: string;
+  view: string;
 }
