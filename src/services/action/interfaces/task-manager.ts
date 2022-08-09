@@ -21,21 +21,4 @@ export interface ActionTaskManager {
       handler: ActionHandler;
     },
   ): Task<Actor, Action>;
-
-  createGetActionsTaskSequence(
-    member: Actor,
-    itemId: string,
-    payload: {
-      itemPath?: string;
-      sampleSize?: number;
-      view?: string;
-    },
-  ): Task<Actor, unknown>[];
-
-  createGetBaseAnalyticsForItemTaskSequence(
-    member: Actor,
-    payload: { itemId: string; sampleSize: number; view?: string },
-  ): Task<Actor, unknown>[];
-
-  createDeleteTask(member: Actor, memberId: string): Task<Actor, Action[]>;
 }

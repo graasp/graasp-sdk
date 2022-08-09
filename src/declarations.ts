@@ -46,6 +46,41 @@ declare module 'fastify' {
     // task runner
     taskRunner: TaskRunner<Actor>;
 
+    // mailer
+    mailer: {
+      sendRegisterEmail: (
+        member: Member,
+        link: string,
+        lang?: string,
+      ) => Promise<void>;
+      sendLoginEmail: (
+        member: Member,
+        link: string,
+        reRegistrationAttempt?: boolean,
+        lang?: string,
+      ) => Promise<void>;
+      sendExportActionsEmail: (
+        member: Member,
+        link: string,
+        itemName: string,
+        lang?: string,
+        expirationDays?: number,
+      ) => Promise<void>;
+      sendInvitationEmail: (
+        email: string,
+        link: string,
+        itemName: string,
+        creatorName: string,
+        lang?: string,
+      ) => Promise<void>;
+      sendPublishNotificationEmail: (
+        member: Member,
+        link: string,
+        itemName: string,
+        lang?: string,
+      ) => Promise<void>;
+    };
+
     // item service
     items: {
       taskManager: ItemTaskManager;
@@ -141,7 +176,7 @@ declare module 'fastify' {
     /**
      * Action service
      */
-    action?: {
+    actions?: {
       taskManager: ActionTaskManager;
       dbService: ActionService;
     };
