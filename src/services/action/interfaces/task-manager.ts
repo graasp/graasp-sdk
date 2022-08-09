@@ -10,7 +10,7 @@ export type ActionHandler = (args: {
   reply: FastifyReply;
   log: FastifyLoggerInstance;
   handler: DatabaseTransactionHandler;
-}) => Promise<Action[]>;
+}) => Promise<Partial<Action>[]>;
 
 export interface ActionTaskManager {
   createCreateTask(
