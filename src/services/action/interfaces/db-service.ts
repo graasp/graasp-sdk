@@ -2,6 +2,11 @@ import { DatabaseTransactionConnection as TrxHandler } from 'slonik';
 
 import { Action } from './action';
 
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
+
+export type CreateActionInput = PartialBy<PartialBy<Action, 'id'>, 'createdAt'>;
+
 /**
  * Database's first layer of abstraction for Actions
  */
@@ -14,7 +19,10 @@ export declare class ActionService {
    * @param action Action to create
    * @param transactionHandler Database transaction handler
    */
-  create(action: Action, transactionHandler: TrxHandler): Promise<Action>;
+  create(
+    action: CreateActionInput,
+    transactionHandler: TrxHandler,
+  ): Promise<Action>;
 
   /**
    * Delete actions matching the given `memberId`. Return actions, or `null`, if delete has no effect.
