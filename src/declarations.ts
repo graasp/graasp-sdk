@@ -25,12 +25,12 @@ import { ActionService } from './services/actions/interfaces/db-service';
 declare module 'fastify' {
   interface FastifyRequest {
     /** member id extracted from auth token when auth is token based (app) */
-    memberId: string;
+    memberId?: string;
 
     /**
      * Member and session are available if the user has been authenticated and verified
      */
-    member: Member;
+    member?: Member;
     session: Session;
 
     /**
