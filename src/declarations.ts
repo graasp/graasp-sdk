@@ -20,7 +20,7 @@ import {
   PublicItemTaskManager,
   S3FileConfiguration,
 } from './services';
-import { ActionService } from './services/action/interfaces/db-service';
+import { ActionService } from './services/actions/interfaces/db-service';
 
 declare module 'fastify' {
   interface FastifyRequest {

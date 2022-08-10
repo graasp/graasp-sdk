@@ -1,5 +1,5 @@
 export * from './app';
-export * from './action';
+export * from './actions';
 export * from './database';
 export * from './file';
 export * from './h5p';
