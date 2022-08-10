@@ -18,4 +18,9 @@ export enum ActionType {
   AUTH_SIGN_IN_PASSWORD = 'auth_sign_in_password',
   AUTH_SIGN_OUT = 'auth_sign_out',
   AUTH_UPDATE_PASSWORD = 'auth_update_password',
+
+  COPY_CHAT_MESSAGE = 'copy_chat_message',
+  UPDATE_CHAT_MESSAGE = 'update_chat_message',
+  CREATE_CHAT_MESSAGE = 'create_chat_message',
+  DELETE_CHAT_MESSAGE = 'delete_chat_message',
 }
