@@ -20,6 +20,7 @@ const {
   isSessionExpired,
   removeSession,
   setLangCookie,
+  getLangCookie,
 } = cookieUtils;
 
 describe('Cookie Util Tests', () => {
@@ -224,7 +225,7 @@ describe('Cookie Util Tests', () => {
     // eslint-disable-next-line quotes
     it("get user's lang in cookie", () => {
       Cookies.set(COOKIE_KEYS.LANG_KEY, MOCK_LANG);
-      const res = cookieUtils.getLangCookie();
+      const res = getLangCookie();
       expect(res).toEqual(MOCK_LANG);
     });
   });
