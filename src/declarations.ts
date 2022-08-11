@@ -144,6 +144,7 @@ declare module 'fastify' {
     admin?: {
       dbService: AdminService;
       taskManager: AdminTaskManager;
+      adminRoleId: string;
     };
   }
 }

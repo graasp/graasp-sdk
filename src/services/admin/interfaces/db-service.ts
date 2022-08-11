@@ -11,7 +11,10 @@ export interface AdminService {
    * @param memberId
    * @param dbHandler Database handler
    */
-  getMemberRole(memberId: string, dbHandler: TrxHandler): Promise<MemberRole[]>;
+  getMemberRoles(
+    memberId: string,
+    dbHandler: TrxHandler,
+  ): Promise<MemberRole[]>;
 
   isAdmin(memberId: string, dbHandler: TrxHandler): Promise<boolean>;
 }
