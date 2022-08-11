@@ -4,6 +4,7 @@ import { Session } from '@fastify/secure-session';
 
 import { Actor, TaskRunner } from './interfaces';
 import {
+  AdminService,
   AuthTokenSubject,
   Database,
   H5PTaskManager,
@@ -19,6 +20,7 @@ import {
   PublicItemTaskManager,
   S3FileConfiguration,
 } from './services';
+import { AdminTaskManager } from './services/admin/interfaces/task-manager';
 
 declare module 'fastify' {
   interface FastifyRequest {
@@ -134,6 +136,14 @@ declare module 'fastify' {
      */
     h5p?: {
       taskManager: H5PTaskManager;
+    };
+
+    /**
+     * admin service
+     */
+    admin?: {
+      dbService: AdminService;
+      taskManager: AdminTaskManager;
     };
   }
 }
