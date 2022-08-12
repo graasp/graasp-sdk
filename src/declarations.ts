@@ -145,6 +145,7 @@ declare module 'fastify' {
       dbService: AdminService;
       taskManager: AdminTaskManager;
       adminRoleId: string;
+      verifyIsAdmin: (request: FastifyRequest, reply: FastifyReply) => boolean;
     };
   }
 }
