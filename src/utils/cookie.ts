@@ -23,6 +23,12 @@ export const hasAcceptedCookies = () =>
   Cookies.get(COOKIE_KEYS.ACCEPT_COOKIES_KEY) === 'true';
 
 /**
+ * @returns {boolean} whether the user is authenticated
+ */
+export const isUserAuthenticated = () =>
+  Boolean(Cookies.get(COOKIE_KEYS.SESSION_KEY));
+
+/**
  * @param {string|null} token value to set in the session key. A null value will remove it.
  * @param  {string} domain value for the cookie's domain
  */
