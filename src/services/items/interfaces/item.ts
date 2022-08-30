@@ -15,4 +15,5 @@ export interface Item<T extends UnknownExtra = UnknownExtra> {
 export interface ItemSettings extends Serializable {
   isPinned?: boolean;
   showChatBox?: boolean;
+  hasThumbnail?: boolean;
 }
