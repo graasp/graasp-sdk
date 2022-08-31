@@ -21,6 +21,7 @@ const {
   removeSession,
   setLangCookie,
   getLangCookie,
+  isUserAuthenticated,
 } = cookieUtils;
 
 describe('Cookie Util Tests', () => {
@@ -47,6 +48,20 @@ describe('Cookie Util Tests', () => {
     it('check successfully accepted cookies value for false value', () => {
       Cookies.set(COOKIE_KEYS.ACCEPT_COOKIES_KEY, 'null');
       const res = hasAcceptedCookies();
+      expect(res).toBeFalsy();
+    });
+  });
+
+  describe('isUserAuthenticated', () => {
+    const value = 'session-value';
+    it('check session value returns true', () => {
+      Cookies.set(COOKIE_KEYS.SESSION_KEY, value);
+      const res = isUserAuthenticated();
+      expect(res).toBeTruthy();
+    });
+
+    it('check empty session value returns false', () => {
+      const res = isUserAuthenticated();
       expect(res).toBeFalsy();
     });
   });
