@@ -50,9 +50,14 @@ export const MAX_TARGETS_FOR_MODIFY_REQUEST_W_RESPONSE = 5;
 /**
  * Maximum size for a uploaded zip to be extracted
  */
-export const ZIP_MAX_FILE_SIZE = 1024 * 1024 * 250; // 250MB
+export const MAX_ZIP_FILE_SIZE = 1024 * 1024 * 250; // 250MB
 
 /**
  * Maximum size for an uploaded file
  */
 export const MAX_FILE_SIZE = 1024 * 1024 * 1024; // 1GB
+
+/**
+ * Maximum size for a thumbnail
+ */
+export const MAX_THUMBNAIL_SIZE = 10 * 1024 * 1024;
