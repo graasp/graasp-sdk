@@ -46,3 +46,13 @@ export const MAX_TARGETS_FOR_MODIFY_REQUEST = 20;
  * and the results should be pushed to the client (websockets, ...) as they happen.
  */
 export const MAX_TARGETS_FOR_MODIFY_REQUEST_W_RESPONSE = 5;
+
+/**
+ * Maximum size for a uploaded zip to be extracted
+ */
+export const ZIP_MAX_FILE_SIZE = 1024 * 1024 * 250; // 250MB
+
+/**
+ * Maximum size for a uploaded zip to be extracted
+ */
+export const MAX_FILE_SIZE = 1024 * 1024 * 1024; // 1GB
