@@ -4,4 +4,3 @@ export * from './permissionLevel';
 export * from './constants';
 export * from './httpMethod';
 export * from './mentions';
-export * from './limits';

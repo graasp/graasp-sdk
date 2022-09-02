@@ -16,6 +16,7 @@ export const COOKIE_KEYS = {
   REDIRECT_URL_KEY: 'redirectUrl',
   LANG_KEY: 'lang',
 };
+
 /**
  * @returns {boolean} whether the user accepted the cookies
  */
