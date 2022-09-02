@@ -22,6 +22,7 @@ export const COOKIE_KEYS = {
 export const hasAcceptedCookies = () =>
   Cookies.get(COOKIE_KEYS.ACCEPT_COOKIES_KEY) === 'true';
 
+// TODO: this function should change to rely on another cookie -> session will be httpOnly
 /**
  * @returns {boolean} whether the user is authenticated
  */
