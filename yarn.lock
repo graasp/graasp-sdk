@@ -954,7 +954,7 @@ __metadata:
     aws-sdk: 2.1111.0
     eslint: 8.6.0
     eslint-config-prettier: 8.3.0
-    fastify: ^3.29.1
+    fastify: 3.29.1
     fluent-json-schema: 3.1.0
     husky: 7.0.4
     immutable: 4.1.0
@@ -3269,7 +3269,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:^3.29.1":
+"fastify@npm:3.29.1":
   version: 3.29.1
   resolution: "fastify@npm:3.29.1"
   dependencies:
