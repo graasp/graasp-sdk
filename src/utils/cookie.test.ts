@@ -10,18 +10,21 @@ import { SESSION_COOKIE_EXPIRATION_DURATION_MS } from '../constants/constants';
 import * as cookieUtils from './cookie';
 
 const {
+  buildIframeResizeHeightKey,
   COOKIE_KEYS,
-  saveUrlForRedirection,
-  hasAcceptedCookies,
-  setCurrentSession,
   getCurrentSession,
-  getStoredSessions,
-  storeSession,
-  isSessionExpired,
-  removeSession,
-  setLangCookie,
+  getIframeResizeHeightCookie,
   getLangCookie,
+  getStoredSessions,
+  hasAcceptedCookies,
+  isSessionExpired,
   isUserAuthenticated,
+  removeSession,
+  saveUrlForRedirection,
+  setCurrentSession,
+  setIframeResizeHeightCookie,
+  setLangCookie,
+  storeSession,
 } = cookieUtils;
 
 describe('Cookie Util Tests', () => {
@@ -29,6 +32,42 @@ describe('Cookie Util Tests', () => {
     jest.clearAllMocks();
     Object.values(COOKIE_KEYS).forEach((key) => {
       Cookies.remove(key);
+    });
+  });
+
+  describe('getIframeResizeHeightCookie', () => {
+    const itemId = 'itemId';
+    const memberId = 'memberId';
+    const height = '230';
+    it('get height successfully for memberId and itemId', () => {
+      Cookies.set(buildIframeResizeHeightKey({ memberId, itemId }), height);
+      const res = getIframeResizeHeightCookie({ itemId, memberId });
+      expect(res).toEqual(height);
+    });
+
+    it('get height successfully for undefined memberId', () => {
+      Cookies.set(buildIframeResizeHeightKey({ itemId }), height);
+      const res = getIframeResizeHeightCookie({ itemId });
+      expect(res).toEqual(height);
+    });
+  });
+
+  describe('setIframeResizeHeightCookie', () => {
+    const itemId = 'itemId';
+    const memberId = 'memberId';
+    const height = '230';
+    it('set height successfully for memberId and itemId', () => {
+      const key = buildIframeResizeHeightKey({ memberId, itemId });
+      Cookies.set(key, height);
+      setIframeResizeHeightCookie({ itemId, memberId }, height + 1);
+      expect(Cookies.get(key)).toEqual(height + 1);
+    });
+
+    it('get height successfully for undefined memberId', () => {
+      const key = buildIframeResizeHeightKey({ itemId });
+      Cookies.set(key, height);
+      setIframeResizeHeightCookie({ itemId }, height + 2);
+      expect(Cookies.get(key)).toEqual(height + 2);
     });
   });
 

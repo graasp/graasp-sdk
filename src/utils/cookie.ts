@@ -27,8 +27,16 @@ export const COOKIE_KEYS = {
  * @param {UUID} memeber id
  * * @param {UUID} item id
  */
-const buildIframeResizeHeightKey = (memberId: UUID, itemId: UUID) =>
-  `${COOKIE_KEYS.IFRAME_RESIZE_HEIGHT_KEY}-${memberId}-${itemId}`;
+export const buildIframeResizeHeightKey = ({
+  memberId,
+  itemId,
+}: {
+  memberId?: UUID;
+  itemId: UUID;
+}) =>
+  `${COOKIE_KEYS.IFRAME_RESIZE_HEIGHT_KEY}${
+    memberId ? `-${memberId}` : 'unknown'
+  }-${itemId}`;
 
 /**
  * @returns {boolean} whether the user accepted the cookies
@@ -162,18 +170,33 @@ export const getLangCookie = () => Cookies.get(COOKIE_KEYS.LANG_KEY);
  * @param  {number} variable height to set in the cookie
  */
 export const setIframeResizeHeightCookie = (
-  memberId: UUID,
-  itemId: UUID,
+  {
+    itemId,
+
+    memberId,
+  }: {
+    itemId: UUID;
+    memberId?: UUID;
+  },
   height: string | number,
 ) =>
-  Cookies.set(buildIframeResizeHeightKey(memberId, itemId), String(height), {
-    expires: IFRAME_RESIZE_HEIGHT_COOKIE_EXPIRATION_DAYS,
-  });
+  Cookies.set(
+    buildIframeResizeHeightKey({ memberId, itemId }),
+    String(height),
+    {
+      expires: IFRAME_RESIZE_HEIGHT_COOKIE_EXPIRATION_DAYS,
+    },
+  );
 
 /**
  * @returns  {string|undefined} iframe height
  * @param {UUID} memeber id
  * @param {UUID} item id
  */
-export const getIframeResizeHeightCookie = (memberId: UUID, itemId: UUID) =>
-  Cookies.get(buildIframeResizeHeightKey(memberId, itemId));
+export const getIframeResizeHeightCookie = ({
+  itemId,
+  memberId,
+}: {
+  itemId: UUID;
+  memberId?: UUID;
+}) => Cookies.get(buildIframeResizeHeightKey({ memberId, itemId }));
