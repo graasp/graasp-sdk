@@ -34,8 +34,7 @@ export const buildIframeResizeHeightKey = ({
   memberId?: UUID;
   itemId: UUID;
 }) =>
-  `${COOKIE_KEYS.IFRAME_RESIZE_HEIGHT_KEY}${
-    memberId ? `-${memberId}` : 'unknown'
+  `${COOKIE_KEYS.IFRAME_RESIZE_HEIGHT_KEY}-${memberId ?? 'unknown'
   }-${itemId}`;
 
 /**
