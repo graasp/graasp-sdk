@@ -215,20 +215,18 @@ describe('Navigation Util Tests', () => {
   });
 
   describe('buildPdfLink', () => {
-    const fileUrl = 'fileUrl';
     const assetsUrl = 'assetsUrl';
 
     it('build url without asset url', () => {
-      const res = buildPdfLink(fileUrl);
-      expect(res).toEqual(fileUrl);
+      const res = buildPdfLink();
+      expect(res).toEqual('');
 
-      const res1 = buildPdfLink(fileUrl, '');
-      expect(res1).toEqual(fileUrl);
+      const res1 = buildPdfLink('');
+      expect(res1).toEqual('');
     });
 
     it('build url with asset url', () => {
-      const res = buildPdfLink(fileUrl, assetsUrl);
-      expect(res).toContain(fileUrl);
+      const res = buildPdfLink(assetsUrl);
       expect(res).toContain(assetsUrl);
     });
   });
