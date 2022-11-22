@@ -8,7 +8,7 @@ import { DEFAULT_PROTOCOL } from '../config';
 import * as cookieUtils from './cookie';
 import {
   buildItemLinkForBuilder,
-  buildPdfLink,
+  buildPdfViewerLink,
   buildSignInPath,
   redirect,
   redirectToSavedUrl,
@@ -214,19 +214,19 @@ describe('Navigation Util Tests', () => {
     });
   });
 
-  describe('buildPdfLink', () => {
+  describe('buildPdfViewerLink', () => {
     const assetsUrl = 'assetsUrl';
 
     it('build url without asset url', () => {
-      const res = buildPdfLink();
+      const res = buildPdfViewerLink();
       expect(res).toEqual('');
 
-      const res1 = buildPdfLink('');
+      const res1 = buildPdfViewerLink('');
       expect(res1).toEqual('');
     });
 
     it('build url with asset url', () => {
-      const res = buildPdfLink(assetsUrl);
+      const res = buildPdfViewerLink(assetsUrl);
       expect(res).toContain(assetsUrl);
     });
   });
