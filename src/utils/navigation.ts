@@ -105,3 +105,13 @@ export const buildItemLinkForBuilder: BuildItemLinkFunc = (
     { addQueryPrefix: true },
   )}`;
 };
+
+/**
+ * Return a link to display a pdf, embedded in a custom pdf viewer if provided
+ * @param assetsUrl assets url where the pdf viewer is hosted
+ * @returns embedded link to display a pdf
+ */
+export const buildPdfLink = (fileUrl: string, assetsUrl?: string) =>
+  assetsUrl
+    ? `https://${assetsUrl}/pdf-viewer/web/viewer.html?file=${fileUrl}`
+    : fileUrl;

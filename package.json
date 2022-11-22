@@ -20,7 +20,7 @@
     "hooks:uninstall": "husky uninstall",
     "hooks:install": "husky install",
     "build": "tsc",
-    "test": "jest",
+    "test": "jest --silent",
     "test:watch": "yarn test --watchAll",
     "lint": "eslint {src,test}",
     "prettier:check": "prettier --check src/**/*.ts",
