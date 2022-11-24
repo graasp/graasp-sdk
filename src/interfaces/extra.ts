@@ -33,5 +33,5 @@ export type EmbeddedLinkItemExtraProperties = {
 };
 
 export interface EmbeddedLinkItemExtra extends UnknownExtra {
-  embeddedLink: EmbeddedLinkItemExtraProperties;
+  [ItemType.LINK]: EmbeddedLinkItemExtraProperties;
 }
