@@ -1,3 +1,5 @@
+import { ItemType } from '../constants';
+
 export declare type Anything =
   | string
   | number
@@ -13,4 +15,23 @@ export interface UnknownExtra {
 }
 export interface Serializable {
   [key: string]: Anything;
+}
+
+export type DocumentItemExtraProperties = {
+  content: string;
+};
+
+export interface DocumentItemExtra extends UnknownExtra {
+  [ItemType.DOCUMENT]: DocumentItemExtraProperties;
+}
+
+export type EmbeddedLinkItemExtraProperties = {
+  thumbnails: string[];
+  html: string;
+  url: string;
+  icons: string[];
+};
+
+export interface EmbeddedLinkItemExtra extends UnknownExtra {
+  embeddedLink: EmbeddedLinkItemExtraProperties;
 }
