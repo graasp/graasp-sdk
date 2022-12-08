@@ -35,3 +35,11 @@ export type EmbeddedLinkItemExtraProperties = {
 export interface EmbeddedLinkItemExtra extends UnknownExtra {
   [ItemType.LINK]: EmbeddedLinkItemExtraProperties;
 }
+
+export type FolderItemExtraProperties = {
+  childrenOrder: string[];
+};
+
+export interface FolderItemExtra extends UnknownExtra {
+  [ItemType.FOLDER]: FolderItemExtraProperties;
+}
