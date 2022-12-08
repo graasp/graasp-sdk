@@ -43,3 +43,11 @@ export type FolderItemExtraProperties = {
 export interface FolderItemExtra extends UnknownExtra {
   [ItemType.FOLDER]: FolderItemExtraProperties;
 }
+
+export type ShortcutItemExtraProperties = {
+  target: string;
+};
+
+export interface ShortcutItemExtra extends UnknownExtra {
+  [ItemType.SHORTCUT]: ShortcutItemExtraProperties;
+}
