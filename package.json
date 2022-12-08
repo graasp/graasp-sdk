@@ -2,7 +2,11 @@
   "name": "@graasp/sdk",
   "version": "0.1.0",
   "repository": "git@github.com:graasp/graasp-sdk.git",
-  "author": "Kim Lan Phan Hoang",
+  "author": "Graasp",
+  "contributors": [
+    "Kim Lan Phan Hoang",
+    "Basile Spaenlehauer"
+  ],
   "license": "AGPL-3.0-only",
   "source": "src/index.ts",
   "main": "dist/index.js",
