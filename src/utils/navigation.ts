@@ -112,6 +112,4 @@ export const buildItemLinkForBuilder: BuildItemLinkFunc = (
  * @returns embedded link to display a pdf
  */
 export const buildPdfViewerLink = (assetsUrl?: string) =>
-  assetsUrl
-    ? `https://${assetsUrl}/pdf-viewer/web/viewer.html?file=`
-    : '';
+  assetsUrl ? `https://${assetsUrl}/pdf-viewer/web/viewer.html?file=` : '';
