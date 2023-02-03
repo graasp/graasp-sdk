@@ -5,7 +5,6 @@ import {
   FolderItemExtra,
   Serializable,
   ShortcutItemExtra,
-  UnknownExtra,
 } from '../../../interfaces/extra';
 import { AppItemExtra } from '../../app/';
 import { Etherpad } from '../../etherpad';
