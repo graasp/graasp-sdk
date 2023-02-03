@@ -35,13 +35,15 @@
     "hooks:uninstall": "husky uninstall",
     "hooks:install": "husky install",
     "build": "tsc",
+    "type-check": "tsc --noEmit",
     "test": "jest --silent",
     "test:watch": "yarn test --watchAll",
     "lint": "eslint {src,test}",
     "prettier:check": "prettier --check src/**/*.ts",
     "prettier:write": "prettier --write src/**/*.ts",
     "prepack": "yarn build",
-    "prepare": "yarn prepack && yarn hooks:install"
+    "prepare": "yarn prepack && yarn hooks:install",
+    "check": "yarn prettier:check && yarn lint && yarn type-check"
   },
   "devDependencies": {
     "@commitlint/cli": "17.0.3",

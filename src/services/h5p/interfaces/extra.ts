@@ -1,7 +1,8 @@
+import { ItemType } from '../../../constants';
 import { UnknownExtra } from '../../../interfaces';
 
 export interface H5PExtra extends UnknownExtra {
-  h5p: {
+  [ItemType.H5P]: {
     /** storage ID */
     contentId: string;
     /** relative path from root storage to the uploaded .h5p package */
