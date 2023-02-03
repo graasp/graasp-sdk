@@ -20,7 +20,7 @@ export interface ItemSettings extends Serializable {
   isCollapsible?: boolean;
 }
 
-export declare type ItemBase<S = ItemSettings> = {
+export type ItemBase<S = ItemSettings> = {
   id: string;
   name: string;
   description: string;
@@ -29,20 +29,52 @@ export declare type ItemBase<S = ItemSettings> = {
   creator: string;
   createdAt: string;
   updatedAt: string;
-  type: `${ItemType}`;
-  extra: UnknownExtra;
 };
 
-export declare type Item<S = ItemSettings> =
-  | ({ type: `${ItemType.APP}`; extra: AppItemExtra } & ItemBase<S>)
-  | ({ type: `${ItemType.DOCUMENT}`; extra: DocumentItemExtra } & ItemBase<S>)
-  | ({ type: `${ItemType.FOLDER}`; extra: FolderItemExtra } & ItemBase<S>)
-  | ({ type: `${ItemType.H5P}`; extra: H5PExtra } & ItemBase<S>)
-  | ({ type: `${ItemType.LINK}`; extra: EmbeddedLinkItemExtra } & ItemBase<S>)
-  | ({
-      type: `${ItemType.LOCAL_FILE}`;
-      extra: LocalFileItemExtra;
-    } & ItemBase<S>)
-  | ({ type: `${ItemType.S3_FILE}`; extra: S3FileItemExtra } & ItemBase<S>)
-  | ({ type: `${ItemType.SHORTCUT}`; extra: ShortcutItemExtra } & ItemBase<S>)
-  | ({ type: `${ItemType.ETHERPAD}`; extra: Etherpad } & ItemBase<S>);
+export type AppItemType<S = ItemSettings> = {
+  type: `${ItemType.APP}`;
+  extra: AppItemExtra;
+} & ItemBase<S>;
+export type DocumentItemType<S = ItemSettings> = {
+  type: `${ItemType.DOCUMENT}`;
+  extra: DocumentItemExtra;
+} & ItemBase<S>;
+export type FolderItemType<S = ItemSettings> = {
+  type: `${ItemType.FOLDER}`;
+  extra: FolderItemExtra;
+} & ItemBase<S>;
+export type H5PItemType<S = ItemSettings> = {
+  type: `${ItemType.H5P}`;
+  extra: H5PExtra;
+} & ItemBase<S>;
+export type EmbeddedLinkItemType<S = ItemSettings> = {
+  type: `${ItemType.LINK}`;
+  extra: EmbeddedLinkItemExtra;
+} & ItemBase<S>;
+export type LocalFileItemType<S = ItemSettings> = {
+  type: `${ItemType.LOCAL_FILE}`;
+  extra: LocalFileItemExtra;
+} & ItemBase<S>;
+export type S3FileItemType<S = ItemSettings> = {
+  type: `${ItemType.S3_FILE}`;
+  extra: S3FileItemExtra;
+} & ItemBase<S>;
+export type ShortcutItemType<S = ItemSettings> = {
+  type: `${ItemType.SHORTCUT}`;
+  extra: ShortcutItemExtra;
+} & ItemBase<S>;
+export type EtherpadItemType<S = ItemSettings> = {
+  type: `${ItemType.ETHERPAD}`;
+  extra: Etherpad;
+} & ItemBase<S>;
+
+export type Item<S = ItemSettings> =
+  | AppItemType<S>
+  | DocumentItemType<S>
+  | FolderItemType<S>
+  | H5PItemType<S>
+  | EmbeddedLinkItemType<S>
+  | LocalFileItemType<S>
+  | S3FileItemType<S>
+  | ShortcutItemType<S>
+  | EtherpadItemType<S>;
