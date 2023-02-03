@@ -5,6 +5,7 @@ import {
   FolderItemExtra,
   Serializable,
   ShortcutItemExtra,
+  UnknownExtra,
 } from '../../../interfaces/extra';
 import { AppItemExtra } from '../../app/';
 import { Etherpad } from '../../etherpad';
@@ -19,7 +20,7 @@ export interface ItemSettings extends Serializable {
   isCollapsible?: boolean;
 }
 
-export type Item<S = ItemSettings> = {
+export declare type ItemBase<S = ItemSettings> = {
   id: string;
   name: string;
   description: string;
@@ -28,14 +29,20 @@ export type Item<S = ItemSettings> = {
   creator: string;
   createdAt: string;
   updatedAt: string;
-} & (
-  | { type: ItemType.APP; extra: AppItemExtra }
-  | { type: ItemType.DOCUMENT; extra: DocumentItemExtra }
-  | { type: ItemType.FOLDER; extra: FolderItemExtra }
-  | { type: ItemType.H5P; extra: H5PExtra }
-  | { type: ItemType.LINK; extra: EmbeddedLinkItemExtra }
-  | { type: ItemType.LOCAL_FILE; extra: LocalFileItemExtra }
-  | { type: ItemType.S3_FILE; extra: S3FileItemExtra }
-  | { type: ItemType.SHORTCUT; extra: ShortcutItemExtra }
-  | { type: ItemType.ETHERPAD; extra: Etherpad }
-);
+  type: `${ItemType}`;
+  extra: UnknownExtra;
+};
+
+export declare type Item<S = ItemSettings> =
+  | ({ type: `${ItemType.APP}`; extra: AppItemExtra } & ItemBase<S>)
+  | ({ type: `${ItemType.DOCUMENT}`; extra: DocumentItemExtra } & ItemBase<S>)
+  | ({ type: `${ItemType.FOLDER}`; extra: FolderItemExtra } & ItemBase<S>)
+  | ({ type: `${ItemType.H5P}`; extra: H5PExtra } & ItemBase<S>)
+  | ({ type: `${ItemType.LINK}`; extra: EmbeddedLinkItemExtra } & ItemBase<S>)
+  | ({
+      type: `${ItemType.LOCAL_FILE}`;
+      extra: LocalFileItemExtra;
+    } & ItemBase<S>)
+  | ({ type: `${ItemType.S3_FILE}`; extra: S3FileItemExtra } & ItemBase<S>)
+  | ({ type: `${ItemType.SHORTCUT}`; extra: ShortcutItemExtra } & ItemBase<S>)
+  | ({ type: `${ItemType.ETHERPAD}`; extra: Etherpad } & ItemBase<S>);
