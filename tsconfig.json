@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "declaration": true,
     "declarationDir": "dist",
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "strict": true,
     "isolatedModules": true,
     "noImplicitThis": true,
