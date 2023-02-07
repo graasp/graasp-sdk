@@ -18,12 +18,13 @@
   },
   "exports": {
     ".": "./dist/index.js",
-    "./frontend": "./dist/frontend/index.js"
+    "./frontend": "./dist/frontend/index.js",
+    "./package.json": "./package.json"
   },
   "typesVersions": {
     "*": {
       "frontend": [
-        "./dist/frontend/index.d.ts"
+        "dist/frontend/index.d.ts"
       ]
     }
   },
