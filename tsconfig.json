@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
+    "baseUrl": ".",
     "module": "commonjs",
     "outDir": "dist",
     "esModuleInterop": true,
@@ -15,5 +16,5 @@
     "strictNullChecks": true
   },
   "include": ["src/**/*"],
-  "exclude": [ "test", "src/**/*.test.ts"]
+  "exclude": ["test", "src/**/*.test.ts"]
 }

@@ -16,6 +16,16 @@
   "typescript": {
     "definition": "dist/index.d.ts"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./frontend": {
+      "types": "./dist/frontend/index.d.ts",
+      "import": "./dist/frontend/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
