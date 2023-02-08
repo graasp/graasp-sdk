@@ -29,16 +29,26 @@ export type ImmutableCast<Type> = RecordOf<{
     : Type[Property];
 }>;
 
+export type AppItemTypeRecord = ImmutableCast<AppItemType>;
+export type DocumentItemTypeRecord = ImmutableCast<DocumentItemType>;
+export type FolderItemTypeRecord = ImmutableCast<FolderItemType>;
+export type H5PItemTypeRecord = ImmutableCast<H5PItemType>;
+export type EmbeddedLinkItemTypeRecord = ImmutableCast<EmbeddedLinkItemType>;
+export type LocalFileItemTypeRecord = ImmutableCast<LocalFileItemType>;
+export type S3FileItemTypeRecord = ImmutableCast<S3FileItemType>;
+export type ShortcutItemTypeRecord = ImmutableCast<ShortcutItemType>;
+export type EtherpadItemTypeRecord = ImmutableCast<EtherpadItemType>;
+
 export type ItemRecord =
-  | ImmutableCast<AppItemType>
-  | ImmutableCast<DocumentItemType>
-  | ImmutableCast<FolderItemType>
-  | ImmutableCast<H5PItemType>
-  | ImmutableCast<EmbeddedLinkItemType>
-  | ImmutableCast<LocalFileItemType>
-  | ImmutableCast<S3FileItemType>
-  | ImmutableCast<ShortcutItemType>
-  | ImmutableCast<EtherpadItemType>;
+  | AppItemTypeRecord
+  | DocumentItemTypeRecord
+  | FolderItemTypeRecord
+  | H5PItemTypeRecord
+  | EmbeddedLinkItemTypeRecord
+  | LocalFileItemTypeRecord
+  | S3FileItemTypeRecord
+  | ShortcutItemTypeRecord
+  | EtherpadItemTypeRecord;
 
 export type EtherpadRecord = RecordOf<Etherpad>;
 
