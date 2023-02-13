@@ -1,4 +1,4 @@
-import { MentionStatus } from 'src/constants/mentions';
+import { MentionStatus } from '@/constants/mentions';
 
 // ********************** Chat ******************************
 

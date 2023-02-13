@@ -1,4 +1,4 @@
-import { UUID } from 'src/types';
+import { UUID } from '@/types';
 
 /**
  * Higher order categories for `Categories`.

@@ -1,10 +1,10 @@
 import Cookies from 'js-cookie';
-import { UUID } from 'src/types';
 
 import {
   IFRAME_RESIZE_HEIGHT_COOKIE_EXPIRATION_DAYS,
   SESSION_COOKIE_EXPIRATION_DURATION_MS,
 } from '../constants/constants';
+import { UUID } from '@/types';
 
 export interface Session {
   id: string;

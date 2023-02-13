@@ -46,7 +46,7 @@
     "pre-commit": "yarn prettier:check && yarn lint",
     "hooks:uninstall": "husky uninstall",
     "hooks:install": "husky install",
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "type-check": "tsc --noEmit",
     "test": "jest --silent",
     "test:watch": "yarn test --watchAll",
@@ -78,6 +78,7 @@
     "prettier": "2.8.3",
     "ts-jest": "27.1.5",
     "ts-node": "10.9.1",
+    "tsc-alias": "1.8.2",
     "typescript": "4.9.5"
   },
   "packageManager": "yarn@3.3.0"

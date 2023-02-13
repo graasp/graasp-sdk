@@ -1,5 +1,6 @@
-import { List, RecordOf } from 'immutable';
-import {
+import type { List, RecordOf } from 'immutable';
+
+import type {
   AppItemType,
   Category,
   CategoryType,
@@ -17,6 +18,7 @@ import {
   Invitation,
   ItemCategory,
   ItemChat,
+  ItemLoginSchema,
   ItemMembership,
   ItemTag,
   LocalFileItemType,
@@ -25,8 +27,8 @@ import {
   MemberMentions,
   S3FileItemType,
   ShortcutItemType,
-} from 'src/index';
-import { UUID } from 'src/types';
+} from '@/index';
+import type { UUID } from '@/types';
 
 /**
  * Convenience type to convert nested objects to deeply immutable objects
@@ -100,13 +102,8 @@ export type InvitationRecord = RecordOf<Invitation>;
 
 export type ItemCategoryRecord = RecordOf<ItemCategory>;
 
-export enum ITEM_LOGIN_SCHEMAS {
-  USERNAME = 'username',
-  USERNAME_AND_PASSWORD = 'username+password',
-}
-
 export type ItemLogin = {
-  loginSchema: ITEM_LOGIN_SCHEMAS;
+  loginSchema: ItemLoginSchema;
 };
 
 export type ItemLoginRecord = RecordOf<ItemLogin>;

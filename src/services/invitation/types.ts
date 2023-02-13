@@ -1,5 +1,5 @@
-import { PermissionLevel } from 'src/index';
-import { UUID } from 'src/types';
+import { PermissionLevel } from '@/index';
+import { UUID } from '@/types';
 
 export type Invitation = {
   id: UUID;
