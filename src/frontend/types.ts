@@ -18,7 +18,7 @@ import {
 } from 'src/index';
 
 // alias type for uuid v4
-type UUID = string;
+export type UUID = string;
 
 /**
  * Convenience type to convert nested objects to deeply immutable objects
