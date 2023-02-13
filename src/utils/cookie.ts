@@ -1,5 +1,5 @@
-import { UUID } from 'aws-sdk/clients/cloudtrail';
 import Cookies from 'js-cookie';
+import { UUID } from 'src/types';
 
 import {
   IFRAME_RESIZE_HEIGHT_COOKIE_EXPIRATION_DAYS,

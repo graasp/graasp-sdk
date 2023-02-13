@@ -1,24 +1,32 @@
 import { List, RecordOf } from 'immutable';
 import {
   AppItemType,
+  Category,
+  CategoryType,
+  ChatMention,
+  ChatMessage,
   DocumentItemType,
   EmbeddedLinkItemType,
   Etherpad,
   EtherpadItemType,
+  ExportedChatMessage,
+  ExportedItemChat,
+  Flag,
   FolderItemType,
   H5PItemType,
+  Invitation,
+  ItemCategory,
+  ItemChat,
   ItemMembership,
+  ItemTag,
   LocalFileItemType,
   Member,
   MemberExtra,
-  MentionStatus,
-  PermissionLevel,
+  MemberMentions,
   S3FileItemType,
   ShortcutItemType,
 } from 'src/index';
-
-// alias type for uuid v4
-export type UUID = string;
+import { UUID } from 'src/types';
 
 /**
  * Convenience type to convert nested objects to deeply immutable objects
@@ -66,103 +74,29 @@ export type MemberRecord = ImmutableCast<Member<MemberExtra>>;
 
 export type ItemMembershipRecord = ImmutableCast<ItemMembership>;
 
-export type ChatMention = {
-  id: string;
-  itemPath: string;
-  message: string;
-  messageId: string;
-  memberId: string;
-  creator: string;
-  createdAt: string;
-  updatedAt: string;
-  status: MentionStatus;
-};
-
 export type ChatMentionRecord = ImmutableCast<ChatMention>;
-
-export type PartialChatMention = {
-  id: string;
-  status: MentionStatus;
-};
-
-export type MemberMentions = {
-  memberId: string;
-  mentions: ChatMention[];
-};
 
 export type MemberMentionsRecord = ImmutableCast<MemberMentions>;
 
-export type MessageBodyType = { message: string; mentions?: string[] };
-
-export type Category = {
-  id: UUID;
-  name: string;
-  type: UUID;
-};
-
+/**
+ * A `CategoryRecord` represents a sort of "tag" for an item. For example: "Math", "Kindergarten" etc ...
+ */
 export type CategoryRecord = RecordOf<Category>;
 
-// todo: Do we use this or the one with the `type` prop ??
-export type CategoryType = {
-  id: UUID;
-  name: string;
-};
-
+/**
+ * A `CategoryTypeRecord` represents a higher order grouping of `CategoryRecord`s like "discipline", "education level" or "language"
+ */
 export type CategoryTypeRecord = RecordOf<CategoryType>;
-
-export type ChatMessage = {
-  id: string;
-  chatId: string;
-  creator: string;
-  createdAt: string;
-  updatedAt: string;
-  body: string;
-};
 
 export type ChatMessageRecord = ImmutableCast<ChatMessage>;
 
-export type ItemChat = {
-  id: string;
-  messages: ChatMessage[];
-};
-
 export type ItemChatRecord = ImmutableCast<ItemChat>;
-
-export type ItemTag = {
-  id: UUID;
-  itemPath: string;
-  tagId: UUID;
-  createdAt: string;
-  creator: string;
-};
 
 export type ItemTagRecord = RecordOf<ItemTag>;
 
-export type Flag = {
-  id: UUID;
-  name: string;
-};
-
 export type FlagRecord = RecordOf<Flag>;
 
-export type Invitation = {
-  id: UUID;
-  email: string;
-  permission?: PermissionLevel;
-  name?: string;
-  creator: UUID;
-  itemPath: string;
-};
-
 export type InvitationRecord = RecordOf<Invitation>;
-
-export type ItemCategory = {
-  id: UUID;
-  itemId: UUID;
-  categoryId: UUID;
-  createdAt: string;
-  creator: string;
-};
 
 export type ItemCategoryRecord = RecordOf<ItemCategory>;
 
@@ -177,26 +111,9 @@ export type ItemLogin = {
 
 export type ItemLoginRecord = RecordOf<ItemLogin>;
 
-// type of the exported chat message
-// contains the additional "creatorName" key with the plain text name of the user
-export type ExportedChatMessage = {
-  id: string;
-  chatId: string;
-  creator: string;
-  creatorName: string;
-  createdAt: string;
-  updatedAt: string;
-  body: string;
-};
-
 export type ExportedChatMessageRecord = RecordOf<ExportedChatMessage>;
 
-export type ExportedItemChat = {
-  id: string;
-  messages: List<ExportedChatMessageRecord>;
-};
-
-export type ExportedItemChatRecord = RecordOf<ExportedItemChat>;
+export type ExportedItemChatRecord = ImmutableCast<ExportedItemChat>;
 
 // a combined record from item-validation, item-validation-review, item-validation-process
 export type FullValidationRecord = {
