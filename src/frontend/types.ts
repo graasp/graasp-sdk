@@ -34,17 +34,13 @@ import type { UUID } from '@/types';
  * Convenience type to convert nested objects to deeply immutable objects
  */
 export type ImmutableCast<Type> = RecordOf<{
-  [Property in keyof Type]: Type[Property] extends (infer U)[]
-    ? U extends object
-      ? List<ImmutableCast<U>>
-      : List<U>
-    : Type[Property] extends (infer U)[] | undefined
-    ? U extends object
-      ? List<ImmutableCast<U>> | undefined
-      : List<U> | undefined
-    : Type[Property] extends object
-    ? ImmutableCast<Type[Property]>
-    : Type[Property];
+  [Property in keyof Type]: Type[Property] extends (infer U)[] | undefined // check that type is an array (or an optional array)
+    ? U extends object // check if internal array type is a custom type
+      ? List<ImmutableCast<U>> // if is custom type transform to List of an immutable transformation of the custom type
+      : List<U> // else just wrap in a List
+    : Type[Property] extends object | undefined // check that type is a custom type (or optional custom type)
+    ? ImmutableCast<Type[Property]> // if is custom type then transform to immutable custom type
+    : Type[Property]; // else (it is a base type) just return the type
 }>;
 
 export type AppItemTypeRecord = ImmutableCast<AppItemType>;
