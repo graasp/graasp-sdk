@@ -7,8 +7,7 @@
 export const isError = (obj: unknown): boolean => {
   if (!obj || typeof obj !== 'object') {
     return false;
-  } else if (obj) {
+  } else {
     return 'statusCode' in obj || obj instanceof Error;
   }
-  return false;
 };

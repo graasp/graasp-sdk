@@ -16,6 +16,7 @@ import type {
   FolderItemType,
   H5PItemType,
   Invitation,
+  Item,
   ItemCategory,
   ItemChat,
   ItemLoginSchema,
@@ -64,7 +65,7 @@ export type ItemRecord =
   | ShortcutItemTypeRecord
   | EtherpadItemTypeRecord;
 
-export type EtherpadRecord = RecordOf<Etherpad>;
+export type EtherpadRecord = ImmutableCast<Etherpad>;
 
 export type MemberExtraRecord = ImmutableCast<MemberExtra>;
 
@@ -79,37 +80,37 @@ export type MemberMentionsRecord = ImmutableCast<MemberMentions>;
 /**
  * A `CategoryRecord` represents a sort of "tag" for an item. For example: "Math", "Kindergarten" etc ...
  */
-export type CategoryRecord = RecordOf<Category>;
+export type CategoryRecord = ImmutableCast<Category>;
 
 /**
  * A `CategoryTypeRecord` represents a higher order grouping of `CategoryRecord`s like "discipline", "education level" or "language"
  */
-export type CategoryTypeRecord = RecordOf<CategoryType>;
+export type CategoryTypeRecord = ImmutableCast<CategoryType>;
 
 export type ChatMessageRecord = ImmutableCast<ChatMessage>;
 
 export type ItemChatRecord = ImmutableCast<ItemChat>;
 
-export type ItemTagRecord = RecordOf<ItemTag>;
+export type ItemTagRecord = ImmutableCast<ItemTag>;
 
-export type FlagRecord = RecordOf<Flag>;
+export type FlagRecord = ImmutableCast<Flag>;
 
-export type InvitationRecord = RecordOf<Invitation>;
+export type InvitationRecord = ImmutableCast<Invitation>;
 
-export type ItemCategoryRecord = RecordOf<ItemCategory>;
+export type ItemCategoryRecord = ImmutableCast<ItemCategory>;
 
 export type ItemLogin = {
   loginSchema: ItemLoginSchema;
 };
 
-export type ItemLoginRecord = RecordOf<ItemLogin>;
+export type ItemLoginRecord = ImmutableCast<ItemLogin>;
 
-export type ExportedChatMessageRecord = RecordOf<ExportedChatMessage>;
+export type ExportedChatMessageRecord = ImmutableCast<ExportedChatMessage>;
 
 export type ExportedItemChatRecord = ImmutableCast<ExportedItemChat>;
 
 // a combined record from item-validation, item-validation-review, item-validation-process
-export type FullValidationRecord = {
+export type FullValidation = {
   id: string;
   itemId: string;
   reviewStatusId: string;
@@ -119,7 +120,7 @@ export type FullValidationRecord = {
   createdAt: string;
 };
 
-export type FullValidationRecordRecord = RecordOf<FullValidationRecord>;
+export type FullValidationRecord = ImmutableCast<FullValidation>;
 
 export type ItemValidationAndReview = {
   itemValidationId: string;
@@ -128,7 +129,8 @@ export type ItemValidationAndReview = {
   createdAt: string;
 };
 
-export type ItemValidationAndReviewRecord = RecordOf<ItemValidationAndReview>;
+export type ItemValidationAndReviewRecord =
+  ImmutableCast<ItemValidationAndReview>;
 
 export type ItemValidationGroup = {
   id: string;
@@ -141,41 +143,37 @@ export type ItemValidationGroup = {
   createdAt: string;
 };
 
-export type ItemValidationGroupRecord = RecordOf<ItemValidationGroup>;
+export type ItemValidationGroupRecord = ImmutableCast<ItemValidationGroup>;
 
 export type Status = {
   id: string;
   name: string;
 };
 
-export type StatusRecord = RecordOf<Status>;
+export type StatusRecord = ImmutableCast<Status>;
 
 export interface Action {
   id: string;
   itemId: UUID;
   memberId: UUID;
 }
+export type ActionRecord = ImmutableCast<Action>;
 
-export type ActionRecord = RecordOf<Action>;
 export type ActionMetadata = {
   numActionsRetrieved: number;
   requestedSampleSize: number;
 };
-export type ActionMetadataRecord = RecordOf<{
-  numActionsRetrieved: number;
-  requestedSampleSize: number;
-}>;
+export type ActionMetadataRecord = ImmutableCast<ActionMetadata>;
 
 export interface ActionData {
-  actions: List<ActionRecord>;
-  descendants: List<ItemRecord>;
-  item: ItemRecord;
-  itemMemberships: List<ItemMembershipRecord>;
-  members: List<MemberRecord>;
-  metadata: ActionMetadataRecord;
+  actions: ActionRecord[];
+  descendants: Item[];
+  item: Item;
+  itemMemberships: ItemMembership[];
+  members: Member[];
+  metadata: ActionMetadata;
 }
-
-export type ActionDataRecord = RecordOf<ActionData>;
+export type ActionDataRecord = ImmutableCast<ActionData>;
 
 export type Password = string;
 export type NewInvitation = Pick<Invitation, 'email' & 'permission'> &
@@ -188,8 +186,9 @@ export type ItemLike = {
   createdAt: string;
 };
 
-export type ItemLikeRecord = RecordOf<ItemLike>;
+export type ItemLikeRecord = ImmutableCast<ItemLike>;
 
+// todo: check exact value of extra prop
 export type App = {
   name: string;
   url: string;
@@ -197,11 +196,11 @@ export type App = {
   extra: any;
 };
 
-export type AppRecord = RecordOf<App>;
+export type AppRecord = ImmutableCast<App>;
 
 export type Tag = {
   id: UUID;
   name: string;
 };
 
-export type TagRecord = RecordOf<Tag>;
+export type TagRecord = ImmutableCast<Tag>;

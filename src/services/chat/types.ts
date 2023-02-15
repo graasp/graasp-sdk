@@ -58,8 +58,6 @@ export type ChatMention = {
   status: MentionStatus;
 };
 
-export type PartialChatMention = Pick<ChatMention, 'id' | 'status'>;
-
 /**
  * Represents all mentions destined to a member
  */
