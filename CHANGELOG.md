@@ -5,7 +5,7 @@
 
 ### Features
 
-* **types:** add a magic `ImmutableCast&lt;T&gt;` type to derive `*Record` (immutable) types from backend (mutable) types. Supports nested and optional props with basic or custom types. ([e21d1e5](https://github.com/graasp/graasp-sdk/commit/e21d1e57940ce0aa8235b321654743551ff38794))
+* **types:** add a magic `ImmutableCast<T>` type to derive `*Record` (immutable) types from backend (mutable) types. Supports nested and optional props with basic or custom types. ([e21d1e5](https://github.com/graasp/graasp-sdk/commit/e21d1e57940ce0aa8235b321654743551ff38794))
 * **types:** create /frontend subpackage ([#75](https://github.com/graasp/graasp-sdk/issues/75)) ([e21d1e5](https://github.com/graasp/graasp-sdk/commit/e21d1e57940ce0aa8235b321654743551ff38794))
 * **types:** define `Item` as a discriminated union type ([e21d1e5](https://github.com/graasp/graasp-sdk/commit/e21d1e57940ce0aa8235b321654743551ff38794))
 * **types:** move query-client types to /frontend ([e21d1e5](https://github.com/graasp/graasp-sdk/commit/e21d1e57940ce0aa8235b321654743551ff38794))
