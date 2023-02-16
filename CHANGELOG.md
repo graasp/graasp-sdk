@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/graasp/graasp-sdk/compare/v0.4.0...v0.4.1) (2023-02-16)
+
+
+### Bug Fixes
+
+* **types:** update actions prop type in `ActionData` ([#79](https://github.com/graasp/graasp-sdk/issues/79)) ([993a18f](https://github.com/graasp/graasp-sdk/commit/993a18f8640b47e83edab6c04846add19853c6d6)), closes [#78](https://github.com/graasp/graasp-sdk/issues/78)
+
 ## [0.4.0](https://github.com/graasp/graasp-sdk/compare/v0.3.0...v0.4.0) (2023-02-16)
 
 
