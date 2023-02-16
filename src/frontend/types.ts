@@ -166,7 +166,7 @@ export type ActionMetadata = {
 export type ActionMetadataRecord = ImmutableCast<ActionMetadata>;
 
 export interface ActionData {
-  actions: ActionRecord[];
+  actions: Action[];
   descendants: Item[];
   item: Item;
   itemMemberships: ItemMembership[];
