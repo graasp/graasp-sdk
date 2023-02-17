@@ -19,6 +19,11 @@ export interface Serializable {
 
 export type DocumentItemExtraProperties = {
   content: string;
+  /**
+   * Style flavor of the document's surrounding box defined according
+   * to severity prop of https://mui.com/material-ui/react-alert/
+   */
+  flavor?: 'error' | 'warning' | 'info' | 'success';
 };
 
 export interface DocumentItemExtra extends UnknownExtra {
