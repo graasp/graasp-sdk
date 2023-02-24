@@ -9,7 +9,7 @@ import {
 import { AppItemExtra } from '../../app/';
 import { Etherpad } from '../../etherpad';
 import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
-import { H5PExtra } from '../../h5p';
+import { H5PItemExtra } from '../../h5p';
 
 export interface ItemSettings extends Serializable {
   isPinned?: boolean;
@@ -44,7 +44,7 @@ export type FolderItemType<S = ItemSettings> = {
 } & ItemBase<S>;
 export type H5PItemType<S = ItemSettings> = {
   type: `${ItemType.H5P}`;
-  extra: H5PExtra;
+  extra: H5PItemExtra;
 } & ItemBase<S>;
 export type EmbeddedLinkItemType<S = ItemSettings> = {
   type: `${ItemType.LINK}`;

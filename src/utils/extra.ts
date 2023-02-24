@@ -8,6 +8,7 @@ import {
 import {
   AppItemExtra,
   EtherpadItemExtra,
+  H5PItemExtra,
   LocalFileItemExtra,
   S3FileItemExtra,
 } from '../services';
@@ -60,3 +61,9 @@ export const getAppExtra = <
 >(
   extra?: U,
 ): U[ItemType.APP] | undefined => extra?.[ItemType.APP];
+
+export const getH5PExtra = <
+  U extends H5PItemExtra | ImmutableCast<H5PItemExtra>,
+>(
+  extra?: U,
+): U[ItemType.H5P] | undefined => extra?.[ItemType.H5P];
