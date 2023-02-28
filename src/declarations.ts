@@ -15,6 +15,8 @@ import {
   Member,
   MemberService,
   MemberTaskManager,
+  Metric,
+  MetricsService,
   PublicItemService,
   PublicItemTaskManager,
   S3FileConfiguration,
@@ -35,6 +37,13 @@ declare module 'fastify' {
      * App token subject
      */
     authTokenSubject?: AuthTokenSubject;
+
+    /**
+     * Collect metrics for monitoring, traces in the given request lifecycle
+     */
+    metrics?: {
+      lifecycle: Metric;
+    };
   }
 
   interface FastifyInstance {
@@ -135,5 +144,10 @@ declare module 'fastify' {
     h5p?: {
       taskManager: H5PTaskManager;
     };
+
+    /**
+     * Metrics service: collect monitoring data
+     */
+    metrics?: MetricsService;
   }
 }
