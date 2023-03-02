@@ -6,3 +6,4 @@ export * from './httpMethod';
 export * from './mentions';
 export * from './limits';
 export * from './itemLogin';
+export * from './mimeTypes';
