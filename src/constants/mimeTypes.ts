@@ -1,42 +1,25 @@
-const JPEG = 'image/jpeg';
-const JPG = 'image/jpg';
-const PNG = 'image/png';
-const GIF = 'image/gif';
-const SVG = 'image/svg+xml';
-
 const IMAGE = {
-  JPG,
-  JPEG,
-  PNG,
-  GIF,
-  SVG,
+  JPG: 'image/jpg',
+  JPEG: 'image/jpeg',
+  PNG: 'image/png',
+  GIF: 'image/gif',
+  SVG: 'image/svg+xml',
 };
-
-const MP4 = 'video/mp4';
-// https://stackoverflow.com/questions/15277147/m4v-mimetype-video-mp4-or-video-m4v
-const MP4_Apple = 'video/x-m4v';
-const OGG = 'video/ogg';
-const QUICKTIME = 'video/quicktime';
-const WEBM = 'video/webm';
 
 const VIDEO = {
-  MP4,
-  MP4_Apple,
-  OGG,
-  QUICKTIME,
-  WEBM,
+  MP4: 'video/mp4',
+  // https://stackoverflow.com/questions/15277147/m4v-mimetype-video-mp4-or-video-m4v
+  MP4_Apple: 'video/x-m4v',
+  OGG: 'video/ogg',
+  QUICKTIME: 'video/quicktime',
+  WEBM: 'video/webm',
 };
 
-const MPEG = 'audio/mpeg';
-const MP3 = 'audio/mp3';
-const WAV = 'audio/wav';
-const WAV_Chrome = 'audio/x-wav';
-
 const AUDIO = {
-  MPEG,
-  MP3,
-  WAV,
-  WAV_Chrome,
+  MPEG: 'audio/mpeg',
+  MP3: 'audio/mp3',
+  WAV: 'audio/wav',
+  WAV_Chrome: 'audio/x-wav',
 };
 
 const PDF = 'application/pdf';
