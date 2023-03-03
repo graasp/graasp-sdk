@@ -17,13 +17,21 @@ export interface Serializable {
   [key: string]: Anything;
 }
 
+/**
+ * Document style flavor defined according to severity prop of
+ * https://mui.com/material-ui/react-alert/
+ */
+export enum DocumentItemExtraFlavor {
+  Error = 'error',
+  Warning = 'warning',
+  Info = 'info',
+  Success = 'success',
+}
+
 export type DocumentItemExtraProperties = {
   content: string;
-  /**
-   * Style flavor of the document's surrounding box defined according
-   * to severity prop of https://mui.com/material-ui/react-alert/
-   */
-  flavor?: 'error' | 'warning' | 'info' | 'success';
+  /** Style flavor of the document's surrounding box */
+  flavor?: DocumentItemExtraFlavor | `${DocumentItemExtraFlavor}`;
 };
 
 export interface DocumentItemExtra extends UnknownExtra {
