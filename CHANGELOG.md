@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0](https://github.com/graasp/graasp-sdk/compare/v0.5.0...v0.6.0) (2023-03-03)
+
+
+### Features
+
+* add document flavor extra property ([#83](https://github.com/graasp/graasp-sdk/issues/83)) ([509f514](https://github.com/graasp/graasp-sdk/commit/509f5142dcdcb8dfee0cd041ba684b0db9848d61))
+* add mimetypes ([#90](https://github.com/graasp/graasp-sdk/issues/90)) ([ebbe42c](https://github.com/graasp/graasp-sdk/commit/ebbe42cbeaf227380d5e03894841dabc02c9c068))
+
 ## [0.5.0](https://github.com/graasp/graasp-sdk/compare/v0.4.1...v0.5.0) (2023-02-27)
 
 
