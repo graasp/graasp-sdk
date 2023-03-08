@@ -72,9 +72,9 @@ export const getH5PExtra = <
 ): U[ItemType.H5P] | undefined => extra?.[ItemType.H5P];
 
 export const buildDocumentExtra = (
-  text: DocumentItemExtraProperties,
+  document: DocumentItemExtraProperties,
 ): DocumentItemExtra => ({
-  [ItemType.DOCUMENT]: text,
+  [ItemType.DOCUMENT]: document,
 });
 
 export const buildFileExtra = (
