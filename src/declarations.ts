@@ -19,6 +19,7 @@ import {
   PublicItemTaskManager,
   S3FileConfiguration,
 } from './services';
+import { WebsocketService } from './services/websockets/index';
 
 declare module 'fastify' {
   interface FastifyRequest {
@@ -135,5 +136,10 @@ declare module 'fastify' {
     h5p?: {
       taskManager: H5PTaskManager;
     };
+
+    /**
+     * Websockets service
+     */
+    websockets?: WebsocketService;
   }
 }
