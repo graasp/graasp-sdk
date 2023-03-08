@@ -4,24 +4,43 @@
  */
 export abstract class WebsocketError extends Error {}
 
+/**
+ * Available websocket error names
+ *
+ * @example
+ *  ```
+ *    if (err.name === Websocket.ErrorNames.AccessDenied) {
+ *      // handle access denied
+ *    }
+ *  ```
+ */
+export enum ErrorNames {
+  AccessDenied = 'ACCESS_DENIED',
+  BadRequest = 'BAD_REQUEST',
+  NotFound = 'NOT_FOUND',
+  ServerError = 'SERVER_ERROR',
+}
+
+export type ErrorName = ErrorNames | `${ErrorNames}`;
+
 export class AccessDeniedError extends WebsocketError {
-  name = 'ACCESS_DENIED';
+  name: `${ErrorNames.AccessDenied}` = ErrorNames.AccessDenied;
   message = 'Websocket: Access denied for the requested resource';
 }
 
 export class BadRequestError extends WebsocketError {
-  name = 'BAD_REQUEST';
+  name: `${ErrorNames.BadRequest}` = ErrorNames.BadRequest;
   message =
     'Websocket: Request message format was not understood by the server';
 }
 
 export class NotFoundError extends WebsocketError {
-  name = 'NOT_FOUND';
+  name: `${ErrorNames.NotFound}` = ErrorNames.NotFound;
   message = 'Websocket: Requested resource not found';
 }
 
 export class ServerError extends WebsocketError {
-  name = 'SERVER_ERROR';
+  name: `${ErrorNames.ServerError}` = ErrorNames.ServerError;
   constructor(message: string) {
     super((message = `Websocket: Internal server error: ${message}`));
   }

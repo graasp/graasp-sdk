@@ -1,7 +1,8 @@
 import { Member, UnknownExtra } from '@/index';
 
 /**
- * Request type when clients attempt to subscribe to some channel
+ * Internal request type when clients attempt to subscribe to some channel
+ * Allows consumers to operate on the subscription attempt in the server
  */
 export interface SubscriptionRequest {
   /**
