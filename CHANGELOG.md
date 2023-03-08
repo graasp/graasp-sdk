@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.0](https://github.com/graasp/graasp-sdk/compare/v0.7.0...v0.8.0) (2023-03-08)
+
+
+### Features
+
+* add building utilities for extra ([#93](https://github.com/graasp/graasp-sdk/issues/93)) ([7eba62a](https://github.com/graasp/graasp-sdk/commit/7eba62ac0c98965835a425726787cdeab96124f7))
+* add ThumbnailSize to exported constants ([#100](https://github.com/graasp/graasp-sdk/issues/100)) ([ae23fb3](https://github.com/graasp/graasp-sdk/commit/ae23fb3224a51ff39d6419bac37d4da13ad12eb9))
+
 ## [0.7.0](https://github.com/graasp/graasp-sdk/compare/v0.6.0...v0.7.0) (2023-03-08)
 
 
