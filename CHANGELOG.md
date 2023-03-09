@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/graasp/graasp-sdk/compare/v0.8.0...v0.8.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* change mimetype naming convention to PascalCase ([#104](https://github.com/graasp/graasp-sdk/issues/104)) ([a73ae7e](https://github.com/graasp/graasp-sdk/commit/a73ae7eec9a29e21a3011b4064418bba74e096d7))
+
 ## [0.8.0](https://github.com/graasp/graasp-sdk/compare/v0.7.0...v0.8.0) (2023-03-08)
 
 
