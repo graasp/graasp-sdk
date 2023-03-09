@@ -102,4 +102,5 @@ export const buildShortcutExtra = (target: string): ShortcutItemExtra => ({
 // todo: improve extra typing
 export const buildItemLoginSchemaExtra = (
   schema?: ItemLoginSchema,
-): { itemLogin?: ItemLogin } => schema ? ({ itemLogin: { loginSchema: schema }, }) : ({});
+): { itemLogin?: ItemLogin } =>
+  schema ? { itemLogin: { loginSchema: schema } } : {};
