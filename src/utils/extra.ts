@@ -1,18 +1,21 @@
-import { ItemType } from '../constants';
+import { ItemLoginSchema, ItemType } from '../constants';
 import {
   DocumentItemExtra,
+  DocumentItemExtraProperties,
   EmbeddedLinkItemExtra,
+  EmbeddedLinkItemExtraProperties,
   FolderItemExtra,
   ShortcutItemExtra,
 } from '../interfaces';
 import {
   AppItemExtra,
   EtherpadItemExtra,
+  FileItemProperties,
   H5PItemExtra,
   LocalFileItemExtra,
   S3FileItemExtra,
 } from '../services';
-import { ImmutableCast } from '@/frontend/types';
+import { ImmutableCast, ItemLogin } from '@/frontend/types';
 
 export const getFileExtra = <
   U extends LocalFileItemExtra | ImmutableCast<LocalFileItemExtra>,
@@ -67,3 +70,37 @@ export const getH5PExtra = <
 >(
   extra?: U,
 ): U[ItemType.H5P] | undefined => extra?.[ItemType.H5P];
+
+export const buildDocumentExtra = (
+  document: DocumentItemExtraProperties,
+): DocumentItemExtra => ({
+  [ItemType.DOCUMENT]: document,
+});
+
+export const buildFileExtra = (
+  file: FileItemProperties,
+): LocalFileItemExtra => ({
+  [ItemType.LOCAL_FILE]: file,
+});
+
+export const buildS3FileExtra = (
+  s3File: FileItemProperties,
+): S3FileItemExtra => ({
+  [ItemType.S3_FILE]: s3File,
+});
+
+export const buildEmbeddedLinkExtra = (
+  embeddedLink: EmbeddedLinkItemExtraProperties,
+): EmbeddedLinkItemExtra => ({
+  [ItemType.LINK]: embeddedLink,
+});
+
+export const buildShortcutExtra = (target: string): ShortcutItemExtra => ({
+  [ItemType.SHORTCUT]: { target },
+});
+
+// todo: improve extra typing
+export const buildItemLoginSchemaExtra = (
+  schema?: ItemLoginSchema,
+): { itemLogin?: ItemLogin } =>
+  schema ? { itemLogin: { loginSchema: schema } } : {};

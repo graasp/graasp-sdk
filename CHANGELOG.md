@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.8.1](https://github.com/graasp/graasp-sdk/compare/v0.8.0...v0.8.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* change mimetype naming convention to PascalCase ([#104](https://github.com/graasp/graasp-sdk/issues/104)) ([a73ae7e](https://github.com/graasp/graasp-sdk/commit/a73ae7eec9a29e21a3011b4064418bba74e096d7))
+
+## [0.8.0](https://github.com/graasp/graasp-sdk/compare/v0.7.0...v0.8.0) (2023-03-08)
+
+
+### Features
+
+* add building utilities for extra ([#93](https://github.com/graasp/graasp-sdk/issues/93)) ([7eba62a](https://github.com/graasp/graasp-sdk/commit/7eba62ac0c98965835a425726787cdeab96124f7))
+* add ThumbnailSize to exported constants ([#100](https://github.com/graasp/graasp-sdk/issues/100)) ([ae23fb3](https://github.com/graasp/graasp-sdk/commit/ae23fb3224a51ff39d6419bac37d4da13ad12eb9))
+
+## [0.7.0](https://github.com/graasp/graasp-sdk/compare/v0.6.0...v0.7.0) (2023-03-08)
+
+
+### Features
+
+* add enableSaveActions property ([e86b7df](https://github.com/graasp/graasp-sdk/commit/e86b7df79b2eb17db629989f3d7e96262aa6915b))
+
 ## [0.6.0](https://github.com/graasp/graasp-sdk/compare/v0.5.0...v0.6.0) (2023-03-03)
 
 

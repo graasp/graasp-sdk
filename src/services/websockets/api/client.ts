@@ -2,7 +2,6 @@
  * Client message types for the graasp websockets network API
  * {@link https://github.com/graasp/graasp-plugin-websockets/blob/main/API.md}
  */
-
 import { NotifMessage } from './message';
 
 /**

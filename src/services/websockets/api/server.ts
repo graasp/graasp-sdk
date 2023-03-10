@@ -3,7 +3,8 @@
  * {@link https://github.com/graasp/graasp-plugin-websockets/blob/main/API.md}
  */
 import { WebsocketError } from '../errors';
-import { ClientMessage, NotifMessage } from './message';
+import { ClientMessage } from './client';
+import { NotifMessage } from './message';
 
 /**
  * Server message types: describe what the server can send to the clients
@@ -27,9 +28,7 @@ export enum ResponseStatuses {
   Error = 'error',
 }
 
-export type ResponseStatus =
-  | ResponseStatuses
-  | `${ResponseStatuses}`;
+export type ResponseStatus = ResponseStatuses | `${ResponseStatuses}`;
 
 /**
  * Message sent by server as a response to a {@link ClientMessage} on success
