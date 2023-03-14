@@ -20,16 +20,18 @@ export interface ItemSettings extends Serializable {
   enableSaveActions?: boolean;
 }
 
-export type ItemBase<S = ItemSettings> = {
+export interface ItemBase<S = ItemSettings> {
   id: string;
   name: string;
   description: string;
   path: string;
   settings: S;
+  type: ItemType | `${ItemType}`;
+  extra: unknown;
   creator: string;
   createdAt: string;
   updatedAt: string;
-};
+}
 
 export type AppItemType<S = ItemSettings> = {
   type: `${ItemType.APP}`;
