@@ -1,8 +1,10 @@
 import { ItemType } from '../../../constants';
+import { UnknownExtra } from '@/index';
 
-export interface Etherpad {
+export type Etherpad = {
   padUrl: string;
-}
-export type EtherpadItemExtra = {
-  [ItemType.ETHERPAD]: Etherpad;
 };
+
+export interface EtherpadItemExtra extends UnknownExtra {
+  [ItemType.ETHERPAD]: Etherpad;
+}
