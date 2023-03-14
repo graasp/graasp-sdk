@@ -7,7 +7,7 @@ import {
   ShortcutItemExtra,
 } from '../../../interfaces/extra';
 import { AppItemExtra } from '../../app/';
-import { Etherpad } from '../../etherpad';
+import { EtherpadItemExtra } from '../../etherpad';
 import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
 
@@ -65,7 +65,7 @@ export type ShortcutItemType<S = ItemSettings> = {
 } & ItemBase<S>;
 export type EtherpadItemType<S = ItemSettings> = {
   type: `${ItemType.ETHERPAD}`;
-  extra: Etherpad;
+  extra: EtherpadItemExtra;
 } & ItemBase<S>;
 
 export type Item<S = ItemSettings> =
