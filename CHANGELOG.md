@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.1](https://github.com/graasp/graasp-sdk/compare/v0.9.0...v0.9.1) (2023-03-14)
+
+
+### Bug Fixes
+
+* etherpad extra type ([#108](https://github.com/graasp/graasp-sdk/issues/108)) ([a4113e5](https://github.com/graasp/graasp-sdk/commit/a4113e5b4aae74b829b439bf3f2cd7836c68022c))
+
 ## [0.9.0](https://github.com/graasp/graasp-sdk/compare/v0.8.1...v0.9.0) (2023-03-14)
 
 
