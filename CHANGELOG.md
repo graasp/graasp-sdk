@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://github.com/graasp/graasp-sdk/compare/v0.8.1...v0.9.0) (2023-03-14)
+
+
+### Features
+
+* add websocket types ([#98](https://github.com/graasp/graasp-sdk/issues/98)) ([32f283b](https://github.com/graasp/graasp-sdk/commit/32f283b7bb3b15d39dba95c1118458d886d89f46))
+
 ## [0.8.1](https://github.com/graasp/graasp-sdk/compare/v0.8.0...v0.8.1) (2023-03-09)
 
 
