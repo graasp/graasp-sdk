@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.2](https://github.com/graasp/graasp-sdk/compare/v0.9.1...v0.9.2) (2023-03-16)
+
+
+### Bug Fixes
+
+* SDK new types integration for core ([#111](https://github.com/graasp/graasp-sdk/issues/111)) ([20053fc](https://github.com/graasp/graasp-sdk/commit/20053fcab2e7f77900c945b14c7869f2daaf44b8))
+
 ## [0.9.1](https://github.com/graasp/graasp-sdk/compare/v0.9.0...v0.9.1) (2023-03-14)
 
 
