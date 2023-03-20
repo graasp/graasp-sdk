@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.3](https://github.com/graasp/graasp-sdk/compare/v0.9.2...v0.9.3) (2023-03-20)
+
+
+### Bug Fixes
+
+* differentiate Etherpad result type from extra type, refactor H5P extra ([#117](https://github.com/graasp/graasp-sdk/issues/117)) ([d78da5f](https://github.com/graasp/graasp-sdk/commit/d78da5f19efa11ea9fdae6d87311cc5904744d07))
+
 ## [0.9.2](https://github.com/graasp/graasp-sdk/compare/v0.9.1...v0.9.2) (2023-03-16)
 
 
