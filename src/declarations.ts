@@ -19,6 +19,7 @@ import {
   PublicItemTaskManager,
   S3FileConfiguration,
 } from './services';
+import { PublishItemTaskManager } from './services/item-publish/index';
 import { WebsocketService } from './services/websockets/index';
 
 declare module 'fastify' {
@@ -141,5 +142,12 @@ declare module 'fastify' {
      * Websockets service
      */
     websockets?: WebsocketService;
+
+    /**
+     * Publish service
+     */
+    publish?: {
+      taskManager: PublishItemTaskManager;
+    };
   }
 }
