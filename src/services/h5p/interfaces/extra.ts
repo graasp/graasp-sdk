@@ -1,5 +1,4 @@
 import { ItemType } from '../../../constants';
-import { UnknownExtra } from '../../../interfaces';
 
 export type H5PItemExtraProperties = {
   /** storage ID */
@@ -10,6 +9,6 @@ export type H5PItemExtraProperties = {
   contentFilePath: string;
 };
 
-export interface H5PItemExtra extends UnknownExtra {
+export interface H5PItemExtra {
   [ItemType.H5P]: H5PItemExtraProperties;
 }

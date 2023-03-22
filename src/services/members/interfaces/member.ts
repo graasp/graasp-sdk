@@ -1,11 +1,10 @@
 import { Actor } from '../../../interfaces/actor';
-import { UnknownExtra } from '../../../interfaces/extra';
 
 export enum MemberType {
   Individual = 'individual',
   Group = 'group',
 }
-export interface Member<E extends UnknownExtra = UnknownExtra> extends Actor {
+export interface Member<E extends MemberExtra = MemberExtra> extends Actor {
   name: string;
   email: string;
   type: MemberType;
@@ -15,7 +14,7 @@ export interface Member<E extends UnknownExtra = UnknownExtra> extends Actor {
   password?: string;
 }
 
-export interface MemberExtra extends UnknownExtra {
+export interface MemberExtra {
   hasAvatar?: boolean;
   favoriteItems?: string[];
   lang?: string;

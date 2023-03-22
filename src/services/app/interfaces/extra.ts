@@ -6,6 +6,6 @@ export type AppItemExtraProperties = {
   settings?: UnknownExtra;
 };
 
-export interface AppItemExtra extends UnknownExtra {
+export type AppItemExtra = {
   [ItemType.APP]: AppItemExtraProperties;
-}
+};

@@ -1,11 +1,12 @@
 import type { List, RecordOf } from 'immutable';
 
-import type {
+import {
   AppItemType,
   Category,
   CategoryType,
   ChatMention,
   ChatMessage,
+  DiscriminatedItem,
   DocumentItemType,
   EmbeddedLinkItemType,
   Etherpad,
@@ -54,16 +55,17 @@ export type S3FileItemTypeRecord = ImmutableCast<S3FileItemType>;
 export type ShortcutItemTypeRecord = ImmutableCast<ShortcutItemType>;
 export type EtherpadItemTypeRecord = ImmutableCast<EtherpadItemType>;
 
-export type ItemRecord =
-  | AppItemTypeRecord
-  | DocumentItemTypeRecord
-  | FolderItemTypeRecord
-  | H5PItemTypeRecord
-  | EmbeddedLinkItemTypeRecord
-  | LocalFileItemTypeRecord
-  | S3FileItemTypeRecord
-  | ShortcutItemTypeRecord
-  | EtherpadItemTypeRecord;
+export type ItemRecord = ImmutableCast<DiscriminatedItem>;
+
+// | AppItemTypeRecord
+// | DocumentItemTypeRecord
+// | FolderItemTypeRecord
+// | H5PItemTypeRecord
+// | EmbeddedLinkItemTypeRecord
+// | LocalFileItemTypeRecord
+// | S3FileItemTypeRecord
+// | ShortcutItemTypeRecord
+// | EtherpadItemTypeRecord;
 
 export type EtherpadRecord = ImmutableCast<Etherpad>;
 
