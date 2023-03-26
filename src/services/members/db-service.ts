@@ -61,4 +61,12 @@ export declare class MemberService {
     id: string,
     transactionHandler: TrxHandler,
   ): Promise<Member<E>>;
+
+  /**
+   * Return the number of sign up today
+   * @param transactionHandler Database transaction handler
+   */
+  getNumberOfNewAccountsToday(
+    transactionHandler: TrxHandler,
+  ): Promise<number>;
 }
