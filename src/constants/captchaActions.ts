@@ -1,8 +1,8 @@
 export const RecaptchaActionType = {
-  SignIn: 'signMeInPleaseAction',
-  SignUp: 'signMeUpPleaseAction',
-  SignInWithPassword: 'signMeInWithPasswordPleaseAction',
-  SignInWithPasswordMobile: 'signMeInWithPasswordMobilePleaseAction',
-  SignInMobile: 'signMeInMobilePleaseAction',
-  SignUpMobile: 'signMeUpMobilePleaseAction',
+  SignIn: 'signIn',
+  SignUp: 'signUp',
+  SignInWithPassword: 'signInWithPassword',
+  SignInWithPasswordMobile: 'signInWithPasswordMobile',
+  SignInMobile: 'signInMobile',
+  SignUpMobile: 'signUpMobile',
 } as const;
