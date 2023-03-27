@@ -1,3 +1,5 @@
+import { UnionOfConst } from '@/types';
+
 /**
  * Size of Thumbnail to use
  */
@@ -7,3 +9,4 @@ export const ThumbnailSize = {
   Large: 'large',
   Original: 'original',
 } as const;
+export type ThumbnailSizeType = UnionOfConst<typeof ThumbnailSize>;
