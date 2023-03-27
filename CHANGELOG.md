@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.10.0](https://github.com/graasp/graasp-sdk/compare/v0.9.3...v0.10.0) (2023-03-27)
+
+
+### Features
+
+* **type:** add UnionOfConst type helper ([#123](https://github.com/graasp/graasp-sdk/issues/123)) ([4b53cf7](https://github.com/graasp/graasp-sdk/commit/4b53cf74ec70e2a23394d6c02e96900edc17604b))
+
+
+### Bug Fixes
+
+* add captcha constant ([#123](https://github.com/graasp/graasp-sdk/issues/123)) ([4b53cf7](https://github.com/graasp/graasp-sdk/commit/4b53cf74ec70e2a23394d6c02e96900edc17604b))
+
 ## [0.9.3](https://github.com/graasp/graasp-sdk/compare/v0.9.2...v0.9.3) (2023-03-20)
 
 
