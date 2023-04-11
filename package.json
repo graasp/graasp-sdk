@@ -39,7 +39,7 @@
     "immutable": "4.2.4",
     "js-cookie": "3.0.1",
     "qs": "6.11.1",
-    "slonik": "28.1.1",
+    "slonik": "28.2.0",
     "uuid": "9.0.0"
   },
   "scripts": {
