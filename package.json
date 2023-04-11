@@ -36,7 +36,7 @@
     "aws-sdk": "2.1310.0",
     "fastify": "3.29.5",
     "fluent-json-schema": "3.1.0",
-    "immutable": "4.2.4",
+    "immutable": "4.3.0",
     "js-cookie": "3.0.1",
     "qs": "6.11.1",
     "slonik": "28.1.1",
