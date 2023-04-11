@@ -38,7 +38,7 @@
     "fluent-json-schema": "3.1.0",
     "immutable": "4.2.4",
     "js-cookie": "3.0.1",
-    "qs": "6.11.0",
+    "qs": "6.11.1",
     "slonik": "28.1.1",
     "uuid": "9.0.0"
   },
