@@ -33,6 +33,7 @@
   ],
   "dependencies": {
     "@fastify/secure-session": "5.3.0",
+    "@graasp/etherpad-api": "2.1.1",
     "aws-sdk": "2.1356.0",
     "fastify": "3.29.5",
     "fluent-json-schema": "3.1.0",
