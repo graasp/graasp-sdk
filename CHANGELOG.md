@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.10.1](https://github.com/graasp/graasp-sdk/compare/v0.10.0...v0.10.1) (2023-04-14)
+
+
+### Bug Fixes
+
+* add embedded link item settings ([#150](https://github.com/graasp/graasp-sdk/issues/150)) ([acbdf58](https://github.com/graasp/graasp-sdk/commit/acbdf5898f72d2e54fb5a7b4ed881b64e51d0bfe))
+* **deps:** update dependency aws-sdk to v2.1356.0 ([#133](https://github.com/graasp/graasp-sdk/issues/133)) ([93d8e0d](https://github.com/graasp/graasp-sdk/commit/93d8e0d6b946ec4ad525cac530c1e1465d0746e0))
+* **deps:** update dependency immutable to v4.3.0 ([#134](https://github.com/graasp/graasp-sdk/issues/134)) ([dc23105](https://github.com/graasp/graasp-sdk/commit/dc231055515c386a03a56c0a51a9c45d89c75499))
+* **deps:** update dependency qs to v6.11.1 ([#129](https://github.com/graasp/graasp-sdk/issues/129)) ([e47dbbb](https://github.com/graasp/graasp-sdk/commit/e47dbbb2c869daf6064de3f0181123ae21a45a9a))
+* typo in auto-tag workflow ([#127](https://github.com/graasp/graasp-sdk/issues/127)) ([4589830](https://github.com/graasp/graasp-sdk/commit/458983007fdf9f869b9aec629435c146c38b29a3))
+
 ## [0.10.0](https://github.com/graasp/graasp-sdk/compare/v0.9.3...v0.10.0) (2023-03-27)
 
 
