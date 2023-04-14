@@ -21,6 +21,11 @@ export interface ItemSettings extends Serializable {
   enableSaveActions?: boolean;
 }
 
+export interface EmbeddedLinkItemSettings extends ItemSettings {
+  showLinkIframe?: boolean;
+  showLinkButton?: boolean;
+}
+
 export interface Item<E = UnknownExtra, S = ItemSettings> {
   id: string;
   name: string;
@@ -53,6 +58,7 @@ export type H5PItemType<S = ItemSettings> = {
 export type EmbeddedLinkItemType<S = ItemSettings> = {
   type: `${ItemType.LINK}`;
   extra: EmbeddedLinkItemExtra;
+  settings: EmbeddedLinkItemSettings;
 } & Item<S>;
 export type LocalFileItemType<S = ItemSettings> = {
   type: `${ItemType.LOCAL_FILE}`;
