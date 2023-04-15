@@ -1,11 +1,12 @@
 import { PermissionLevel } from '../../../constants';
+import { Item, Member, UUID } from '@/index';
 
 export interface ItemMembership {
-  id: string;
-  memberId: string;
-  itemPath: string;
+  id: UUID;
+  member: Member;
+  item: Item;
   permission: PermissionLevel;
-  creator: string;
-  createdAt: string;
-  updatedAt: string;
+  creator: Member;
+  createdAt: Date;
+  updatedAt: Date;
 }

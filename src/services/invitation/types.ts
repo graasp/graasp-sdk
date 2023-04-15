@@ -1,4 +1,4 @@
-import { PermissionLevel } from '@/index';
+import { Item, Member, PermissionLevel } from '@/index';
 import { UUID } from '@/types';
 
 export type Invitation = {
@@ -6,6 +6,6 @@ export type Invitation = {
   email: string;
   permission?: PermissionLevel;
   name?: string;
-  creator: UUID;
-  itemPath: string;
+  creator: Member;
+  item: Item;
 };

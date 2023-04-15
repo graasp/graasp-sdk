@@ -12,37 +12,45 @@ import type {
   EtherpadItemType,
   ExportedChatMessage,
   ExportedItemChat,
-  Flag,
   FolderItemType,
   H5PItemType,
   Invitation,
   Item,
   ItemCategory,
   ItemChat,
+  ItemFlag,
+  ItemLike,
   ItemLoginSchema,
   ItemMembership,
+  ItemPublished,
   ItemTag,
   LocalFileItemType,
   Member,
   MemberExtra,
   MemberMentions,
+  RecycledItemData,
   S3FileItemType,
   ShortcutItemType,
 } from '@/index';
-import type { UUID } from '@/types';
+import type { ResultOf, UUID } from '@/types';
 
 /**
  * Convenience type to convert nested objects to deeply immutable objects
  */
-export type ImmutableCast<Type> = RecordOf<{
-  [Property in keyof Type]: Type[Property] extends (infer U)[] | undefined // check that type is an array (or an optional array)
-    ? U extends object // check if internal array type is a custom type
-      ? List<ImmutableCast<U>> // if is custom type transform to List of an immutable transformation of the custom type
-      : List<U> // else just wrap in a List
-    : Type[Property] extends object | undefined // check that type is a custom type (or optional custom type)
-    ? ImmutableCast<Type[Property]> // if is custom type then transform to immutable custom type
-    : Type[Property]; // else (it is a base type) just return the type
-}>;
+export type ImmutableCast<Type> = Type extends (infer U)[]
+  ? List<ImmutableCast<U>>
+  : RecordOf<{
+      [Property in keyof Type]: Type[Property] extends (infer U)[] | undefined // check that type is an array (or an optional array)
+        ? // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          Type[Property] extends RecordOf<infer V> | List<infer V>
+          ? Type[Property]
+          : U extends object // check if internal array type is a custom type
+          ? List<ImmutableCast<U>> // if is custom type transform to List of an immutable transformation of the custom type
+          : List<U> // else just wrap in a List
+        : Type[Property] extends object | undefined // check that type is a custom type (or optional custom type)
+        ? ImmutableCast<Type[Property]> // if is custom type then transform to immutable custom type
+        : Type[Property]; // else (it is a base type) just return the type
+    }>;
 
 export type AppItemTypeRecord = ImmutableCast<AppItemType>;
 export type DocumentItemTypeRecord = ImmutableCast<DocumentItemType>;
@@ -89,11 +97,11 @@ export type CategoryTypeRecord = ImmutableCast<CategoryType>;
 
 export type ChatMessageRecord = ImmutableCast<ChatMessage>;
 
-export type ItemChatRecord = ImmutableCast<ItemChat>;
+export type ItemChatRecord = ImmutableCast<ChatMessage[]>;
 
 export type ItemTagRecord = ImmutableCast<ItemTag>;
 
-export type FlagRecord = ImmutableCast<Flag>;
+export type ItemFlagRecord = ImmutableCast<ItemFlag>;
 
 export type InvitationRecord = ImmutableCast<Invitation>;
 
@@ -104,6 +112,8 @@ export type ItemLogin = {
 };
 
 export type ItemLoginRecord = ImmutableCast<ItemLogin>;
+
+export type ItemLoginSchemaRecord = ImmutableCast<ItemLoginSchema>;
 
 export type ExportedChatMessageRecord = ImmutableCast<ExportedChatMessage>;
 
@@ -117,7 +127,7 @@ export type FullValidation = {
   validationStatusId: string;
   validationResult: string;
   process: string;
-  createdAt: string;
+  createdAt: Date;
 };
 
 export type FullValidationRecord = ImmutableCast<FullValidation>;
@@ -126,7 +136,7 @@ export type ItemValidationAndReview = {
   itemValidationId: string;
   reviewStatusId: string;
   reviewReason: string;
-  createdAt: string;
+  createdAt: Date;
 };
 
 export type ItemValidationAndReviewRecord =
@@ -139,8 +149,8 @@ export type ItemValidationGroup = {
   processId: string;
   statusId: string;
   result: string;
-  updatedAt: string;
-  createdAt: string;
+  updatedAt: Date;
+  createdAt: Date;
 };
 
 export type ItemValidationGroupRecord = ImmutableCast<ItemValidationGroup>;
@@ -179,13 +189,6 @@ export type Password = string;
 export type NewInvitation = Pick<Invitation, 'email' & 'permission'> &
   Partial<Invitation>;
 
-export type ItemLike = {
-  id: UUID;
-  itemId: UUID;
-  memberId: string;
-  createdAt: string;
-};
-
 export type ItemLikeRecord = ImmutableCast<ItemLike>;
 
 // todo: check exact value of extra prop
@@ -204,3 +207,9 @@ export type Tag = {
 };
 
 export type TagRecord = ImmutableCast<Tag>;
+
+export type ResultOfRecord<T> = ImmutableCast<ResultOf<T>>;
+
+export type ItemPublishedRecord = ImmutableCast<ItemPublished>;
+
+export type RecycledItemDataRecord = ImmutableCast<RecycledItemData>;

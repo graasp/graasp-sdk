@@ -12,6 +12,9 @@
     "isolatedModules": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "strictNullChecks": true,
     "baseUrl": "./src",
     "paths": {

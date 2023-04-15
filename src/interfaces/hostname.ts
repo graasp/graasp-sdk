@@ -1,4 +1,6 @@
+import { Context } from '..';
+
 export type Hostname = {
-  name: string;
+  name: Context;
   hostname: string;
 };

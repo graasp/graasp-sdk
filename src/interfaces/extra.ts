@@ -52,6 +52,7 @@ export interface EmbeddedLinkItemExtra extends UnknownExtra {
 
 export type FolderItemExtraProperties = {
   childrenOrder: string[];
+  isRoot?: boolean;
 };
 
 export interface FolderItemExtra extends UnknownExtra {

@@ -1,5 +1,3 @@
-import { Item } from '../services';
-
 /**
  * @param ids consecutive item ids
  * @returns path of consecutive items
@@ -44,8 +42,9 @@ export const isChildOf = (path: string, parentPath: string) => {
   return path.match(reg);
 };
 
+// TODO
 /**
  * @param  {Item} item
  * @returns whether the item is a root
  */
-export const isRootItem = ({ path }: Item) => path.includes('.');
+export const isRootItem = ({ path }: any) => path.includes('.');

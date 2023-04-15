@@ -1,4 +1,4 @@
-import { ItemLoginSchema, ItemType } from '../constants';
+import { ItemType } from '../constants';
 import {
   DocumentItemExtra,
   DocumentItemExtraProperties,
@@ -15,7 +15,7 @@ import {
   LocalFileItemExtra,
   S3FileItemExtra,
 } from '../services';
-import { ImmutableCast, ItemLogin } from '@/frontend/types';
+import { ImmutableCast } from '@/frontend/types';
 
 export const getFileExtra = <
   U extends LocalFileItemExtra | ImmutableCast<LocalFileItemExtra>,
@@ -98,9 +98,3 @@ export const buildEmbeddedLinkExtra = (
 export const buildShortcutExtra = (target: string): ShortcutItemExtra => ({
   [ItemType.SHORTCUT]: { target },
 });
-
-// todo: improve extra typing
-export const buildItemLoginSchemaExtra = (
-  schema?: ItemLoginSchema,
-): { itemLogin?: ItemLogin } =>
-  schema ? { itemLogin: { loginSchema: schema } } : {};

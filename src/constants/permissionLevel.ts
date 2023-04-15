@@ -32,4 +32,24 @@ export class PermissionLevelCompare {
    */
   static lte = (a: PermissionLevel, b: PermissionLevel): boolean =>
     a === b || PermissionLevelCompare.lt(a, b);
+
+  static getHighest = (
+    permissions?: PermissionLevel[],
+  ): PermissionLevel | null => {
+    if (!permissions?.length) {
+      return null;
+    }
+
+    if (permissions.includes(PermissionLevel.Admin)) {
+      return PermissionLevel.Admin;
+    }
+    if (permissions.includes(PermissionLevel.Write)) {
+      return PermissionLevel.Write;
+    }
+    if (permissions.includes(PermissionLevel.Read)) {
+      return PermissionLevel.Read;
+    }
+
+    return null;
+  };
 }

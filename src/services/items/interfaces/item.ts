@@ -5,12 +5,12 @@ import {
   FolderItemExtra,
   Serializable,
   ShortcutItemExtra,
-  UnknownExtra,
 } from '../../../interfaces/extra';
 import { AppItemExtra } from '../../app/';
-import { EtherpadItemExtra } from '../../etherpad';
+import { Etherpad } from '../../etherpad';
 import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
+import { Member } from '@/index';
 
 export interface ItemSettings extends Serializable {
   lang?: string;
@@ -19,66 +19,57 @@ export interface ItemSettings extends Serializable {
   hasThumbnail?: boolean;
   isResizable?: boolean;
   isCollapsible?: boolean;
-  enableSaveActions?: boolean;
 }
 
-export interface EmbeddedLinkItemSettings extends ItemSettings {
-  showLinkIframe?: boolean;
-  showLinkButton?: boolean;
-}
-
-export interface Item<E = UnknownExtra, S = ItemSettings> {
+export interface ItemBase<S = ItemSettings> {
   id: string;
   name: string;
   description: string;
   path: string;
   settings: S;
-  type: ItemType | `${ItemType}`;
-  extra: E;
-  creator: string;
-  createdAt: string;
-  updatedAt: string;
+  creator: Member;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export type AppItemType<S = ItemSettings> = {
   type: `${ItemType.APP}`;
   extra: AppItemExtra;
-} & Item<S>;
+} & ItemBase<S>;
 export type DocumentItemType<S = ItemSettings> = {
   type: `${ItemType.DOCUMENT}`;
   extra: DocumentItemExtra;
-} & Item<S>;
+} & ItemBase<S>;
 export type FolderItemType<S = ItemSettings> = {
   type: `${ItemType.FOLDER}`;
   extra: FolderItemExtra;
-} & Item<S>;
+} & ItemBase<S>;
 export type H5PItemType<S = ItemSettings> = {
   type: `${ItemType.H5P}`;
   extra: H5PItemExtra;
-} & Item<S>;
+} & ItemBase<S>;
 export type EmbeddedLinkItemType<S = ItemSettings> = {
   type: `${ItemType.LINK}`;
   extra: EmbeddedLinkItemExtra;
-  settings: EmbeddedLinkItemSettings;
-} & Item<S>;
+} & ItemBase<S>;
 export type LocalFileItemType<S = ItemSettings> = {
   type: `${ItemType.LOCAL_FILE}`;
   extra: LocalFileItemExtra;
-} & Item<S>;
+} & ItemBase<S>;
 export type S3FileItemType<S = ItemSettings> = {
   type: `${ItemType.S3_FILE}`;
   extra: S3FileItemExtra;
-} & Item<S>;
+} & ItemBase<S>;
 export type ShortcutItemType<S = ItemSettings> = {
   type: `${ItemType.SHORTCUT}`;
   extra: ShortcutItemExtra;
-} & Item<S>;
+} & ItemBase<S>;
 export type EtherpadItemType<S = ItemSettings> = {
   type: `${ItemType.ETHERPAD}`;
-  extra: EtherpadItemExtra;
-} & Item<S>;
+  extra: Etherpad;
+} & ItemBase<S>;
 
-export type DiscriminatedItem<S = ItemSettings> =
+export type Item<S = ItemSettings> =
   | AppItemType<S>
   | DocumentItemType<S>
   | FolderItemType<S>
