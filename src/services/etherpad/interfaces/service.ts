@@ -20,6 +20,7 @@ export interface EtherpadService {
     name: string,
     member: Member,
     parentId?: string,
+    initHtml?: string,
   ): Promise<Item<EtherpadItemExtra>>;
 
   getEtherpadFromItem(
