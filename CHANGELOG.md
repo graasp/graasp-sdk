@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.0](https://github.com/graasp/graasp-sdk/compare/v0.10.1...v0.11.0) (2023-04-19)
+
+
+### Features
+
+* add etherpad service ([#143](https://github.com/graasp/graasp-sdk/issues/143)) ([04a7d40](https://github.com/graasp/graasp-sdk/commit/04a7d403896e32d528204b4e239240b151505c87))
+
 ## [0.10.1](https://github.com/graasp/graasp-sdk/compare/v0.10.0...v0.10.1) (2023-04-14)
 
 
