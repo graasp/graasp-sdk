@@ -3,10 +3,7 @@ import { UUID } from '@/types';
 
 export interface ItemPublished {
   id: UUID;
-
-  creator: Member;
-
+  creator?: Member;
   createdAt: Date;
-
   item: Item;
 }

@@ -9,6 +9,10 @@ export function convertJs<T>(data: T) {
     return Seq<any>(data).map(convertJs).toList();
   }
 
+  if (data instanceof Date) {
+    return data;
+  }
+
   if (typeof data === 'object') {
     const Factory = Record(data as unknown as object);
 

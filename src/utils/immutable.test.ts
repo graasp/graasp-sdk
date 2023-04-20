@@ -67,5 +67,20 @@ describe('Immutable', () => {
       expect(res3.get(1).toJS()).toEqual(val3[1]);
       expect(res3.get(1).e.toJS()).toEqual(val3[1].e);
     });
+
+    it('Dates', () => {
+      const val1 = new Date();
+      const res1 = convertJs(val1);
+      expect(res1).toEqual(val1);
+
+      const val2 = [
+        { a: 'd', b: new Date() },
+        { a: 'de', b: true },
+      ];
+      const res2 = convertJs(val2);
+      expect(res2.toJS()).toEqual(val2);
+      expect(res2.get(0).toJS()).toEqual(val2[0]);
+      expect(res2.get(1).toJS()).toEqual(val2[1]);
+    });
   });
 });

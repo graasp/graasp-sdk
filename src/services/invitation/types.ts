@@ -4,8 +4,10 @@ import { UUID } from '@/types';
 export type Invitation = {
   id: UUID;
   email: string;
-  permission?: PermissionLevel;
+  permission: PermissionLevel;
   name?: string;
-  creator: Member;
+  creator?: Member;
   item: Item;
+  createdAt: Date;
+  updatedAt: Date;
 };

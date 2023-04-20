@@ -6,7 +6,7 @@ import { UUID } from '@/types';
 
 export type ChatMessage = {
   id: UUID;
-  item: UUID;
+  item: Item;
   creator: Member;
   createdAt: Date;
   updatedAt: Date;

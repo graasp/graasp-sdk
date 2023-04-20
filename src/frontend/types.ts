@@ -1,6 +1,9 @@
 import type { List, RecordOf } from 'immutable';
 
 import type {
+  Action,
+  ActionData,
+  App,
   AppItemType,
   Category,
   CategoryType,
@@ -15,15 +18,16 @@ import type {
   FolderItemType,
   H5PItemType,
   Invitation,
-  Item,
   ItemCategory,
-  ItemChat,
   ItemFlag,
   ItemLike,
+  ItemLogin,
   ItemLoginSchema,
   ItemMembership,
   ItemPublished,
   ItemTag,
+  ItemValidationGroup,
+  ItemValidationReview,
   LocalFileItemType,
   Member,
   MemberExtra,
@@ -32,7 +36,7 @@ import type {
   S3FileItemType,
   ShortcutItemType,
 } from '@/index';
-import type { ResultOf, UUID } from '@/types';
+import type { ResultOf } from '@/types';
 
 /**
  * Convenience type to convert nested objects to deeply immutable objects
@@ -47,6 +51,8 @@ export type ImmutableCast<Type> = Type extends (infer U)[]
           : U extends object // check if internal array type is a custom type
           ? List<ImmutableCast<U>> // if is custom type transform to List of an immutable transformation of the custom type
           : List<U> // else just wrap in a List
+        : Type[Property] extends Date // check that type is a date
+        ? Type[Property] // return raw date
         : Type[Property] extends object | undefined // check that type is a custom type (or optional custom type)
         ? ImmutableCast<Type[Property]> // if is custom type then transform to immutable custom type
         : Type[Property]; // else (it is a base type) just return the type
@@ -107,10 +113,6 @@ export type InvitationRecord = ImmutableCast<Invitation>;
 
 export type ItemCategoryRecord = ImmutableCast<ItemCategory>;
 
-export type ItemLogin = {
-  loginSchema: ItemLoginSchema;
-};
-
 export type ItemLoginRecord = ImmutableCast<ItemLogin>;
 
 export type ItemLoginSchemaRecord = ImmutableCast<ItemLoginSchema>;
@@ -132,57 +134,12 @@ export type FullValidation = {
 
 export type FullValidationRecord = ImmutableCast<FullValidation>;
 
-export type ItemValidationAndReview = {
-  itemValidationId: string;
-  reviewStatusId: string;
-  reviewReason: string;
-  createdAt: Date;
-};
-
-export type ItemValidationAndReviewRecord =
-  ImmutableCast<ItemValidationAndReview>;
-
-export type ItemValidationGroup = {
-  id: string;
-  itemId: string;
-  itemValidationId: string;
-  processId: string;
-  statusId: string;
-  result: string;
-  updatedAt: Date;
-  createdAt: Date;
-};
+export type ItemValidationAndReviewRecord = ImmutableCast<ItemValidationReview>;
 
 export type ItemValidationGroupRecord = ImmutableCast<ItemValidationGroup>;
 
-export type Status = {
-  id: string;
-  name: string;
-};
-
-export type StatusRecord = ImmutableCast<Status>;
-
-export interface Action {
-  id: string;
-  itemId: UUID;
-  memberId: UUID;
-}
 export type ActionRecord = ImmutableCast<Action>;
 
-export type ActionMetadata = {
-  numActionsRetrieved: number;
-  requestedSampleSize: number;
-};
-export type ActionMetadataRecord = ImmutableCast<ActionMetadata>;
-
-export interface ActionData {
-  actions: Action[];
-  descendants: Item[];
-  item: Item;
-  itemMemberships: ItemMembership[];
-  members: Member[];
-  metadata: ActionMetadata;
-}
 export type ActionDataRecord = ImmutableCast<ActionData>;
 
 export type Password = string;
@@ -191,22 +148,7 @@ export type NewInvitation = Pick<Invitation, 'email' & 'permission'> &
 
 export type ItemLikeRecord = ImmutableCast<ItemLike>;
 
-// todo: check exact value of extra prop
-export type App = {
-  name: string;
-  url: string;
-  description: string;
-  extra: any;
-};
-
 export type AppRecord = ImmutableCast<App>;
-
-export type Tag = {
-  id: UUID;
-  name: string;
-};
-
-export type TagRecord = ImmutableCast<Tag>;
 
 export type ResultOfRecord<T> = ImmutableCast<ResultOf<T>>;
 

@@ -1,8 +1,6 @@
 import { Item, Member } from '../index';
 import { UUID } from '@/types';
 
-// TODO: necessary ?? simplify ?? but we have endpoints
-
 // TODO: translate? use keys? <<<- have a table ??? change for admin
 export enum CategoryType {
   LEVEL = 'level',

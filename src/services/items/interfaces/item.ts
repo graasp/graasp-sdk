@@ -19,9 +19,16 @@ export interface ItemSettings extends Serializable {
   hasThumbnail?: boolean;
   isResizable?: boolean;
   isCollapsible?: boolean;
+  enableSaveActions?: boolean;
+  tags?: string[];
 }
 
-export interface ItemBase<S = ItemSettings> {
+export interface EmbeddedLinkItemSettings extends ItemSettings {
+  showLinkIframe?: boolean;
+  showLinkButton?: boolean;
+}
+
+export interface Item<S = ItemSettings> {
   id: string;
   name: string;
   description: string;
@@ -35,41 +42,42 @@ export interface ItemBase<S = ItemSettings> {
 export type AppItemType<S = ItemSettings> = {
   type: `${ItemType.APP}`;
   extra: AppItemExtra;
-} & ItemBase<S>;
+} & Item<S>;
 export type DocumentItemType<S = ItemSettings> = {
   type: `${ItemType.DOCUMENT}`;
   extra: DocumentItemExtra;
-} & ItemBase<S>;
+} & Item<S>;
 export type FolderItemType<S = ItemSettings> = {
   type: `${ItemType.FOLDER}`;
   extra: FolderItemExtra;
-} & ItemBase<S>;
+} & Item<S>;
 export type H5PItemType<S = ItemSettings> = {
   type: `${ItemType.H5P}`;
   extra: H5PItemExtra;
-} & ItemBase<S>;
+} & Item<S>;
 export type EmbeddedLinkItemType<S = ItemSettings> = {
   type: `${ItemType.LINK}`;
   extra: EmbeddedLinkItemExtra;
-} & ItemBase<S>;
+  settings: EmbeddedLinkItemSettings;
+} & Item<S>;
 export type LocalFileItemType<S = ItemSettings> = {
   type: `${ItemType.LOCAL_FILE}`;
   extra: LocalFileItemExtra;
-} & ItemBase<S>;
+} & Item<S>;
 export type S3FileItemType<S = ItemSettings> = {
   type: `${ItemType.S3_FILE}`;
   extra: S3FileItemExtra;
-} & ItemBase<S>;
+} & Item<S>;
 export type ShortcutItemType<S = ItemSettings> = {
   type: `${ItemType.SHORTCUT}`;
   extra: ShortcutItemExtra;
-} & ItemBase<S>;
+} & Item<S>;
 export type EtherpadItemType<S = ItemSettings> = {
   type: `${ItemType.ETHERPAD}`;
   extra: Etherpad;
-} & ItemBase<S>;
+} & Item<S>;
 
-export type Item<S = ItemSettings> =
+export type Discriminated<S = ItemSettings> =
   | AppItemType<S>
   | DocumentItemType<S>
   | FolderItemType<S>

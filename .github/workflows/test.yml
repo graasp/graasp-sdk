@@ -13,7 +13,7 @@ jobs:
       - name: set up node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 18.15
           
       - name: yarn install, build, and test
         run: |

@@ -3,7 +3,7 @@ export interface AppIdentification {
 }
 
 export type AuthTokenSubject = {
-  memberId: string;
+  memberId?: string;
   itemId: string;
   origin: string;
 } & AppIdentification; // from the graasp client/app wrapper // from the app itself
