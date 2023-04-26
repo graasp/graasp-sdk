@@ -13,6 +13,7 @@ import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
 
 export interface ItemSettings extends Serializable {
+  lang?: string;
   isPinned?: boolean;
   showChatbox?: boolean;
   hasThumbnail?: boolean;
