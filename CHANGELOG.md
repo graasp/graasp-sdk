@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.12.0](https://github.com/graasp/graasp-sdk/compare/v0.11.0...v0.12.0) (2023-04-27)
+
+
+### Features
+
+* add appendQueryParamToUrl ([#157](https://github.com/graasp/graasp-sdk/issues/157)) ([47d7dc2](https://github.com/graasp/graasp-sdk/commit/47d7dc293f98eae4315b9b880f6dd022a24783d9))
+
+
+### Bug Fixes
+
+* add lang prop in ItemSettings ([#158](https://github.com/graasp/graasp-sdk/issues/158)) ([d7b043f](https://github.com/graasp/graasp-sdk/commit/d7b043f97d811f1f24838a49c666924ac9f7d043))
+
 ## [0.11.0](https://github.com/graasp/graasp-sdk/compare/v0.10.1...v0.11.0) (2023-04-19)
 
 
