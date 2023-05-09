@@ -58,7 +58,6 @@ export type DeleteChatMessageParamType = Pick<ChatMessage, 'item' | 'id'>;
  */
 export type ChatMention = {
   id: UUID;
-  item: Item;
   message: ChatMessage;
   member: Member;
   createdAt: Date;
