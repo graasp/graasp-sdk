@@ -1,3 +1,4 @@
+import { UUID } from '@/types';
 import { Publisher } from '..';
 
 export type AppExtra = {
@@ -5,7 +6,7 @@ export type AppExtra = {
 };
 
 export interface App {
-  id: string;
+  id: UUID;
   key: string;
   name: string;
   description: string;

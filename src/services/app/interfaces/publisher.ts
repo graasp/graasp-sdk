@@ -1,5 +1,7 @@
+import { UUID } from '@/types';
+
 export interface Publisher {
-  id: string;
+  id: UUID;
   name: string;
   origins: string[];
   createdAt: Date;

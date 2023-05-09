@@ -4,13 +4,13 @@ import { Anything } from '@/interfaces';
 
 export interface Action {
   id: string;
-  item?: Item;
-  member: Member;
+  item?: Item | null;
+  member?: Member | null;
   view: Context | 'Unknown';
   type: string;
   extra: Anything;
-  // TODO: cannot important geoip
-  geolocation?: any;
+  // TODO: cannot import geoip
+  geolocation?: unknown;
   createdAt: Date;
 }
 

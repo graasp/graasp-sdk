@@ -6,6 +6,7 @@ export enum CategoryType {
   LEVEL = 'level',
   DISCIPLINE = 'discipline',
   LANGUAGE = 'language',
+  TYPE = 'type'
 }
 
 /**
