@@ -7,7 +7,7 @@ import { UUID } from '@/types';
 export type ChatMessage = {
   id: UUID;
   item: Item;
-  creator: Member;
+  creator: Member | null;
   createdAt: Date;
   updatedAt: Date;
   body: string;
@@ -59,10 +59,8 @@ export type DeleteChatMessageParamType = Pick<ChatMessage, 'item' | 'id'>;
 export type ChatMention = {
   id: UUID;
   item: Item;
-  message: string;
-  messageId: UUID;
+  message: ChatMessage;
   member: Member;
-  creator: Member;
   createdAt: Date;
   updatedAt: Date;
   status: MentionStatus;
@@ -72,6 +70,6 @@ export type ChatMention = {
  * Represents all mentions destined to a member
  */
 export type MemberMentions = {
-  memberId: UUID;
+  memberId: Member['id'];
   mentions: ChatMention[];
 };

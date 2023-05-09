@@ -6,7 +6,7 @@ export type Invitation = {
   email: string;
   permission: PermissionLevel;
   name?: string;
-  creator?: Member;
+  creator?: Member | null;
   item: Item;
   createdAt: Date;
   updatedAt: Date;
