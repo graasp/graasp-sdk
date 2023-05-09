@@ -77,7 +77,7 @@ export type EtherpadItemType<S = ItemSettings> = {
   extra: Etherpad;
 } & Item<S>;
 
-export type Discriminated<S = ItemSettings> =
+export type DiscriminatedItem<S = ItemSettings> =
   | AppItemType<S>
   | DocumentItemType<S>
   | FolderItemType<S>
