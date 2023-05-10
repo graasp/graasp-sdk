@@ -43,13 +43,19 @@ export type ExportedItemChat = {
  */
 export type MessageBodyType = { body: string; mentions?: string[] };
 
-export type PostChatMessageParamType = Pick<ChatMessage, 'item'> &
-  MessageBodyType;
+export type PostChatMessageParamType = {
+  itemId: ChatMessage['item']['id'];
+} & MessageBodyType;
 
-export type PatchChatMessageParamType = Pick<ChatMessage, 'item' | 'id'> &
-  MessageBodyType;
+export type PatchChatMessageParamType = {
+  messageId: ChatMessage['id'];
+  itemId: ChatMessage['item']['id'];
+} & MessageBodyType;
 
-export type DeleteChatMessageParamType = Pick<ChatMessage, 'item' | 'id'>;
+export type DeleteChatMessageParamType = {
+  messageId: ChatMessage['id'];
+  itemId: ChatMessage['item']['id'];
+};
 
 // ********************* Mentions *****************************
 
