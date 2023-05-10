@@ -1,5 +1,5 @@
-import { UUID } from '@/types';
 import { Publisher } from '..';
+import { UUID } from '@/types';
 
 export type AppExtra = {
   image?: string;

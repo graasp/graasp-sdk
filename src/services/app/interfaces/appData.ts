@@ -15,4 +15,4 @@ export type AppData = {
   data: { [key: string]: unknown };
   createdAt: Date;
   updatedAt: Date;
-}
+};
