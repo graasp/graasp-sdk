@@ -9,6 +9,7 @@ import type {
   CategoryType,
   ChatMention,
   ChatMessage,
+  DiscriminatedItem,
   DocumentItemType,
   EmbeddedLinkItemType,
   Etherpad,
@@ -43,20 +44,14 @@ import type { ResultOf } from '@/types';
  */
 export type ImmutableCast<Type> = Type extends (infer U)[]
   ? List<ImmutableCast<U>>
-  : RecordOf<{
-      [Property in keyof Type]: Type[Property] extends (infer U)[] | undefined // check that type is an array (or an optional array)
-        ? // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          Type[Property] extends RecordOf<infer V> | List<infer V>
-          ? Type[Property]
-          : U extends object // check if internal array type is a custom type
-          ? List<ImmutableCast<U>> // if is custom type transform to List of an immutable transformation of the custom type
-          : List<U> // else just wrap in a List
-        : Type[Property] extends Date // check that type is a date
-        ? Type[Property] // return raw date
-        : Type[Property] extends object | undefined // check that type is a custom type (or optional custom type)
-        ? ImmutableCast<Type[Property]> // if is custom type then transform to immutable custom type
-        : Type[Property]; // else (it is a base type) just return the type
-    }>;
+  : // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  Type extends RecordOf<infer V> | List<infer V> | Date // add any type that you do not want to change
+  ? Type
+  : Type extends object
+  ? RecordOf<{
+      [Property in keyof Type]: ImmutableCast<Type[Property]>;
+    }>
+  : Type;
 
 export type AppItemTypeRecord = ImmutableCast<AppItemType>;
 export type DocumentItemTypeRecord = ImmutableCast<DocumentItemType>;
@@ -68,16 +63,7 @@ export type S3FileItemTypeRecord = ImmutableCast<S3FileItemType>;
 export type ShortcutItemTypeRecord = ImmutableCast<ShortcutItemType>;
 export type EtherpadItemTypeRecord = ImmutableCast<EtherpadItemType>;
 
-export type ItemRecord =
-  | AppItemTypeRecord
-  | DocumentItemTypeRecord
-  | FolderItemTypeRecord
-  | H5PItemTypeRecord
-  | EmbeddedLinkItemTypeRecord
-  | LocalFileItemTypeRecord
-  | S3FileItemTypeRecord
-  | ShortcutItemTypeRecord
-  | EtherpadItemTypeRecord;
+export type ItemRecord = ImmutableCast<DiscriminatedItem>;
 
 export type EtherpadRecord = ImmutableCast<Etherpad>;
 
