@@ -80,6 +80,6 @@ export type MemberMentions = {
 };
 
 export enum ChatStatus {
-  OPEN = 'true',
-  CLOSE = 'false',
+  Open = 'true',
+  Close = 'false',
 }
