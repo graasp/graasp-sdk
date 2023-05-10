@@ -78,3 +78,8 @@ export type MemberMentions = {
   memberId: Member['id'];
   mentions: ChatMention[];
 };
+
+export enum ChatStatus {
+  OPEN = 'true',
+  CLOSE = 'false',
+}
