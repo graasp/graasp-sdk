@@ -6,7 +6,7 @@ export interface ItemMembership {
   member: Member;
   item: Item;
   permission: PermissionLevel;
-  creator?: Member;
+  creator?: Member | null;
   createdAt: Date;
   updatedAt: Date;
 }
