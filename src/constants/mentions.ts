@@ -1,11 +1,11 @@
 export enum MentionStatus {
-  UNREAD = 'unread',
-  READ = 'read',
+  Unread = 'unread',
+  Read = 'read',
 }
 
 export enum EmailFrequency {
-  ALWAYS = 'always',
+  Always = 'always',
   // todo: add more granular options
   // DAILY = 'daily',
-  NEVER = 'never',
+  Never = 'never',
 }
