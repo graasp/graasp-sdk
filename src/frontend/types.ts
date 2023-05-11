@@ -23,6 +23,7 @@ import type {
   H5PItemType,
   Invitation,
   ItemCategory,
+  ItemFavorite,
   ItemFlag,
   ItemLike,
   ItemLogin,
@@ -131,6 +132,8 @@ export type ActionDataRecord = ImmutableCast<ActionData>;
 export type Password = string;
 export type NewInvitation = Pick<Invitation, 'email' & 'permission'> &
   Partial<Invitation>;
+
+export type ItemFavoriteRecord = ImmutableCast<ItemFavorite>
 
 export type ItemLikeRecord = ImmutableCast<ItemLike>;
 

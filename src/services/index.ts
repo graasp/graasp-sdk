@@ -7,6 +7,7 @@ export * from './file';
 export * from './flag';
 export * from './h5p';
 export * from './invitation';
+export * from './item-favorite'
 export * from './item-like';
 export * from './item-login';
 export * from './item-memberships';
