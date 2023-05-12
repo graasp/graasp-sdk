@@ -12,6 +12,7 @@ export interface Session {
 // todo: use enum once frontend interfaces are in ts
 export const COOKIE_KEYS = {
   ACCEPT_COOKIES_KEY: 'acceptAllCookies',
+  SESSION_KEY: 'session',
   REDIRECT_URL_KEY: 'redirectUrl',
   LANG_KEY: 'lang',
   IFRAME_RESIZE_HEIGHT_KEY: 'iframeResizeHeight',
@@ -19,7 +20,7 @@ export const COOKIE_KEYS = {
 
 /**
  * @returns {string} IframeResizeHeightCookie key
- * @param {UUID} member id
+ * @param {UUID} memeber id
  * * @param {UUID} item id
  */
 export const buildIframeResizeHeightKey = ({
