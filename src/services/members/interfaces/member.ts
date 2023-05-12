@@ -12,7 +12,7 @@ export interface MemberExtra extends UnknownExtra {
   enableSaveActions?: boolean;
 }
 
-export interface Member<E extends UnknownExtra = UnknownExtra> extends Actor {
+export interface Member<E extends UnknownExtra = MemberExtra> extends Actor {
   id: UUID;
   name: string;
   email: string;

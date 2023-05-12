@@ -26,7 +26,7 @@ export type ItemChat = {
 export type ExportedChatMessage = {
   id: UUID;
   chatId: UUID;
-  creator: Member;
+  creator: Member | null;
   creatorName: string;
   createdAt: Date;
   updatedAt: Date;
