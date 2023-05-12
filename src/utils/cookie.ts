@@ -1,9 +1,6 @@
 import Cookies from 'js-cookie';
 
-import {
-  IFRAME_RESIZE_HEIGHT_COOKIE_EXPIRATION_DAYS,
-  SESSION_COOKIE_EXPIRATION_DURATION_MS,
-} from '../constants/constants';
+import { IFRAME_RESIZE_HEIGHT_COOKIE_EXPIRATION_DAYS } from '../constants/constants';
 import { UUID } from '@/types';
 
 export interface Session {
@@ -15,8 +12,6 @@ export interface Session {
 // todo: use enum once frontend interfaces are in ts
 export const COOKIE_KEYS = {
   ACCEPT_COOKIES_KEY: 'acceptAllCookies',
-  SESSION_KEY: 'session',
-  STORED_SESSIONS_KEY: 'storedSessions',
   REDIRECT_URL_KEY: 'redirectUrl',
   LANG_KEY: 'lang',
   IFRAME_RESIZE_HEIGHT_KEY: 'iframeResizeHeight',
@@ -24,7 +19,7 @@ export const COOKIE_KEYS = {
 
 /**
  * @returns {string} IframeResizeHeightCookie key
- * @param {UUID} memeber id
+ * @param {UUID} member id
  * * @param {UUID} item id
  */
 export const buildIframeResizeHeightKey = ({
@@ -41,100 +36,6 @@ export const buildIframeResizeHeightKey = ({
  */
 export const hasAcceptedCookies = () =>
   Cookies.get(COOKIE_KEYS.ACCEPT_COOKIES_KEY) === 'true';
-
-// TODO: this function should change to rely on another cookie -> session will be httpOnly
-/**
- * @returns {boolean} whether the user is authenticated
- */
-export const isUserAuthenticated = () =>
-  Boolean(Cookies.get(COOKIE_KEYS.SESSION_KEY));
-
-/**
- * @param {string|null} token value to set in the session key. A null value will remove it.
- * @param  {string} domain value for the cookie's domain
- */
-export const setCurrentSession = (token: string | null, domain: string) => {
-  if (!token) {
-    return Cookies.remove(COOKIE_KEYS.SESSION_KEY, { domain, secure: true });
-  }
-  return Cookies.set(COOKIE_KEYS.SESSION_KEY, token, { domain, secure: true });
-};
-/**
- * @returns {string|undefined} current session token
- */
-export const getCurrentSession = () => Cookies.get(COOKIE_KEYS.SESSION_KEY);
-
-/**
- * @returnss {Session[]} stored sessions
- */
-export const getStoredSessions = (): Session[] => {
-  try {
-    const storedSessions = JSON.parse(
-      Cookies.get(COOKIE_KEYS.STORED_SESSIONS_KEY) ?? '[]',
-    );
-
-    // validate value is an array
-    if (!Array.isArray(storedSessions)) {
-      return [];
-    }
-
-    return storedSessions;
-  } catch (e) {
-    return [];
-  }
-};
-
-/**
- * @param  {Session} session value to store
- * @param  {string} domain value for the cookie's domain
- */
-export const storeSession = (session: Session, domain: string) => {
-  const sessions = getStoredSessions();
-
-  const storedSessionIdx = sessions.findIndex(({ id }) => id === session.id);
-  // add session if doesn't exist
-  if (storedSessionIdx < 0) {
-    sessions.push(session);
-  }
-  // replace corresponding session with new values (date, token)
-  else {
-    sessions[storedSessionIdx] = session;
-  }
-
-  Cookies.set(COOKIE_KEYS.STORED_SESSIONS_KEY, JSON.stringify(sessions), {
-    domain,
-    secure: true,
-  });
-};
-/**
- * @param  {string} sId session id to remove
- * @param  {string} domain value for the cookie's domain
- */
-export const removeSession = (sId: string, domain: string) => {
-  const sessions = getStoredSessions();
-
-  // remove session
-  Cookies.set(
-    COOKIE_KEYS.STORED_SESSIONS_KEY,
-    JSON.stringify(sessions.filter(({ id }) => sId !== id)),
-    { domain, secure: true },
-  );
-};
-/**
- * @param  {string} sId session id to remove
- * @returns  {boolean} whether the session is expired, true if no session found
- */
-export const isSessionExpired = (sId: string) => {
-  const sessions = getStoredSessions();
-
-  const session = sessions.find(({ id }) => id === sId);
-  if (!session) {
-    return true;
-  }
-  return Boolean(
-    session.createdAt + SESSION_COOKIE_EXPIRATION_DURATION_MS < Date.now(),
-  );
-};
 
 /**
  * @param  {string} link link to save for further redirection

@@ -48,8 +48,8 @@ export type ImmutableCast<Type> = Type extends (infer U)[]
   ? Type
   : Type extends object
   ? RecordOf<{
-    [Property in keyof Type]: ImmutableCast<Type[Property]>;
-  }>
+      [Property in keyof Type]: ImmutableCast<Type[Property]>;
+    }>
   : Type;
 
 export type AppItemTypeRecord = ImmutableCast<AppItemType>;

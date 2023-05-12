@@ -71,7 +71,6 @@ export type ChatMention = {
   status: MentionStatus;
 };
 
-
 export enum ChatStatus {
   Open = 'true',
   Close = 'false',
