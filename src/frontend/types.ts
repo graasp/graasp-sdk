@@ -32,7 +32,6 @@ import type {
   LocalFileItemType,
   Member,
   MemberExtra,
-  MemberMentions,
   RecycledItemData,
   S3FileItemType,
   ShortcutItemType,
@@ -49,8 +48,8 @@ export type ImmutableCast<Type> = Type extends (infer U)[]
   ? Type
   : Type extends object
   ? RecordOf<{
-      [Property in keyof Type]: ImmutableCast<Type[Property]>;
-    }>
+    [Property in keyof Type]: ImmutableCast<Type[Property]>;
+  }>
   : Type;
 
 export type AppItemTypeRecord = ImmutableCast<AppItemType>;
@@ -74,8 +73,6 @@ export type MemberRecord = ImmutableCast<Member<MemberExtra>>;
 export type ItemMembershipRecord = ImmutableCast<ItemMembership>;
 
 export type ChatMentionRecord = ImmutableCast<ChatMention>;
-
-export type MemberMentionsRecord = ImmutableCast<MemberMentions>;
 
 /**
  * A `CategoryRecord` represents a sort of "tag" for an item. For example: "Math", "Kindergarten" etc ...

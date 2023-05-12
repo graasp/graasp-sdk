@@ -3,7 +3,6 @@ import {
   DocumentItemExtra,
   EmbeddedLinkItemExtra,
   FolderItemExtra,
-  Serializable,
   ShortcutItemExtra,
 } from '../../../interfaces/extra';
 import { AppItemExtra } from '../../app/';
@@ -12,7 +11,7 @@ import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
 import { Member } from '@/index';
 
-export interface ItemSettings extends Serializable {
+export interface ItemSettings {
   lang?: string;
   isPinned?: boolean;
   showChatbox?: boolean;

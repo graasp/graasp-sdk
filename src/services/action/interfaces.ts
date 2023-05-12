@@ -1,6 +1,5 @@
 import { Item, ItemMembership, Member } from '..';
 import { Context } from '@/constants';
-import { Anything } from '@/interfaces';
 
 export interface Action {
   id: string;
@@ -8,7 +7,7 @@ export interface Action {
   member?: Member | null;
   view: Context | 'Unknown';
   type: string;
-  extra: Anything;
+  extra: { [key: string]: unknown };
   // TODO: cannot import geoip
   geolocation?: unknown;
   createdAt: Date;

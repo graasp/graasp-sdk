@@ -71,13 +71,6 @@ export type ChatMention = {
   status: MentionStatus;
 };
 
-/**
- * Represents all mentions destined to a member
- */
-export type MemberMentions = {
-  memberId: Member['id'];
-  mentions: ChatMention[];
-};
 
 export enum ChatStatus {
   Open = 'true',
