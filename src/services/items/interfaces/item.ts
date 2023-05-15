@@ -9,7 +9,7 @@ import { AppItemExtra } from '../../app/';
 import { Etherpad } from '../../etherpad';
 import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
-import { Member } from '@/index';
+import { CCLicenseAdaptions, Member, OldCCLicenseAdapations } from '@/index';
 
 export interface ItemSettings {
   lang?: string;
@@ -20,6 +20,11 @@ export interface ItemSettings {
   isCollapsible?: boolean;
   enableSaveActions?: boolean;
   tags?: string[];
+  ccLicenseAdaption?:
+    | `${CCLicenseAdaptions}`
+    | CCLicenseAdaptions
+    // todo: these are the old licenses, we might remove them at some point.
+    | `${OldCCLicenseAdapations}`;
 }
 
 export interface EmbeddedLinkItemSettings extends ItemSettings {
