@@ -15,6 +15,7 @@ export type FileItemProperties = {
   path: string;
   mimetype: string;
   size: number;
+  altText?: string;
 };
 
 export interface LocalFileItemExtra extends UnknownExtra {

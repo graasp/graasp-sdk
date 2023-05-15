@@ -133,7 +133,7 @@ export type Password = string;
 export type NewInvitation = Pick<Invitation, 'email' & 'permission'> &
   Partial<Invitation>;
 
-export type ItemFavoriteRecord = ImmutableCast<ItemFavorite>
+export type ItemFavoriteRecord = ImmutableCast<ItemFavorite>;
 
 export type ItemLikeRecord = ImmutableCast<ItemLike>;
 
