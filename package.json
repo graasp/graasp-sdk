@@ -48,7 +48,7 @@
     "pre-commit": "yarn prettier:check && yarn lint",
     "hooks:uninstall": "husky uninstall",
     "hooks:install": "husky install",
-    "build": "tsc && tsc-alias",
+    "build": "tsc -p tsconfig.build.json && tsc-alias",
     "type-check": "tsc --noEmit",
     "test": "jest ",
     "test:watch": "yarn test --watchAll",

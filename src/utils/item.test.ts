@@ -1,12 +1,12 @@
 import { v4 } from 'uuid';
 
-import { Item } from '../services';
 import {
   buildPathFromIds,
   getChildFromPath,
   getIdsFromPath,
   getParentFromPath,
   isChildOf,
+  isDescendantOf,
   isRootItem,
 } from './item';
 
@@ -83,17 +83,42 @@ describe('Item Utils', () => {
     });
   });
 
+  describe('isDescendantOf', () => {
+    test('Two root elements are not descendants', () => {
+      const parent = buildPathFromIds(v4());
+      const child = buildPathFromIds(v4());
+      expect(isDescendantOf(child, parent)).toBeFalsy();
+    });
+    test('Direct children is a descendant', () => {
+      const parentId = v4();
+      const parent = buildPathFromIds(parentId);
+      const child = buildPathFromIds(parentId, v4());
+      expect(isDescendantOf(child, parent)).toBeTruthy();
+    });
+    test('Deep descendant', () => {
+      const grandParentId = v4();
+      const parentId = v4();
+      const grandParent = buildPathFromIds(grandParentId);
+      const parent = buildPathFromIds(grandParentId, parentId);
+      const child = buildPathFromIds(grandParentId, parentId, v4());
+      expect(isDescendantOf(child, parent)).toBeTruthy();
+      expect(isDescendantOf(child, grandParent)).toBeTruthy();
+    });
+  });
+
   describe('isRootItem', () => {
-    test('return true', () => {
+    test('Nested item is not root', () => {
       const id = v4();
       const parentId = v4();
       const item = { id, path: buildPathFromIds(parentId, id) };
-      expect(isRootItem(item as Item)).toBeTruthy();
+      expect(isRootItem(item)).toBeFalsy();
+      console.log(item, isRootItem(item));
     });
-    test('return false', () => {
+    test('Item without parent is root', () => {
       const id = v4();
       const item = { id, path: buildPathFromIds(id) };
-      expect(isRootItem(item as Item)).toBeFalsy();
+      expect(isRootItem(item)).toBeTruthy();
+      console.log(item, isRootItem(item));
     });
   });
 });
