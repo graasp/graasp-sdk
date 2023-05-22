@@ -27,10 +27,10 @@ export interface DocumentItemExtra extends UnknownExtra {
 }
 
 export type EmbeddedLinkItemExtraProperties = {
-  thumbnails: string[];
-  html: string;
+  thumbnails?: string[];
+  html?: string;
   url: string;
-  icons: string[];
+  icons?: string[];
 };
 
 export interface EmbeddedLinkItemExtra extends UnknownExtra {
