@@ -6,6 +6,7 @@ import { Actor, TaskRunner } from './interfaces';
 import {
   AuthTokenSubject,
   Database,
+  EtherpadService,
   H5PTaskManager,
   ItemMembershipService,
   ItemMembershipTaskManager,
@@ -17,10 +18,10 @@ import {
   MemberTaskManager,
   PublicItemService,
   PublicItemTaskManager,
+  PublishItemTaskManager,
   S3FileConfiguration,
+  WebsocketService,
 } from './services';
-import { PublishItemTaskManager } from './services/item-publish/index';
-import { WebsocketService } from './services/websockets/index';
 
 declare module 'fastify' {
   interface FastifyRequest {
@@ -142,6 +143,11 @@ declare module 'fastify' {
      * Websockets service
      */
     websockets?: WebsocketService;
+
+    /*
+     * Etherpad service
+     */
+    etherpad?: EtherpadService;
 
     /**
      * Publish service

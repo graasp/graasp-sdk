@@ -7,6 +7,7 @@ import {
 import { DEFAULT_PROTOCOL } from '../config';
 import * as cookieUtils from './cookie';
 import {
+  appendQueryParamToUrl,
   buildItemLinkForBuilder,
   buildPdfViewerLink,
   buildSignInPath,
@@ -228,6 +229,32 @@ describe('Navigation Util Tests', () => {
     it('build url with asset url', () => {
       const res = buildPdfViewerLink(assetsUrl);
       expect(res).toContain(assetsUrl);
+    });
+  });
+
+  describe('appendQueryParamToUrl', () => {
+    it('return same url when params is empty', () => {
+      const initialUrl = 'http://localhost:3000/index.html';
+      const res = appendQueryParamToUrl(initialUrl, {});
+      expect(res).toEqual(initialUrl);
+    });
+
+    it('add params to url', () => {
+      const initialUrl = 'http://localhost:3000/index.html';
+      const res = appendQueryParamToUrl(initialUrl, { lang: 'en' });
+      expect(res).toEqual('http://localhost:3000/index.html?lang=en');
+    });
+
+    it('add params to url without overriding', () => {
+      const initialUrl = 'http://localhost:3000/index.html?lang=en';
+      const res = appendQueryParamToUrl(initialUrl, { lang: 'de' });
+      expect(res).toEqual('http://localhost:3000/index.html?lang=en&lang=de');
+    });
+
+    it('override params in url', () => {
+      const initialUrl = 'http://localhost:3000/index.html?lang=en&test=bobo';
+      const res = appendQueryParamToUrl(initialUrl, { lang: 'de' }, true);
+      expect(res).toEqual('http://localhost:3000/index.html?lang=de&test=bobo');
     });
   });
 });

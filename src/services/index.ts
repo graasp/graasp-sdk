@@ -8,6 +8,7 @@ export * from './flag';
 export * from './h5p';
 export * from './invitation';
 export * from './item-memberships';
+export * from './item-publish';
 export * from './item-tags';
 export * from './items';
 export * from './members';

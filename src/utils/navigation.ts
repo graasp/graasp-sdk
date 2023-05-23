@@ -113,3 +113,29 @@ export const buildItemLinkForBuilder: BuildItemLinkFunc = (
  */
 export const buildPdfViewerLink = (assetsUrl?: string) =>
   assetsUrl ? `https://${assetsUrl}/pdf-viewer/web/viewer.html?file=` : '';
+
+/**
+ * Utility method to append new query parameters to a url.
+ * The initial url is allowed to contain some query parameters already.
+ * Any key in the `params` argument will override the value of already present query parameters in `initialUrl`.
+ * @param initialUrl a string representing the url that you want to append queries to
+ * @param params an object of key values that should be added to the query string of the url
+ * @param overrideExisting a boolean that controls whether the keys in the `params` object
+ * should override existing keys or be added (default)
+ * @returns new string representing the url with added parameters
+ */
+export const appendQueryParamToUrl = (
+  initialUrl: string,
+  params: { [key: string]: string },
+  overrideExisting = false,
+): string => {
+  const url = new URL(initialUrl);
+  const queryString = new URLSearchParams(url.search);
+  Object.entries(params).forEach(([key, value]) =>
+    overrideExisting
+      ? queryString.set(key, value)
+      : queryString.append(key, value),
+  );
+  url.search = queryString.toString();
+  return url.toString();
+};

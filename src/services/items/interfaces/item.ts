@@ -13,12 +13,18 @@ import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
 
 export interface ItemSettings extends Serializable {
+  lang?: string;
   isPinned?: boolean;
   showChatbox?: boolean;
   hasThumbnail?: boolean;
   isResizable?: boolean;
   isCollapsible?: boolean;
   enableSaveActions?: boolean;
+}
+
+export interface EmbeddedLinkItemSettings extends ItemSettings {
+  showLinkIframe?: boolean;
+  showLinkButton?: boolean;
 }
 
 export interface Item<E = UnknownExtra, S = ItemSettings> {
@@ -53,6 +59,7 @@ export type H5PItemType<S = ItemSettings> = {
 export type EmbeddedLinkItemType<S = ItemSettings> = {
   type: `${ItemType.LINK}`;
   extra: EmbeddedLinkItemExtra;
+  settings: EmbeddedLinkItemSettings;
 } & Item<S>;
 export type LocalFileItemType<S = ItemSettings> = {
   type: `${ItemType.LOCAL_FILE}`;
