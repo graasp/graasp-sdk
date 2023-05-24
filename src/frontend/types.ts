@@ -4,7 +4,10 @@ import type {
   Action,
   ActionData,
   App,
+  AppAction,
+  AppData,
   AppItemType,
+  AppSetting,
   Category,
   CategoryType,
   ChatMention,
@@ -48,8 +51,8 @@ export type ImmutableCast<Type> = Type extends (infer U)[]
   ? Type
   : Type extends object
   ? RecordOf<{
-      [Property in keyof Type]: ImmutableCast<Type[Property]>;
-    }>
+    [Property in keyof Type]: ImmutableCast<Type[Property]>;
+  }>
   : Type;
 
 export type AppItemTypeRecord = ImmutableCast<AppItemType>;
@@ -132,6 +135,9 @@ export type NewInvitation = Pick<Invitation, 'email' & 'permission'> &
 export type ItemLikeRecord = ImmutableCast<ItemLike>;
 
 export type AppRecord = ImmutableCast<App>;
+export type AppDataRecord = ImmutableCast<AppData>;
+export type AppActionRecord = ImmutableCast<AppAction>;
+export type AppSettingRecord = ImmutableCast<AppSetting>;
 
 export type ResultOfRecord<T> = ImmutableCast<ResultOf<T>>;
 
