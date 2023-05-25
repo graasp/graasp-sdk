@@ -3,17 +3,17 @@ import { UUID } from '@/types';
 
 export type ItemFlag = {
   id: UUID;
-  type: FlagType;
+  type: `${FlagType}` | FlagType;
   item: Item;
   creator: Member;
   createdAt: Date;
 };
 
 export enum FlagType {
-  INAPPROPRIATE_CONTENT = 'inappropriate-content',
-  HATE_SPEECH = 'hate-speech',
-  FRAUD_PLAGIARISM = 'fraud-plagiarism',
-  SPAM = 'spam',
-  TARGETED_HARASMENT = 'targeted-harrasment',
-  FALSE_INFORMATION = 'false-information',
+  InappropriateContent = 'inappropriate-content',
+  HateSpeech = 'hate-speech',
+  FraudPlagiarism = 'fraud-plagiarism',
+  Spam = 'spam',
+  TargetedHarassment = 'targeted-harassment',
+  FalseInformation = 'false-information',
 }

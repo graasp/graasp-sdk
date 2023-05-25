@@ -11,7 +11,7 @@ export type AppData = {
   creator: Member | null;
   member: Member;
   type: string;
-  visibility: AppDataVisibility;
+  visibility: `${AppDataVisibility}` | AppDataVisibility;
   data: { [key: string]: unknown };
   createdAt: Date;
   updatedAt: Date;

@@ -3,10 +3,10 @@ import { UUID } from '@/types';
 
 // TODO: translate? use keys? <<<- have a table ??? change for admin
 export enum CategoryType {
-  LEVEL = 'level',
-  DISCIPLINE = 'discipline',
-  LANGUAGE = 'language',
-  TYPE = 'type',
+  Level = 'level',
+  Discipline = 'discipline',
+  Language = 'language',
+  Type = 'type',
 }
 
 /**
@@ -17,7 +17,7 @@ export enum CategoryType {
 export type Category = {
   id: UUID;
   name: string;
-  type: CategoryType;
+  type: `${CategoryType}` | CategoryType;
 };
 
 export type ItemCategory = {
