@@ -1,7 +1,7 @@
 import { default as EtherpadApi } from '@graasp/etherpad-api';
 
 import { EtherpadItemExtra } from './etherpad';
-import { Actor, Item, Member } from '@/index';
+import { Item, Member } from '@/index';
 
 export type EtherpadCookie = {
   name: string;
@@ -31,12 +31,12 @@ export interface EtherpadService {
 
   deleteEtherpadForItem(
     item: Partial<Item<EtherpadItemExtra>>,
-    actor: Actor,
+    actor: Pick<Member, 'id'>,
   ): Promise<void>;
 
   copyEtherpadInMutableItem(
     mutableItem: Partial<Item<EtherpadItemExtra>>,
-    actor: Actor,
+    actor: Pick<Member, 'id'>,
   ): Promise<void>;
 
   buildPadID({

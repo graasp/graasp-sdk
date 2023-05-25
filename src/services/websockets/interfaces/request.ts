@@ -1,4 +1,4 @@
-import { Member, UnknownExtra } from '@/index';
+import { Member } from '@/index';
 
 /**
  * Internal request type when clients attempt to subscribe to some channel
@@ -12,7 +12,7 @@ export interface SubscriptionRequest {
   /**
    * Member requesting a subscription
    */
-  member: Member<UnknownExtra>;
+  member: Member;
   /**
    * Rejects the subscription request with a specified error
    */
