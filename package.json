@@ -39,7 +39,7 @@
     "fluent-json-schema": "4.1.0",
     "immutable": "4.3.0",
     "js-cookie": "3.0.5",
-    "qs": "6.11.1",
+    "qs": "6.11.2",
     "typeorm": "0.3.15",
     "uuid": "9.0.0",
     "validator": "13.9.0"
