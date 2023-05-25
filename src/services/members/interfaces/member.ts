@@ -1,4 +1,4 @@
-import { UUID } from '@/index';
+import { EmailFrequency, UUID } from '@/index';
 
 export enum MemberType {
   Individual = 'individual',
@@ -10,6 +10,7 @@ export interface MemberExtra {
   favoriteItems?: string[];
   lang?: string;
   enableSaveActions?: boolean;
+  emailFreq?: `${EmailFrequency}` | EmailFrequency;
 }
 
 export interface Member {
