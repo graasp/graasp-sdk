@@ -1,23 +1,23 @@
-import { Actor, UUID, UnknownExtra } from '@/index';
+import { UUID } from '@/index';
 
 export enum MemberType {
   Individual = 'individual',
   Group = 'group',
 }
 
-export interface MemberExtra extends UnknownExtra {
+export interface MemberExtra {
   hasAvatar?: boolean;
   favoriteItems?: string[];
   lang?: string;
   enableSaveActions?: boolean;
 }
 
-export interface Member<E extends UnknownExtra = MemberExtra> extends Actor {
+export interface Member {
   id: UUID;
   name: string;
   email: string;
-  type: MemberType;
-  extra: E;
+  type: `${MemberType}` | MemberType;
+  extra: MemberExtra;
   createdAt: Date;
   updatedAt: Date;
 }

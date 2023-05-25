@@ -6,10 +6,10 @@ import {
   ShortcutItemExtra,
 } from '../../../interfaces/extra';
 import { AppItemExtra } from '../../app/';
-import { Etherpad } from '../../etherpad';
+import { EtherpadItemExtra } from '../../etherpad';
 import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
-import { CCLicenseAdaptions, Member, OldCCLicenseAdapations } from '@/index';
+import { CCLicenseAdaptions, Member, OldCCLicenseAdaptations } from '@/index';
 
 export interface ItemSettings {
   lang?: string;
@@ -24,7 +24,7 @@ export interface ItemSettings {
     | `${CCLicenseAdaptions}`
     | CCLicenseAdaptions
     // todo: these are the old licenses, we might remove them at some point.
-    | `${OldCCLicenseAdapations}`;
+    | `${OldCCLicenseAdaptations}`;
 }
 
 export interface EmbeddedLinkItemSettings extends ItemSettings {
@@ -38,7 +38,7 @@ export interface Item<S = ItemSettings> {
   description: string;
   path: string;
   settings: S;
-  creator: Member;
+  creator: Member | null;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -78,7 +78,7 @@ export type ShortcutItemType<S = ItemSettings> = {
 } & Item<S>;
 export type EtherpadItemType<S = ItemSettings> = {
   type: `${ItemType.ETHERPAD}`;
-  extra: Etherpad;
+  extra: EtherpadItemExtra;
 } & Item<S>;
 
 export type DiscriminatedItem<S = ItemSettings> =

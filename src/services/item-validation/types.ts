@@ -22,8 +22,8 @@ export enum ItemValidationReviewStatus {
 export interface ItemValidation {
   id: string;
   item: Item;
-  process: `${ItemValidationProcess}`;
-  status: ItemValidationStatus;
+  process: `${ItemValidationProcess}` | ItemValidationProcess;
+  status: `${ItemValidationStatus}` | ItemValidationStatus;
   result: string;
   itemValidationGroup: ItemValidationGroup;
   createdAt: Date;
@@ -41,7 +41,7 @@ export interface ItemValidationReview {
   id: string;
   itemValidation: ItemValidation;
   reviewer: Member | null;
-  status: ItemValidationReviewStatus;
+  status: `${ItemValidationReviewStatus}` | ItemValidationReviewStatus;
   reason: string;
   updatedAt: Date;
   createdAt: Date;

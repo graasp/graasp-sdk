@@ -4,7 +4,7 @@ import { ItemLoginSchemaType, UUID } from '@/index';
 export interface ItemLoginSchema {
   id: UUID;
   item: Item;
-  type: ItemLoginSchemaType;
+  type: `${ItemLoginSchemaType}` | ItemLoginSchemaType;
   createdAt: Date;
   updatedAt: Date;
 }

@@ -10,7 +10,7 @@ export enum CCLicenseAdaptions {
 /**
  * @deprecated old license format that might be removed at some point
  */
-export enum OldCCLicenseAdapations {
+export enum OldCCLicenseAdaptations {
   allow = 'allow',
   alike = 'alike',
 }
