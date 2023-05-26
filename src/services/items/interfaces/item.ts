@@ -20,6 +20,7 @@ export interface ItemSettings {
   isCollapsible?: boolean;
   enableSaveActions?: boolean;
   tags?: string[];
+  displayCoEditors?: boolean;
   ccLicenseAdaption?:
     | `${CCLicenseAdaptions}`
     | CCLicenseAdaptions
