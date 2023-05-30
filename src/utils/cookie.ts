@@ -42,7 +42,7 @@ export const hasAcceptedCookies = () =>
  * @param  {string} link link to save for further redirection
  * @param  {string} domain value for the cookie's domain
  */
-export const saveUrlForRedirection = (link: string, domain: string) => {
+export const saveUrlForRedirection = (link: string, domain?: string) => {
   Cookies.set(COOKIE_KEYS.REDIRECT_URL_KEY, link, { domain, secure: true });
 };
 
