@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.0.0-rc1](https://github.com/graasp/graasp-sdk/compare/v0.12.0...v1.0.0-rc1) (2023-05-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* typeorm
+
+### Features
+
+* typeorm ([bf659e5](https://github.com/graasp/graasp-sdk/commit/bf659e5362237064c5bf1df99c097221ccc74b0c))
+
+
+### Bug Fixes
+
+* add displayCoEditors to item settings ([68eb81b](https://github.com/graasp/graasp-sdk/commit/68eb81b9d427066c4edc45dd28a824d364736fc0))
+* add emailFreq ([#169](https://github.com/graasp/graasp-sdk/issues/169)) ([68eb81b](https://github.com/graasp/graasp-sdk/commit/68eb81b9d427066c4edc45dd28a824d364736fc0))
+
+
+### chore
+
+* set release ([f7bd5d1](https://github.com/graasp/graasp-sdk/commit/f7bd5d12e4e202c5c7c4b7af4458209233436bcd))
+
 ## [0.12.0](https://github.com/graasp/graasp-sdk/compare/v0.11.0...v0.12.0) (2023-04-27)
 
 
