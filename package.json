@@ -83,5 +83,5 @@
     "tsc-alias": "1.8.6",
     "typescript": "5.0.4"
   },
-  "packageManager": "yarn@3.5.1"
+  "packageManager": "yarn@3.6.0"
 }
