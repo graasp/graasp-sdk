@@ -32,7 +32,7 @@
     "dist"
   ],
   "dependencies": {
-    "@fastify/secure-session": "5.3.0",
+    "@fastify/secure-session": "6.1.0",
     "@graasp/etherpad-api": "2.1.1",
     "aws-sdk": "2.1370.0",
     "fastify": "4.17.0",
