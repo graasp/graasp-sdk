@@ -35,7 +35,7 @@
     "@fastify/secure-session": "5.3.0",
     "@graasp/etherpad-api": "2.1.1",
     "aws-sdk": "2.1370.0",
-    "fastify": "4.17.0",
+    "fastify": "4.18.0",
     "fluent-json-schema": "4.1.0",
     "immutable": "4.3.0",
     "js-cookie": "3.0.5",
