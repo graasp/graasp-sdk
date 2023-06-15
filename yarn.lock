@@ -1075,7 +1075,7 @@ __metadata:
     "@types/validator": 13.7.17
     "@typescript-eslint/eslint-plugin": 5.59.11
     "@typescript-eslint/parser": 5.59.11
-    aws-sdk: 2.1370.0
+    aws-sdk: 2.1398.0
     eslint: 8.42.0
     eslint-config-prettier: 8.8.0
     fastify: 4.17.0
@@ -2293,9 +2293,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:2.1370.0":
-  version: 2.1370.0
-  resolution: "aws-sdk@npm:2.1370.0"
+"aws-sdk@npm:2.1398.0":
+  version: 2.1398.0
+  resolution: "aws-sdk@npm:2.1398.0"
   dependencies:
     buffer: 4.9.2
     events: 1.1.1
@@ -2307,7 +2307,7 @@ __metadata:
     util: ^0.12.4
     uuid: 8.0.0
     xml2js: 0.5.0
-  checksum: 6f4170efb47c1e9731afbf48928d365231f348f0245a6c36a4284fa2aed07571c20f64f805c309bc73b288c1d345aaf90a5394520b4ca15b9259807f766f719f
+  checksum: c9b5389ce16bcec1d3d4adc289f76a16c372f1b35afc978d43c8fce142d88aa34e9016d7b02e185cf9f55ff4a541d321b1f340df3975b532cb8008f7ac90d7db
   languageName: node
   linkType: hard
 
