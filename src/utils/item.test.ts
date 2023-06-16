@@ -112,13 +112,11 @@ describe('Item Utils', () => {
       const parentId = v4();
       const item = { id, path: buildPathFromIds(parentId, id) };
       expect(isRootItem(item)).toBeFalsy();
-      console.log(item, isRootItem(item));
     });
     test('Item without parent is root', () => {
       const id = v4();
       const item = { id, path: buildPathFromIds(id) };
       expect(isRootItem(item)).toBeTruthy();
-      console.log(item, isRootItem(item));
     });
   });
 });

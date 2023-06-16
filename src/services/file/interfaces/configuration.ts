@@ -1,4 +1,4 @@
-import S3 from 'aws-sdk/clients/s3';
+import { S3 } from '@aws-sdk/client-s3';
 
 export interface S3FileConfiguration {
   s3Region: string;
