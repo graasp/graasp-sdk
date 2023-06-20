@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.0](https://github.com/graasp/graasp-sdk/compare/v1.0.0-rc1...v1.0.0) (2023-06-20)
+
+
+### Features
+
+* add favorite type ([#164](https://github.com/graasp/graasp-sdk/issues/164)) ([76580fb](https://github.com/graasp/graasp-sdk/commit/76580fb7ec20872ae1ba3a2e8fb53a3888947fcc))
+
+
+### Bug Fixes
+
+* allow optional domain on saveUrlForRedirection ([#174](https://github.com/graasp/graasp-sdk/issues/174)) ([0fc6893](https://github.com/graasp/graasp-sdk/commit/0fc6893081e28c38686efd5a65ed559825f1576c))
+* update dependencies ([#184](https://github.com/graasp/graasp-sdk/issues/184)) ([d50913b](https://github.com/graasp/graasp-sdk/commit/d50913b16ef34770594c1e54cd972e13ea564c62))
+
+
+### chore
+
+* **deps:** update dependency typescript to v5.1.3 ([#175](https://github.com/graasp/graasp-sdk/issues/175)) ([94e0d19](https://github.com/graasp/graasp-sdk/commit/94e0d19b3f156c362ea119db761929655b68abee))
+* updare release-as ([a960f6a](https://github.com/graasp/graasp-sdk/commit/a960f6a92ff9232b0f157f5bf2faea96a000accd))
+
 ## [1.0.0-rc1](https://github.com/graasp/graasp-sdk/compare/v0.12.0...v1.0.0-rc1) (2023-05-30)
 
 
