@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/graasp/graasp-sdk/compare/v1.0.0...v1.1.0) (2023-06-23)
+
+
+### Features
+
+* add altText to file extras ([#163](https://github.com/graasp/graasp-sdk/issues/163)) ([a55c4f9](https://github.com/graasp/graasp-sdk/commit/a55c4f924cf79f0a499877d32cd027000f8d84aa))
+* adds completed tour extra to member ([#191](https://github.com/graasp/graasp-sdk/issues/191)) ([c39820f](https://github.com/graasp/graasp-sdk/commit/c39820f4efa50c90636becf450a622f3c8a4888e))
+
 ## [1.0.0](https://github.com/graasp/graasp-sdk/compare/v1.0.0-rc1...v1.0.0) (2023-06-20)
 
 
