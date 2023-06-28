@@ -7,7 +7,6 @@ export enum MemberType {
 
 export interface MemberExtra {
   hasAvatar?: boolean;
-  favoriteItems?: string[];
   lang?: string;
   enableSaveActions?: boolean;
   emailFreq?: `${EmailFrequency}` | EmailFrequency;
