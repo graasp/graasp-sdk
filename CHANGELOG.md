@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/graasp/graasp-sdk/compare/v1.1.0...v1.1.1) (2023-06-28)
+
+
+### Bug Fixes
+
+* remove favorites from memberExtra ([#197](https://github.com/graasp/graasp-sdk/issues/197)) ([d9bfa80](https://github.com/graasp/graasp-sdk/commit/d9bfa8007384d2cfd5695411911852f074469315))
+
 ## [1.1.0](https://github.com/graasp/graasp-sdk/compare/v1.0.0...v1.1.0) (2023-06-23)
 
 
