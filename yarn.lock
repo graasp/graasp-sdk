@@ -2120,7 +2120,7 @@ __metadata:
     "@types/eslint": 8.40.2
     "@types/jest": 29.5.2
     "@types/js-cookie": 3.0.3
-    "@types/jsdom": 16.2.15
+    "@types/jsdom": 21.1.1
     "@types/qs": 6.9.7
     "@types/uuid": 9.0.2
     "@types/validator": 13.7.17
@@ -2764,14 +2764,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsdom@npm:16.2.15":
-  version: 16.2.15
-  resolution: "@types/jsdom@npm:16.2.15"
+"@types/jsdom@npm:21.1.1":
+  version: 21.1.1
+  resolution: "@types/jsdom@npm:21.1.1"
   dependencies:
     "@types/node": "*"
-    "@types/parse5": ^6.0.3
     "@types/tough-cookie": "*"
-  checksum: e038335321bef42ebf220aaf597e186e2eec8de6107ce7a70de1c046a84c1fbb42d454e195a20383a6870b18c7ef6fa6b73812a626f88a4a2ef1f711d2e2e13c
+    parse5: ^7.0.0
+  checksum: 7450d6e23aa31b837a1682f0e59b06838aacca85c9d030035f40e21d559169c773aee5cee9244f23c3004b78f7064f0c540ceb808d2f187deb3140f2b0449dee
   languageName: node
   linkType: hard
 
@@ -2800,13 +2800,6 @@ __metadata:
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
   checksum: e87bccbf11f95035c89a132b52b79ce69a1e3652fe55962363063c9c0dae0fe2477ebc585e03a9652adc6f381d24ba5589cc5e51849df4ced3d3e004a7d40ed5
-  languageName: node
-  linkType: hard
-
-"@types/parse5@npm:^6.0.3":
-  version: 6.0.3
-  resolution: "@types/parse5@npm:6.0.3"
-  checksum: ddb59ee4144af5dfcc508a8dcf32f37879d11e12559561e65788756b95b33e6f03ea027d88e1f5408f9b7bfb656bf630ace31a2169edf44151daaf8dd58df1b7
   languageName: node
   linkType: hard
 
@@ -6821,6 +6814,15 @@ __metadata:
   version: 5.1.1
   resolution: "parse5@npm:5.1.1"
   checksum: 613a714af4c1101d1cb9f7cece2558e35b9ae8a0c03518223a4a1e35494624d9a9ad5fad4c13eab66a0e0adccd9aa3d522fc8f5f9cc19789e0579f3fa0bdfc65
+  languageName: node
+  linkType: hard
+
+"parse5@npm:^7.0.0":
+  version: 7.1.2
+  resolution: "parse5@npm:7.1.2"
+  dependencies:
+    entities: ^4.4.0
+  checksum: 59465dd05eb4c5ec87b76173d1c596e152a10e290b7abcda1aecf0f33be49646ea74840c69af975d7887543ea45564801736356c568d6b5e71792fd0f4055713
   languageName: node
   linkType: hard
 
