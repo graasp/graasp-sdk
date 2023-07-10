@@ -36,7 +36,7 @@ export interface EmbeddedLinkItemSettings extends ItemSettings {
 export interface Item<S = ItemSettings> {
   id: string;
   name: string;
-  description: string;
+  description: string | null;
   path: string;
   settings: S;
   creator: Member | null;
