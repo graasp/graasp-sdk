@@ -40,7 +40,7 @@
     "immutable": "4.3.0",
     "js-cookie": "3.0.5",
     "qs": "6.11.2",
-    "typeorm": "0.3.16",
+    "typeorm": "0.3.17",
     "uuid": "9.0.0",
     "validator": "13.9.0"
   },
