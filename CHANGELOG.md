@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.3](https://github.com/graasp/graasp-sdk/compare/v1.1.2...v1.1.3) (2023-07-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-sdk/client-s3 to v3.370.0 ([#186](https://github.com/graasp/graasp-sdk/issues/186)) ([bb36d9a](https://github.com/graasp/graasp-sdk/commit/bb36d9a4d93a92c88032359484767c52c976c647))
+* **deps:** update dependency immutable to v4.3.1 ([#209](https://github.com/graasp/graasp-sdk/issues/209)) ([16b3c51](https://github.com/graasp/graasp-sdk/commit/16b3c51636c2d2a57b9e515f5fbd229d79ae0cc4))
+* **deps:** update dependency typeorm to v0.3.17 ([#183](https://github.com/graasp/graasp-sdk/issues/183)) ([c32b8f6](https://github.com/graasp/graasp-sdk/commit/c32b8f6fb2ee401ddbe5ae207a9ffaf180ebe5e9))
+
 ## [1.1.2](https://github.com/graasp/graasp-sdk/compare/v1.1.1...v1.1.2) (2023-07-12)
 
 
