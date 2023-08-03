@@ -14,11 +14,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.15
-          
-      - name: yarn install, build, and test
-        run: |
-          yarn
-          yarn build
-          yarn test
+
+      - name: Yarn Install and Cache
+        uses: graasp/graasp-deploy/.github/actions/yarn-install-and-cache@v1
+
+      - name: Check code linting
+        run: yarn check
+
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test
         env:
           CI: true
