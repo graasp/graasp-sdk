@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/graasp/graasp-sdk/compare/v1.2.0...v1.2.1) (2023-08-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency immutable to v4.3.2 ([#226](https://github.com/graasp/graasp-sdk/issues/226)) ([e783417](https://github.com/graasp/graasp-sdk/commit/e78341763dba15bf7c3a38ad1d4bef69dcd32552))
+
 ## [1.2.0](https://github.com/graasp/graasp-sdk/compare/v1.1.3...v1.2.0) (2023-08-04)
 
 
