@@ -42,7 +42,7 @@
     "qs": "6.11.2",
     "typeorm": "0.3.17",
     "uuid": "9.0.0",
-    "validator": "13.9.0"
+    "validator": "13.11.0"
   },
   "scripts": {
     "pre-commit": "yarn prettier:check && yarn lint",
