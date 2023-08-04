@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/graasp/graasp-sdk/compare/v1.1.3...v1.2.0) (2023-08-04)
+
+
+### Features
+
+* agg enums ([#222](https://github.com/graasp/graasp-sdk/issues/222)) ([b07d02a](https://github.com/graasp/graasp-sdk/commit/b07d02af61cb69e770e1dbc5d24dbae0f94a45c2))
+
 ## [1.1.3](https://github.com/graasp/graasp-sdk/compare/v1.1.2...v1.1.3) (2023-07-19)
 
 
