@@ -63,7 +63,7 @@
     "@commitlint/cli": "17.7.0",
     "@commitlint/config-conventional": "17.7.0",
     "@trivago/prettier-plugin-sort-imports": "4.2.0",
-    "@types/eslint": "8.44.1",
+    "@types/eslint": "8.44.2",
     "@types/jest": "29.5.3",
     "@types/js-cookie": "3.0.3",
     "@types/jsdom": "21.1.1",
