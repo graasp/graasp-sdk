@@ -60,7 +60,7 @@
     "check": "yarn prettier:check && yarn lint && yarn type-check"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.7.0",
+    "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
     "@trivago/prettier-plugin-sort-imports": "4.2.0",
     "@types/eslint": "8.44.2",
