@@ -9,8 +9,8 @@ import { AppItemExtra } from '../../app/';
 import { EtherpadItemExtra } from '../../etherpad';
 import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
+import { ScormItemExtra } from '../../scorm';
 import { CCLicenseAdaptions, Member, OldCCLicenseAdaptations } from '@/index';
-import { ScormItemExtra } from '@/services/scorm';
 
 export interface ItemSettings {
   lang?: string;
