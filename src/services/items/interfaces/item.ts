@@ -10,6 +10,7 @@ import { EtherpadItemExtra } from '../../etherpad';
 import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
 import { CCLicenseAdaptions, Member, OldCCLicenseAdaptations } from '@/index';
+import { ScormItemExtra } from '@/services/scorm';
 
 export interface ItemSettings {
   lang?: string;
@@ -60,6 +61,10 @@ export type H5PItemType<S = ItemSettings> = {
   type: `${ItemType.H5P}`;
   extra: H5PItemExtra;
 } & Item<S>;
+export type ScormItemType<S = ItemSettings> = {
+  type: `${ItemType.SCORM}`;
+  extra: ScormItemExtra;
+} & Item<S>;
 export type EmbeddedLinkItemType<S = ItemSettings> = {
   type: `${ItemType.LINK}`;
   extra: EmbeddedLinkItemExtra;
@@ -87,6 +92,7 @@ export type DiscriminatedItem<S = ItemSettings> =
   | DocumentItemType<S>
   | FolderItemType<S>
   | H5PItemType<S>
+  | ScormItemType<S>
   | EmbeddedLinkItemType<S>
   | LocalFileItemType<S>
   | S3FileItemType<S>

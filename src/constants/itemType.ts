@@ -7,6 +7,7 @@ export enum ItemType {
   S3_FILE = 's3File',
   SHORTCUT = 'shortcut',
   H5P = 'h5p',
+  SCORM = 'scorm',
   ETHERPAD = 'etherpad',
 }
 

@@ -16,6 +16,7 @@ import {
   S3FileItemExtra,
 } from '../services';
 import { ImmutableCast } from '@/frontend/types';
+import { ScormItemExtra } from '@/services/scorm';
 
 export const getFileExtra = <
   U extends LocalFileItemExtra | ImmutableCast<LocalFileItemExtra>,
@@ -70,6 +71,12 @@ export const getH5PExtra = <
 >(
   extra?: U,
 ): U[ItemType.H5P] | undefined => extra?.[ItemType.H5P];
+
+export const getScormExtra = <
+  U extends ScormItemExtra | ImmutableCast<ScormItemExtra>,
+>(
+  extra?: U,
+): U[ItemType.SCORM] | undefined => extra?.[ItemType.SCORM];
 
 export const buildDocumentExtra = (
   document: DocumentItemExtraProperties,
