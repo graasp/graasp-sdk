@@ -38,6 +38,7 @@ import type {
   MemberExtra,
   RecycledItemData,
   S3FileItemType,
+  ScormItemType,
   ShortcutItemType,
 } from '@/index';
 import type { ResultOf } from '@/types';
@@ -60,6 +61,7 @@ export type AppItemTypeRecord = ImmutableCast<AppItemType>;
 export type DocumentItemTypeRecord = ImmutableCast<DocumentItemType>;
 export type FolderItemTypeRecord = ImmutableCast<FolderItemType>;
 export type H5PItemTypeRecord = ImmutableCast<H5PItemType>;
+export type ScormItemTypeRecord = ImmutableCast<ScormItemType>;
 export type EmbeddedLinkItemTypeRecord = ImmutableCast<EmbeddedLinkItemType>;
 export type LocalFileItemTypeRecord = ImmutableCast<LocalFileItemType>;
 export type S3FileItemTypeRecord = ImmutableCast<S3FileItemType>;
