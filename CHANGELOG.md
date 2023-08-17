@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.1](https://github.com/graasp/graasp-sdk/compare/v1.2.0...v1.2.1) (2023-08-17)
+
+
+### Bug Fixes
+
+* addd linting and cached dependecnies step in workflow ([#224](https://github.com/graasp/graasp-sdk/issues/224)) ([6130b6f](https://github.com/graasp/graasp-sdk/commit/6130b6f0f0a474b5c47d355f2279a94431cd0034))
+* **deps:** update dependency immutable to v4.3.2 ([#226](https://github.com/graasp/graasp-sdk/issues/226)) ([e783417](https://github.com/graasp/graasp-sdk/commit/e78341763dba15bf7c3a38ad1d4bef69dcd32552))
+* **deps:** update dependency validator to v13.11.0 ([#231](https://github.com/graasp/graasp-sdk/issues/231)) ([4e3942a](https://github.com/graasp/graasp-sdk/commit/4e3942aa10cac67a6c9b06d1fe0bdb6ef7e1c8bf))
+
 ## [1.2.0](https://github.com/graasp/graasp-sdk/compare/v1.1.3...v1.2.0) (2023-08-04)
 
 
