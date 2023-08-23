@@ -48,9 +48,10 @@ export type EmbeddedLinkItemType<S = ItemSettings> = {
   extra: EmbeddedLinkItemExtra;
   settings: EmbeddedLinkItemSettings;
 } & Item<S>;
-export type LocalFileItemType<S = FileItemSettings> = {
+export type LocalFileItemType<S = ItemSettings> = {
   type: `${ItemType.LOCAL_FILE}`;
   extra: LocalFileItemExtra;
+  settings: FileItemSettings;
 } & Item<S>;
 export type S3FileItemType<S = FileItemSettings> = {
   type: `${ItemType.S3_FILE}`;
