@@ -1,17 +1,16 @@
 import { Item, Member } from '../index';
 import { UUID } from '@/types';
 
-// TODO: translate? use keys? <<<- have a table ??? change for admin
 export enum CategoryType {
   Level = 'level',
   Discipline = 'discipline',
   Language = 'language',
-  Type = 'type',
+  ResourceType = 'resource-type',
 }
 
 /**
  * `Category` represents a sort of "tag" for items.
- * For example you can create a "Math" category which would then relate to the `CategoryType`of "discipline"
+ * For example you can create a "math" category which would then relate to the `CategoryType`of "discipline"
  * @field type is a foreign key to a `CategoryType` instance
  */
 export type Category = {
