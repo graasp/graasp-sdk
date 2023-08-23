@@ -1,8 +1,8 @@
-import { Item, Member } from '@/services';
+import { DiscriminatedItem, Member } from '@/services';
 
 export type AppAction = {
   id: string;
-  item: Item;
+  item: DiscriminatedItem;
   member: Member;
   type: string;
   data: object;

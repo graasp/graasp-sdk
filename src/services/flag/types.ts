@@ -1,10 +1,10 @@
-import { Item, Member } from '../index';
+import { DiscriminatedItem, Member } from '../index';
 import { UUID } from '@/types';
 
 export type ItemFlag = {
   id: UUID;
   type: `${FlagType}` | FlagType;
-  item: Item;
+  item: DiscriminatedItem;
   creator: Member;
   createdAt: Date;
 };

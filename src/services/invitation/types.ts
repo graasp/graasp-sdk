@@ -1,4 +1,4 @@
-import { Item, Member, PermissionLevel } from '@/index';
+import { DiscriminatedItem, Member, PermissionLevel } from '@/index';
 import { UUID } from '@/types';
 
 export type Invitation = {
@@ -7,7 +7,7 @@ export type Invitation = {
   permission: PermissionLevel;
   name?: string;
   creator?: Member | null;
-  item: Item;
+  item: DiscriminatedItem;
   createdAt: Date;
   updatedAt: Date;
 };

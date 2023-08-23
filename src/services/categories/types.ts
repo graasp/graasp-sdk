@@ -1,4 +1,4 @@
-import { Item, Member } from '../index';
+import { DiscriminatedItem, Member } from '../index';
 import { UUID } from '@/types';
 
 export enum CategoryType {
@@ -21,7 +21,7 @@ export type Category = {
 
 export type ItemCategory = {
   id: UUID;
-  item: Item;
+  item: DiscriminatedItem;
   category: Category;
   createdAt: Date;
   creator: Member;

@@ -1,4 +1,4 @@
-import { Item, Member } from '../index';
+import { DiscriminatedItem, Member } from '../index';
 import { UUID } from '@/types';
 
 export enum ItemTagType {
@@ -8,7 +8,7 @@ export enum ItemTagType {
 
 export type ItemTag = {
   id: UUID;
-  item: Item;
+  item: DiscriminatedItem;
   type: `${ItemTagType}` | ItemTagType;
   createdAt: Date;
   creator: Member;

@@ -1,4 +1,4 @@
-import { Item, Member } from '..';
+import { DiscriminatedItem, Member } from '..';
 
 export enum ItemValidationStatus {
   Success = 'success',
@@ -21,7 +21,7 @@ export enum ItemValidationReviewStatus {
 
 export interface ItemValidation {
   id: string;
-  item: Item;
+  item: DiscriminatedItem;
   process: `${ItemValidationProcess}` | ItemValidationProcess;
   status: `${ItemValidationStatus}` | ItemValidationStatus;
   result: string;
@@ -32,7 +32,7 @@ export interface ItemValidation {
 
 export interface ItemValidationGroup {
   id: string;
-  item: Item;
+  item: DiscriminatedItem;
   createdAt: Date;
   itemValidations: ItemValidation[];
 }

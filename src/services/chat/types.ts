@@ -1,4 +1,4 @@
-import { Item, Member } from '../index';
+import { DiscriminatedItem, Member } from '../index';
 import { MentionStatus } from '@/constants/mentions';
 import { UUID } from '@/types';
 
@@ -6,7 +6,7 @@ import { UUID } from '@/types';
 
 export type ChatMessage = {
   id: UUID;
-  item: Item;
+  item: DiscriminatedItem;
   creator: Member | null;
   createdAt: Date;
   updatedAt: Date;

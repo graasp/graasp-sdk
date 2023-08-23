@@ -1,9 +1,9 @@
-import { Item, Member } from '@/services';
+import { DiscriminatedItem, Member } from '@/services';
 import { UUID } from '@/types';
 
 export type AppSetting = {
   id: UUID;
-  item: Item;
+  item: DiscriminatedItem;
   creator?: Member | null;
   name: string;
   data: { [key: string]: unknown };

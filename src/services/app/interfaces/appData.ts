@@ -1,4 +1,4 @@
-import { Item, Member } from '@/services';
+import { DiscriminatedItem, Item, Member } from '@/services';
 
 export enum AppDataVisibility {
   Item = 'item',
@@ -7,7 +7,7 @@ export enum AppDataVisibility {
 
 export type AppData = {
   id: string;
-  item: Item;
+  item: DiscriminatedItem;
   creator: Member | null;
   member: Member;
   type: string;

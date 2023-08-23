@@ -17,6 +17,12 @@ export interface Member {
   id: UUID;
   name: string;
   email: string;
+}
+
+export interface CurrentMember {
+  id: UUID;
+  name: string;
+  email: string;
   type: `${MemberType}` | MemberType;
   extra: MemberExtra;
   createdAt: Date;

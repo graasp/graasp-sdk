@@ -1,9 +1,9 @@
-import { Item, Member } from '../index';
+import { DiscriminatedItem, Member } from '../index';
 import { ItemLoginSchemaType, UUID } from '@/index';
 
 export interface ItemLoginSchema {
   id: UUID;
-  item: Item;
+  item: DiscriminatedItem;
   type: `${ItemLoginSchemaType}` | ItemLoginSchemaType;
   createdAt: Date;
   updatedAt: Date;

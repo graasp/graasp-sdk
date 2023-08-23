@@ -1,9 +1,9 @@
-import { Item, ItemMembership, Member } from '..';
+import { DiscriminatedItem, ItemMembership, Member } from '..';
 import { Context } from '@/constants';
 
 export interface Action {
   id: string;
-  item?: Item | null;
+  item?: DiscriminatedItem | null;
   member?: Member | null;
   view: Context | 'Unknown';
   type: string;
@@ -15,8 +15,8 @@ export interface Action {
 
 export interface ActionData {
   actions: Action[];
-  descendants: Item[];
-  item: Item;
+  descendants: DiscriminatedItem[];
+  item: DiscriminatedItem;
   itemMemberships: ItemMembership[];
   members: Member[];
   metadata: {
