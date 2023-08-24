@@ -25,23 +25,23 @@ export interface Item<S = ItemSettings> {
 }
 
 export type AppItemType<S = ItemSettings> = {
-  type: `${ItemType.APP}`;
+  type: typeof ItemType.APP;
   extra: AppItemExtra;
 } & Item<S>;
 export type DocumentItemType<S = ItemSettings> = {
-  type: `${ItemType.DOCUMENT}`;
+  type: typeof ItemType.DOCUMENT;
   extra: DocumentItemExtra;
 } & Item<S>;
 export type FolderItemType<S = ItemSettings> = {
-  type: `${ItemType.FOLDER}`;
+  type: typeof ItemType.FOLDER;
   extra: FolderItemExtra;
 } & Item<S>;
 export type H5PItemType<S = ItemSettings> = {
-  type: `${ItemType.H5P}`;
+  type: typeof ItemType.H5P;
   extra: H5PItemExtra;
 } & Item<S>;
 export type EmbeddedLinkItemType<S = ItemSettings> = {
-  type: `${ItemType.LINK}`;
+  type: typeof ItemType.LINK;
   extra: EmbeddedLinkItemExtra;
   settings: EmbeddedLinkItemSettings;
 } & Item<S>;
@@ -54,11 +54,11 @@ export type S3FileItemType = {
   extra: S3FileItemExtra;
 } & Item<FileItemSettings>;
 export type ShortcutItemType<S = ItemSettings> = {
-  type: `${ItemType.SHORTCUT}`;
+  type: typeof ItemType.SHORTCUT;
   extra: ShortcutItemExtra;
 } & Item<S>;
 export type EtherpadItemType<S = ItemSettings> = {
-  type: `${ItemType.ETHERPAD}`;
+  type: typeof ItemType.ETHERPAD;
   extra: EtherpadItemExtra;
 } & Item<S>;
 
