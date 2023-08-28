@@ -1,4 +1,5 @@
 import { CCLicenseAdaptions, OldCCLicenseAdaptations } from '@/constants';
+import { MaxWidth } from '@/services';
 
 export interface ItemSettings {
   lang?: string;
@@ -20,4 +21,8 @@ export interface ItemSettings {
 export interface EmbeddedLinkItemSettings extends ItemSettings {
   showLinkIframe?: boolean;
   showLinkButton?: boolean;
+}
+
+export interface FileItemSettings extends ItemSettings {
+  maxWidth?: MaxWidth;
 }

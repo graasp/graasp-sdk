@@ -48,15 +48,14 @@ export type EmbeddedLinkItemType<S = ItemSettings> = {
   extra: EmbeddedLinkItemExtra;
   settings: EmbeddedLinkItemSettings;
 } & Item<S>;
-export type LocalFileItemType<S = ItemSettings> = {
+export type LocalFileItemType = {
   type: `${ItemType.LOCAL_FILE}`;
   extra: LocalFileItemExtra;
-  settings: FileItemSettings;
-} & Item<S>;
-export type S3FileItemType<S = FileItemSettings> = {
+} & Item<FileItemSettings>;
+export type S3FileItemType = {
   type: `${ItemType.S3_FILE}`;
   extra: S3FileItemExtra;
-} & Item<S>;
+} & Item<FileItemSettings>;
 export type ShortcutItemType<S = ItemSettings> = {
   type: `${ItemType.SHORTCUT}`;
   extra: ShortcutItemExtra;
@@ -72,7 +71,7 @@ export type DiscriminatedItem<S = ItemSettings> =
   | FolderItemType<S>
   | H5PItemType<S>
   | EmbeddedLinkItemType<S>
-  | LocalFileItemType<S>
-  | S3FileItemType<S>
+  | LocalFileItemType
+  | S3FileItemType
   | ShortcutItemType<S>
   | EtherpadItemType<S>;
