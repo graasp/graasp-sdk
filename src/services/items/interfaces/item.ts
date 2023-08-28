@@ -7,13 +7,13 @@ import {
 } from '../../../interfaces/extra';
 import { AppItemExtra } from '../../app/';
 import { EtherpadItemExtra } from '../../etherpad';
-import {
-  FileItemSettings,
-  LocalFileItemExtra,
-  S3FileItemExtra,
-} from '../../file';
+import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
-import { EmbeddedLinkItemSettings, ItemSettings } from './itemSettings';
+import {
+  EmbeddedLinkItemSettings,
+  FileItemSettings,
+  ItemSettings,
+} from './itemSettings';
 import { Member } from '@/index';
 
 export interface Item<S = ItemSettings> {
