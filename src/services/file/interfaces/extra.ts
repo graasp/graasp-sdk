@@ -1,13 +1,6 @@
 import { ItemType } from '../../../constants';
 import { UnknownExtra } from '../../../interfaces';
 
-export enum MaxWidth {
-  Small = 'sm',
-  Medium = 'md',
-  Large = 'lg',
-  ExtraLarge = 'xl',
-}
-
 /**
  * @deprecated Use FileItemProperties instead
  */

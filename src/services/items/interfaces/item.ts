@@ -9,12 +9,9 @@ import { AppItemExtra } from '../../app/';
 import { EtherpadItemExtra } from '../../etherpad';
 import { LocalFileItemExtra, S3FileItemExtra } from '../../file';
 import { H5PItemExtra } from '../../h5p';
-import {
-  EmbeddedLinkItemSettings,
-  FileItemSettings,
-  ItemSettings,
-} from './itemSettings';
+import { EmbeddedLinkItemSettings, ItemSettings } from './itemSettings';
 import { Member } from '@/index';
+import { FileItemSettings } from '@/services/file/interfaces/settings';
 
 export interface Item<S = ItemSettings> {
   id: string;
