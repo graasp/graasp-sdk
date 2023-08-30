@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.0](https://github.com/graasp/graasp-sdk/compare/v1.2.1...v1.3.0) (2023-08-30)
+
+
+### Features
+
+* add item settings with maxWidth ([#250](https://github.com/graasp/graasp-sdk/issues/250)) ([7164a1c](https://github.com/graasp/graasp-sdk/commit/7164a1cc156091950cad20db4a505d2e6ec31f3b))
+
+
+### Bug Fixes
+
+* rename resource type category ([#247](https://github.com/graasp/graasp-sdk/issues/247)) ([374f931](https://github.com/graasp/graasp-sdk/commit/374f9310571ec9f9e78f51647bda1a62ac568b0e))
+
+
+### Documentation
+
+* add readme ([#244](https://github.com/graasp/graasp-sdk/issues/244)) ([793a619](https://github.com/graasp/graasp-sdk/commit/793a6190c3e3412887615ff7ba40adbbaf8cc46e))
+
 ## [1.2.1](https://github.com/graasp/graasp-sdk/compare/v1.2.0...v1.2.1) (2023-08-17)
 
 
