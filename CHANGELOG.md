@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/graasp/graasp-sdk/compare/v1.4.0...v1.5.0) (2023-09-01)
+
+
+### Features
+
+* add format date util ([#263](https://github.com/graasp/graasp-sdk/issues/263)) ([248d621](https://github.com/graasp/graasp-sdk/commit/248d621428f687254e19a373c9865af39a277b98))
+
 ## [1.4.0](https://github.com/graasp/graasp-sdk/compare/v1.3.0...v1.4.0) (2023-09-01)
 
 
