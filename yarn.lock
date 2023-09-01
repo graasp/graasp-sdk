@@ -1771,6 +1771,7 @@ __metadata:
     "@types/validator": 13.11.1
     "@typescript-eslint/eslint-plugin": 6.5.0
     "@typescript-eslint/parser": 6.5.0
+    date-fns: 2.30.0
     eslint: 8.48.0
     eslint-config-prettier: 9.0.0
     fastify: 4.18.0
@@ -4118,7 +4119,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.29.3":
+"date-fns@npm:2.30.0, date-fns@npm:^2.29.3":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:

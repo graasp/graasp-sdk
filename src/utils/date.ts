@@ -1,3 +1,5 @@
+import { differenceInDays, intlFormat, intlFormatDistance } from 'date-fns';
+
 type TYear = `${number}${number}${number}${number}`;
 type TMonth = `${number}${number}`;
 type TDay = `${number}${number}`;
@@ -27,6 +29,40 @@ type TDateISO = `${TDateISODate}T${TDateISOTime}Z`;
 
 const isoDateFormat =
   /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d*)?(?:[-+]\d{2}:?\d{2}|Z)?$/;
+
+export const formatDate = (
+  datetime: Date | undefined,
+  args: { locale: string; defaultValue?: string },
+): string => {
+  const { locale, defaultValue = 'Unknown' } = args;
+  if (!datetime) {
+    return defaultValue;
+  }
+  try {
+    const now = new Date();
+
+    // return human readable date if less than a month ago
+    if (differenceInDays(now, datetime) < 7) {
+      return intlFormatDistance(datetime, now, { locale });
+    }
+
+    // compute best intl date
+    return intlFormat(
+      datetime,
+      {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      },
+      { locale },
+    );
+  } catch (e) {
+    console.error(e);
+    return defaultValue;
+  }
+};
 
 const isIsoDateString = (value: string): value is TDateISO =>
   Boolean(value && isoDateFormat.test(value));
