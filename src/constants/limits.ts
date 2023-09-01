@@ -61,3 +61,8 @@ export const MAX_FILE_SIZE = 1024 * 1024 * 1024; // 1GB
  * Maximum size for a thumbnail
  */
 export const MAX_THUMBNAIL_SIZE = 10 * 1024 * 1024;
+
+/**
+ * Maximum item name length
+ */
+export const MAX_ITEM_NAME_LENGTH = 500;
