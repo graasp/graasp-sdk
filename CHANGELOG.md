@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/graasp/graasp-sdk/compare/v1.3.0...v1.4.0) (2023-09-01)
+
+
+### Features
+
+* add maximum item name length ([#261](https://github.com/graasp/graasp-sdk/issues/261)) ([9c84371](https://github.com/graasp/graasp-sdk/commit/9c84371ba3469756f2ea2fc98aeccf58455b5ff0))
+
+
+### Bug Fixes
+
+* export file settings ([#259](https://github.com/graasp/graasp-sdk/issues/259)) ([8a9a666](https://github.com/graasp/graasp-sdk/commit/8a9a666b318ccad87d7861ef321d6f38477f729b))
+
 ## [1.3.0](https://github.com/graasp/graasp-sdk/compare/v1.2.1...v1.3.0) (2023-08-30)
 
 
