@@ -37,6 +37,7 @@ import type {
   MeiliSearchResults,
   Member,
   MemberExtra,
+  MemberStorage,
   RecycledItemData,
   S3FileItemType,
   ShortcutItemType,
@@ -150,3 +151,5 @@ export type ItemPublishedRecord = ImmutableCast<ItemPublished>;
 export type RecycledItemDataRecord = ImmutableCast<RecycledItemData>;
 
 export type MeiliSearchResultsRecord = ImmutableCast<MeiliSearchResults>;
+
+export type MemberStorageRecord = ImmutableCast<MemberStorage>;
