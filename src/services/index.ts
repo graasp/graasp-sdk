@@ -17,4 +17,5 @@ export * from './item-tags';
 export * from './item-validation';
 export * from './items';
 export * from './members';
+export * from './search';
 export * from './websockets';
