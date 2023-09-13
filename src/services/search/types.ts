@@ -20,3 +20,11 @@ export type IndexMember = {
   id: string;
   name: string;
 };
+
+// todo: get type from meilisearch library?
+type Hits = IndexItem & {
+  _formatted: IndexItem;
+};
+export type MeiliSearchResults = {
+  results: { hits: Hits[]; estimatedTotalHits: number }[];
+};

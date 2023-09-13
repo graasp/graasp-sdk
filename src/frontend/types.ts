@@ -34,6 +34,7 @@ import type {
   ItemValidationGroup,
   ItemValidationReview,
   LocalFileItemType,
+  MeiliSearchResults,
   Member,
   MemberExtra,
   RecycledItemData,
@@ -147,3 +148,5 @@ export type ResultOfRecord<T> = ImmutableCast<ResultOf<T>>;
 export type ItemPublishedRecord = ImmutableCast<ItemPublished>;
 
 export type RecycledItemDataRecord = ImmutableCast<RecycledItemData>;
+
+export type MeiliSearchResultsRecord = ImmutableCast<MeiliSearchResults>;
