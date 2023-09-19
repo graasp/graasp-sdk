@@ -19,7 +19,7 @@ export interface Member {
   email: string;
 }
 
-export interface CurrentMember {
+export interface CompleteMember {
   id: UUID;
   name: string;
   email: string;
