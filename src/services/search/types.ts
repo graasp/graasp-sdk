@@ -26,5 +26,11 @@ type Hits = IndexItem & {
   _formatted: IndexItem;
 };
 export type MeiliSearchResults = {
-  results: { hits: Hits[]; estimatedTotalHits: number }[];
+  results: {
+    hits: Hits[];
+    estimatedTotalHits: number;
+    totalHits: number;
+    totalPages: number;
+    page: number;
+  }[];
 };
