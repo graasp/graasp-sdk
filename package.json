@@ -38,7 +38,7 @@
     "date-fns": "2.30.0",
     "fastify": "4.18.0",
     "fluent-json-schema": "4.1.0",
-    "immutable": "4.3.2",
+    "immutable": "4.3.4",
     "js-cookie": "3.0.5",
     "qs": "6.11.2",
     "typeorm": "0.3.17",
