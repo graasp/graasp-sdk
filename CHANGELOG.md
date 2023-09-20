@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/graasp/graasp-sdk/compare/v1.5.0...v1.6.0) (2023-09-20)
+
+
+### Features
+
+* search index types ([#267](https://github.com/graasp/graasp-sdk/issues/267)) ([39967b2](https://github.com/graasp/graasp-sdk/commit/39967b297276d58cc3f746117fa5e61f966b2c4a))
+
 ## [1.5.0](https://github.com/graasp/graasp-sdk/compare/v1.4.0...v1.5.0) (2023-09-01)
 
 
