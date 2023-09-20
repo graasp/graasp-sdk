@@ -32,7 +32,7 @@
     "dist"
   ],
   "dependencies": {
-    "@aws-sdk/client-s3": "3.370.0",
+    "@aws-sdk/client-s3": "3.417.0",
     "@fastify/secure-session": "6.1.0",
     "@graasp/etherpad-api": "2.1.1",
     "date-fns": "2.30.0",
