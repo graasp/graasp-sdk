@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.7.0](https://github.com/graasp/graasp-sdk/compare/v1.6.0...v1.7.0) (2023-09-26)
+
+
+### Features
+
+* add member storage type ([#277](https://github.com/graasp/graasp-sdk/issues/277)) ([2ada33e](https://github.com/graasp/graasp-sdk/commit/2ada33ee3047cbf69567ba7ee3b67902f8747a0f))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-sdk/client-s3 to v3.417.0 ([#214](https://github.com/graasp/graasp-sdk/issues/214)) ([de53915](https://github.com/graasp/graasp-sdk/commit/de53915f47a7e6bdb5e0497ed52950e84d4580ee))
+* **deps:** update dependency immutable to v4.3.4 ([#249](https://github.com/graasp/graasp-sdk/issues/249)) ([7ecd5e4](https://github.com/graasp/graasp-sdk/commit/7ecd5e463330ecc9fbd1a3584cd8eb2a94b85432))
+
 ## [1.6.0](https://github.com/graasp/graasp-sdk/compare/v1.5.0...v1.6.0) (2023-09-20)
 
 
