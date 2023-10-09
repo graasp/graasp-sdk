@@ -1,3 +1,4 @@
+import { ActionRecord } from '@/frontend';
 import { Item, Member } from '../index';
 import { UUID } from '@/types';
 
@@ -6,4 +7,5 @@ export interface ItemPublished {
   creator?: Member;
   createdAt: Date;
   item: Item;
+  views: ActionRecord[];
 }
