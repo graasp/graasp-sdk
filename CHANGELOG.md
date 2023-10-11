@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.8.0](https://github.com/graasp/graasp-sdk/compare/v1.7.0...v1.8.0) (2023-10-11)
+
+
+### Features
+
+* move websocket client to sdk, always restart ws client ([#278](https://github.com/graasp/graasp-sdk/issues/278)) ([fe99573](https://github.com/graasp/graasp-sdk/commit/fe9957374580d1b6a93ec24a64cac86eae926939))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-sdk/client-s3 to v3.427.0 ([#275](https://github.com/graasp/graasp-sdk/issues/275)) ([b4a2238](https://github.com/graasp/graasp-sdk/commit/b4a223852db9368c824691b487450681a56af883))
+* **deps:** update dependency uuid to v9.0.1 ([1ee559b](https://github.com/graasp/graasp-sdk/commit/1ee559b7fc7c1216c2770f3ea744e362f97e950d))
+
 ## [1.7.0](https://github.com/graasp/graasp-sdk/compare/v1.6.0...v1.7.0) (2023-09-26)
 
 
