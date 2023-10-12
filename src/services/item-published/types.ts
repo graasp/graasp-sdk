@@ -7,5 +7,5 @@ export interface ItemPublished {
   creator?: Member;
   createdAt: Date;
   item: Item;
-  views: ActionRecord[];
+  totalViews: number;
 }
