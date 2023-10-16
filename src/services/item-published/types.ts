@@ -8,4 +8,4 @@ export interface ItemPublished {
   createdAt: Date;
   item: Item;
   totalViews: number;
-}
+};
