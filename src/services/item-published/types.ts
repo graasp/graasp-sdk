@@ -1,4 +1,3 @@
-import { ActionRecord } from '@/frontend';
 import { Item, Member } from '../index';
 import { UUID } from '@/types';
 
@@ -8,4 +7,4 @@ export interface ItemPublished {
   createdAt: Date;
   item: Item;
   totalViews: number;
-};
+}
