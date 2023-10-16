@@ -1,4 +1,10 @@
+export enum ChatbotRole {
+  System = 'system',
+  Assistant = 'assistant',
+  User = 'user',
+}
+
 export interface ChatBotMessage {
-  role: 'system' | 'assistant' | 'user';
+  role: `${ChatbotRole}` | ChatbotRole;
   content: string;
 }
