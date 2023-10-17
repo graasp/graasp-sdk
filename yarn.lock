@@ -1656,7 +1656,7 @@ __metadata:
     "@types/jsdom": 21.1.3
     "@types/qs": 6.9.8
     "@types/uuid": 9.0.5
-    "@types/validator": 13.11.2
+    "@types/validator": 13.11.3
     "@typescript-eslint/eslint-plugin": 6.7.5
     "@typescript-eslint/parser": 6.7.5
     date-fns: 2.30.0
@@ -3045,10 +3045,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/validator@npm:13.11.2":
-  version: 13.11.2
-  resolution: "@types/validator@npm:13.11.2"
-  checksum: 7fceb65a9729c2d0fca7f21acd13eaf93bd5e1a0367817dc1afd160f3053cd6fefbb2ba368134c1d864b9f3bfcc99b588f069c9db400481b96265b827e53562e
+"@types/validator@npm:13.11.3":
+  version: 13.11.3
+  resolution: "@types/validator@npm:13.11.3"
+  checksum: 641c87d55d11664d83bac9201ca75ff0e1fd0cc6588145a6629e82a354827933afe351d0a37dcd641b979a27794fe1666f1f74699cda3dc3f02f17c6005f951c
   languageName: node
   linkType: hard
 
