@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.0](https://github.com/graasp/graasp-sdk/compare/v1.8.0...v1.9.0) (2023-10-17)
+
+
+### Features
+
+* add `Optional` type ([#286](https://github.com/graasp/graasp-sdk/issues/286)) ([6d48f00](https://github.com/graasp/graasp-sdk/commit/6d48f00733bf850bf4a481a280377d70ba7b5cef))
+* add new chatbot interface (graasp/graasp[#641](https://github.com/graasp/graasp-sdk/issues/641)) ([#289](https://github.com/graasp/graasp-sdk/issues/289)) ([e364a00](https://github.com/graasp/graasp-sdk/commit/e364a006da41c4c6d2f760c61c8c5c201ccc0097))
+
 ## [1.8.0](https://github.com/graasp/graasp-sdk/compare/v1.7.0...v1.8.0) (2023-10-11)
 
 
