@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/graasp/graasp-sdk/compare/v1.9.0...v1.9.1) (2023-10-19)
+
+
+### Bug Fixes
+
+* item published type ([#293](https://github.com/graasp/graasp-sdk/issues/293)) ([750665d](https://github.com/graasp/graasp-sdk/commit/750665dcbd775da369e6c2e26ade6b719238463e))
+
 ## [1.9.0](https://github.com/graasp/graasp-sdk/compare/v1.8.0...v1.9.0) (2023-10-17)
 
 
