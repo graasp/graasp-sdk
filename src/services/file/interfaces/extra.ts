@@ -1,5 +1,4 @@
 import { ItemType } from '../../../constants';
-import { UnknownExtra } from '../../../interfaces';
 
 /**
  * @deprecated Use FileItemProperties instead
@@ -19,11 +18,11 @@ export type FileItemProperties = {
   content: string;
 };
 
-export interface LocalFileItemExtra extends UnknownExtra {
+export interface LocalFileItemExtra {
   [ItemType.LOCAL_FILE]: FileItemProperties;
 }
 
-export interface S3FileItemExtra extends UnknownExtra {
+export interface S3FileItemExtra {
   [ItemType.S3_FILE]: FileItemProperties;
 }
 

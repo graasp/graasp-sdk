@@ -1,11 +1,11 @@
 import { ItemType } from '../../../constants';
-import { UnknownExtra } from '../../../interfaces';
 
 export type AppItemExtraProperties = {
   url: string;
-  settings?: UnknownExtra;
+  // todo: there currently is nothing stored in the settings. this might change later
+  settings?: object;
 };
 
-export interface AppItemExtra extends UnknownExtra {
+export interface AppItemExtra {
   [ItemType.APP]: AppItemExtraProperties;
 }

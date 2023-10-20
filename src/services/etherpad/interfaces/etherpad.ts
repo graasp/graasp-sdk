@@ -1,5 +1,4 @@
 import { ItemType } from '../../../constants';
-import { UnknownExtra } from '@/index';
 
 /**
  * This type refers to the result sent by the server when querying
@@ -14,6 +13,6 @@ export type EtherpadItemExtraProperties = {
   groupID: string;
 };
 
-export interface EtherpadItemExtra extends UnknownExtra {
+export interface EtherpadItemExtra {
   [ItemType.ETHERPAD]: EtherpadItemExtraProperties;
 }

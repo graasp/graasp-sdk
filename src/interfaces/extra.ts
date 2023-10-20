@@ -1,9 +1,5 @@
 import { ItemType } from '../constants';
 
-export interface UnknownExtra {
-  [key: string]: unknown;
-}
-
 /**
  * Document style flavor defined according to severity prop of
  * https://mui.com/material-ui/react-alert/
@@ -22,7 +18,7 @@ export type DocumentItemExtraProperties = {
   flavor?: DocumentItemExtraFlavor | `${DocumentItemExtraFlavor}`;
 };
 
-export interface DocumentItemExtra extends UnknownExtra {
+export interface DocumentItemExtra {
   [ItemType.DOCUMENT]: DocumentItemExtraProperties;
 }
 
@@ -33,7 +29,7 @@ export type EmbeddedLinkItemExtraProperties = {
   icons?: string[];
 };
 
-export interface EmbeddedLinkItemExtra extends UnknownExtra {
+export interface EmbeddedLinkItemExtra {
   [ItemType.LINK]: EmbeddedLinkItemExtraProperties;
 }
 
@@ -42,7 +38,7 @@ export type FolderItemExtraProperties = {
   isRoot?: boolean;
 };
 
-export interface FolderItemExtra extends UnknownExtra {
+export interface FolderItemExtra {
   [ItemType.FOLDER]: FolderItemExtraProperties;
 }
 
@@ -50,6 +46,6 @@ export type ShortcutItemExtraProperties = {
   target: string;
 };
 
-export interface ShortcutItemExtra extends UnknownExtra {
+export interface ShortcutItemExtra {
   [ItemType.SHORTCUT]: ShortcutItemExtraProperties;
 }

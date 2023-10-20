@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "CommonJS",
+    "module": "node16",
     "outDir": "dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -18,12 +18,8 @@
     "strictNullChecks": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["src/**/*"]
 }
