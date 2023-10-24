@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.2](https://github.com/graasp/graasp-sdk/compare/v1.9.1...v1.9.2) (2023-10-24)
+
+
+### Bug Fixes
+
+* remove `UnknownExtra` ([#298](https://github.com/graasp/graasp-sdk/issues/298)) ([858680b](https://github.com/graasp/graasp-sdk/commit/858680bee94bd76be633bfcdfbb1b2777c143c5c))
+
 ## [1.9.1](https://github.com/graasp/graasp-sdk/compare/v1.9.0...v1.9.1) (2023-10-19)
 
 
