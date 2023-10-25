@@ -5,26 +5,23 @@ export enum MemberType {
   Group = 'group',
 }
 
-export interface MemberExtra {
+export type MemberExtra = {
   hasAvatar?: boolean;
   lang?: string;
   enableSaveActions?: boolean;
   emailFreq?: `${EmailFrequency}` | EmailFrequency;
   hasCompletedTour?: boolean;
-}
+};
 
-export interface Member {
+export type Member = {
   id: UUID;
   name: string;
   email: string;
-}
+};
 
-export interface CompleteMember {
-  id: UUID;
-  name: string;
-  email: string;
+export type CompleteMember = Member & {
   type: `${MemberType}` | MemberType;
   extra: MemberExtra;
   createdAt: Date;
   updatedAt: Date;
-}
+};
