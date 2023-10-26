@@ -21,55 +21,55 @@ export const getFileExtra = <
   U extends LocalFileItemExtra | ImmutableCast<LocalFileItemExtra>,
 >(
   extra: U,
-): U[ItemType.LOCAL_FILE] => extra[ItemType.LOCAL_FILE];
+): U[typeof ItemType.LOCAL_FILE] => extra[ItemType.LOCAL_FILE];
 
 export const getFolderExtra = <
   U extends FolderItemExtra | ImmutableCast<FolderItemExtra>,
 >(
   extra: U,
-): U[ItemType.FOLDER] => extra[ItemType.FOLDER];
+): U[typeof ItemType.FOLDER] => extra[ItemType.FOLDER];
 
 export const getShortcutExtra = <
   U extends ShortcutItemExtra | ImmutableCast<ShortcutItemExtra>,
 >(
   extra: U,
-): U[ItemType.SHORTCUT] => extra[ItemType.SHORTCUT];
+): U[typeof ItemType.SHORTCUT] => extra[ItemType.SHORTCUT];
 
 export const getEtherpadExtra = <
   U extends EtherpadItemExtra | ImmutableCast<EtherpadItemExtra>,
 >(
   extra: U,
-): U[ItemType.ETHERPAD] => extra[ItemType.ETHERPAD];
+): U[typeof ItemType.ETHERPAD] => extra[ItemType.ETHERPAD];
 
 export const getS3FileExtra = <
   U extends S3FileItemExtra | ImmutableCast<S3FileItemExtra>,
 >(
   extra: U,
-): U[ItemType.S3_FILE] => extra[ItemType.S3_FILE];
+): U[typeof ItemType.S3_FILE] => extra[ItemType.S3_FILE];
 
 export const getEmbeddedLinkExtra = <
   U extends EmbeddedLinkItemExtra | ImmutableCast<EmbeddedLinkItemExtra>,
 >(
   extra: U,
-): U[ItemType.LINK] => extra[ItemType.LINK];
+): U[typeof ItemType.LINK] => extra[ItemType.LINK];
 
 export const getDocumentExtra = <
   U extends DocumentItemExtra | ImmutableCast<DocumentItemExtra>,
 >(
   extra: U,
-): U[ItemType.DOCUMENT] => extra[ItemType.DOCUMENT];
+): U[typeof ItemType.DOCUMENT] => extra[ItemType.DOCUMENT];
 
 export const getAppExtra = <
   U extends AppItemExtra | ImmutableCast<AppItemExtra>,
 >(
   extra: U,
-): U[ItemType.APP] => extra[ItemType.APP];
+): U[typeof ItemType.APP] => extra[ItemType.APP];
 
 export const getH5PExtra = <
   U extends H5PItemExtra | ImmutableCast<H5PItemExtra>,
 >(
   extra: U,
-): U[ItemType.H5P] => extra[ItemType.H5P];
+): U[typeof ItemType.H5P] => extra[ItemType.H5P];
 
 export const buildDocumentExtra = (
   document: DocumentItemExtraProperties,

@@ -1,4 +1,5 @@
 import { ItemType } from '@/constants';
+import { UnionOfConst } from '@/types';
 
 export const INDEX_NAME = 'itemIndex';
 
@@ -7,7 +8,7 @@ export type IndexItem = {
   name: string;
   creator: IndexMember;
   description: string;
-  type: `${ItemType}`;
+  type: UnionOfConst<typeof ItemType>;
   categories: string[];
   content: string;
   isPublishedRoot: boolean;
