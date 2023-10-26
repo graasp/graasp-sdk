@@ -6,5 +6,5 @@ export interface ItemPublished {
   creator?: Member;
   createdAt: Date;
   item: DiscriminatedItem;
-  totalViews: number;
+  totalViews?: number;
 }
