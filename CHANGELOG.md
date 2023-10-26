@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.10.1](https://github.com/graasp/graasp-sdk/compare/v1.10.0...v1.10.1) (2023-10-26)
+
+
+### Bug Fixes
+
+* convert itemtype to const ([#312](https://github.com/graasp/graasp-sdk/issues/312)) ([7bf95c1](https://github.com/graasp/graasp-sdk/commit/7bf95c18c85c89c616d3c773e1550e6470d0dc2a))
+* remove Member from itemLike type as it is not provided when querying the api ([#225](https://github.com/graasp/graasp-sdk/issues/225)) ([60f1410](https://github.com/graasp/graasp-sdk/commit/60f1410c899d264b3cc6f67e765b61951b38a383))
+* remove qs dep ([#307](https://github.com/graasp/graasp-sdk/issues/307)) ([3fe0d9c](https://github.com/graasp/graasp-sdk/commit/3fe0d9c371dfcbc75f2649a966a9728249f0028e))
+
 ## [1.10.0](https://github.com/graasp/graasp-sdk/compare/v1.9.2...v1.10.0) (2023-10-26)
 
 
