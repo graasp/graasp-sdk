@@ -1578,7 +1578,7 @@ __metadata:
     eslint: "npm:8.52.0"
     eslint-config-prettier: "npm:9.0.0"
     fastify: "npm:4.18.0"
-    fluent-json-schema: "npm:4.1.0"
+    fluent-json-schema: "npm:4.1.2"
     husky: "npm:8.0.3"
     immutable: "npm:4.3.4"
     jest: "npm:29.7.0"
@@ -4855,12 +4855,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fluent-json-schema@npm:4.1.0":
-  version: 4.1.0
-  resolution: "fluent-json-schema@npm:4.1.0"
+"fluent-json-schema@npm:4.1.2":
+  version: 4.1.2
+  resolution: "fluent-json-schema@npm:4.1.2"
   dependencies:
     "@fastify/deepmerge": "npm:^1.1.0"
-  checksum: 2efea806d240e2cf3f8ce6c7e2b9679ef553c59634125332361286f112bb45e8c3c0106ffdcb9c1a7a476afcd8b2b825e8ce0426f9780df57754dfe1e9f80297
+  checksum: cfcad4c7b6a701985954e8b4b59ae60b58b8ddce80ba5065c28ccc6fa5681aa18b47489ae56c4b7d0ab84b0d8995eb540e5e7634bfccd2648c724b343eca932a
   languageName: node
   linkType: hard
 
