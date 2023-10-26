@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.10.0](https://github.com/graasp/graasp-sdk/compare/v1.9.2...v1.10.0) (2023-10-26)
+
+
+### Features
+
+* add CompleteMember ([5059a70](https://github.com/graasp/graasp-sdk/commit/5059a70ac6bf5cfe0cc30502af846c2be21f4f24))
+
+
+### Bug Fixes
+
+* make appSetting and appData generic ([5059a70](https://github.com/graasp/graasp-sdk/commit/5059a70ac6bf5cfe0cc30502af846c2be21f4f24))
+* use `DiscriminatedItem` instead of `Item` ([#252](https://github.com/graasp/graasp-sdk/issues/252)) ([5059a70](https://github.com/graasp/graasp-sdk/commit/5059a70ac6bf5cfe0cc30502af846c2be21f4f24))
+
 ## [1.9.2](https://github.com/graasp/graasp-sdk/compare/v1.9.1...v1.9.2) (2023-10-24)
 
 
