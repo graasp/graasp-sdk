@@ -3,6 +3,7 @@ import * as Errors from './errors';
 import * as Requests from './interfaces/request';
 
 export * from './interfaces/service';
+export * from './ws-client';
 
 /**
  * Re-export types and utility classes within the Websocket namespace
