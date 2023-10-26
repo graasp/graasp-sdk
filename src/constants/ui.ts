@@ -10,3 +10,6 @@ export const ThumbnailSize = {
   Original: 'original',
 } as const;
 export type ThumbnailSizeType = UnionOfConst<typeof ThumbnailSize>;
+
+export type ThumbnailSizeVariant =
+  `${(typeof ThumbnailSize)[keyof typeof ThumbnailSize]}`;
