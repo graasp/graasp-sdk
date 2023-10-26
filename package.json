@@ -88,5 +88,5 @@
     "@babel/core": "^7.22.5",
     "minimist": "^1.2.6"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@4.0.0"
 }
