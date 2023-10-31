@@ -20,8 +20,8 @@ export interface Item<S = ItemSettings> {
   path: string;
   settings: S;
   creator: Member | null;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export type AppItemType<S = ItemSettings> = {
