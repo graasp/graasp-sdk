@@ -8,6 +8,6 @@ export type Invitation = {
   name?: string;
   creator?: Member | null;
   item: DiscriminatedItem;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 };

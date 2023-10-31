@@ -13,6 +13,6 @@ export interface App {
   url: string;
   extra: AppExtra;
   publisher: Publisher;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }

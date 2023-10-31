@@ -10,6 +10,6 @@ export type ItemTag = {
   id: UUID;
   item: DiscriminatedItem;
   type: `${ItemTagType}` | ItemTagType;
-  createdAt: Date;
+  createdAt: string;
   creator: Member;
 };

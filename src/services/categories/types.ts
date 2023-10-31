@@ -23,6 +23,6 @@ export type ItemCategory = {
   id: UUID;
   item: DiscriminatedItem;
   category: Category;
-  createdAt: Date;
+  createdAt: string;
   creator: Member;
 };

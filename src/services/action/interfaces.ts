@@ -10,7 +10,7 @@ export interface Action {
   extra: { [key: string]: unknown };
   // TODO: cannot import geoip
   geolocation?: unknown;
-  createdAt: Date;
+  createdAt: string;
 }
 
 export interface ActionData {

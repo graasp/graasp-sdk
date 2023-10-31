@@ -4,5 +4,5 @@ import { UUID } from '@/types';
 export type ItemLike = {
   id: UUID;
   item: DiscriminatedItem;
-  createdAt: Date;
+  createdAt: string;
 };

@@ -7,6 +7,6 @@ export interface ItemMembership {
   item: DiscriminatedItem;
   permission: PermissionLevel;
   creator?: Member | null;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }

@@ -26,14 +26,14 @@ export interface ItemValidation {
   status: `${ItemValidationStatus}` | ItemValidationStatus;
   result: string;
   itemValidationGroup: ItemValidationGroup;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface ItemValidationGroup {
   id: string;
   item: DiscriminatedItem;
-  createdAt: Date;
+  createdAt: string;
   itemValidations: ItemValidation[];
 }
 
@@ -43,6 +43,6 @@ export interface ItemValidationReview {
   reviewer: Member | null;
   status: `${ItemValidationReviewStatus}` | ItemValidationReviewStatus;
   reason: string;
-  updatedAt: Date;
-  createdAt: Date;
+  updatedAt: string;
+  createdAt: string;
 }

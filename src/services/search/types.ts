@@ -13,8 +13,8 @@ export type IndexItem = {
   content: string;
   isPublishedRoot: boolean;
   isHidden: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type IndexMember = {

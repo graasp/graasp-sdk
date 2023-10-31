@@ -8,8 +8,8 @@ export type ChatMessage = {
   id: UUID;
   item: DiscriminatedItem;
   creator: Member | null;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
   body: string;
 };
 
@@ -28,8 +28,8 @@ export type ExportedChatMessage = {
   chatId: UUID;
   creator: Member | null;
   creatorName: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
   body: string;
 };
 
@@ -66,8 +66,8 @@ export type ChatMention = {
   id: UUID;
   message: ChatMessage;
   member: Member;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
   status: MentionStatus;
 };
 

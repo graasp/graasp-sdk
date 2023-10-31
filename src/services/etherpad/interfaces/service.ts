@@ -9,7 +9,7 @@ export type EtherpadCookie = {
   options: {
     domain: string;
     path: string;
-    expires: Date;
+    expires: string;
     signed: boolean;
     httpOnly: boolean;
   };
