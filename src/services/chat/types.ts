@@ -13,14 +13,6 @@ export type ChatMessage = {
   body: string;
 };
 
-/**
- * All messages linked to an item
- */
-export type ItemChat = {
-  id: UUID;
-  messages: ChatMessage[];
-};
-
 // type of the exported chat message
 // contains the additional "creatorName" key with the plain text name of the user
 export type ExportedChatMessage = {
@@ -31,11 +23,6 @@ export type ExportedChatMessage = {
   createdAt: string;
   updatedAt: string;
   body: string;
-};
-
-export type ExportedItemChat = {
-  id: UUID;
-  messages: ExportedChatMessage[];
 };
 
 /**
