@@ -36,7 +36,7 @@
     "@fastify/secure-session": "6.1.0",
     "@graasp/etherpad-api": "2.1.1",
     "date-fns": "2.30.0",
-    "fastify": "4.18.0",
+    "fastify": "4.24.3",
     "immutable": "4.3.4",
     "js-cookie": "3.0.5",
     "uuid": "9.0.1",
