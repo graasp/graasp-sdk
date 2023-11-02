@@ -1487,13 +1487,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/cookie@npm:^8.0.0":
-  version: 8.3.0
-  resolution: "@fastify/cookie@npm:8.3.0"
+"@fastify/cookie@npm:^9.0.4":
+  version: 9.1.0
+  resolution: "@fastify/cookie@npm:9.1.0"
   dependencies:
     cookie: "npm:^0.5.0"
     fastify-plugin: "npm:^4.0.0"
-  checksum: bfb637113a76e14bb2efda674183937897df0122c8033d2b8654cdf7e60de947ef13c72f3a0f4b2c56cdb4cf2e1a4f4a4d277eff3b05389320e05623e675e4a3
+  checksum: 4dc7dc120023f1fdd66bfea737a47278219f9a15e48b085fce8047f50e574430b9962f7b3d9e9bec01c4cfff8dff26bb229174fb75aed7a2cf0e0813bce1d462
   languageName: node
   linkType: hard
 
@@ -1520,16 +1520,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/secure-session@npm:6.1.0":
-  version: 6.1.0
-  resolution: "@fastify/secure-session@npm:6.1.0"
+"@fastify/secure-session@npm:7.1.0":
+  version: 7.1.0
+  resolution: "@fastify/secure-session@npm:7.1.0"
   dependencies:
-    "@fastify/cookie": "npm:^8.0.0"
+    "@fastify/cookie": "npm:^9.0.4"
     fastify-plugin: "npm:^4.0.0"
     sodium-native: "npm:^4.0.0"
   bin:
     secure-session: genkey.js
-  checksum: a3ecafae6559454ca01743a4280102017313097504f6025a741b231b9f2c22f001ec449123b52af8aa3a4dd2fd8ccb3f56a400f06fe823395df440a7fa7379f6
+  checksum: e733903272300ead5a6ac563c9a1a633dbfc6e1c6381fd00544cf6cae09ed65cad8358697926c152dad814938fb513e8d7d329a3aa7651980a4d1b32de508af3
   languageName: node
   linkType: hard
 
@@ -1560,7 +1560,7 @@ __metadata:
     "@aws-sdk/client-s3": "npm:3.427.0"
     "@commitlint/cli": "npm:18.2.0"
     "@commitlint/config-conventional": "npm:18.1.0"
-    "@fastify/secure-session": "npm:6.1.0"
+    "@fastify/secure-session": "npm:7.1.0"
     "@graasp/etherpad-api": "npm:2.1.1"
     "@trivago/prettier-plugin-sort-imports": "npm:4.2.1"
     "@types/eslint": "npm:8.44.6"
