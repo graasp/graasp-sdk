@@ -1520,16 +1520,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/secure-session@npm:6.1.0":
-  version: 6.1.0
-  resolution: "@fastify/secure-session@npm:6.1.0"
+"@fastify/secure-session@npm:6.2.0":
+  version: 6.2.0
+  resolution: "@fastify/secure-session@npm:6.2.0"
   dependencies:
     "@fastify/cookie": "npm:^8.0.0"
     fastify-plugin: "npm:^4.0.0"
     sodium-native: "npm:^4.0.0"
   bin:
     secure-session: genkey.js
-  checksum: a3ecafae6559454ca01743a4280102017313097504f6025a741b231b9f2c22f001ec449123b52af8aa3a4dd2fd8ccb3f56a400f06fe823395df440a7fa7379f6
+  checksum: b45003108d536f79f2b9ee41156ab73a64a01167f89ae6ea1d3f5e765a8d752c517805bbf273efbd201aced792851c658e1a225a7bf7eedcfb95d22924280a3f
   languageName: node
   linkType: hard
 
@@ -1560,7 +1560,7 @@ __metadata:
     "@aws-sdk/client-s3": "npm:3.427.0"
     "@commitlint/cli": "npm:18.2.0"
     "@commitlint/config-conventional": "npm:18.1.0"
-    "@fastify/secure-session": "npm:6.1.0"
+    "@fastify/secure-session": "npm:6.2.0"
     "@graasp/etherpad-api": "npm:2.1.1"
     "@trivago/prettier-plugin-sort-imports": "npm:4.2.1"
     "@types/eslint": "npm:8.44.6"
