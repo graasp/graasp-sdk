@@ -67,6 +67,10 @@ export const formatDate = (
 const isIsoDateString = (value: string): value is TDateISO =>
   Boolean(value && isoDateFormat.test(value));
 
+/**
+ *
+ * @deprecated we should not use this function anymore
+ */
 export const parseStringToDate = (data: any): any => {
   if (!data) {
     return data;
