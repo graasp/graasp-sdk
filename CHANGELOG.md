@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/graasp/graasp-sdk/compare/v1.10.1...v2.0.0) (2023-11-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove frontend package ([#311](https://github.com/graasp/graasp-sdk/issues/311))
+
+### chore
+
+* release 2.0.0 ([1a2e6c8](https://github.com/graasp/graasp-sdk/commit/1a2e6c86d7d5c3101a2fbca78b889fa784708ef4))
+
+
+### fest
+
+* remove frontend package ([#311](https://github.com/graasp/graasp-sdk/issues/311)) ([5e63c75](https://github.com/graasp/graasp-sdk/commit/5e63c7591eb4121dbb5310052800cecd1ce0e6e9))
+
 ## [1.10.1](https://github.com/graasp/graasp-sdk/compare/v1.10.0...v1.10.1) (2023-10-26)
 
 

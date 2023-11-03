@@ -1,6 +1,6 @@
 {
   "name": "@graasp/sdk",
-  "version": "1.10.1",
+  "version": "2.0.0",
   "repository": "git@github.com:graasp/graasp-sdk.git",
   "author": "Graasp",
   "contributors": [
