@@ -3,5 +3,6 @@ export enum Context {
   Player = 'player',
   Library = 'library',
   Analytics = 'analytics',
+  Account = 'account',
   Unknown = 'unknown',
 }
