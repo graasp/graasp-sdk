@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/graasp/graasp-sdk/compare/v2.0.0...v2.0.1) (2023-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-sdk/client-s3 to v3.441.0 ([#288](https://github.com/graasp/graasp-sdk/issues/288)) ([9371b4e](https://github.com/graasp/graasp-sdk/commit/9371b4eecacc13681e6239f6bddd2cf25c3fed45))
+* remove ws heartbeat ([#323](https://github.com/graasp/graasp-sdk/issues/323)) ([10a718f](https://github.com/graasp/graasp-sdk/commit/10a718f49c33b3837f967f713dd839c211cbbff0))
+
 ## [2.0.0](https://github.com/graasp/graasp-sdk/compare/v1.10.1...v2.0.0) (2023-11-03)
 
 
