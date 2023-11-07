@@ -3,7 +3,6 @@ export * from './cookie';
 export * from './date';
 export * from './error';
 export * from './extra';
-export * from './immutable';
 export * from './item';
 export * from './member';
 export * from './navigation';

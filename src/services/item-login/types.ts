@@ -5,8 +5,8 @@ export interface ItemLoginSchema {
   id: UUID;
   item: DiscriminatedItem;
   type: `${ItemLoginSchemaType}` | ItemLoginSchemaType;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export type ItemLogin = {
@@ -14,6 +14,6 @@ export type ItemLogin = {
   member: Member;
   itemLoginSchema: ItemLoginSchema;
   password?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 };

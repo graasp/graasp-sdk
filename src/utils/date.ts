@@ -31,7 +31,7 @@ const isoDateFormat =
   /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d*)?(?:[-+]\d{2}:?\d{2}|Z)?$/;
 
 export const formatDate = (
-  datetime: Date | undefined,
+  datetime: string | undefined,
   args: { locale: string; defaultValue?: string },
 ): string => {
   const { locale, defaultValue = 'Unknown' } = args;
@@ -40,15 +40,15 @@ export const formatDate = (
   }
   try {
     const now = new Date();
-
+    const date = new Date(datetime);
     // return human readable date if less than a month ago
-    if (differenceInDays(now, datetime) < 7) {
-      return intlFormatDistance(datetime, now, { locale });
+    if (differenceInDays(now, date) < 7) {
+      return intlFormatDistance(date, now, { locale });
     }
 
     // compute best intl date
     return intlFormat(
-      datetime,
+      date,
       {
         year: 'numeric',
         month: 'short',
@@ -67,6 +67,10 @@ export const formatDate = (
 const isIsoDateString = (value: string): value is TDateISO =>
   Boolean(value && isoDateFormat.test(value));
 
+/**
+ *
+ * @deprecated we should not use this function anymore
+ */
 export const parseStringToDate = (data: any): any => {
   if (!data) {
     return data;

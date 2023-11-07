@@ -6,5 +6,5 @@ export type AppAction = {
   member: Member;
   type: string;
   data: object;
-  createdAt: Date;
+  createdAt: string;
 };

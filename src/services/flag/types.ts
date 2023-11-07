@@ -6,7 +6,7 @@ export type ItemFlag = {
   type: `${FlagType}` | FlagType;
   item: DiscriminatedItem;
   creator: Member;
-  createdAt: Date;
+  createdAt: string;
 };
 
 export enum FlagType {

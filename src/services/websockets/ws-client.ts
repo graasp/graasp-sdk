@@ -95,37 +95,40 @@ export const configureWebsocketClient = (wsHost: string): WebsocketClient => {
   // native client WebSocket instance
   let ws: WebSocket;
 
+  // TODO: heartbeat
+  // the following code leads to flooding the backend when the user is not signed in
+  // it is also because the backend does not allow public connection
   const assignWsClient = () => {
     console.debug('restarting ws client');
     ws = new WebSocket(wsHost);
     let keepAlive: ReturnType<typeof setInterval>;
 
-    // on close, recreate connection
-    ws.addEventListener('close', () => {
-      clearInterval(keepAlive);
-      assignWsClient();
-    });
-    // keep alive on error, trigger close event
-    ws.addEventListener('error', (error) => {
-      console.error(error);
-      ws.close();
-    });
-    // ad-hoc ping mechanism
-    ws.addEventListener('open', () => {
-      let ttl = 2;
-      keepAlive = setInterval(() => {
-        if (ttl <= 0) {
-          ws.close();
-          return;
-        }
-        // note: we abuse that sending a "ping" string will result in a bad request response
-        ws.send('ping');
-        ttl = ttl - 1;
-      }, 30000);
-      ws.addEventListener('message', () => {
-        ttl = 2;
-      });
-    });
+    //   // on close, recreate connection
+    // ws.addEventListener('close', () => {
+    //   clearInterval(keepAlive);
+    //   assignWsClient();
+    // });
+    // // keep alive on error, trigger close event
+    // ws.addEventListener('error', (error) => {
+    //   console.error(error);
+    //   ws.close();
+    // });
+    // // ad-hoc ping mechanism
+    // ws.addEventListener('open', () => {
+    //   let ttl = 2;
+    //   keepAlive = setInterval(() => {
+    //     if (ttl <= 0) {
+    //       ws.close();
+    //       return;
+    //     }
+    //     // note: we abuse that sending a "ping" string will result in a bad request response
+    //     ws.send('ping');
+    //     ttl = ttl - 1;
+    //   }, 30000);
+    //   ws.addEventListener('message', () => {
+    //     ttl = 2;
+    //   });
+    // });
 
     return ws;
   };

@@ -1,5 +1,3 @@
-import qs from 'qs';
-
 import { DEFAULT_PROTOCOL, PROTOCOL_REGEX } from '../config';
 import { getUrlForRedirection } from './cookie';
 
@@ -99,11 +97,11 @@ export const buildItemLinkForBuilder: BuildItemLinkFunc = (
       origin = `${args.protocol || DEFAULT_PROTOCOL}://${args.host}`;
     }
   }
-
-  return `${origin}/items/${itemId}${qs.stringify(
-    { chat: chatOpen },
-    { addQueryPrefix: true },
-  )}`;
+  const url = new URL(`/items/${itemId}`, origin);
+  if (chatOpen !== undefined) {
+    url.searchParams.set('chat', chatOpen.toString());
+  }
+  return url.toString();
 };
 
 /**

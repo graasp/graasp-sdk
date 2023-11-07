@@ -4,7 +4,7 @@ import { UUID } from '@/types';
 export interface ItemPublished {
   id: UUID;
   creator?: Member;
-  createdAt: Date;
+  createdAt: string;
   item: DiscriminatedItem;
   totalViews: number;
 }

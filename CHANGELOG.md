@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.0.1](https://github.com/graasp/graasp-sdk/compare/v2.0.0...v2.0.1) (2023-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-sdk/client-s3 to v3.441.0 ([#288](https://github.com/graasp/graasp-sdk/issues/288)) ([9371b4e](https://github.com/graasp/graasp-sdk/commit/9371b4eecacc13681e6239f6bddd2cf25c3fed45))
+* remove ws heartbeat ([#323](https://github.com/graasp/graasp-sdk/issues/323)) ([10a718f](https://github.com/graasp/graasp-sdk/commit/10a718f49c33b3837f967f713dd839c211cbbff0))
+
+## [2.0.0](https://github.com/graasp/graasp-sdk/compare/v1.10.1...v2.0.0) (2023-11-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove frontend package ([#311](https://github.com/graasp/graasp-sdk/issues/311))
+
+### chore
+
+* release 2.0.0 ([1a2e6c8](https://github.com/graasp/graasp-sdk/commit/1a2e6c86d7d5c3101a2fbca78b889fa784708ef4))
+
+
+### fest
+
+* remove frontend package ([#311](https://github.com/graasp/graasp-sdk/issues/311)) ([5e63c75](https://github.com/graasp/graasp-sdk/commit/5e63c7591eb4121dbb5310052800cecd1ce0e6e9))
+
+## [1.10.1](https://github.com/graasp/graasp-sdk/compare/v1.10.0...v1.10.1) (2023-10-26)
+
+
+### Bug Fixes
+
+* convert itemtype to const ([#312](https://github.com/graasp/graasp-sdk/issues/312)) ([7bf95c1](https://github.com/graasp/graasp-sdk/commit/7bf95c18c85c89c616d3c773e1550e6470d0dc2a))
+* remove Member from itemLike type as it is not provided when querying the api ([#225](https://github.com/graasp/graasp-sdk/issues/225)) ([60f1410](https://github.com/graasp/graasp-sdk/commit/60f1410c899d264b3cc6f67e765b61951b38a383))
+* remove qs dep ([#307](https://github.com/graasp/graasp-sdk/issues/307)) ([3fe0d9c](https://github.com/graasp/graasp-sdk/commit/3fe0d9c371dfcbc75f2649a966a9728249f0028e))
+
 ## [1.10.0](https://github.com/graasp/graasp-sdk/compare/v1.9.2...v1.10.0) (2023-10-26)
 
 

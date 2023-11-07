@@ -3,12 +3,12 @@ import { formatDate, parseStringToDate } from './date';
 describe('Date utils', () => {
   describe('formatDate', () => {
     it('format date to readable string', () => {
-      const result = formatDate(new Date('2021-03-16T16:00:50.968Z'), {
+      const result = formatDate('2021-03-16T16:00:50.968Z', {
         locale: 'en',
       });
       // test contain without hour because it can be differnt in CI
       expect(result).toContain('Mar 16, 2021');
-      const resultFr = formatDate(new Date('2021-03-16T16:00:50.968Z'), {
+      const resultFr = formatDate('2021-03-16T16:00:50.968Z', {
         locale: 'fr',
       });
       // test contain without hour because it can be differnt in CI
@@ -16,9 +16,11 @@ describe('Date utils', () => {
     });
 
     it('format date to relative date', () => {
-      const result = formatDate(new Date(), { locale: 'en' });
+      const result = formatDate(new Date().toISOString(), { locale: 'en' });
       expect(result).toEqual('now');
-      const resultFr = formatDate(new Date(), { locale: 'fr' });
+      const resultFr = formatDate(new Date().toISOString(), {
+        locale: 'fr',
+      });
       expect(resultFr).toEqual('maintenant');
     });
 
@@ -28,12 +30,12 @@ describe('Date utils', () => {
       });
       expect(result).toEqual('Unknown');
 
-      const resultMalformattedDate = formatDate(new Date('some date'), {
+      const resultMalformattedDate = formatDate('some date', {
         locale: 'fr',
       });
       expect(resultMalformattedDate).toEqual('Unknown');
 
-      const resultCustomDefault = formatDate(new Date('some date'), {
+      const resultCustomDefault = formatDate('some date', {
         locale: 'fr',
         defaultValue: 'Default Date',
       });

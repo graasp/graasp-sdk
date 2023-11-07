@@ -15,6 +15,6 @@ export type AppData<T extends Data = Data> = {
   type: string;
   visibility: `${AppDataVisibility}` | AppDataVisibility;
   data: T;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 };

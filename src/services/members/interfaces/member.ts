@@ -22,6 +22,6 @@ export type Member = {
 export type CompleteMember = Member & {
   type: `${MemberType}` | MemberType;
   extra: MemberExtra;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 };

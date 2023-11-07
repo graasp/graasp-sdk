@@ -8,6 +8,6 @@ export type AppSetting<T extends Data = Data> = {
   creator?: Member | null;
   name: string;
   data: T;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 };

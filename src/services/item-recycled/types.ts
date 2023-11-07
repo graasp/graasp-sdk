@@ -3,6 +3,6 @@ import { DiscriminatedItem, Member } from '../index';
 export type RecycledItemData = {
   id: string;
   creator: Member;
-  createdAt: Date;
+  createdAt: string;
   item: DiscriminatedItem;
 };
