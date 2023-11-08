@@ -11,4 +11,4 @@ export * from './mimeTypes';
 export * from './permissionLevel';
 export * from './ui';
 export * from './triggers';
-export * from './prefix';
+export * from './host';

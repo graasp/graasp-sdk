@@ -7,4 +7,3 @@ export * from './item';
 export * from './member';
 export * from './navigation';
 export * from './password';
-export * from './shortLink';
