@@ -1557,11 +1557,11 @@ __metadata:
     "@graasp/etherpad-api": "npm:2.1.1"
     "@trivago/prettier-plugin-sort-imports": "npm:4.2.1"
     "@types/eslint": "npm:8.44.6"
-    "@types/jest": "npm:29.5.7"
-    "@types/js-cookie": "npm:3.0.5"
-    "@types/jsdom": "npm:21.1.4"
-    "@types/uuid": "npm:9.0.6"
-    "@types/validator": "npm:13.11.5"
+    "@types/jest": "npm:29.5.8"
+    "@types/js-cookie": "npm:3.0.6"
+    "@types/jsdom": "npm:21.1.5"
+    "@types/uuid": "npm:9.0.7"
+    "@types/validator": "npm:13.11.6"
     "@typescript-eslint/eslint-plugin": "npm:6.10.0"
     "@typescript-eslint/parser": "npm:6.10.0"
     date-fns: "npm:2.30.0"
@@ -2837,31 +2837,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.5.7":
-  version: 29.5.7
-  resolution: "@types/jest@npm:29.5.7"
+"@types/jest@npm:29.5.8":
+  version: 29.5.8
+  resolution: "@types/jest@npm:29.5.8"
   dependencies:
     expect: "npm:^29.0.0"
     pretty-format: "npm:^29.0.0"
-  checksum: 231c873f3d1ddac973b8f8f2ad7760677d941d85fb52d1c5dc4a311bafba4c2c1658a1040fd7054a51f4d1841f51c6ca4cabf70675ee4fa9e10fc5b8066e1de1
+  checksum: a28e7827ea7e1a2aace6a386868fa6b8402c162d6c71570aed2c29d3745ddc22ceef6899a20643071817905d3c57b670a7992fc8760bff65939351fd4dc481cf
   languageName: node
   linkType: hard
 
-"@types/js-cookie@npm:3.0.5":
-  version: 3.0.5
-  resolution: "@types/js-cookie@npm:3.0.5"
-  checksum: 033db21a75da27e889062f3d3d9745ff89a1c7a3637dc6dce538877244bdf505a2d9bb13e6d073b0c4cc6dd269249650a94a67d0f318951e3a139da7bd0a9b5c
+"@types/js-cookie@npm:3.0.6":
+  version: 3.0.6
+  resolution: "@types/js-cookie@npm:3.0.6"
+  checksum: 173afaf5ea9d86c22395b9d2a00b6adb0006dcfef165d6dcb0395cdc32f5a5dcf9c3c60f97194119963a15849b8f85121e1ae730b03e40bc0c29b84396ba22f9
   languageName: node
   linkType: hard
 
-"@types/jsdom@npm:21.1.4":
-  version: 21.1.4
-  resolution: "@types/jsdom@npm:21.1.4"
+"@types/jsdom@npm:21.1.5":
+  version: 21.1.5
+  resolution: "@types/jsdom@npm:21.1.5"
   dependencies:
     "@types/node": "npm:*"
     "@types/tough-cookie": "npm:*"
     parse5: "npm:^7.0.0"
-  checksum: 011343281cd771f5758f2569a18a557dc5c0ccd580e0cc6b5ed690342ca6eccfa4a5bf17cb875b0bc1ff3ea262f0c148552f2d6188460b9d45e79f001995b30e
+  checksum: de274d2af7196b0ee869ffc874295a2edc7d0e6161c7e185ffeadd7791c2196b77a352e2ef5d9e38cbafdee7cdfa8a32485db8f8b86de21bc6ff6565c327c865
   languageName: node
   linkType: hard
 
@@ -2937,17 +2937,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:9.0.6":
-  version: 9.0.6
-  resolution: "@types/uuid@npm:9.0.6"
-  checksum: 8fb6b3a583a035b8e917192eeadaadadfbfd29315094aafd3478e11f11a986cb118ee0f388b15035fda063d9f1a32fa62e7a791215b762fe1e2c177929ca7146
+"@types/uuid@npm:9.0.7":
+  version: 9.0.7
+  resolution: "@types/uuid@npm:9.0.7"
+  checksum: b329ebd4f9d1d8e08d4f2cc211be4922d70d1149f73d5772630e4a3acfb5170c6d37b3d7a39a0412f1a56e86e8a844c7f297c798b082f90380608bf766688787
   languageName: node
   linkType: hard
 
-"@types/validator@npm:13.11.5":
-  version: 13.11.5
-  resolution: "@types/validator@npm:13.11.5"
-  checksum: 3c85a355802b97c71986c2b326bf0003bc32ae0283c780312feb984edaa98f786f26431031dae803e4cb603c097b51864e13792e06d85343a8fcbcf19d0fac7e
+"@types/validator@npm:13.11.6":
+  version: 13.11.6
+  resolution: "@types/validator@npm:13.11.6"
+  checksum: 3201902a8e5d4784d1c67f5a5a796d1500bae10fe5413ed75fdbdf5d6b5572952445f3482ffe64908531b20171d4c5cfe94934de3fd401781bb6cf9f95766b02
   languageName: node
   linkType: hard
 
