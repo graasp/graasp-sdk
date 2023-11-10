@@ -17,8 +17,11 @@ export type ShortLink = {
 };
 
 export type ShortLinkPostPayload = Omit<ShortLink, 'createdAt'>;
-export type ShortLinkPutPayload = AnyOfExcept<ShortLink, 'createdAt' | 'item'>;
-export type ShortLinkUpdatePayload = Omit<ShortLink, 'createdAt' | 'item'>;
+export type ShortLinkPatchPayload = AnyOfExcept<
+  ShortLink,
+  'createdAt' | 'item'
+>;
+export type ShortLinkPutPayload = Omit<ShortLink, 'createdAt' | 'item'>;
 
 export class ClientHostManager {
   private static INSTANCE: ClientHostManager | null;
