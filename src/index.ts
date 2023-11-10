@@ -3,6 +3,7 @@ import {
   BUILDER_ITEMS_PREFIX,
   LIBRARY_ITEMS_PREFIX,
   PLAYER_ITEMS_PREFIX,
+  PROD_ANALYTICS_HOST,
   PROD_BUILDER_HOST,
   PROD_LIBRARY_HOST,
   PROD_PLAYER_HOST,
@@ -26,4 +27,4 @@ ClientHostManager.getInstance()
   .addHost(Context.Builder, new URL(PROD_BUILDER_HOST))
   .addHost(Context.Library, new URL(PROD_LIBRARY_HOST))
   .addHost(Context.Player, new URL(PROD_PLAYER_HOST))
-  .addHost(Context.Analytics, new URL(ANALYTICS_ITEMS_PREFIX));
+  .addHost(Context.Analytics, new URL(PROD_ANALYTICS_HOST));
