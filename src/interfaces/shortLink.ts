@@ -1,3 +1,4 @@
+import { AnyOfExcept } from '..';
 import { Context } from '@/constants';
 
 // This const is used to define the allowed Platforms.
@@ -6,17 +7,18 @@ export const ShortLinkPlatform = {
   [Context.Builder]: Context.Builder,
   [Context.Player]: Context.Player,
   [Context.Library]: Context.Library,
-};
+} as const;
 
-export interface ShortLinkPayload {
+export type ShortLink = {
   alias: string;
   platform: keyof typeof ShortLinkPlatform;
   item: { id: string };
-}
-
-export interface ShortLinkResponse extends ShortLinkPayload {
   createdAt: string;
-}
+};
+
+export type ShortLinkPostPayload = Omit<ShortLink, 'createdAt'>;
+export type ShortLinkPutPayload = AnyOfExcept<ShortLink, 'createdAt' | 'item'>;
+export type ShortLinkUpdatePayload = Omit<ShortLink, 'createdAt' | 'item'>;
 
 export class ClientHostManager {
   private static INSTANCE: ClientHostManager | null;
@@ -38,7 +40,8 @@ export class ClientHostManager {
         `The given context '${context}' is not present in the hosts.`,
       );
     }
-    return this.clientHosts.get(context);
+    // create new URL to keep current host map immutable
+    return new URL(this.clientHosts.get(context)!);
   }
 
   public addHost(context: Context, host: URL, replace: boolean = false) {
@@ -76,6 +79,14 @@ export class ClientHostManager {
     const host = this.getHost(context);
     const prefix = this.getPrefix(context);
 
-    return { host, prefix };
+    // create new URL to keep current host map immutable
+    return { host: new URL(host!), prefix };
+  }
+
+  public getItemLink(context: Context, itemId: string) {
+    const host = this.getHost(context);
+    const prefix = this.getPrefix(context);
+    const url = new URL(`${prefix}/${itemId}`, host!.origin);
+    return url;
   }
 }

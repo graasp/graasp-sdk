@@ -1,4 +1,5 @@
 import {
+  ANALYTICS_ITEMS_PREFIX,
   BUILDER_ITEMS_PREFIX,
   LIBRARY_ITEMS_PREFIX,
   PLAYER_ITEMS_PREFIX,
@@ -21,6 +22,8 @@ ClientHostManager.getInstance()
   .addPrefix(Context.Builder, BUILDER_ITEMS_PREFIX)
   .addPrefix(Context.Library, LIBRARY_ITEMS_PREFIX)
   .addPrefix(Context.Player, PLAYER_ITEMS_PREFIX)
+  .addPrefix(Context.Analytics, ANALYTICS_ITEMS_PREFIX)
   .addHost(Context.Builder, new URL(PROD_BUILDER_HOST))
   .addHost(Context.Library, new URL(PROD_LIBRARY_HOST))
-  .addHost(Context.Player, new URL(PROD_PLAYER_HOST));
+  .addHost(Context.Player, new URL(PROD_PLAYER_HOST))
+  .addHost(Context.Analytics, new URL(ANALYTICS_ITEMS_PREFIX));
