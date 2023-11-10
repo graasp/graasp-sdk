@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/graasp/graasp-sdk/compare/v2.0.1...v2.1.0) (2023-11-10)
+
+
+### Features
+
+* add library collection preview triggers ([#309](https://github.com/graasp/graasp-sdk/issues/309)) ([2309807](https://github.com/graasp/graasp-sdk/commit/23098073deffe655541815aebde2ab8801d388ff))
+
+
+### Bug Fixes
+
+* add `"account"` option in `Context` enum ([#321](https://github.com/graasp/graasp-sdk/issues/321)) ([d13194b](https://github.com/graasp/graasp-sdk/commit/d13194b88716a1ed6d5e64e3d21cc0a1d14d37d2))
+
 ## [2.0.1](https://github.com/graasp/graasp-sdk/compare/v2.0.0...v2.0.1) (2023-11-06)
 
 
