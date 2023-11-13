@@ -38,13 +38,15 @@ export class ClientHostManager {
   }
 
   public getHost(context: Context) {
-    if (!this.clientHosts.has(context)) {
-      throw new Error(
-        `The given context '${context}' is not present in the hosts.`,
-      );
+    const host = this.clientHosts.get(context);
+    if (host) {
+      // create new URL to keep current host map immutable
+      return new URL(host);
     }
-    // create new URL to keep current host map immutable
-    return new URL(this.clientHosts.get(context)!);
+
+    throw new Error(
+      `The given context '${context}' is not present in the hosts.`,
+    );
   }
 
   public addHost(context: Context, host: URL, replace: boolean = false) {
@@ -59,12 +61,15 @@ export class ClientHostManager {
   }
 
   public getPrefix(context: Context) {
-    if (!this.clientPrefix.has(context)) {
-      throw new Error(
-        `The given context '${context}' is not present in the prefix.`,
-      );
+    const prefix = this.clientPrefix.get(context);
+
+    if (prefix) {
+      return prefix;
     }
-    return this.clientPrefix.get(context);
+
+    throw new Error(
+      `The given context '${context}' is not present in the prefix.`,
+    );
   }
 
   public addPrefix(context: Context, prefix: string) {
@@ -83,13 +88,13 @@ export class ClientHostManager {
     const prefix = this.getPrefix(context);
 
     // create new URL to keep current host map immutable
-    return { host: new URL(host!), prefix };
+    return { host: new URL(host), prefix };
   }
 
   public getItemLink(context: Context, itemId: string) {
     const host = this.getHost(context);
     const prefix = this.getPrefix(context);
-    const url = new URL(`${prefix}/${itemId}`, host!.origin);
+    const url = new URL(`${prefix}/${itemId}`, host.origin);
     return url;
   }
 }
