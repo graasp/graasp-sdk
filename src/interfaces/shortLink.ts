@@ -39,7 +39,7 @@ export class ClientHostManager {
 
   public getHost(context: Context) {
     const host = this.clientHosts.get(context);
-    if (host) {
+    if (host !== undefined) {
       // create new URL to keep current host map immutable
       return new URL(host);
     }
@@ -63,7 +63,7 @@ export class ClientHostManager {
   public getPrefix(context: Context) {
     const prefix = this.clientPrefix.get(context);
 
-    if (prefix) {
+    if (prefix !== undefined) {
       return prefix;
     }
 
