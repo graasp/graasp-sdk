@@ -49,8 +49,8 @@ export class ClientHostManager {
     );
   }
 
-  public addHost(context: Context, host: URL, replace: boolean = false) {
-    if (!replace && this.clientHosts.has(context)) {
+  public addHost(context: Context, host: URL) {
+    if (this.clientHosts.has(context)) {
       throw new Error(
         `The given context '${context}' is already present in the hosts.`,
       );
