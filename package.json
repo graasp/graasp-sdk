@@ -24,10 +24,8 @@
     "dist"
   ],
   "dependencies": {
-    "@aws-sdk/client-s3": "3.449.0",
     "@graasp/etherpad-api": "2.1.1",
     "date-fns": "2.30.0",
-    "fastify": "4.24.3",
     "js-cookie": "3.0.5",
     "uuid": "9.0.1",
     "validator": "13.11.0"

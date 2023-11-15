@@ -101,7 +101,7 @@ export const configureWebsocketClient = (wsHost: string): WebsocketClient => {
   const assignWsClient = () => {
     console.debug('restarting ws client');
     ws = new WebSocket(wsHost);
-    let keepAlive: ReturnType<typeof setInterval>;
+    // let keepAlive: ReturnType<typeof setInterval>;
 
     //   // on close, recreate connection
     // ws.addEventListener('close', () => {
