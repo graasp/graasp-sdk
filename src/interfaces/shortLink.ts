@@ -22,6 +22,9 @@ export type ShortLinkPatchPayload = AnyOfExcept<
   'createdAt' | 'item'
 >;
 export type ShortLinkPutPayload = Omit<ShortLink, 'createdAt' | 'item'>;
+export type ShortLinkAvailable = {
+  available: boolean;
+};
 
 export class ClientHostManager {
   private static INSTANCE: ClientHostManager | null;
