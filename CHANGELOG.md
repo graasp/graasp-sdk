@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/graasp/graasp-sdk/compare/v3.0.0...v3.0.1) (2023-11-16)
+
+
+### Bug Fixes
+
+* add support for webp image format ([#339](https://github.com/graasp/graasp-sdk/issues/339)) ([61cc2bc](https://github.com/graasp/graasp-sdk/commit/61cc2bc42e106938f261231813f81371faa11d90))
+
 ## [3.0.0](https://github.com/graasp/graasp-sdk/compare/v2.1.0...v3.0.0) (2023-11-16)
 
 
