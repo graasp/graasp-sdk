@@ -4,6 +4,7 @@ const Image = {
   PNG: 'image/png',
   GIF: 'image/gif',
   SVG: 'image/svg+xml',
+  WEBP: 'image/webp',
 };
 
 const Video = {
