@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.0.0](https://github.com/graasp/graasp-sdk/compare/v2.1.0...v3.0.0) (2023-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove fastify and aws sdk ([#337](https://github.com/graasp/graasp-sdk/issues/337))
+
+### Features
+
+* add short link interfaces ([#664](https://github.com/graasp/graasp-sdk/issues/664)) ([#317](https://github.com/graasp/graasp-sdk/issues/317)) ([8af55e3](https://github.com/graasp/graasp-sdk/commit/8af55e395e9fcb4445d53cb6fdea7bef606eef2a))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-sdk/client-s3 to v3.449.0 ([#326](https://github.com/graasp/graasp-sdk/issues/326)) ([21bd25b](https://github.com/graasp/graasp-sdk/commit/21bd25bad9fd816b8ddfc6f3fb66c42e9ff074df))
+* remove ClientHostManager instanciation in the SDK ([#332](https://github.com/graasp/graasp-sdk/issues/332)) ([85997f4](https://github.com/graasp/graasp-sdk/commit/85997f47a4bb6f283bd6bd792a377f4d242c6433))
+* remove fastify and aws sdk ([#337](https://github.com/graasp/graasp-sdk/issues/337)) ([9d53b4e](https://github.com/graasp/graasp-sdk/commit/9d53b4e01c4c27c3253579c3bceae5bfc0c0bbbb))
+
 ## [2.1.0](https://github.com/graasp/graasp-sdk/compare/v2.0.1...v2.1.0) (2023-11-10)
 
 
