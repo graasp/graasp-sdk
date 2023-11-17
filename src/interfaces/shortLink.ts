@@ -94,10 +94,14 @@ export class ClientHostManager {
     return { host: new URL(host), prefix };
   }
 
-  public getItemLink(context: Context, itemId: string) {
+  public getItemAsURL(context: Context, itemId: string) {
     const host = this.getHost(context);
     const prefix = this.getPrefix(context);
     const url = new URL(`${prefix}/${itemId}`, host.origin);
     return url;
+  }
+
+  public getItemLink(context: Context, itemId: string) {
+    return this.getItemAsURL(context, itemId).toString();
   }
 }
