@@ -16,12 +16,15 @@ export type ShortLink = {
   createdAt: string;
 };
 
-export type ShortLinkPostPayload = Omit<ShortLink, 'createdAt'>;
-export type ShortLinkPatchPayload = AnyOfExcept<
-  ShortLink,
-  'createdAt' | 'item'
->;
-export type ShortLinkPutPayload = Omit<ShortLink, 'createdAt' | 'item'>;
+export type ShortLinkItemId = {
+  itemId: string;
+};
+
+export type ShortLinkPayload = Omit<ShortLink, 'createdAt' | 'item'> &
+  ShortLinkItemId;
+export type ShortLinkPostPayload = ShortLinkPayload;
+export type ShortLinkPatchPayload = AnyOfExcept<ShortLinkPostPayload, 'itemId'>;
+export type ShortLinkPutPayload = Omit<ShortLinkPayload, 'itemId'>;
 export type ShortLinkAvailable = {
   available: boolean;
 };
