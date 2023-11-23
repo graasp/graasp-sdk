@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/graasp/graasp-sdk/compare/v3.0.1...v3.1.0) (2023-11-23)
+
+
+### Features
+
+* rename favorite to bookmark ([#346](https://github.com/graasp/graasp-sdk/issues/346)) ([7e72cba](https://github.com/graasp/graasp-sdk/commit/7e72cba2dbe7e270203970d67d548178ae9b034d))
+
 ## [3.0.1](https://github.com/graasp/graasp-sdk/compare/v3.0.0...v3.0.1) (2023-11-16)
 
 
