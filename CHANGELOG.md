@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/graasp/graasp-sdk/compare/v3.1.0...v3.2.0) (2023-11-28)
+
+
+### chore
+
+* release 3.2.0 ([0cf04e3](https://github.com/graasp/graasp-sdk/commit/0cf04e3e507168b5b3d7f4aecff7159db7818335))
+
 ## [3.1.0](https://github.com/graasp/graasp-sdk/compare/v3.0.1...v3.1.0) (2023-11-23)
 
 
