@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.0](https://github.com/graasp/graasp-sdk/compare/v3.2.0...v3.3.0) (2023-11-29)
+
+
+### Features
+
+* implement the appendPathToUrl to construct URLs correctly ([#351](https://github.com/graasp/graasp-sdk/issues/351)) ([56d9487](https://github.com/graasp/graasp-sdk/commit/56d9487643a0f8af3721c78c429fb989b992840d))
+
 ## [3.2.0](https://github.com/graasp/graasp-sdk/compare/v3.1.0...v3.2.0) (2023-11-28)
 
 
