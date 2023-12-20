@@ -71,7 +71,7 @@ const isIsoDateString = (value: string): value is TDateISO =>
  *
  * @deprecated we should not use this function anymore
  */
-export const parseStringToDate = (data: any): any => {
+export const parseStringToDate = (data: unknown): unknown => {
   if (!data) {
     return data;
   }
