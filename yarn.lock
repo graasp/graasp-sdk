@@ -182,15 +182,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.21.0":
-  version: 7.22.5
-  resolution: "@babel/runtime@npm:7.22.5"
-  dependencies:
-    regenerator-runtime: "npm:^0.13.11"
-  checksum: 11dcaeecd2246857ccf22f939fcae28a58d29e410607bfa28b95d9b03e298a3e3df8a530e22637d5bfccfc1661fb39cc50c06b404b5d53454bd93889c7dd3eb8
-  languageName: node
-  linkType: hard
-
 "@babel/template@npm:^7.22.15":
   version: 7.22.15
   resolution: "@babel/template@npm:7.22.15"
@@ -722,7 +713,7 @@ __metadata:
     "@types/validator": "npm:13.11.7"
     "@typescript-eslint/eslint-plugin": "npm:6.13.1"
     "@typescript-eslint/parser": "npm:6.13.1"
-    date-fns: "npm:2.30.0"
+    date-fns: "npm:3.0.1"
     eslint: "npm:8.55.0"
     eslint-config-prettier: "npm:9.1.0"
     husky: "npm:8.0.3"
@@ -1989,12 +1980,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:2.30.0":
-  version: 2.30.0
-  resolution: "date-fns@npm:2.30.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.21.0"
-  checksum: e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
+"date-fns@npm:3.0.1":
+  version: 3.0.1
+  resolution: "date-fns@npm:3.0.1"
+  checksum: d840a0b25ba4c262868df804d1f4939e809326b6fbdacc04f7f5184c2af9891de84ca5620777a98b077fad52777928032bb2cd8cd3a99d22eb1c75220f0aae34
   languageName: node
   linkType: hard
 
@@ -4323,13 +4312,6 @@ __metadata:
     indent-string: "npm:^4.0.0"
     strip-indent: "npm:^3.0.0"
   checksum: d64a6b5c0b50eb3ddce3ab770f866658a2b9998c678f797919ceb1b586bab9259b311407280bd80b804e2a7c7539b19238ae6a2a20c843f1a7fcff21d48c2eae
-  languageName: node
-  linkType: hard
-
-"regenerator-runtime@npm:^0.13.11":
-  version: 0.13.11
-  resolution: "regenerator-runtime@npm:0.13.11"
-  checksum: 12b069dc774001fbb0014f6a28f11c09ebfe3c0d984d88c9bced77fdb6fedbacbca434d24da9ae9371bfbf23f754869307fb51a4c98a8b8b18e5ef748677ca24
   languageName: node
   linkType: hard
 
