@@ -9,6 +9,7 @@ import {
 } from '../interfaces';
 import {
   AppItemExtra,
+  DiscriminatedItem,
   EtherpadItemExtra,
   FileItemProperties,
   H5PItemExtra,
@@ -51,6 +52,18 @@ export const getAppExtra = <U extends AppItemExtra>(
 export const getH5PExtra = <U extends H5PItemExtra>(
   extra: U,
 ): U[typeof ItemType.H5P] => extra[ItemType.H5P];
+
+export const getMimetype = (
+  extra: DiscriminatedItem['extra'],
+): string | undefined => {
+  if (ItemType.LOCAL_FILE in extra) {
+    return getFileExtra(extra)?.mimetype;
+  }
+  if (ItemType.S3_FILE in extra) {
+    return getS3FileExtra(extra)?.mimetype;
+  }
+  return undefined;
+};
 
 export const buildDocumentExtra = (
   document: DocumentItemExtraProperties,
