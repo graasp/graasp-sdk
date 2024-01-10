@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { appendPathToUrl, appendQueryParamToUrl } from './url';
 
 describe('URL utils', () => {
@@ -53,14 +55,14 @@ describe('URL utils', () => {
         });
         expect(url.toString()).toEqual(URL_WITH_ADDITIONAL_PATH);
       });
-      it('Append correclty when not ending with a trail', () => {
+      it('Append correctly when not ending with a trail', () => {
         const url = appendPathToUrl({
           pathname: ADDITIONAL_PATH_NAME,
           baseURL: URL_NO_TRAIL,
         });
         expect(url.toString()).toEqual(URL_WITH_ADDITIONAL_PATH);
       });
-      it('Append correclty when pathname starts with a trail', () => {
+      it('Append correctly when pathname starts with a trail', () => {
         const url = appendPathToUrl({
           pathname: `/${ADDITIONAL_PATH_NAME}`,
           baseURL: URL_NO_TRAIL,

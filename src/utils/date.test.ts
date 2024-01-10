@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { formatDate, parseStringToDate } from './date';
 
 describe('Date utils', () => {
@@ -6,12 +8,12 @@ describe('Date utils', () => {
       const result = formatDate('2021-03-16T16:00:50.968Z', {
         locale: 'en',
       });
-      // test contain without hour because it can be differnt in CI
+      // test contain without hour because it can be different in CI
       expect(result).toContain('Mar 16, 2021');
       const resultFr = formatDate('2021-03-16T16:00:50.968Z', {
         locale: 'fr',
       });
-      // test contain without hour because it can be differnt in CI
+      // test contain without hour because it can be different in CI
       expect(resultFr).toContain('16 mars 2021');
     });
 

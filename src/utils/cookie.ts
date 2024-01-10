@@ -62,7 +62,8 @@ export const setLangCookie = (lang: string, domain: string) =>
 /**
  * @returns  {string|undefined} user's lang
  */
-export const getLangCookie = () => Cookies.get(COOKIE_KEYS.LANG_KEY);
+export const getLangCookie = (): string | undefined =>
+  Cookies.get(COOKIE_KEYS.LANG_KEY);
 
 /**
  * @param  {string} memberId

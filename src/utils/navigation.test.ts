@@ -1,3 +1,5 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
 import {
   MOCK_HOST,
   MOCK_HOST_WITH_PROTOCOL,
@@ -14,56 +16,59 @@ import {
   redirectToSavedUrl,
 } from './navigation';
 
+const mockTarget = {
+  open: vi.fn(),
+  location: {
+    assign: vi.fn(),
+  },
+};
+
 describe('Navigation Util Tests', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   describe('redirect', () => {
     it('redirect successfully for default values', () => {
-      const mockWindowOpen = jest.spyOn(window.location, 'assign');
-      redirect(MOCK_URL);
-      expect(mockWindowOpen).toHaveBeenCalledWith(MOCK_URL);
+      redirect(mockTarget, MOCK_URL);
+      expect(mockTarget.location.assign.mock.calls[0]).toEqual([MOCK_URL]);
     });
 
     it('redirect successfully in new tab with name', () => {
-      const mockWindowOpen = jest.spyOn(window, 'open');
       const args = { name: 'somename', openInNewTab: true };
-      redirect(MOCK_URL, args);
-      expect(mockWindowOpen).toHaveBeenCalledWith(MOCK_URL, args.name);
+      redirect(mockTarget, MOCK_URL, args);
+      expect(mockTarget.open.mock.calls[0]).toEqual([MOCK_URL, args.name]);
     });
   });
 
   describe('redirectToSavedUrl', () => {
     it('redirect successfully to saved link', () => {
-      const mockWindowOpen = jest.spyOn(window.location, 'assign');
-      jest.spyOn(cookieUtils, 'getUrlForRedirection').mockReturnValue(MOCK_URL);
-      redirectToSavedUrl();
-      expect(mockWindowOpen).toHaveBeenCalledWith(MOCK_URL);
+      vi.spyOn(cookieUtils, 'getUrlForRedirection').mockReturnValue(
+        'http://google.com',
+      );
+      redirectToSavedUrl(mockTarget);
+      expect(mockTarget.location.assign.mock.calls[0]).toEqual([
+        'http://google.com',
+      ]);
     });
 
     it('redirect successfully to default link', () => {
-      const mockWindowOpen = jest.spyOn(window.location, 'assign');
-      jest
-        .spyOn(cookieUtils, 'getUrlForRedirection')
-        .mockReturnValue(undefined);
-      redirectToSavedUrl(MOCK_URL);
-      expect(mockWindowOpen).toHaveBeenCalledWith(MOCK_URL);
+      vi.spyOn(cookieUtils, 'getUrlForRedirection').mockReturnValue(undefined);
+      redirectToSavedUrl(mockTarget, MOCK_URL);
+      expect(mockTarget.location.assign.mock.calls[0]).toEqual([MOCK_URL]);
     });
 
     it('redirect successfully to saved link in new tab', () => {
-      const mockWindowOpen = jest.spyOn(window, 'open');
       const args = { name: 'somename', openInNewTab: true };
-      jest.spyOn(cookieUtils, 'getUrlForRedirection').mockReturnValue(MOCK_URL);
-      redirectToSavedUrl(MOCK_URL, args);
-      expect(mockWindowOpen).toHaveBeenCalledWith(MOCK_URL, args.name);
+      vi.spyOn(cookieUtils, 'getUrlForRedirection').mockReturnValue(MOCK_URL);
+      redirectToSavedUrl(mockTarget, MOCK_URL, args);
+      expect(mockTarget.open.mock.calls[0]).toEqual([MOCK_URL, args.name]);
     });
 
     it('redirect successfully to default link in new tab', () => {
-      const mockWindowOpen = jest.spyOn(window, 'open');
       const args = { name: 'somename', openInNewTab: true };
-      redirectToSavedUrl(MOCK_URL, args);
-      expect(mockWindowOpen).toHaveBeenCalledWith(MOCK_URL, args.name);
+      redirectToSavedUrl(mockTarget, MOCK_URL, args);
+      expect(mockTarget.open.mock.calls[0]).toEqual([MOCK_URL, args.name]);
     });
   });
 

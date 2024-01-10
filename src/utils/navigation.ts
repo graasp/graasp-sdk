@@ -5,18 +5,29 @@ interface RedirectOptions {
   openInNewTab?: boolean;
   name?: string;
 }
-
+type TargetType = {
+  open: (
+    url?: string | URL | undefined,
+    target?: string | undefined,
+    features?: string | undefined,
+  ) => void;
+  location: { assign: (url: string | URL) => void };
+};
 /**
  * @param  {string} url link to redirect to
  * @param  {RedirectOptions} options
  */
-export const redirect = (url: string, options?: RedirectOptions) => {
+export const redirect = (
+  target: TargetType,
+  url: string,
+  options?: RedirectOptions,
+) => {
   const { openInNewTab = false, name = '_blank' } = options ?? {};
 
   if (openInNewTab) {
-    window.open(url, name);
+    target.open(url, name);
   } else {
-    window.location.assign(url);
+    target.location.assign(url);
   }
 };
 
@@ -26,16 +37,17 @@ export const redirect = (url: string, options?: RedirectOptions) => {
  * @returns {false|void} return false if no redirection has been triggered
  */
 export const redirectToSavedUrl = (
+  target: TargetType,
   defaultLink?: string,
   options?: RedirectOptions,
 ) => {
   const link = getUrlForRedirection();
   // prevent / to avoid possible infinite loop
   if (link && link !== '/') {
-    return redirect(link, options);
+    return redirect(target, link, options);
   }
   if (defaultLink) {
-    return redirect(defaultLink, options);
+    return redirect(target, defaultLink, options);
   }
 
   return false;

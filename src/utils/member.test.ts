@@ -1,8 +1,10 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
 import { isPseudonymizedMember } from './member';
 
 describe('Member Util Tests', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   describe('isPseudonymizedMember', () => {

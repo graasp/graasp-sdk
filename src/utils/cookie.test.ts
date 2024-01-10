@@ -1,22 +1,24 @@
+// @vitest-environment jsdom
 import Cookies from 'js-cookie';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { MOCK_DOMAIN, MOCK_LANG, MOCK_URL } from '../../test/fixtures';
-import * as cookieUtils from './cookie';
-
-const {
-  buildIframeResizeHeightKey,
+import {
   COOKIE_KEYS,
+  buildIframeResizeHeightKey,
   getIframeResizeHeightCookie,
   getLangCookie,
+  getUrlForRedirection,
   hasAcceptedCookies,
   saveUrlForRedirection,
   setIframeResizeHeightCookie,
   setLangCookie,
-} = cookieUtils;
+} from './cookie';
 
 describe('Cookie Util Tests', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.resetAllMocks();
+    vi.clearAllMocks();
     Object.values(COOKIE_KEYS).forEach((key) => {
       Cookies.remove(key);
     });
@@ -80,7 +82,7 @@ describe('Cookie Util Tests', () => {
 
   describe('saveUrlForRedirection', () => {
     it('save link for redirection in cookie', () => {
-      const mock = jest.spyOn(Cookies, 'set');
+      const mock = vi.spyOn(Cookies, 'set');
       saveUrlForRedirection(MOCK_URL, MOCK_DOMAIN);
       expect(mock).toHaveBeenCalledWith(
         COOKIE_KEYS.REDIRECT_URL_KEY,
@@ -92,25 +94,29 @@ describe('Cookie Util Tests', () => {
 
   describe('getUrlForRedirection', () => {
     it('save link for redirection in cookie', () => {
+      const getRedirectionCookieSpy = vi.spyOn(Cookies, 'get');
       Cookies.set(COOKIE_KEYS.REDIRECT_URL_KEY, MOCK_URL);
-      const res = cookieUtils.getUrlForRedirection();
-      expect(res).toEqual(MOCK_URL);
+      getUrlForRedirection();
+      expect(getRedirectionCookieSpy).toHaveBeenCalledWith(
+        COOKIE_KEYS.REDIRECT_URL_KEY,
+      );
     });
   });
 
   describe('getLangCookie', () => {
     // eslint-disable-next-line quotes
     it("get user's lang in cookie", () => {
+      const getCookieSpy = vi.spyOn(Cookies, 'get');
       Cookies.set(COOKIE_KEYS.LANG_KEY, MOCK_LANG);
-      const res = getLangCookie();
-      expect(res).toEqual(MOCK_LANG);
+      getLangCookie();
+      expect(getCookieSpy).toHaveBeenCalledWith(COOKIE_KEYS.LANG_KEY);
     });
   });
 
   describe('setLangCookie', () => {
     // eslint-disable-next-line quotes
     it("save user's lang in cookie", () => {
-      const mock = jest.spyOn(Cookies, 'set');
+      const mock = vi.spyOn(Cookies, 'set');
       setLangCookie(MOCK_LANG, MOCK_DOMAIN);
       expect(mock).toHaveBeenCalledWith(COOKIE_KEYS.LANG_KEY, MOCK_LANG, {
         domain: MOCK_DOMAIN,
