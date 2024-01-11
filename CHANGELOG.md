@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.4.0](https://github.com/graasp/graasp-sdk/compare/v3.3.0...v3.4.0) (2024-01-11)
+
+
+### Features
+
+* add getMimetype and move to vitest ([#365](https://github.com/graasp/graasp-sdk/issues/365)) ([dd9df78](https://github.com/graasp/graasp-sdk/commit/dd9df7810aa1d6ce7258d18cadde0cadcd227ed0))
+
+
+### Bug Fixes
+
+* **deps:** update dependency date-fns to v3 ([#362](https://github.com/graasp/graasp-sdk/issues/362)) ([a860c74](https://github.com/graasp/graasp-sdk/commit/a860c742d71d0869a38501cefc9ec1b64b849d31))
+* **deps:** update dependency date-fns to v3.2.0 ([#369](https://github.com/graasp/graasp-sdk/issues/369)) ([afbbfa2](https://github.com/graasp/graasp-sdk/commit/afbbfa2b92d4c71213bbabeb674d7b29da3eed72))
+* move to vitest for tests ([dd9df78](https://github.com/graasp/graasp-sdk/commit/dd9df7810aa1d6ce7258d18cadde0cadcd227ed0))
+* udpate release-please condition ([2eaac37](https://github.com/graasp/graasp-sdk/commit/2eaac37d6f732961988e269b6aca7fce8c85282f))
+
 ## [3.3.0](https://github.com/graasp/graasp-sdk/compare/v3.2.0...v3.3.0) (2023-11-29)
 
 
