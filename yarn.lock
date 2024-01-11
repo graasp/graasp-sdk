@@ -713,7 +713,7 @@ __metadata:
     "@types/validator": "npm:13.11.7"
     "@typescript-eslint/eslint-plugin": "npm:6.13.1"
     "@typescript-eslint/parser": "npm:6.13.1"
-    date-fns: "npm:3.0.1"
+    date-fns: "npm:3.2.0"
     eslint: "npm:8.55.0"
     eslint-config-prettier: "npm:9.1.0"
     husky: "npm:8.0.3"
@@ -1980,10 +1980,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:3.0.1":
-  version: 3.0.1
-  resolution: "date-fns@npm:3.0.1"
-  checksum: d840a0b25ba4c262868df804d1f4939e809326b6fbdacc04f7f5184c2af9891de84ca5620777a98b077fad52777928032bb2cd8cd3a99d22eb1c75220f0aae34
+"date-fns@npm:3.2.0":
+  version: 3.2.0
+  resolution: "date-fns@npm:3.2.0"
+  checksum: f93e987f785d7f2b7349986d150b014ce21fa6425e2e1edea6f0e01731dceef68deabf0f723689c28604e857648ac708a52b924cb7584e4321835686aa665371
   languageName: node
   linkType: hard
 
