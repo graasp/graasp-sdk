@@ -41,7 +41,7 @@ export const formatDate = (
   try {
     const now = new Date();
     const date = new Date(datetime);
-    // return human readable date if less than a month ago
+    // return human readable date if less than a week ago
     if (differenceInDays(now, date) < 7) {
       return intlFormatDistance(date, now, { locale });
     }
