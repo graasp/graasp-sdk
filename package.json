@@ -24,7 +24,6 @@
     "dist"
   ],
   "dependencies": {
-    "@graasp/etherpad-api": "2.1.1",
     "date-fns": "3.2.0",
     "js-cookie": "3.0.5",
     "uuid": "9.0.1",
