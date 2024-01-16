@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.1](https://github.com/graasp/graasp-sdk/compare/v3.4.0...v3.4.1) (2024-01-16)
+
+
+### Bug Fixes
+
+* remove etherpad api dependency ([#371](https://github.com/graasp/graasp-sdk/issues/371)) ([334856f](https://github.com/graasp/graasp-sdk/commit/334856fb0af2ea453bb41ed01ef8226e2735d98f))
+
 ## [3.4.0](https://github.com/graasp/graasp-sdk/compare/v3.3.0...v3.4.0) (2024-01-11)
 
 
