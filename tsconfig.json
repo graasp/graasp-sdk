@@ -4,6 +4,7 @@
     "module": "node16",
     "outDir": "dist",
     "esModuleInterop": true,
+    "lib": ["esnext"],
     "skipLibCheck": true,
     "declaration": true,
     "declarationDir": "dist",

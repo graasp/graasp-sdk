@@ -1,6 +1,7 @@
 import { v4 } from 'uuid';
 import { describe, expect, it } from 'vitest';
 
+import { Item } from '..';
 import {
   buildPathFromIds,
   getChildFromPath,
@@ -9,6 +10,7 @@ import {
   isChildOf,
   isDescendantOf,
   isRootItem,
+  sortChildrenWith,
 } from './item';
 
 describe('Item Utils', () => {
@@ -118,6 +120,66 @@ describe('Item Utils', () => {
       const id = v4();
       const item = { id, path: buildPathFromIds(id) };
       expect(isRootItem(item)).toBeTruthy();
+    });
+  });
+
+  describe('sortChildrenWith', () => {
+    it('correctly sort children', () => {
+      const children = [
+        { id: v4() },
+        { id: v4() },
+        { id: v4() },
+        { id: v4() },
+      ] as Item[];
+      const order = [
+        children[1].id,
+        children[3].id,
+        children[2].id,
+        children[0].id,
+      ];
+      expect(sortChildrenWith(children, order)).toEqual([
+        children[1],
+        children[3],
+        children[2],
+        children[0],
+      ]);
+    });
+    it('correctly sort despite containing falsy ids', () => {
+      const children = [
+        { id: v4() },
+        { id: v4() },
+        { id: v4() },
+        { id: v4() },
+      ] as Item[];
+      const order = [
+        children[1].id,
+        v4(),
+        children[3].id,
+        children[2].id,
+        children[0].id,
+        v4(),
+      ];
+      expect(sortChildrenWith(children, order)).toEqual([
+        children[1],
+        children[3],
+        children[2],
+        children[0],
+      ]);
+    });
+    it('sort by created at children outside of the ordered array', () => {
+      const children = [
+        { id: v4(), createdAt: '2024-01-07T19:24:29.058Z' },
+        { id: v4(), createdAt: '2024-01-07T18:24:29.058Z' },
+        { id: v4(), createdAt: '2024-03-07T19:24:29.058Z' },
+        { id: v4(), createdAt: '2024-04-07T19:24:29.058Z' },
+      ] as Item[];
+      const order = [children[3].id, children[2].id];
+      expect(sortChildrenWith(children, order)).toEqual([
+        children[3],
+        children[2],
+        children[1],
+        children[0],
+      ]);
     });
   });
 });
