@@ -1,4 +1,4 @@
-import { Item } from '@/index';
+import { DiscriminatedItem, Item } from '@/index';
 
 /**
  * @param ids consecutive item ids
@@ -65,8 +65,11 @@ export const isRootItem = ({ path }: Pick<Item, 'path'>) => !path.includes('.');
  * @param  {string[]} idsOrder non-exhaustive ids in order
  * @returns array of ordered children
  */
-export const sortChildrenWith = (children: Item[], idsOrder: string[]) => {
-  const compareFn = (stElem: Item, ndElem: Item) => {
+export const sortChildrenWith = (
+  children: DiscriminatedItem[],
+  idsOrder: string[],
+) => {
+  const compareFn = (stElem: DiscriminatedItem, ndElem: DiscriminatedItem) => {
     if (idsOrder.indexOf(stElem.id) >= 0 && idsOrder.indexOf(ndElem.id) >= 0) {
       return idsOrder.indexOf(stElem.id) - idsOrder.indexOf(ndElem.id);
     }
