@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.5.0](https://github.com/graasp/graasp-sdk/compare/v3.4.1...v3.5.0) (2024-01-22)
+
+
+### Features
+
+* add sortChildrenWith ([#378](https://github.com/graasp/graasp-sdk/issues/378)) ([ed77433](https://github.com/graasp/graasp-sdk/commit/ed77433772ed58ef6e4bd68129b1b53da09e1bd7))
+
+
+### Bug Fixes
+
+* update lock file ([4faf239](https://github.com/graasp/graasp-sdk/commit/4faf2393a3423e0fb59ff023939af790945566ba))
+
 ## [3.4.1](https://github.com/graasp/graasp-sdk/compare/v3.4.0...v3.4.1) (2024-01-16)
 
 
