@@ -1,7 +1,7 @@
 import { v4 } from 'uuid';
 import { describe, expect, it } from 'vitest';
 
-import { Item } from '..';
+import { DiscriminatedItem } from '..';
 import {
   buildPathFromIds,
   getChildFromPath,
@@ -130,7 +130,7 @@ describe('Item Utils', () => {
         { id: v4() },
         { id: v4() },
         { id: v4() },
-      ] as Item[];
+      ] as DiscriminatedItem[];
       const order = [
         children[1].id,
         children[3].id,
@@ -150,7 +150,7 @@ describe('Item Utils', () => {
         { id: v4() },
         { id: v4() },
         { id: v4() },
-      ] as Item[];
+      ] as DiscriminatedItem[];
       const order = [
         children[1].id,
         v4(),
@@ -172,7 +172,7 @@ describe('Item Utils', () => {
         { id: v4(), createdAt: '2024-01-07T18:24:29.058Z' },
         { id: v4(), createdAt: '2024-03-07T19:24:29.058Z' },
         { id: v4(), createdAt: '2024-04-07T19:24:29.058Z' },
-      ] as Item[];
+      ] as DiscriminatedItem[];
       const order = [children[3].id, children[2].id];
       expect(sortChildrenWith(children, order)).toEqual([
         children[3],

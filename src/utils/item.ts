@@ -1,4 +1,4 @@
-import { DiscriminatedItem, Item } from '@/index';
+import { DiscriminatedItem } from '@/index';
 
 /**
  * @param ids consecutive item ids
@@ -57,7 +57,8 @@ export const isDescendantOf = (path: string, parentPath: string) =>
  * @param  {Item} item
  * @returns whether the item is a root
  */
-export const isRootItem = ({ path }: Pick<Item, 'path'>) => !path.includes('.');
+export const isRootItem = ({ path }: Pick<DiscriminatedItem, 'path'>) =>
+  !path.includes('.');
 
 /**
  * Sort children given order array
