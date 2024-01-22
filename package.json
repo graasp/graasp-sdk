@@ -24,7 +24,7 @@
     "dist"
   ],
   "dependencies": {
-    "date-fns": "3.2.0",
+    "date-fns": "3.3.1",
     "js-cookie": "3.0.5",
     "uuid": "9.0.1",
     "validator": "13.11.0"
