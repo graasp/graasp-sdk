@@ -14,6 +14,7 @@ export * from './item-memberships';
 export * from './item-published';
 export * from './item-recycled';
 export * from './item-tags';
+export * from './item-geolocation';
 export * from './item-validation';
 export * from './items';
 export * from './members';
