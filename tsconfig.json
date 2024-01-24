@@ -31,4 +31,6 @@
     "strictNullChecks": true,
   },
   "include": ["src"],
+  "exclude": ["test"],
+  "references": [{ "path": "./tsconfig.node.json" }],
 }

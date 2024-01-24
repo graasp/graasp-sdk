@@ -2,10 +2,16 @@
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { UserConfigExport, defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
 export default (): UserConfigExport => {
   return defineConfig({
     test: {},
+    plugins: [
+      dts({
+        insertTypesEntry: true,
+      }),
+    ],
     build: {
       lib: {
         // Could also be a dictionary or array of multiple entry points
