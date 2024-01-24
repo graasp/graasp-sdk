@@ -13,7 +13,7 @@ import {
 export const MOCK_ITEM_ID = '1234';
 const MOCK_URL = 'https://example.com';
 const MOCK_HOST = 'myhost';
-const MOCK_HOST_WITH_PROTOCOL = 'http://myhost.com';
+const MOCK_HOST_WITH_PROTOCOL = 'https://myhost.com';
 
 const mockTarget = {
   open: vi.fn(),
