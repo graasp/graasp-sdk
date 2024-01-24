@@ -1,11 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import {
-  MOCK_HOST,
-  MOCK_HOST_WITH_PROTOCOL,
-  MOCK_ITEM_ID,
-  MOCK_URL,
-} from '../../test/fixtures';
 import { DEFAULT_PROTOCOL } from '../config';
 import * as cookieUtils from './cookie';
 import {
@@ -15,6 +9,11 @@ import {
   redirect,
   redirectToSavedUrl,
 } from './navigation';
+
+export const MOCK_ITEM_ID = '1234';
+const MOCK_URL = 'https://example.com';
+const MOCK_HOST = 'myhost';
+const MOCK_HOST_WITH_PROTOCOL = 'http://myhost.com';
 
 const mockTarget = {
   open: vi.fn(),

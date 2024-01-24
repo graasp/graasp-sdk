@@ -2,7 +2,6 @@
 import Cookies from 'js-cookie';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { MOCK_DOMAIN, MOCK_LANG, MOCK_URL } from '../../test/fixtures';
 import {
   COOKIE_KEYS,
   buildIframeResizeHeightKey,
@@ -14,6 +13,10 @@ import {
   setIframeResizeHeightCookie,
   setLangCookie,
 } from './cookie';
+
+const MOCK_URL = 'https://example.com';
+const MOCK_LANG = 'en';
+const MOCK_DOMAIN = 'domain';
 
 describe('Cookie Util Tests', () => {
   beforeEach(() => {

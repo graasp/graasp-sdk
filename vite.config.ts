@@ -9,6 +9,7 @@ export default (): UserConfigExport => {
     test: {},
     plugins: [
       dts({
+        tsconfigPath: './tsconfig.build.json',
         insertTypesEntry: true,
       }),
     ],
