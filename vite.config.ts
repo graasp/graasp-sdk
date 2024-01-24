@@ -1,15 +1,33 @@
 /// <reference types="vitest" />
+import { resolve } from 'path';
 import { fileURLToPath } from 'url';
-import { defineConfig } from 'vite';
+import { UserConfigExport, defineConfig } from 'vite';
 
-export default defineConfig({
-  test: {},
-  resolve: {
-    alias: [
-      {
-        find: '@',
-        replacement: fileURLToPath(new URL('./src', import.meta.url)),
+export default (): UserConfigExport => {
+  return defineConfig({
+    test: {},
+    build: {
+      lib: {
+        // Could also be a dictionary or array of multiple entry points
+        entry: resolve(__dirname, 'src/index.ts'),
+        name: 'graasp-sdk',
+        formats: ['cjs', 'es'],
+        // the proper extensions will be added
+        fileName: 'index',
       },
-    ],
-  },
-});
+      rollupOptions: {
+        // make sure to externalize deps that shouldn't be bundled
+        // into your library
+        external: ['date-fns', 'uuid'],
+      },
+    },
+    resolve: {
+      alias: [
+        {
+          find: '@',
+          replacement: fileURLToPath(new URL('./src', import.meta.url)),
+        },
+      ],
+    },
+  });
+};
