@@ -7,7 +7,7 @@ describe('ItemFactory', () => {
     const item = ItemFactory({ id: '2d11f9d9-fbbe-4e0a-9a13-0999ca20bebc' });
     expect(item.path).toEqual('2d11f9d9_fbbe_4e0a_9a13_0999ca20bebc');
   });
-  it.only('Returns correct path for parentItem', () => {
+  it('Returns correct path for parentItem', () => {
     const item1 = ItemFactory({
       parentItem: ItemFactory({ id: '3d11f9d9-fbbe-4e0a-9a13-0999ca20bebc' }),
     });
