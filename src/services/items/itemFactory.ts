@@ -33,6 +33,17 @@ export const ItemExtraFactory = (
           ...extra,
         },
       } as DocumentItemExtra;
+    case ItemType.LOCAL_FILE:
+    case ItemType.S3_FILE:
+      return {
+        [type]: {
+          name: faker.system.fileName(),
+          mimetype: faker.system.mimeType(),
+          path: faker.system.filePath(),
+          size: faker.number.int(),
+          ...extra,
+        },
+      };
     case ItemType.FOLDER:
     default:
       return {
@@ -52,7 +63,7 @@ faker.helpers.arrayElement([
 export const ItemFactory = (
   i: Partial<DiscriminatedItem> & { parentItem?: DiscriminatedItem } = {},
 ) => {
-  const type = faker.helpers.arrayElement(Object.values(ItemType));
+  const type = i.type ?? ItemType.FOLDER;
   const id = i.id ?? faker.string.uuid();
   return {
     id,
