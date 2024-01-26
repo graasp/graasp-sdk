@@ -70,9 +70,8 @@ export const ItemFactory = (
   const createdAt = faker.date.anytime();
   const updatedAt = faker.date.anytime();
 
-  const path = buildPathFromIds(
-    ...([i.parentItem?.id, id].filter(Boolean) as string[]),
-  );
+  const path =
+    (i.parentItem ? i.parentItem.path + '.' : '') + buildPathFromIds(id);
 
   return {
     id,
