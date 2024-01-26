@@ -62,15 +62,20 @@ faker.helpers.arrayElement([
 
 export const ItemFactory = (
   i: Partial<DiscriminatedItem> & { parentItem?: DiscriminatedItem } = {},
+  options: { dateType: 'string' | 'date' } = { dateType: 'string' },
 ) => {
   const type = i.type ?? ItemType.FOLDER;
   const id = i.id ?? faker.string.uuid();
+  const createdAt = faker.date.anytime();
+  const updatedAt = faker.date.anytime();
   return {
     id,
     name: faker.person.fullName(),
     description: faker.internet.email(),
-    createdAt: faker.date.anytime().toISOString(),
-    updatedAt: faker.date.anytime().toISOString(),
+    createdAt:
+      options.dateType === 'string' ? createdAt.toISOString() : createdAt,
+    updatedAt:
+      options.dateType === 'string' ? updatedAt.toISOString() : updatedAt,
     extra: ItemExtraFactory(type),
     type,
 
