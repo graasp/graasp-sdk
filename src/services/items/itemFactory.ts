@@ -3,147 +3,115 @@ import { MemberFactory } from '..';
 import { CCLicenseAdaptions, ItemType } from '@/constants';
 import { buildPathFromIds } from '@/utils';
 import { faker } from '@faker-js/faker';
-import merge from 'lodash.merge';
 
-export const buildExtraAndType = (
-  {
-    type = ItemType.FOLDER,
-    extra,
-  }: {
-    type: DiscriminatedItem['type'];
-    extra?: Partial<DiscriminatedItem['extra']>;
-  },
-  // Partial<Pick<DiscriminatedItem, 'type' | 'extra'>>
-): Pick<DiscriminatedItem, 'type' | 'extra'> => {
+export const buildExtraAndType = ({
+  type = ItemType.FOLDER,
+  extra,
+}: Partial<Pick<DiscriminatedItem, 'type' | 'extra'>>): Pick<
+  DiscriminatedItem,
+  'type' | 'extra'
+> => {
   switch (type) {
     case ItemType.APP:
       return {
         type,
-        extra: merge(
-          {
-            [type]: {
-              url: faker.internet.url(),
-              settings: {},
-            },
+        extra: extra ?? {
+          [type]: {
+            url: faker.internet.url(),
+            settings: {},
           },
-          extra,
-        ),
+        },
       };
     case ItemType.DOCUMENT:
       return {
         type,
-        extra: merge(
-          {
-            [type]: {
-              content: faker.lorem.text(),
-            },
+        extra: extra ?? {
+          [type]: {
+            content: faker.lorem.text(),
           },
-          extra,
-        ),
+        },
       };
     case ItemType.LINK:
       return {
         type,
-        extra: merge(
-          {
-            [ItemType.LINK]: {
-              html: 'html',
-              icons: [],
-              thumbnails: [],
-              url: faker.internet.url(),
-            },
+        extra: extra ?? {
+          [ItemType.LINK]: {
+            html: 'html',
+            icons: [],
+            thumbnails: [],
+            url: faker.internet.url(),
           },
-          extra,
-        ),
+        },
       };
     case ItemType.H5P:
       return {
         type,
-        extra: merge(
-          {
-            [ItemType.H5P]: {
-              contentId: faker.string.uuid(),
-              h5pFilePath: faker.system.filePath(),
-              contentFilePath: faker.system.filePath(),
-            },
+        extra: extra ?? {
+          [ItemType.H5P]: {
+            contentId: faker.string.uuid(),
+            h5pFilePath: faker.system.filePath(),
+            contentFilePath: faker.system.filePath(),
           },
-          extra,
-        ),
+        },
       };
     case ItemType.ETHERPAD:
       return {
         type,
-        extra: merge(
-          {
-            [ItemType.ETHERPAD]: {
-              padID: faker.string.uuid(),
-              groupID: faker.string.uuid(),
-            },
+        extra: extra ?? {
+          [ItemType.ETHERPAD]: {
+            padID: faker.string.uuid(),
+            groupID: faker.string.uuid(),
           },
-          extra,
-        ),
+        },
       };
     case ItemType.SHORTCUT:
       return {
         type,
-        extra: merge(
-          {
-            [ItemType.SHORTCUT]: {
-              target: faker.string.uuid(),
-              ...extra,
-            },
+        extra: extra ?? {
+          [ItemType.SHORTCUT]: {
+            target: faker.string.uuid(),
           },
-          extra,
-        ),
+        },
       };
     // bug: duplicate because of type
     case ItemType.LOCAL_FILE:
       return {
         type,
-        extra: merge(
-          {
-            [type]: {
-              name: faker.system.fileName(),
-              mimetype: faker.system.mimeType(),
-              path: faker.system.filePath(),
-              size: faker.number.int(),
-              altText: faker.lorem.word(),
-              content: faker.lorem.text(),
-            },
+        extra: extra ?? {
+          [type]: {
+            name: faker.system.fileName(),
+            mimetype: faker.system.mimeType(),
+            path: faker.system.filePath(),
+            size: faker.number.int(),
+            altText: faker.lorem.word(),
+            content: faker.lorem.text(),
           },
-          extra,
-        ),
+        },
       };
     // bug: duplicate because of type
     case ItemType.S3_FILE:
       return {
         type,
-        extra: merge(
-          {
-            [type]: {
-              name: faker.system.fileName(),
-              mimetype: faker.system.mimeType(),
-              path: faker.system.filePath(),
-              size: faker.number.int(),
-              altText: faker.lorem.word(),
-              content: faker.lorem.text(),
-            },
+        extra: extra ?? {
+          [type]: {
+            name: faker.system.fileName(),
+            mimetype: faker.system.mimeType(),
+            path: faker.system.filePath(),
+            size: faker.number.int(),
+            altText: faker.lorem.word(),
+            content: faker.lorem.text(),
           },
-          extra,
-        ),
+        },
       };
     case ItemType.FOLDER:
     default:
       return {
         type,
-        extra: merge(
-          {
-            [ItemType.FOLDER]: {
-              childrenOrder: [],
-            },
+        extra: extra ?? {
+          [ItemType.FOLDER]: {
+            childrenOrder: [],
           },
-          extra,
-        ),
+        },
       };
   }
 };
