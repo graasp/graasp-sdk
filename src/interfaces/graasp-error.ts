@@ -9,6 +9,7 @@ export interface GraaspErrorDetails {
   code: string;
   message: string;
   statusCode: number;
+  name?: string;
 }
 
 export abstract class BaseGraaspError implements GraaspError {
@@ -20,13 +21,14 @@ export abstract class BaseGraaspError implements GraaspError {
   origin!: ErrorOrigin;
 
   constructor(
-    { code, statusCode, message }: GraaspErrorDetails,
+    { code, statusCode, message, name }: GraaspErrorDetails,
     data?: unknown,
   ) {
     this.code = code;
     this.statusCode = statusCode;
     this.message = message;
     this.data = data;
+    this.name = name ?? message;
   }
 }
 
