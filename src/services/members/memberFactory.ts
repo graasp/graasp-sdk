@@ -2,7 +2,7 @@ import { CompleteMember, MemberType } from '.';
 import { faker } from '@faker-js/faker';
 import * as Factory from 'factory.ts';
 
-export const MemberFactory = Factory.Sync.makeFactory<CompleteMember>({
+export const MemberFactory = Factory.makeFactory<CompleteMember>({
   id: faker.string.uuid(),
   name: faker.person.fullName(),
   email: faker.internet.email(),
