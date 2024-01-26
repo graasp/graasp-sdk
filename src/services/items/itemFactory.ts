@@ -7,7 +7,6 @@ import {
   FolderItemExtra,
   FolderItemExtraProperties,
 } from '@/interfaces';
-import { UUID } from '@/types';
 import { buildPathFromIds } from '@/utils';
 import { faker } from '@faker-js/faker';
 
