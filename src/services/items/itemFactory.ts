@@ -1,58 +1,127 @@
-import { DiscriminatedItem } from '.';
-import { AppItemExtra, AppItemExtraProperties, MemberFactory } from '..';
-import { ItemType } from '@/constants';
-import {
-  DocumentItemExtra,
-  DocumentItemExtraProperties,
-  FolderItemExtra,
-  FolderItemExtraProperties,
-} from '@/interfaces';
+import { DiscriminatedItem, Item } from '.';
+import { MemberFactory } from '..';
+import { CCLicenseAdaptions, ItemType } from '@/constants';
 import { buildPathFromIds } from '@/utils';
 import { faker } from '@faker-js/faker';
 
-// TODO: match type with extra type and return value
-export const ItemExtraFactory = (
-  type: DiscriminatedItem['type'] = ItemType.FOLDER,
-  extra?:
-    | Partial<FolderItemExtraProperties>
-    | Partial<AppItemExtraProperties>
-    | Partial<DocumentItemExtraProperties>,
-) => {
+export const buildExtraAndType = ({
+  type = ItemType.FOLDER,
+  extra = { folder: { childrenOrder: [] } },
+}: Partial<Pick<DiscriminatedItem, 'type' | 'extra'>>): Pick<
+  DiscriminatedItem,
+  'type' | 'extra'
+> => {
   switch (type) {
     case ItemType.APP:
       return {
-        [type]: {
-          url: faker.internet.url(),
-          settings: faker.helpers.arrayElement([{}, { some: 'settings' }]),
-          ...extra,
+        type,
+        extra: {
+          [type]: {
+            url: faker.internet.url(),
+            settings: {},
+            ...extra,
+          },
         },
-      } as AppItemExtra;
+      };
     case ItemType.DOCUMENT:
       return {
-        [type]: {
-          content: faker.lorem.text(),
-          ...extra,
+        type,
+        extra: {
+          [type]: {
+            content: faker.lorem.text(),
+            ...extra,
+          },
         },
-      } as DocumentItemExtra;
+      };
+    case ItemType.LINK:
+      return {
+        type,
+        extra: {
+          [ItemType.LINK]: {
+            html: 'html',
+            icons: [],
+            thumbnails: [],
+            url: faker.internet.url(),
+            ...extra,
+          },
+        },
+      };
+    case ItemType.H5P:
+      return {
+        type,
+        extra: {
+          [ItemType.H5P]: {
+            contentId: faker.string.uuid(),
+            h5pFilePath: faker.system.filePath(),
+            contentFilePath: faker.system.filePath(),
+            ...extra,
+          },
+        },
+      };
+    case ItemType.ETHERPAD:
+      return {
+        type,
+        extra: {
+          [ItemType.ETHERPAD]: {
+            padID: faker.string.uuid(),
+            groupID: faker.string.uuid(),
+            ...extra,
+          },
+        },
+      };
+    case ItemType.SHORTCUT:
+      return {
+        type,
+        extra: {
+          [ItemType.SHORTCUT]: {
+            target: faker.string.uuid(),
+            ...extra,
+          },
+        },
+      };
+    // bug: duplicate because of type
     case ItemType.LOCAL_FILE:
+      return {
+        type,
+        extra: {
+          [type]: {
+            name: faker.system.fileName(),
+            mimetype: faker.system.mimeType(),
+            path: faker.system.filePath(),
+            size: faker.number.int(),
+            altText: faker.lorem.word(),
+            content: faker.lorem.text(),
+            ...extra,
+          },
+        },
+      };
+    // bug: duplicate because of type
     case ItemType.S3_FILE:
       return {
-        [type]: {
-          name: faker.system.fileName(),
-          mimetype: faker.system.mimeType(),
-          path: faker.system.filePath(),
-          size: faker.number.int(),
-          ...extra,
+        type,
+        extra: {
+          [type]: {
+            name: faker.system.fileName(),
+            mimetype: faker.system.mimeType(),
+            path: faker.system.filePath(),
+            size: faker.number.int(),
+            altText: faker.lorem.word(),
+            content: faker.lorem.text(),
+            ...extra,
+          },
         },
       };
     case ItemType.FOLDER:
     default:
       return {
-        [ItemType.FOLDER]: {
-          childrenOrder: [],
-          ...extra,
+        type,
+        extra: {
+          [ItemType.FOLDER]: {
+            childrenOrder: [],
+            ...extra,
+          },
         },
-      } as FolderItemExtra;
+      };
   }
 };
 
@@ -61,11 +130,39 @@ faker.helpers.arrayElement([
   {},
 ]);
 
-export const ItemFactory = (
-  i: Partial<DiscriminatedItem> & { parentItem?: DiscriminatedItem } = {},
-  options: { dateType: 'string' | 'date' } = { dateType: 'string' },
+type ItemFactoryType<DateType = Item['createdAt']> = Pick<
+  DiscriminatedItem,
+  'id' | 'name' | 'description' | 'path' | 'settings' | 'creator' | 'extra'
+> & {
+  updatedAt: DateType;
+  createdAt: DateType;
+  // extra: ItemExtraFactory(type),
+};
+
+const adaptDate = (
+  date: Date,
+  { dateType = 'string' }: { dateType?: 'string' | 'date' } = {},
 ) => {
-  const type = i.type ?? ItemType.FOLDER;
+  if (dateType === 'string') {
+    return date.toISOString();
+  }
+  return date;
+};
+
+/**
+ *
+ * @param i partial item, can be omitted. The factory should build a correct item from given type (default to folder) and data
+ * @param options
+ * @returns
+ */
+export const ItemFactory = <DateType = string>(
+  i: Partial<DiscriminatedItem> & { parentItem?: Pick<Item, 'path'> } = {},
+  options: { dateType: 'string' | 'date' } = { dateType: 'string' },
+): ItemFactoryType<DateType> => {
+  const typeAndExtra = buildExtraAndType({
+    type: i.type ?? ItemType.FOLDER,
+    extra: i.extra,
+  });
   const id = i.id ?? faker.string.uuid();
   const createdAt = faker.date.anytime();
   const updatedAt = faker.date.anytime();
@@ -76,17 +173,28 @@ export const ItemFactory = (
   return {
     id,
     name: faker.person.fullName(),
-    description: faker.internet.email(),
-    createdAt:
-      options.dateType === 'string' ? createdAt.toISOString() : createdAt,
-    updatedAt:
-      options.dateType === 'string' ? updatedAt.toISOString() : updatedAt,
-    extra: ItemExtraFactory(type),
-    type,
+    description: faker.lorem.text(),
+    createdAt: adaptDate(createdAt, options) as any, // TODO need help: depend on the generic type
+    updatedAt: adaptDate(updatedAt, options) as any, // TODO need help: depend on the generic type
+    ...typeAndExtra,
 
-    settings: faker.helpers.arrayElement([{}]),
+    settings: faker.helpers.arrayElement([
+      {},
+      {
+        lang: faker.helpers.arrayElement(['fr', 'en']),
+        isPinned: faker.datatype.boolean(),
+        showChatbox: faker.datatype.boolean(),
+        hasThumbnail: faker.datatype.boolean(),
+        isResizable: faker.datatype.boolean(),
+        isCollapsible: faker.datatype.boolean(),
+        enableSaveActions: faker.datatype.boolean(),
+        tags: faker.helpers.multiple(faker.lorem.word),
+        displayCoEditors: faker.datatype.boolean(),
+        ccLicenseAdaption: faker.helpers.enumValue(CCLicenseAdaptions),
+      },
+    ]),
     creator: MemberFactory(),
     path,
     ...i,
-  } as DiscriminatedItem;
+  };
 };
