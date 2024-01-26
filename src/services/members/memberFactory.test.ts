@@ -4,11 +4,9 @@ import { MemberFactory } from '.';
 
 describe('MemberFactory', () => {
   it('return different values', () => {
-    const val1 = MemberFactory.build();
-    const val2 = MemberFactory.build();
-    const val3 = MemberFactory.build();
-
-    console.log(val1, val2, val3);
+    const val1 = MemberFactory();
+    const val2 = MemberFactory();
+    const val3 = MemberFactory();
 
     expect(val1).not.toMatchObject(val2);
     expect(val1).not.toMatchObject(val3);
