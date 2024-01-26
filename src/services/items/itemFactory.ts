@@ -7,6 +7,8 @@ import {
   FolderItemExtra,
   FolderItemExtraProperties,
 } from '@/interfaces';
+import { UUID } from '@/types';
+import { buildPathFromIds } from '@/utils';
 import { faker } from '@faker-js/faker';
 
 // TODO: match type with extra type and return value
@@ -68,6 +70,11 @@ export const ItemFactory = (
   const id = i.id ?? faker.string.uuid();
   const createdAt = faker.date.anytime();
   const updatedAt = faker.date.anytime();
+
+  const path = buildPathFromIds(
+    ...([i.parentItem?.id, id].filter(Boolean) as string[]),
+  );
+
   return {
     id,
     name: faker.person.fullName(),
@@ -81,9 +88,7 @@ export const ItemFactory = (
 
     settings: faker.helpers.arrayElement([{}]),
     creator: MemberFactory(),
-    path:
-      (i.parentItem?.path ? `${i.parentItem?.path}.` : '') +
-      id.replaceAll('-', '_'),
+    path,
     ...i,
   } as DiscriminatedItem;
 };
