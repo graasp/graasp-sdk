@@ -5,13 +5,16 @@ import { buildPathFromIds } from '@/utils';
 import { faker } from '@faker-js/faker';
 import merge from 'lodash.merge';
 
-export const buildExtraAndType = ({
-  type = ItemType.FOLDER,
-  extra,
-}: Partial<Pick<DiscriminatedItem, 'type' | 'extra'>>): Pick<
-  DiscriminatedItem,
-  'type' | 'extra'
-> => {
+export const buildExtraAndType = (
+  {
+    type = ItemType.FOLDER,
+    extra,
+  }: {
+    type: DiscriminatedItem['type'];
+    extra?: Partial<DiscriminatedItem['extra']>;
+  },
+  // Partial<Pick<DiscriminatedItem, 'type' | 'extra'>>
+): Pick<DiscriminatedItem, 'type' | 'extra'> => {
   switch (type) {
     case ItemType.APP:
       return {
