@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.6.0](https://github.com/graasp/graasp-sdk/compare/v3.5.0...v3.6.0) (2024-01-29)
+
+
+### Features
+
+* add item geolocation type ([#385](https://github.com/graasp/graasp-sdk/issues/385)) ([588d5d7](https://github.com/graasp/graasp-sdk/commit/588d5d7e5fdb1a8ad492a9ff1e17b941b8c045ae))
+
+
+### Bug Fixes
+
+* build with vite ([#384](https://github.com/graasp/graasp-sdk/issues/384)) ([06e9965](https://github.com/graasp/graasp-sdk/commit/06e996581977586eb1236714a32c2915d4917f3e))
+* **deps:** update dependency date-fns to v3.3.1 ([#379](https://github.com/graasp/graasp-sdk/issues/379)) ([1d15b4c](https://github.com/graasp/graasp-sdk/commit/1d15b4c1326b59fc26f3802e6629c00e08b5fa02))
+
 ## [3.5.0](https://github.com/graasp/graasp-sdk/compare/v3.4.1...v3.5.0) (2024-01-22)
 
 
