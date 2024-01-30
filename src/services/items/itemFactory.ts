@@ -116,7 +116,7 @@ export const buildExtraAndType = ({
   }
 };
 
-type ItemFactoryType<DateType = DiscriminatedItem['createdAt']> = Pick<
+type ItemFactoryOutputType<DateType = DiscriminatedItem['createdAt']> = Pick<
   DiscriminatedItem,
   'id' | 'name' | 'description' | 'path' | 'settings' | 'creator' | 'extra'
 > & {
@@ -125,14 +125,8 @@ type ItemFactoryType<DateType = DiscriminatedItem['createdAt']> = Pick<
   // extra: ItemExtraFactory(type),
 };
 
-const adaptDate = (
-  date: Date,
-  { dateType = 'string' }: { dateType?: 'string' | 'date' } = {},
-) => {
-  if (dateType === 'string') {
-    return date.toISOString();
-  }
-  return date;
+type ItemFactoryInputType = Partial<DiscriminatedItem> & {
+  parentItem?: Pick<DiscriminatedItem, 'path'>;
 };
 
 /**
@@ -141,31 +135,28 @@ const adaptDate = (
  * @param options
  * @returns
  */
-export const ItemFactory = <DateType = string>(
-  i: Partial<DiscriminatedItem> & {
-    parentItem?: Pick<DiscriminatedItem, 'path'>;
-  } = {},
-  options: { dateType: 'string' | 'date' } = { dateType: 'string' },
-): ItemFactoryType<DateType> => {
+export const ItemFactory = (
+  item: ItemFactoryInputType,
+): ItemFactoryOutputType<string> => {
   const typeAndExtra = buildExtraAndType({
-    type: i.type ?? ItemType.FOLDER,
-    extra: i.extra,
+    type: item.type ?? ItemType.FOLDER,
+    extra: item.extra,
   });
-  const id = i.id ?? faker.string.uuid();
-  const createdAt = faker.date.anytime();
-  const updatedAt = new Date(
+  const id = item.id ?? faker.string.uuid();
+  const createdAt: string = faker.date.anytime().toISOString();
+  const updatedAt: string = new Date(
     new Date(createdAt).getTime() + faker.number.int(),
-  );
+  ).toISOString();
 
   const path =
-    (i.parentItem ? i.parentItem.path + '.' : '') + buildPathFromIds(id);
+    (item.parentItem ? item.parentItem.path + '.' : '') + buildPathFromIds(id);
 
   return {
     id,
     name: faker.person.fullName(),
     description: faker.lorem.text(),
-    createdAt: adaptDate(createdAt, options) as any, // TODO need help: depend on the generic type
-    updatedAt: adaptDate(updatedAt, options) as any, // TODO need help: depend on the generic type
+    createdAt,
+    updatedAt,
     ...typeAndExtra,
 
     settings: faker.helpers.arrayElement([
@@ -185,6 +176,17 @@ export const ItemFactory = <DateType = string>(
     ]),
     creator: MemberFactory(),
     path,
-    ...i,
+    ...item,
+  };
+};
+
+export const ItemFactoryAsDate = (
+  item: ItemFactoryInputType,
+): ItemFactoryOutputType<Date> => {
+  const newItem = ItemFactory(item);
+  return {
+    ...newItem,
+    updatedAt: new Date(newItem.updatedAt),
+    createdAt: new Date(newItem.createdAt),
   };
 };
