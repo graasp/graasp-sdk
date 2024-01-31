@@ -1,6 +1,7 @@
 import { CCLicenseAdaptions, OldCCLicenseAdaptations } from '@/constants';
 
 export interface ItemSettings {
+  /** @deprecated use item.language */
   lang?: string;
   isPinned?: boolean;
   showChatbox?: boolean;
