@@ -22,7 +22,7 @@ export interface Item<S = ItemSettings> {
   creator: Member | null;
   createdAt: string;
   updatedAt: string;
-  language: string;
+  lang: string;
 }
 
 export type AppItemType<S = ItemSettings> = {
