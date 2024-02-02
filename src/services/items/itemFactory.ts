@@ -1,152 +1,43 @@
 import { MemberFactory } from '../members/memberFactory';
-import { DiscriminatedItem } from './interfaces/item';
+import {
+  AppItemType,
+  DiscriminatedItem,
+  DocumentItemType,
+  EmbeddedLinkItemType,
+  EtherpadItemType,
+  FolderItemType,
+  H5PItemType,
+  LocalFileItemType,
+  S3FileItemType,
+  ShortcutItemType,
+} from './interfaces/item';
 import { CCLicenseAdaptions, ItemType } from '@/constants';
 import { buildPathFromIds } from '@/utils';
 import { faker } from '@faker-js/faker';
 
-export const buildExtraAndType = ({
-  type = ItemType.FOLDER,
-  extra,
-}: Partial<Pick<DiscriminatedItem, 'type' | 'extra'>>): Pick<
-  DiscriminatedItem,
-  'type' | 'extra'
-> => {
-  switch (type) {
-    case ItemType.APP:
-      return {
-        type,
-        extra: extra ?? {
-          [type]: {
-            url: faker.internet.url(),
-            settings: {},
-          },
-        },
-      };
-    case ItemType.DOCUMENT:
-      return {
-        type,
-        extra: extra ?? {
-          [type]: {
-            content: `<div>${faker.lorem.text()}</div>`,
-          },
-        },
-      };
-    case ItemType.LINK:
-      return {
-        type,
-        extra: extra ?? {
-          [ItemType.LINK]: {
-            html: `<div>${faker.lorem.text()}</div>`,
-            icons: [],
-            thumbnails: [],
-            url: faker.internet.url(),
-          },
-        },
-      };
-    case ItemType.H5P:
-      return {
-        type,
-        extra: extra ?? {
-          [ItemType.H5P]: {
-            contentId: faker.string.uuid(),
-            h5pFilePath: faker.system.filePath(),
-            contentFilePath: faker.system.filePath(),
-          },
-        },
-      };
-    case ItemType.ETHERPAD:
-      return {
-        type,
-        extra: extra ?? {
-          [ItemType.ETHERPAD]: {
-            padID: faker.string.uuid(),
-            groupID: faker.string.uuid(),
-          },
-        },
-      };
-    case ItemType.SHORTCUT:
-      return {
-        type,
-        extra: extra ?? {
-          [ItemType.SHORTCUT]: {
-            target: faker.string.uuid(),
-          },
-        },
-      };
-    // bug: duplicate because of type
-    case ItemType.LOCAL_FILE:
-      return {
-        type,
-        extra: extra ?? {
-          [type]: {
-            name: faker.system.fileName(),
-            mimetype: faker.system.mimeType(),
-            path: faker.system.filePath(),
-            size: faker.number.int(),
-            altText: faker.lorem.word(),
-            content: faker.lorem.text(),
-          },
-        },
-      };
-    // bug: duplicate because of type
-    case ItemType.S3_FILE:
-      return {
-        type,
-        extra: extra ?? {
-          [type]: {
-            name: faker.system.fileName(),
-            mimetype: faker.system.mimeType(),
-            path: faker.system.filePath(),
-            size: faker.number.int(),
-            altText: faker.lorem.word(),
-            content: faker.lorem.text(),
-          },
-        },
-      };
-    case ItemType.FOLDER:
-    default:
-      return {
-        type,
-        extra: extra ?? {
-          [ItemType.FOLDER]: {
-            childrenOrder: [],
-          },
-        },
-      };
-  }
-};
-
-type ItemFactoryOutputType<DateType = DiscriminatedItem['createdAt']> = Pick<
-  DiscriminatedItem,
+type ItemFactoryOutputType<
+  IT extends DiscriminatedItem,
+  DateType = DiscriminatedItem['createdAt'],
+> = Pick<
+  IT,
   'id' | 'name' | 'description' | 'path' | 'settings' | 'creator' | 'extra'
 > & {
   updatedAt: DateType;
   createdAt: DateType;
-  // extra: ItemExtraFactory(type),
 };
 
-type ItemFactoryInputType = Partial<DiscriminatedItem> & {
-  parentItem?: Pick<DiscriminatedItem, 'path'>;
+type ItemFactoryInputType<IT extends DiscriminatedItem> = Partial<IT> & {
+  parentItem?: Pick<IT, 'path'>;
 };
 
-/**
- *
- * @param i partial item, can be omitted. The factory should build a correct item from given type (default to folder) and data
- * @param options
- * @returns
- */
-export const ItemFactory = (
-  item: ItemFactoryInputType = {},
-): ItemFactoryOutputType<string> => {
-  const typeAndExtra = buildExtraAndType({
-    type: item.type ?? ItemType.FOLDER,
-    extra: item.extra,
-  });
+const PartialItemFactory = <IT extends DiscriminatedItem>(
+  item: ItemFactoryInputType<IT> = {},
+): Omit<ItemFactoryOutputType<IT, string>, 'type' | 'extra'> => {
   const id = item.id ?? faker.string.uuid();
-  const createdAt: string = faker.date.anytime().toISOString();
-  const updatedAt: string = new Date(
-    new Date(createdAt).getTime() + faker.number.int(),
-  ).toISOString();
+  const createdAt: string =
+    item.createdAt ?? faker.date.anytime().toISOString();
+  const updatedAt: string =
+    item.updatedAt ?? faker.date.anytime().toISOString();
 
   const path =
     (item.parentItem ? item.parentItem.path + '.' : '') + buildPathFromIds(id);
@@ -157,7 +48,6 @@ export const ItemFactory = (
     description: faker.lorem.text(),
     createdAt,
     updatedAt,
-    ...typeAndExtra,
 
     settings: faker.helpers.arrayElement([
       {},
@@ -180,13 +70,188 @@ export const ItemFactory = (
   };
 };
 
-export const ItemFactoryAsDate = (
-  item: ItemFactoryInputType,
-): ItemFactoryOutputType<Date> => {
-  const newItem = ItemFactory(item);
+/**
+ *
+ * @param item partial folder item, can be omitted.
+ * @returns
+ */
+export const FolderItemFactoryAsDate = (
+  item: ItemFactoryInputType<FolderItemType> = {},
+): ItemFactoryOutputType<FolderItemType, Date> => {
+  const newItem = FolderItemFactory(item);
   return {
     ...newItem,
     updatedAt: new Date(newItem.updatedAt),
     createdAt: new Date(newItem.createdAt),
+  };
+};
+
+export const FolderItemFactory = (
+  item: ItemFactoryInputType<FolderItemType> = {},
+): ItemFactoryOutputType<FolderItemType> => {
+  const newItem = PartialItemFactory({ ...item });
+  return {
+    ...newItem,
+    extra: item.extra ?? {
+      [ItemType.FOLDER]: {
+        childrenOrder: [],
+      },
+    },
+  };
+};
+
+export const AppItemFactory = (
+  item: ItemFactoryInputType<AppItemType> = {},
+): ItemFactoryOutputType<AppItemType> => {
+  const newItem = PartialItemFactory({ ...item, type: ItemType.APP });
+  return {
+    ...newItem,
+    extra: item.extra ?? {
+      [ItemType.APP]: {
+        url: faker.internet.url(),
+        settings: {},
+      },
+    },
+  };
+};
+
+export const H5PItemFactory = (
+  item: ItemFactoryInputType<H5PItemType> = {},
+): ItemFactoryOutputType<H5PItemType> => {
+  const newItem = PartialItemFactory<H5PItemType>({
+    ...item,
+    type: ItemType.H5P,
+  });
+  return {
+    ...newItem,
+    extra: item.extra ?? {
+      [ItemType.H5P]: {
+        contentId: faker.string.uuid(),
+        h5pFilePath: faker.system.filePath(),
+        contentFilePath: faker.system.filePath(),
+      },
+    },
+  };
+};
+
+export const DocumentItemFactory = (
+  item: ItemFactoryInputType<DocumentItemType> = {},
+): ItemFactoryOutputType<DocumentItemType> => {
+  const newItem = PartialItemFactory<DocumentItemType>({
+    ...item,
+    type: ItemType.DOCUMENT,
+  });
+  return {
+    ...newItem,
+    extra: item.extra ?? {
+      [ItemType.DOCUMENT]: {
+        content: `<div>${faker.lorem.text()}</div>`,
+      },
+    },
+  };
+};
+
+export const EmbeddedLinkItemFactory = (
+  item: ItemFactoryInputType<EmbeddedLinkItemType> = {},
+): ItemFactoryOutputType<EmbeddedLinkItemType> => {
+  const newItem = PartialItemFactory<EmbeddedLinkItemType>({
+    ...item,
+    type: ItemType.LINK,
+  });
+  return {
+    ...newItem,
+    extra: item.extra ?? {
+      [ItemType.LINK]: {
+        html: faker.helpers.arrayElement([
+          `<div>${faker.lorem.text()}</div>`,
+          undefined,
+        ]),
+        icons: faker.helpers.arrayElement([[faker.internet.url()], undefined]),
+        thumbnails: faker.helpers.arrayElement([
+          [faker.internet.url()],
+          undefined,
+        ]),
+        url: faker.internet.url(),
+      },
+    },
+  };
+};
+
+export const LocalFileItemFactory = (
+  item: ItemFactoryInputType<LocalFileItemType> = {},
+): ItemFactoryOutputType<LocalFileItemType> => {
+  const newItem = PartialItemFactory<LocalFileItemType>({
+    ...item,
+    type: ItemType.LOCAL_FILE,
+  });
+  return {
+    ...newItem,
+    extra: item.extra ?? {
+      [ItemType.LOCAL_FILE]: {
+        name: faker.system.fileName(),
+        mimetype: faker.system.mimeType(),
+        path: faker.system.filePath(),
+        size: faker.number.int({ min: 1 }),
+        altText: faker.lorem.word(),
+        content: faker.lorem.text(),
+      },
+    },
+  };
+};
+
+export const S3FileItemFactory = (
+  item: ItemFactoryInputType<S3FileItemType> = {},
+): ItemFactoryOutputType<S3FileItemType> => {
+  const newItem = PartialItemFactory<S3FileItemType>({
+    ...item,
+    type: ItemType.S3_FILE,
+  });
+  return {
+    ...newItem,
+    extra: item.extra ?? {
+      [ItemType.S3_FILE]: {
+        name: faker.system.fileName(),
+        mimetype: faker.system.mimeType(),
+        path: faker.system.filePath(),
+        size: faker.number.int(),
+        altText: faker.helpers.arrayElement([undefined, faker.lorem.word()]),
+        content: faker.lorem.text(),
+      },
+    },
+  };
+};
+
+export const EtherpadItemFactory = (
+  item: ItemFactoryInputType<EtherpadItemType> = {},
+): ItemFactoryOutputType<EtherpadItemType> => {
+  const newItem = PartialItemFactory<EtherpadItemType>({
+    ...item,
+    type: ItemType.ETHERPAD,
+  });
+  return {
+    ...newItem,
+    extra: item.extra ?? {
+      [ItemType.ETHERPAD]: {
+        padID: faker.string.uuid(),
+        groupID: faker.string.uuid(),
+      },
+    },
+  };
+};
+
+export const ShortcutItemFactory = (
+  item: ItemFactoryInputType<ShortcutItemType> = {},
+): ItemFactoryOutputType<ShortcutItemType> => {
+  const newItem = PartialItemFactory<ShortcutItemType>({
+    ...item,
+    type: ItemType.SHORTCUT,
+  });
+  return {
+    ...newItem,
+    extra: item.extra ?? {
+      [ItemType.SHORTCUT]: {
+        target: faker.string.uuid(),
+      },
+    },
   };
 };
