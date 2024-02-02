@@ -136,7 +136,7 @@ type ItemFactoryInputType = Partial<DiscriminatedItem> & {
  * @returns
  */
 export const ItemFactory = (
-  item: ItemFactoryInputType,
+  item: ItemFactoryInputType = {},
 ): ItemFactoryOutputType<string> => {
   const typeAndExtra = buildExtraAndType({
     type: item.type ?? ItemType.FOLDER,
