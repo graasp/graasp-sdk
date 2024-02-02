@@ -55,7 +55,7 @@ const PartialItemFactory = <IT extends DiscriminatedItem>(
     createdAt,
     updatedAt,
     path,
-    name: item.name ?? faker.person.fullName(),
+    name: item.name ?? faker.helpers.multiple(faker.lorem.word).join(' '),
     description: item.description ?? faker.lorem.text(),
     settings:
       item.settings ??
