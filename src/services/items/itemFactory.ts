@@ -15,10 +15,7 @@ import { CCLicenseAdaptions, ItemType } from '@/constants';
 import { buildPathFromIds } from '@/utils';
 import { faker } from '@faker-js/faker';
 
-export type ItemFactoryOutputType<
-  IT extends DiscriminatedItem,
-  DateType = DiscriminatedItem['createdAt'],
-> = Pick<
+export type ItemFactoryOutputType<IT extends DiscriminatedItem> = Pick<
   IT,
   | 'id'
   | 'name'
@@ -29,10 +26,9 @@ export type ItemFactoryOutputType<
   | 'extra'
   | 'type'
   | 'lang'
-> & {
-  updatedAt: DateType;
-  createdAt: DateType;
-};
+  | 'createdAt'
+  | 'updatedAt'
+>;
 
 type ItemFactoryInputType<IT extends DiscriminatedItem> = Partial<IT> & {
   parentItem?: Pick<IT, 'path'>;
@@ -40,7 +36,7 @@ type ItemFactoryInputType<IT extends DiscriminatedItem> = Partial<IT> & {
 
 const PartialItemFactory = <IT extends DiscriminatedItem>(
   item: ItemFactoryInputType<IT> = {},
-): Omit<ItemFactoryOutputType<IT, string>, 'type' | 'extra'> => {
+): Omit<ItemFactoryOutputType<IT>, 'type' | 'extra'> => {
   const id = item.id ?? faker.string.uuid();
   const createdAt: string =
     item.createdAt ?? faker.date.anytime().toISOString();
