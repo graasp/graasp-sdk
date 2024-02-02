@@ -1,4 +1,4 @@
-import { CompleteMember, MemberType } from '.';
+import { CompleteMember, MemberType } from './interfaces/member';
 import { faker } from '@faker-js/faker';
 
 export const MemberFactory = (
@@ -13,6 +13,7 @@ export const MemberFactory = (
     { lang: faker.helpers.arrayElement(['en', 'fr', 'de']) },
     {},
   ]),
-  type: MemberType.Individual, // todo
+  // todo: handle other member type when useful in backend
+  type: MemberType.Individual,
   ...m,
 });

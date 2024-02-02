@@ -1,5 +1,5 @@
-import { DiscriminatedItem, Item } from '.';
-import { MemberFactory } from '..';
+import { MemberFactory } from '../members/memberFactory';
+import { DiscriminatedItem } from './interfaces/item';
 import { CCLicenseAdaptions, ItemType } from '@/constants';
 import { buildPathFromIds } from '@/utils';
 import { faker } from '@faker-js/faker';
@@ -27,7 +27,7 @@ export const buildExtraAndType = ({
         type,
         extra: extra ?? {
           [type]: {
-            content: faker.lorem.text(),
+            content: `<div>${faker.lorem.text()}</div>`,
           },
         },
       };
@@ -36,7 +36,7 @@ export const buildExtraAndType = ({
         type,
         extra: extra ?? {
           [ItemType.LINK]: {
-            html: 'html',
+            html: `<div>${faker.lorem.text()}</div>`,
             icons: [],
             thumbnails: [],
             url: faker.internet.url(),
@@ -116,12 +116,7 @@ export const buildExtraAndType = ({
   }
 };
 
-faker.helpers.arrayElement([
-  { lang: faker.helpers.arrayElement(['en', 'fr', 'de']) },
-  {},
-]);
-
-type ItemFactoryType<DateType = Item['createdAt']> = Pick<
+type ItemFactoryType<DateType = DiscriminatedItem['createdAt']> = Pick<
   DiscriminatedItem,
   'id' | 'name' | 'description' | 'path' | 'settings' | 'creator' | 'extra'
 > & {
@@ -147,7 +142,9 @@ const adaptDate = (
  * @returns
  */
 export const ItemFactory = <DateType = string>(
-  i: Partial<DiscriminatedItem> & { parentItem?: Pick<Item, 'path'> } = {},
+  i: Partial<DiscriminatedItem> & {
+    parentItem?: Pick<DiscriminatedItem, 'path'>;
+  } = {},
   options: { dateType: 'string' | 'date' } = { dateType: 'string' },
 ): ItemFactoryType<DateType> => {
   const typeAndExtra = buildExtraAndType({
@@ -156,7 +153,9 @@ export const ItemFactory = <DateType = string>(
   });
   const id = i.id ?? faker.string.uuid();
   const createdAt = faker.date.anytime();
-  const updatedAt = faker.date.anytime();
+  const updatedAt = new Date(
+    new Date(createdAt).getTime() + faker.number.int(),
+  );
 
   const path =
     (i.parentItem ? i.parentItem.path + '.' : '') + buildPathFromIds(id);
