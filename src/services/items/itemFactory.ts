@@ -28,6 +28,7 @@ export type ItemFactoryOutputType<
   | 'creator'
   | 'extra'
   | 'type'
+  | 'lang'
 > & {
   updatedAt: DateType;
   createdAt: DateType;
@@ -51,29 +52,29 @@ const PartialItemFactory = <IT extends DiscriminatedItem>(
 
   return {
     id,
-    name: faker.person.fullName(),
-    description: faker.lorem.text(),
     createdAt,
     updatedAt,
-
-    settings: faker.helpers.arrayElement([
-      {},
-      {
-        isPinned: faker.datatype.boolean(),
-        showChatbox: faker.datatype.boolean(),
-        hasThumbnail: faker.datatype.boolean(),
-        isResizable: faker.datatype.boolean(),
-        isCollapsible: faker.datatype.boolean(),
-        enableSaveActions: faker.datatype.boolean(),
-        tags: faker.helpers.multiple(faker.lorem.word),
-        displayCoEditors: faker.datatype.boolean(),
-        ccLicenseAdaption: faker.helpers.enumValue(CCLicenseAdaptions),
-      },
-    ]),
-    creator: MemberFactory(),
     path,
-    lang: faker.helpers.arrayElement(['fr', 'en']),
-    ...item,
+    name: item.name ?? faker.person.fullName(),
+    description: item.description ?? faker.lorem.text(),
+    settings:
+      item.settings ??
+      faker.helpers.arrayElement([
+        {},
+        {
+          isPinned: faker.datatype.boolean(),
+          showChatbox: faker.datatype.boolean(),
+          hasThumbnail: faker.datatype.boolean(),
+          isResizable: faker.datatype.boolean(),
+          isCollapsible: faker.datatype.boolean(),
+          enableSaveActions: faker.datatype.boolean(),
+          tags: faker.helpers.multiple(faker.lorem.word),
+          displayCoEditors: faker.datatype.boolean(),
+          ccLicenseAdaption: faker.helpers.enumValue(CCLicenseAdaptions),
+        },
+      ]),
+    creator: item.creator ?? MemberFactory(),
+    lang: item.lang ?? faker.helpers.arrayElement(['fr', 'en']),
   };
 };
 
