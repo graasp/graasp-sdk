@@ -162,7 +162,6 @@ export const ItemFactory = (
     settings: faker.helpers.arrayElement([
       {},
       {
-        lang: faker.helpers.arrayElement(['fr', 'en']),
         isPinned: faker.datatype.boolean(),
         showChatbox: faker.datatype.boolean(),
         hasThumbnail: faker.datatype.boolean(),
@@ -176,6 +175,7 @@ export const ItemFactory = (
     ]),
     creator: MemberFactory(),
     path,
+    lang: faker.helpers.arrayElement(['fr', 'en']),
     ...item,
   };
 };
