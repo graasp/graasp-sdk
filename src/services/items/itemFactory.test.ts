@@ -44,6 +44,10 @@ describe('ItemFactor General', () => {
     });
     expect(item1.creator).toBeNull();
   });
+  it('Default to hasThumbnail = false', () => {
+    const item1 = FolderItemFactory({});
+    expect(item1.settings.hasThumbnail).toBeFalsy();
+  });
 });
 
 describe('FolderItemFactory', () => {

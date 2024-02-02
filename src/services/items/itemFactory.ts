@@ -64,7 +64,7 @@ const PartialItemFactory = <IT extends DiscriminatedItem>(
         {
           isPinned: faker.datatype.boolean(),
           showChatbox: faker.datatype.boolean(),
-          hasThumbnail: faker.datatype.boolean(),
+          hasThumbnail: false,
           isResizable: faker.datatype.boolean(),
           isCollapsible: faker.datatype.boolean(),
           enableSaveActions: faker.datatype.boolean(),
