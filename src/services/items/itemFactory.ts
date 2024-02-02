@@ -73,7 +73,8 @@ const PartialItemFactory = <IT extends DiscriminatedItem>(
           ccLicenseAdaption: faker.helpers.enumValue(CCLicenseAdaptions),
         },
       ]),
-    creator: item.creator ?? MemberFactory(),
+    // allow null creator
+    creator: item.creator === undefined ? MemberFactory() : item.creator,
     lang: item.lang ?? faker.helpers.arrayElement(['fr', 'en']),
   };
 };

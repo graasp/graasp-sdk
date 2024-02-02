@@ -11,9 +11,10 @@ import {
   S3FileItemFactory,
   ShortcutItemFactory,
 } from '.';
+import { MemberFactory } from '..';
 import { ItemType } from '@/constants';
 
-describe('FolderItemFactory', () => {
+describe('ItemFactor General', () => {
   it('Returns correct path for id', () => {
     const item = FolderItemFactory({
       id: '2d11f9d9-fbbe-4e0a-9a13-0999ca20bebc',
@@ -37,7 +38,15 @@ describe('FolderItemFactory', () => {
       '3d11f9d9_fbbe_4e0a_9a13_0999ca20bebc.2d11f9d9_fbbe_4e0a_9a13_0999ca20bebc',
     );
   });
+  it('Allow null creator', () => {
+    const item1 = FolderItemFactory({
+      creator: null,
+    });
+    expect(item1.creator).toBeNull();
+  });
+});
 
+describe('FolderItemFactory', () => {
   it('Create different items', () => {
     const item1 = FolderItemFactory();
     const item2 = FolderItemFactory();
@@ -51,13 +60,16 @@ describe('FolderItemFactory', () => {
   });
 
   it('Create folder item with args', () => {
+    const creator = MemberFactory();
     const item = FolderItemFactory({
+      creator,
       name: 'name',
       description: 'description',
       extra: { folder: { childrenOrder: ['uuid'] } },
       settings: { enableSaveActions: true },
     });
     expect(item.name).toEqual('name');
+    expect(item.creator!.id).toEqual(creator.id);
     expect(item.description).toEqual('description');
     expect(item.extra.folder).toEqual({ childrenOrder: ['uuid'] });
     expect(item.settings.enableSaveActions).toEqual(true);
