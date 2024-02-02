@@ -15,12 +15,19 @@ import { CCLicenseAdaptions, ItemType } from '@/constants';
 import { buildPathFromIds } from '@/utils';
 import { faker } from '@faker-js/faker';
 
-type ItemFactoryOutputType<
+export type ItemFactoryOutputType<
   IT extends DiscriminatedItem,
   DateType = DiscriminatedItem['createdAt'],
 > = Pick<
   IT,
-  'id' | 'name' | 'description' | 'path' | 'settings' | 'creator' | 'extra'
+  | 'id'
+  | 'name'
+  | 'description'
+  | 'path'
+  | 'settings'
+  | 'creator'
+  | 'extra'
+  | 'type'
 > & {
   updatedAt: DateType;
   createdAt: DateType;
@@ -70,28 +77,13 @@ const PartialItemFactory = <IT extends DiscriminatedItem>(
   };
 };
 
-/**
- *
- * @param item partial folder item, can be omitted.
- * @returns
- */
-export const FolderItemFactoryAsDate = (
-  item: ItemFactoryInputType<FolderItemType> = {},
-): ItemFactoryOutputType<FolderItemType, Date> => {
-  const newItem = FolderItemFactory(item);
-  return {
-    ...newItem,
-    updatedAt: new Date(newItem.updatedAt),
-    createdAt: new Date(newItem.createdAt),
-  };
-};
-
 export const FolderItemFactory = (
   item: ItemFactoryInputType<FolderItemType> = {},
 ): ItemFactoryOutputType<FolderItemType> => {
   const newItem = PartialItemFactory({ ...item });
   return {
     ...newItem,
+    type: ItemType.FOLDER,
     extra: item.extra ?? {
       [ItemType.FOLDER]: {
         childrenOrder: [],
@@ -106,6 +98,7 @@ export const AppItemFactory = (
   const newItem = PartialItemFactory({ ...item, type: ItemType.APP });
   return {
     ...newItem,
+    type: ItemType.APP,
     extra: item.extra ?? {
       [ItemType.APP]: {
         url: faker.internet.url(),
@@ -120,10 +113,10 @@ export const H5PItemFactory = (
 ): ItemFactoryOutputType<H5PItemType> => {
   const newItem = PartialItemFactory<H5PItemType>({
     ...item,
-    type: ItemType.H5P,
   });
   return {
     ...newItem,
+    type: ItemType.H5P,
     extra: item.extra ?? {
       [ItemType.H5P]: {
         contentId: faker.string.uuid(),
@@ -139,10 +132,10 @@ export const DocumentItemFactory = (
 ): ItemFactoryOutputType<DocumentItemType> => {
   const newItem = PartialItemFactory<DocumentItemType>({
     ...item,
-    type: ItemType.DOCUMENT,
   });
   return {
     ...newItem,
+    type: ItemType.DOCUMENT,
     extra: item.extra ?? {
       [ItemType.DOCUMENT]: {
         content: `<div>${faker.lorem.text()}</div>`,
@@ -156,10 +149,10 @@ export const EmbeddedLinkItemFactory = (
 ): ItemFactoryOutputType<EmbeddedLinkItemType> => {
   const newItem = PartialItemFactory<EmbeddedLinkItemType>({
     ...item,
-    type: ItemType.LINK,
   });
   return {
     ...newItem,
+    type: ItemType.LINK,
     extra: item.extra ?? {
       [ItemType.LINK]: {
         html: faker.helpers.arrayElement([
@@ -182,10 +175,10 @@ export const LocalFileItemFactory = (
 ): ItemFactoryOutputType<LocalFileItemType> => {
   const newItem = PartialItemFactory<LocalFileItemType>({
     ...item,
-    type: ItemType.LOCAL_FILE,
   });
   return {
     ...newItem,
+    type: ItemType.LOCAL_FILE,
     extra: item.extra ?? {
       [ItemType.LOCAL_FILE]: {
         name: faker.system.fileName(),
@@ -204,10 +197,10 @@ export const S3FileItemFactory = (
 ): ItemFactoryOutputType<S3FileItemType> => {
   const newItem = PartialItemFactory<S3FileItemType>({
     ...item,
-    type: ItemType.S3_FILE,
   });
   return {
     ...newItem,
+    type: ItemType.S3_FILE,
     extra: item.extra ?? {
       [ItemType.S3_FILE]: {
         name: faker.system.fileName(),
@@ -226,10 +219,10 @@ export const EtherpadItemFactory = (
 ): ItemFactoryOutputType<EtherpadItemType> => {
   const newItem = PartialItemFactory<EtherpadItemType>({
     ...item,
-    type: ItemType.ETHERPAD,
   });
   return {
     ...newItem,
+    type: ItemType.ETHERPAD,
     extra: item.extra ?? {
       [ItemType.ETHERPAD]: {
         padID: faker.string.uuid(),
@@ -244,10 +237,10 @@ export const ShortcutItemFactory = (
 ): ItemFactoryOutputType<ShortcutItemType> => {
   const newItem = PartialItemFactory<ShortcutItemType>({
     ...item,
-    type: ItemType.SHORTCUT,
   });
   return {
     ...newItem,
+    type: ItemType.SHORTCUT,
     extra: item.extra ?? {
       [ItemType.SHORTCUT]: {
         target: faker.string.uuid(),

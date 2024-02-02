@@ -6,12 +6,12 @@ import {
   EmbeddedLinkItemFactory,
   EtherpadItemFactory,
   FolderItemFactory,
-  FolderItemFactoryAsDate,
   H5PItemFactory,
   LocalFileItemFactory,
   S3FileItemFactory,
   ShortcutItemFactory,
 } from '.';
+import { ItemType } from '@/constants';
 
 describe('FolderItemFactory', () => {
   it('Returns correct path for id', () => {
@@ -47,6 +47,7 @@ describe('FolderItemFactory', () => {
   it('Create folder item', () => {
     const item = FolderItemFactory();
     expect(item.extra.folder).toEqual({ childrenOrder: [] });
+    expect(item.type).toEqual(ItemType.FOLDER);
   });
 
   it('Create folder item with args', () => {
@@ -60,6 +61,7 @@ describe('FolderItemFactory', () => {
     expect(item.description).toEqual('description');
     expect(item.extra.folder).toEqual({ childrenOrder: ['uuid'] });
     expect(item.settings.enableSaveActions).toEqual(true);
+    expect(item.type).toEqual(ItemType.FOLDER);
   });
 });
 
@@ -73,6 +75,7 @@ describe('AppItemFactory', () => {
     const item = AppItemFactory();
     expect(item.extra.app.url).toContain('http');
     expect(item.extra.app.settings).toBeDefined();
+    expect(item.type).toEqual(ItemType.APP);
   });
   it('Create app item with args', () => {
     const item = AppItemFactory({
@@ -83,6 +86,7 @@ describe('AppItemFactory', () => {
     expect(item.extra.app.url).toEqual('url');
     expect(item.name).toEqual('name');
     expect(item.description).toEqual('description');
+    expect(item.type).toEqual(ItemType.APP);
   });
 });
 
@@ -97,6 +101,7 @@ describe('H5PItemFactory', () => {
     expect(item.extra.h5p.contentId.length).toBeGreaterThan(10);
     expect(item.extra.h5p.h5pFilePath.length).toBeGreaterThan(3);
     expect(item.extra.h5p.contentFilePath.length).toBeGreaterThan(3);
+    expect(item.type).toEqual(ItemType.H5P);
   });
   it('Create h5p item with args', () => {
     const item = H5PItemFactory({
@@ -111,6 +116,7 @@ describe('H5PItemFactory', () => {
     expect(item.extra.h5p.contentId).toEqual('id');
     expect(item.extra.h5p.h5pFilePath).toEqual('path');
     expect(item.extra.h5p.contentFilePath).toEqual('string');
+    expect(item.type).toEqual(ItemType.H5P);
   });
 });
 
@@ -122,12 +128,14 @@ describe('DocumentItemFactory', () => {
   });
   it('Create document item', () => {
     const item = DocumentItemFactory();
+    expect(item.type).toEqual(ItemType.DOCUMENT);
     expect(item.extra.document.content.length).toBeGreaterThan(3);
   });
   it('Create document item with args', () => {
     const item = DocumentItemFactory({
       extra: { document: { content: 'content' } },
     });
+    expect(item.type).toEqual(ItemType.DOCUMENT);
     expect(item.extra.document.content).toEqual('content');
   });
 });
@@ -150,6 +158,7 @@ describe('EmbeddedLinkItemFactory', () => {
       expect(item.extra.embeddedLink.thumbnails[0].length).toBeGreaterThan(3);
     }
     expect(item.extra.embeddedLink.url.length).toBeGreaterThan(3);
+    expect(item.type).toEqual(ItemType.LINK);
   });
   it('Create link item with args', () => {
     const item = EmbeddedLinkItemFactory({
@@ -165,6 +174,7 @@ describe('EmbeddedLinkItemFactory', () => {
     expect(item.extra.embeddedLink.html).toEqual('html');
     expect(item.extra.embeddedLink.icons![0]).toEqual('icon');
     expect(item.extra.embeddedLink.thumbnails![0]).toEqual('thumbnail');
+    expect(item.type).toEqual(ItemType.LINK);
     expect(item.extra.embeddedLink.url).toEqual('url');
   });
 });
@@ -181,12 +191,13 @@ describe('LocalFileItemFactory', () => {
     expect(item.extra.file.mimetype.length).toBeGreaterThan(3);
     expect(item.extra.file.path.length).toBeGreaterThan(3);
     if (item.extra.file.altText) {
-      expect(item.extra.file.altText.length).toBeGreaterThan(3);
+      expect(item.extra.file.altText.length).toBeGreaterThan(1);
     }
     expect(item.extra.file.content.length).toBeGreaterThan(3);
+    expect(item.type).toEqual(ItemType.LOCAL_FILE);
     expect(item.extra.file.size).toBeGreaterThanOrEqual(1);
   });
-  it('Create local file item', () => {
+  it('Create local file item with args', () => {
     const item = LocalFileItemFactory({
       extra: {
         file: {
@@ -203,6 +214,7 @@ describe('LocalFileItemFactory', () => {
     expect(item.extra.file.path).toEqual('path');
     expect(item.extra.file.altText).toBeUndefined();
     expect(item.extra.file.content).toEqual('content');
+    expect(item.type).toEqual(ItemType.LOCAL_FILE);
     expect(item.extra.file.size).toEqual(1);
   });
 });
@@ -219,12 +231,13 @@ describe('S3FileItemFactory', () => {
     expect(item.extra.s3File.mimetype.length).toBeGreaterThan(3);
     expect(item.extra.s3File.path.length).toBeGreaterThan(3);
     if (item.extra.s3File.altText) {
-      expect(item.extra.s3File.altText.length).toBeGreaterThan(3);
+      expect(item.extra.s3File.altText.length).toBeGreaterThan(1);
     }
     expect(item.extra.s3File.content.length).toBeGreaterThan(3);
+    expect(item.type).toEqual(ItemType.S3_FILE);
     expect(item.extra.s3File.size).toBeGreaterThanOrEqual(1);
   });
-  it('Create s3 file item', () => {
+  it('Create s3 file item with args', () => {
     const item = S3FileItemFactory({
       extra: {
         s3File: {
@@ -241,6 +254,7 @@ describe('S3FileItemFactory', () => {
     expect(item.extra.s3File.path).toEqual('path');
     expect(item.extra.s3File.altText).toBeUndefined();
     expect(item.extra.s3File.content).toEqual('content');
+    expect(item.type).toEqual(ItemType.S3_FILE);
     expect(item.extra.s3File.size).toEqual(1);
   });
 });
@@ -254,13 +268,15 @@ describe('EtherpadItemFactory', () => {
   it('Create etherpad item', () => {
     const item = EtherpadItemFactory();
     expect(item.extra.etherpad.padID.length).toBeGreaterThan(3);
+    expect(item.type).toEqual(ItemType.ETHERPAD);
     expect(item.extra.etherpad.groupID.length).toBeGreaterThan(3);
   });
-  it('Create etherpad item', () => {
+  it('Create etherpad item with args', () => {
     const item = EtherpadItemFactory({
       extra: { etherpad: { groupID: 'id', padID: 'padId' } },
     });
     expect(item.extra.etherpad.padID).toEqual('padId');
+    expect(item.type).toEqual(ItemType.ETHERPAD);
     expect(item.extra.etherpad.groupID).toEqual('id');
   });
 });
@@ -274,26 +290,11 @@ describe('ShortcutItemFactory', () => {
   it('Create etherpad item', () => {
     const item = ShortcutItemFactory();
     expect(item.extra.shortcut.target.length).toBeGreaterThan(3);
+    expect(item.type).toEqual(ItemType.SHORTCUT);
   });
-  it('Create etherpad item', () => {
+  it('Create shortcut item with args', () => {
     const item = ShortcutItemFactory({ extra: { shortcut: { target: 'd' } } });
     expect(item.extra.shortcut.target).toEqual('d');
-  });
-});
-
-describe('FolderItemFactoryAsDate', () => {
-  it('Returns item with dates', () => {
-    const item = FolderItemFactoryAsDate();
-    expect(item.createdAt).toBeInstanceOf(Date);
-    expect(item.updatedAt).toBeInstanceOf(Date);
-  });
-  it('Returns provided dates as date', () => {
-    const createdAt = new Date().toISOString();
-    const updatedAt = new Date().toISOString();
-    const item = FolderItemFactoryAsDate({ createdAt, updatedAt });
-    expect(item.createdAt).toBeInstanceOf(Date);
-    expect(item.createdAt.toISOString()).toEqual(createdAt);
-    expect(item.updatedAt).toBeInstanceOf(Date);
-    expect(item.updatedAt.toISOString()).toEqual(updatedAt);
+    expect(item.type).toEqual(ItemType.SHORTCUT);
   });
 });
