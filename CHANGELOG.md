@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.7.0](https://github.com/graasp/graasp-sdk/compare/v3.6.0...v3.7.0) (2024-02-05)
+
+
+### Features
+
+* add fixture factory for item and member ([#389](https://github.com/graasp/graasp-sdk/issues/389)) ([cd39841](https://github.com/graasp/graasp-sdk/commit/cd39841b6c6165a7860e115e7541b8f6fc48ea38))
+* add item language ([#394](https://github.com/graasp/graasp-sdk/issues/394)) ([bc0de93](https://github.com/graasp/graasp-sdk/commit/bc0de934359639cf96f4e399792151ff2ea7515b))
+
 ## [3.6.0](https://github.com/graasp/graasp-sdk/compare/v3.5.0...v3.6.0) (2024-01-29)
 
 
