@@ -11,7 +11,7 @@ import {
   S3FileItemFactory,
   ShortcutItemFactory,
 } from '.';
-import { MemberFactory } from '..';
+import { MemberFactory } from '../members/memberFactory';
 import { ItemType } from '@/constants';
 
 describe('ItemFactor General', () => {

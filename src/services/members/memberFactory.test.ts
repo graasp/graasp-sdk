@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { MemberFactory } from '.';
+import { MemberFactory } from './memberFactory';
 
 describe('MemberFactory', () => {
   it('return different values', () => {
