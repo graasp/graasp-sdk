@@ -37,6 +37,7 @@
     "prettier:check": "prettier --check src/**/*.ts",
     "prettier:write": "prettier --write src/**/*.ts",
     "check": "yarn prettier:check && yarn lint && yarn type-check",
+    "analyze-bundle": "npx vite-bundle-visualizer",
     "pre-commit": "yarn prettier:check && yarn lint",
     "prepack": "yarn build",
     "prepare": "yarn prepack && yarn hooks",
