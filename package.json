@@ -1,25 +1,32 @@
 {
   "name": "@graasp/sdk",
   "version": "3.8.1",
-  "license": "AGPL-3.0-only",
-  "repository": "git@github.com:graasp/graasp-sdk.git",
+  "description": "Development kit including type definitions and util functions for the Graasp ecosystem.",
   "author": "Graasp",
   "contributors": [
     "Kim Lan Phan Hoang",
     "Basile Spaenlehauer"
   ],
+  "license": "AGPL-3.0-only",
+  "repository": "git@github.com:graasp/graasp-sdk.git",
   "type": "module",
-  "sideEffects": false,
   "files": [
     "dist"
   ],
-  "main": "./dist/index.cjs",
+  "sideEffects": false,
   "module": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./factories": {
+      "import": "./dist/factories.js",
+      "require": "./dist/factories.cjs",
+      "types": "./dist/factories.d.ts"
     }
   },
   "scripts": {
@@ -32,9 +39,9 @@
     "check": "yarn prettier:check && yarn lint && yarn type-check",
     "pre-commit": "yarn prettier:check && yarn lint",
     "prepack": "yarn build",
-    "prepare": "yarn prepack && yarn hooks:install",
-    "hooks:install": "husky install",
-    "hooks:uninstall": "husky uninstall"
+    "prepare": "yarn prepack && yarn hooks",
+    "hooks": "husky",
+    "analyze-bundle": "npx vite-bundle-visualizer"
   },
   "dependencies": {
     "@faker-js/faker": "8.4.0",
