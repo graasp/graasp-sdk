@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.8.0](https://github.com/graasp/graasp-sdk/compare/v3.7.0...v3.8.0) (2024-02-13)
+
+
+### Features
+
+* add address in geolocation ([#402](https://github.com/graasp/graasp-sdk/issues/402)) ([d31fdc2](https://github.com/graasp/graasp-sdk/commit/d31fdc256f8742238682d0c76861265ceed89ee8))
+
+
+### Bug Fixes
+
+* remove DEFAULT_LANG ([#399](https://github.com/graasp/graasp-sdk/issues/399)) ([40ce3d2](https://github.com/graasp/graasp-sdk/commit/40ce3d28afe237236bbf1f9a78bcb7b1fdc97433))
+
 ## [3.7.0](https://github.com/graasp/graasp-sdk/compare/v3.6.0...v3.7.0) (2024-02-05)
 
 
