@@ -6,6 +6,7 @@ import { ItemType } from '../constants';
  * Note: ordering matters (flavors list is generated from this enum)
  */
 export enum DocumentItemExtraFlavor {
+  None = 'none',
   Info = 'info',
   Success = 'success',
   Warning = 'warning',
