@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.8.1](https://github.com/graasp/graasp-sdk/compare/v3.8.0...v3.8.1) (2024-02-14)
+
+
+### Bug Fixes
+
+* add isRaw on document extra ([#408](https://github.com/graasp/graasp-sdk/issues/408)) ([2bd3656](https://github.com/graasp/graasp-sdk/commit/2bd3656fd1954f7c935f7cec73ece2d8c54ae083))
+
 ## [3.8.0](https://github.com/graasp/graasp-sdk/compare/v3.7.0...v3.8.0) (2024-02-13)
 
 
