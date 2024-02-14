@@ -11,5 +11,16 @@ export const ActionFactory = (a: Partial<Action> = {}): Action => ({
   type: faker.lorem.word(),
   extra: { value: faker.lorem.word() },
   createdAt: faker.date.anytime().toISOString(),
+  geolocation: faker.helpers.arrayElement([
+    null,
+    // geoip.Lookup
+    {
+      range: [faker.number.int, faker.number.int],
+      country: faker.location.country(),
+      timezone: faker.location.timeZone(),
+      city: faker.location.city(),
+      ll: [faker.location.latitude(), faker.location.longitude()],
+    },
+  ]),
   ...a,
 });
