@@ -16,6 +16,8 @@ export type DocumentItemExtraProperties = {
   content: string;
   /** Style flavor of the document's surrounding box */
   flavor?: DocumentItemExtraFlavor | `${DocumentItemExtraFlavor}`;
+  /** Defines if the document should be edited in raw mode */
+  isRaw?: boolean;
 };
 
 export interface DocumentItemExtra {
