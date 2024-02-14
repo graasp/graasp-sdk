@@ -41,8 +41,7 @@
     "pre-commit": "yarn prettier:check && yarn lint",
     "prepack": "yarn build",
     "prepare": "yarn prepack && yarn hooks",
-    "hooks": "husky",
-    "analyze-bundle": "npx vite-bundle-visualizer"
+    "hooks": "husky"
   },
   "dependencies": {
     "@faker-js/faker": "8.4.0",
