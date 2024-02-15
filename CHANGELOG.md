@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.8.2](https://github.com/graasp/graasp-sdk/compare/v3.8.1...v3.8.2) (2024-02-15)
+
+
+### Bug Fixes
+
+* add none flavor ([#411](https://github.com/graasp/graasp-sdk/issues/411)) ([82e9959](https://github.com/graasp/graasp-sdk/commit/82e9959c94790ee27c941f64180de5846ebcbbe3))
+* **build:** split bundle into production and test code ([#406](https://github.com/graasp/graasp-sdk/issues/406)) ([692afc5](https://github.com/graasp/graasp-sdk/commit/692afc51c45f1849f042af693efab967671c9ef6))
+
 ## [3.8.1](https://github.com/graasp/graasp-sdk/compare/v3.8.0...v3.8.1) (2024-02-14)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@graasp/sdk",
-  "version": "3.8.1",
+  "version": "3.8.2",
   "description": "Development kit including type definitions and util functions for the Graasp ecosystem.",
   "author": "Graasp",
   "contributors": [
