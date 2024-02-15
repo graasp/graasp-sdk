@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.8.3](https://github.com/graasp/graasp-sdk/compare/v3.8.2...v3.8.3) (2024-02-15)
+
+
+### Reverts
+
+* split bundle into production and test code ([#406](https://github.com/graasp/graasp-sdk/issues/406)) ([2ff7fd5](https://github.com/graasp/graasp-sdk/commit/2ff7fd5d2edbb1aa2904e8146d0ca913e1492ec1))
+
 ## [3.8.2](https://github.com/graasp/graasp-sdk/compare/v3.8.1...v3.8.2) (2024-02-15)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@graasp/sdk",
-  "version": "3.8.2",
+  "version": "3.8.3",
   "description": "Development kit including type definitions and util functions for the Graasp ecosystem.",
   "license": "AGPL-3.0-only",
   "repository": "git@github.com:graasp/graasp-sdk.git",
