@@ -7,4 +7,5 @@ export enum Triggers {
   ItemUnlike = 'item-unlike',
   ItemEmbed = 'item-embed',
   ItemSearch = 'item-search',
+  CalculationOperation = 'calculation-operation'
 }
