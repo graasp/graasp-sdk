@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.9.0](https://github.com/graasp/graasp-sdk/compare/v3.8.3...v3.9.0) (2024-02-20)
+
+
+### Features
+
+* add action factory ([#417](https://github.com/graasp/graasp-sdk/issues/417)) ([7869cd2](https://github.com/graasp/graasp-sdk/commit/7869cd29e3080267851985ac838be9d6ebe4aa43))
+
 ## [3.8.3](https://github.com/graasp/graasp-sdk/compare/v3.8.2...v3.8.3) (2024-02-15)
 
 
