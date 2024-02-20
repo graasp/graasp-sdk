@@ -1,4 +1,4 @@
-import { Action } from '.';
+import { Action } from './interfaces';
 import { Context } from '@/constants';
 import { faker } from '@faker-js/faker';
 
