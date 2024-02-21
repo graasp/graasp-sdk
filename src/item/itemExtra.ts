@@ -194,3 +194,10 @@ export const buildEmbeddedLinkExtra = (
 export const buildShortcutExtra = (target: string): ShortcutItemExtra => ({
   [ItemType.SHORTCUT]: { target },
 });
+
+export const buildAppExtra = ({
+  url,
+  settings = {},
+}: AppItemExtraProperties): AppItemExtra => ({
+  [ItemType.APP]: { url, settings },
+});
