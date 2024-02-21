@@ -43,7 +43,7 @@ export function getChildFromPath(itemPath: string): string {
  */
 export const isChildOf = (path: string, parentPath: string): boolean => {
   const reg = new RegExp(`${parentPath}(?=\\.[^\\.]*$)`);
-  return Boolean(path.match(reg));
+  return reg.test(path);
 };
 
 /**
