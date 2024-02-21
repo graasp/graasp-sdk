@@ -113,6 +113,7 @@ export * from './item/factory.js';
 export * from './item/itemSettings.js';
 export * from './item/itemType.js';
 export * from './item/itemUtils.js';
+export * from './item/itemExtra.js';
 
 /**
  * Item Bookmark
