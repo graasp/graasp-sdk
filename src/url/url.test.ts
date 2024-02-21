@@ -4,7 +4,7 @@ import { appendPathToUrl, appendQueryParamToUrl } from './url.js';
 
 describe('URL utils', () => {
   describe('Append path name to url', () => {
-    const ORIGIN = 'http://localhost:3001';
+    const ORIGIN = 'https://localhost:3001';
     const PATH_NAME = '/path';
     const ADDITIONAL_PATH_NAME = 'test';
     const ORIGIN_WITH_TRAIL = `${ORIGIN}/`;
@@ -74,27 +74,29 @@ describe('URL utils', () => {
 
   describe('appendQueryParamToUrl', () => {
     it('return same url when params is empty', () => {
-      const initialUrl = 'http://localhost:3000/index.html';
+      const initialUrl = 'https://localhost:3000/index.html';
       const res = appendQueryParamToUrl(initialUrl, {});
       expect(res).toEqual(initialUrl);
     });
 
     it('add params to url', () => {
-      const initialUrl = 'http://localhost:3000/index.html';
+      const initialUrl = 'https://localhost:3000/index.html';
       const res = appendQueryParamToUrl(initialUrl, { lang: 'en' });
-      expect(res).toEqual('http://localhost:3000/index.html?lang=en');
+      expect(res).toEqual('https://localhost:3000/index.html?lang=en');
     });
 
     it('add params to url without overriding', () => {
-      const initialUrl = 'http://localhost:3000/index.html?lang=en';
+      const initialUrl = 'https://localhost:3000/index.html?lang=en';
       const res = appendQueryParamToUrl(initialUrl, { lang: 'de' });
-      expect(res).toEqual('http://localhost:3000/index.html?lang=en&lang=de');
+      expect(res).toEqual('https://localhost:3000/index.html?lang=en&lang=de');
     });
 
     it('override params in url', () => {
-      const initialUrl = 'http://localhost:3000/index.html?lang=en&test=bobo';
+      const initialUrl = 'https://localhost:3000/index.html?lang=en&test=bobo';
       const res = appendQueryParamToUrl(initialUrl, { lang: 'de' }, true);
-      expect(res).toEqual('http://localhost:3000/index.html?lang=de&test=bobo');
+      expect(res).toEqual(
+        'https://localhost:3000/index.html?lang=de&test=bobo',
+      );
     });
   });
 });

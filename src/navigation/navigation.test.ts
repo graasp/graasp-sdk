@@ -43,11 +43,11 @@ describe('Navigation Util Tests', () => {
   describe('redirectToSavedUrl', () => {
     it('redirect successfully to saved link', () => {
       vi.spyOn(cookieUtils, 'getUrlForRedirection').mockReturnValue(
-        'http://google.com',
+        'https://google.com',
       );
       redirectToSavedUrl(mockTarget);
       expect(mockTarget.location.assign.mock.calls[0]).toEqual([
-        'http://google.com',
+        'https://google.com',
       ]);
     });
 
