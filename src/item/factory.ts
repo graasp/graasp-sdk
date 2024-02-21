@@ -71,7 +71,7 @@ const PartialItemFactory = <IT extends DiscriminatedItem>(
         },
       ]),
     // allow null creator
-    creator: item.creator ?? MemberFactory(),
+    creator: item.creator === undefined ? MemberFactory() : item.creator,
     lang: item.lang ?? faker.helpers.arrayElement(['fr', 'en']),
   };
 };
