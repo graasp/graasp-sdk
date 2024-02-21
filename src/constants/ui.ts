@@ -1,4 +1,4 @@
-import { UnionOfConst } from '@/types';
+import { UnionOfConst } from '@/typeUtils.js';
 
 /**
  * Size of Thumbnail to use

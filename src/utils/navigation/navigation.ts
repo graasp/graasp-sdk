@@ -1,10 +1,11 @@
-import { DEFAULT_PROTOCOL, PROTOCOL_REGEX } from '../config';
-import { getUrlForRedirection } from './cookie';
+import { getUrlForRedirection } from '../cookie.js';
+import { DEFAULT_PROTOCOL, PROTOCOL_REGEX } from './constants.js';
 
 interface RedirectOptions {
   openInNewTab?: boolean;
   name?: string;
 }
+
 type TargetType = {
   open: (
     url?: string | URL | undefined,
@@ -13,6 +14,7 @@ type TargetType = {
   ) => void;
   location: { assign: (url: string | URL) => void };
 };
+
 /**
  * @param  {string} url link to redirect to
  * @param  {RedirectOptions} options

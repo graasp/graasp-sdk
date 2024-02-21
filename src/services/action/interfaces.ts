@@ -1,5 +1,5 @@
 import { DiscriminatedItem, ItemMembership, Member } from '..';
-import { Context } from '@/constants';
+import { Context } from '@/constants/context.js';
 
 export interface Action {
   id: string;

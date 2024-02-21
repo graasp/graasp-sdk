@@ -27,20 +27,17 @@ type TDateISOTime = `${THours}:${TMinutes}:${TSeconds}.${TMilliseconds}`;
  */
 type TDateISO = `${TDateISODate}T${TDateISOTime}Z`;
 
-const isoDateFormat =
-  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d*)?(?:[-+]\d{2}:?\d{2}|Z)?$/;
-
 export const formatDate = (
-  datetime: string | undefined,
+  dateTime: string | undefined,
   args: { locale: string; defaultValue?: string },
 ): string => {
   const { locale, defaultValue = 'Unknown' } = args;
-  if (!datetime) {
+  if (!dateTime) {
     return defaultValue;
   }
   try {
     const now = new Date();
-    const date = new Date(datetime);
+    const date = new Date(dateTime);
     // return human readable date if less than a week ago
     if (differenceInDays(now, date) < 7) {
       return intlFormatDistance(date, now, { locale });
@@ -63,6 +60,11 @@ export const formatDate = (
     return defaultValue;
   }
 };
+
+// ------------------- Deprecated functions -------------------------------
+
+const isoDateFormat =
+  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d*)?(?:[-+]\d{2}:?\d{2}|Z)?$/;
 
 const isIsoDateString = (value: string): value is TDateISO =>
   Boolean(value && isoDateFormat.test(value));

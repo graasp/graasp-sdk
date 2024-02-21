@@ -1,3 +1,3 @@
-export * from './interfaces';
-export * from './aggregation';
-export * from './actionFactory';
+export * from './interfaces.js';
+export * from './aggregation.js';
+export * from './actionFactory.js';

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { PermissionLevel, PermissionLevelCompare } from './permissionLevel';
+import { PermissionLevel, PermissionLevelCompare } from './permissionLevel.js';
 
 describe('PermissionLevelCompare', () => {
   it('gt', () => {

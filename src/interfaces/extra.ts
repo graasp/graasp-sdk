@@ -1,4 +1,4 @@
-import { ItemType } from '../constants';
+import { ItemType } from '../constants/itemType.js';
 
 /**
  * Document style flavor defined according to severity prop of

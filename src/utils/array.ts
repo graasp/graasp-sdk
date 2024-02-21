@@ -4,7 +4,7 @@
  * @param  {(unknown, number): boolean} condition
  * @return two dimensional array of length two
  */
-export const partition = <A = unknown>(
+export const partitionArray = <A = unknown>(
   array: A[],
   condition: (element: A, idx: number) => boolean,
 ) =>

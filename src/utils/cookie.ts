@@ -1,13 +1,8 @@
 import Cookies from 'js-cookie';
 
-import { IFRAME_RESIZE_HEIGHT_COOKIE_EXPIRATION_DAYS } from '../constants/constants';
-import { UUID } from '@/types';
+import { UUID } from '@/types.js';
 
-export interface Session {
-  id: string;
-  token: string;
-  createdAt: number;
-}
+const IFRAME_RESIZE_HEIGHT_COOKIE_EXPIRATION_DAYS = 365; // 365 days
 
 // todo: use enum once frontend interfaces are in ts
 export const COOKIE_KEYS = {

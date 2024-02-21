@@ -24,7 +24,8 @@
     }
   },
   "scripts": {
-    "build": "tsc --noEmit -p tsconfig.build.json && vite build",
+    "build": "tsc -p tsconfig.build.json && tsc-alias ",
+    "build:vite": "tsc --noEmit -p tsconfig.build.json && vite build",
     "test": "vitest",
     "type-check": "tsc --noEmit",
     "lint": "eslint {src,test}",
@@ -64,6 +65,7 @@
     "husky": "9.0.7",
     "jsdom": "24.0.0",
     "prettier": "3.2.4",
+    "tsc-alias": "1.8.8",
     "typescript": "5.3.3",
     "uuid": "9.0.1",
     "vite": "5.1.2",

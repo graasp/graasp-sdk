@@ -1,5 +1,5 @@
-import { AnyOfExcept } from '..';
-import { Context } from '@/constants';
+import { AnyOfExcept } from '../typeUtils.js';
+import { Context } from '@/constants/context.js';
 
 // This const is used to define the allowed Platforms.
 // It is used in schema or database enums.

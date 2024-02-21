@@ -1,14 +1,14 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { DEFAULT_PROTOCOL } from '../config';
-import * as cookieUtils from './cookie';
+import * as cookieUtils from '../cookie.js';
+import { DEFAULT_PROTOCOL } from './constants.js';
 import {
   buildItemLinkForBuilder,
   buildPdfViewerLink,
   buildSignInPath,
   redirect,
   redirectToSavedUrl,
-} from './navigation';
+} from './navigation.js';
 
 export const MOCK_ITEM_ID = '1234';
 const MOCK_URL = 'https://example.com';
