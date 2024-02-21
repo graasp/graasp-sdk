@@ -1,8 +1,6 @@
-declare type ErrorOrigin = 'core' | 'plugin' | 'unknown' | string;
-
 interface GraaspError extends Error {
   data?: unknown;
-  origin: ErrorOrigin;
+  origin: string;
 }
 
 interface GraaspErrorDetails {
@@ -18,7 +16,7 @@ abstract class BaseGraaspError implements GraaspError {
   statusCode?: number;
   message!: string;
   data?: unknown;
-  origin!: ErrorOrigin;
+  origin!: string;
 
   constructor(
     { code, statusCode, message, name }: GraaspErrorDetails,
@@ -32,7 +30,7 @@ abstract class BaseGraaspError implements GraaspError {
   }
 }
 
-export const ErrorFactory = (origin: ErrorOrigin) => {
+export const ErrorFactory = (origin: string) => {
   return class MyError extends BaseGraaspError {
     origin = origin;
   };
