@@ -24,7 +24,7 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json && tsc-alias ",
+    "build": "tsc -p tsconfig.build.json && yarn tsc-alias -p tsconfig.build.json",
     "build:vite": "tsc --noEmit -p tsconfig.build.json && vite build",
     "test": "vitest",
     "type-check": "tsc --noEmit",
