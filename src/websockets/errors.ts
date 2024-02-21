@@ -42,6 +42,6 @@ export class NotFoundError extends WebsocketError {
 export class ServerError extends WebsocketError {
   name: `${ErrorNames.ServerError}` = ErrorNames.ServerError;
   constructor(message: string) {
-    super((message = `Websocket: Internal server error: ${message}`));
+    super(`Websocket: Internal server error: ${message}`);
   }
 }
