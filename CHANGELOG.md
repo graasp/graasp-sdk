@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.0](https://github.com/graasp/graasp-sdk/compare/v3.9.0...v3.10.0) (2024-02-21)
+
+
+### Features
+
+* update factory item and member default ([#420](https://github.com/graasp/graasp-sdk/issues/420)) ([0f7a864](https://github.com/graasp/graasp-sdk/commit/0f7a86487a938269ea2e6ea372923953f2433364))
+
 ## [3.9.0](https://github.com/graasp/graasp-sdk/compare/v3.8.3...v3.9.0) (2024-02-20)
 
 
