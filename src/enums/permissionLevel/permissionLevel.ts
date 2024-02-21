@@ -17,7 +17,7 @@ export class PermissionLevelCompare {
   /**
    * `a` is a better permission level when compared to `b`
    */
-  static gt = (a: PermissionLevel, b: PermissionLevel): boolean =>
+  static readonly gt = (a: PermissionLevel, b: PermissionLevel): boolean =>
     (a === PermissionLevel.Admin &&
       (b === PermissionLevel.Write || b === PermissionLevel.Read)) ||
     (a === PermissionLevel.Write && b === PermissionLevel.Read);
@@ -25,13 +25,13 @@ export class PermissionLevelCompare {
   /**
    * `a` is a better, or the same, permission level when compared to `b`.
    */
-  static gte = (a: PermissionLevel, b: PermissionLevel): boolean =>
+  static readonly gte = (a: PermissionLevel, b: PermissionLevel): boolean =>
     a === b || PermissionLevelCompare.gt(a, b);
 
   /**
    * `a` is a worse permission level when compared to `b`.
    */
-  static lt = (a: PermissionLevel, b: PermissionLevel): boolean =>
+  static readonly lt = (a: PermissionLevel, b: PermissionLevel): boolean =>
     (a === PermissionLevel.Read &&
       (b === PermissionLevel.Write || b === PermissionLevel.Admin)) ||
     (a === PermissionLevel.Write && b === PermissionLevel.Admin);
@@ -39,10 +39,10 @@ export class PermissionLevelCompare {
   /**
    * `a` is a worse, or the same, permission level when compared to `b`.
    */
-  static lte = (a: PermissionLevel, b: PermissionLevel): boolean =>
+  static readonly lte = (a: PermissionLevel, b: PermissionLevel): boolean =>
     a === b || PermissionLevelCompare.lt(a, b);
 
-  static getHighest = (
+  static readonly getHighest = (
     permissions?: PermissionLevel[],
   ): PermissionLevel | null => {
     if (!permissions?.length) {
