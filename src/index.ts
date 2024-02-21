@@ -1,7 +1,211 @@
 /**
+ * Action
+ */
+export * from './action/action.js';
+export * from './action/aggregation.js';
+export * from './action/factory.js';
+
+/**
+ * App
+ */
+export * from './app/app.js';
+export * from './app/publisher.js';
+
+/**
+ * Array Utils
+ */
+export * from './array/array.js';
+
+/**
+ * Categories and ItemCategory types
+ */
+export * from './categories/category.js';
+
+/**
+ * Constants
+ */
+export * from './constants/paths.js';
+export * from './constants/limits.js';
+export * from './constants/validity.js';
+
+/**
+ * Cookies
+ */
+export * from './cookie/cookie.js';
+
+/**
  * Date utils
  */
-export { formatDate } from './utils/date.js';
+export * from './date/date.js';
+
+/**
+ * PermissionLevel enums
+ */
+export * from './enums/permissionLevel/permissionLevel.js';
+
+/**
+ * Creative common licenses
+ */
+export {
+  CCLicenseAdaptions,
+  OldCCLicenseAdaptations,
+} from './enums/ccLicenses.js';
+
+/**
+ * Graasp Services
+ */
+export { Context } from './enums/context.js';
+
+/**
+ * HTTP Methods
+ */
+export { HttpMethod } from './enums/httpMethod.js';
+
+/**
+ * MaxWidth
+ */
+export * from './enums/maxWidth.js';
+
+/**
+ * Chat
+ */
+export * from './chat/chat.js';
+export { MentionStatus, EmailFrequency } from './chat/mentions.js';
+
+/**
+ * Thumbnail Sizes
+ */
+export {
+  ThumbnailSize,
+  type ThumbnailSizeType,
+} from './enums/thumbnailSizes.js';
+
+/**
+ * Action Triggers
+ */
+export { ActionTriggers } from './enums/triggers.js';
+
+/**
+ * Error factories
+ */
+export { ErrorFactory, isError } from './errors/errors.js';
+
+/**
+ * Etherpad
+ */
+export type { Etherpad } from './etherpad/etherpad.js';
+
+/**
+ * Client Host Manager
+ */
+export { ClientHostManager } from './hostManager/hostManager.js';
+
+/**
+ * Invitation
+ */
+export * from './invitation/invitation.js';
+
+/**
+ * Item
+ */
+export * from './item/item.js';
+export * from './item/factory.js';
+export * from './item/itemSettings.js';
+export * from './item/itemType.js';
+export * from './item/itemUtils.js';
+
+/**
+ * Item Bookmark
+ */
+export * from './itemBookmark/itemBookmark.js';
+
+/**
+ * Item Flag
+ */
+export * from './itemFlag/itemFlag.js';
+
+/**
+ * Item Geolocation
+ */
+export * from './itemGeolocation/itemGeolocation.js';
+
+/**
+ * Item Like
+ */
+export * from './itemLike/itemLike.js';
+
+/**
+ * Item Login
+ */
+export * from './itemLogin/itemLogin.js';
+
+/**
+ * Item Memberships
+ */
+export * from './itemMembership/itemMembership.js';
+
+/**
+ * Item Memberships
+ */
+export * from './itemPublished/itemPublished.js';
+
+/**
+ * Item Recycled
+ */
+export * from './itemRecycled/itemRecycled.js';
+
+/**
+ * Item Tag
+ */
+export * from './itemTag/itemTag.js';
+
+/**
+ * Item Validation
+ */
+export * from './itemValidation/itemValidation.js';
+
+/**
+ * Member
+ */
+export * from './member/member.js';
+export * from './member/password.js';
+export * from './member/factory.js';
+
+/**
+ * MimeTypes values and functions to detect the mimetype of an item
+ */
+export { MimeTypes } from './mimeTypes/mimeTypes.js';
+
+/**
+ * Navigation utils
+ */
+export {
+  redirect,
+  redirectToSavedUrl,
+  buildSignInPath,
+  buildPdfViewerLink,
+  buildItemLinkForBuilder,
+} from './navigation/navigation.js';
+
+/**
+ * Search
+ */
+export * from './search/search.js';
+
+/**
+ * ShortLinks
+ */
+export * from './shortLink/shortLink.js';
+
+/**
+ * URL Utils
+ */
+export * from './url/url.js';
+
+/**
+ * Websockets
+ */
+export * from './websockets/index.js';
 
 /**
  * Type utils
@@ -18,8 +222,15 @@ export type {
  */
 export type { UUID } from './types.js';
 
-export * from './utils';
-export * from './constants';
-export * from './interfaces';
-export * from './services';
-export * from './config';
+/**
+ * RecaptchaActions
+ */
+export {
+  RecaptchaAction,
+  type RecaptchaActionType,
+} from './recaptchaActions.js';
+
+/**
+ * Chatbot related types
+ */
+export { ChatbotRole, type ChatBotMessage } from './chatbot/chatbot.js';
