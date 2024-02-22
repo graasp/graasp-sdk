@@ -1,18 +1,15 @@
 import { describe, expect, it } from 'vitest';
 
-import {
-  AppItemExtra,
-  DocumentItemExtra,
-  EtherpadItemExtra,
-  FolderItemExtra,
-  H5PItemExtra,
-  LinkItemExtra,
-  LocalFileItemExtra,
-  S3FileItemExtra,
-  ShortcutItemExtra,
-  getMimetype,
-} from './itemExtra.js';
+import { AppItemExtra } from './appItem/appItem.js';
+import { DocumentItemExtra } from './documentItem/documentItem.js';
+import { EtherpadItemExtra } from './etherpadItem/etherpadItem.js';
+import { LocalFileItemExtra, S3FileItemExtra } from './fileItem/fileItem.js';
+import { FolderItemExtra } from './folderItem/folderItem.js';
+import { H5PItemExtra } from './h5pItem/h5pItem.js';
+import { getMimetype } from './item.js';
 import { ItemType } from './itemType.js';
+import { LinkItemExtra } from './linkItem/linkItem.js';
+import { ShortcutItemExtra } from './shortcutItem/shortcutItem.js';
 
 describe('Extra Utils', () => {
   describe('getMimetype', () => {

@@ -12,4 +12,3 @@ export const ItemType = {
   ETHERPAD: 'etherpad',
 } as const;
 export type ItemTypeUnion = UnionOfConst<typeof ItemType>;
-export type FileItemType = typeof ItemType.S3_FILE | typeof ItemType.LOCAL_FILE;

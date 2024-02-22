@@ -62,11 +62,6 @@ export { Context } from './enums/context.js';
 export { HttpMethod } from './enums/httpMethod.js';
 
 /**
- * MaxWidth
- */
-export * from './enums/maxWidth.js';
-
-/**
  * Chat
  */
 export * from './chat/chat.js';
@@ -108,12 +103,49 @@ export * from './invitation/invitation.js';
 /**
  * Item
  */
-export * from './item/item.js';
-export * from './item/factory.js';
-export * from './item/itemSettings.js';
+export type { DiscriminatedItem, getMimetype } from './item/item.js';
 export * from './item/itemType.js';
 export * from './item/itemUtils.js';
-export * from './item/itemExtra.js';
+/**
+ * App Item
+ */
+export * from './item/appItem/appItem.js';
+export * from './item/appItem/appItem.factory.js';
+/**
+ * Document Item
+ */
+export * from './item/documentItem/documentItem.js';
+export * from './item/documentItem/documentItem.factory.js';
+/**
+ * Etherpad Item
+ */
+export * from './item/etherpadItem/etherpadItem.js';
+export * from './item/etherpadItem/etherpadItem.factory.js';
+/**
+ * File Item
+ */
+export * from './item/fileItem/fileItem.js';
+export * from './item/fileItem/fileItem.factory.js';
+/**
+ * Folder Item
+ */
+export * from './item/folderItem/folderItem.js';
+export * from './item/folderItem/folderItem.factory.js';
+/**
+ * H5P Item
+ */
+export * from './item/h5pItem/h5pItem.js';
+export * from './item/h5pItem/h5pItem.factory.js';
+/**
+ * Link Item
+ */
+export * from './item/linkItem/linkItem.js';
+export * from './item/linkItem/linkItem.factory.js';
+/**
+ * Shortcut Item
+ */
+export * from './item/shortcutItem/shortcutItem.js';
+export * from './item/shortcutItem/shortcutItem.factory.js';
 
 /**
  * Item Bookmark
