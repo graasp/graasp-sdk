@@ -103,7 +103,7 @@ export * from './invitation/invitation.js';
 /**
  * Item
  */
-export type { DiscriminatedItem, getMimetype } from './item/item.js';
+export { type DiscriminatedItem, getMimetype } from './item/item.js';
 export * from './item/itemType.js';
 export * from './item/itemUtils.js';
 /**
