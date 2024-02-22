@@ -1,7 +1,7 @@
-import { isStrongPassword } from 'validator';
+import validator from 'validator';
 
 export const isPasswordStrong = (password: string) =>
-  isStrongPassword(password, {
+  validator.isStrongPassword(password, {
     minLength: 8,
     minLowercase: 1,
     minUppercase: 1,
