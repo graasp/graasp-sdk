@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/graasp/graasp-sdk/compare/v3.10.0...v4.0.0) (2024-02-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* make ESM ([#422](https://github.com/graasp/graasp-sdk/issues/422))
+
+### Features
+
+* make ESM ([#422](https://github.com/graasp/graasp-sdk/issues/422)) ([0b16dbb](https://github.com/graasp/graasp-sdk/commit/0b16dbba7cff5cc8b81ec701ea984b048f098009))
+
 ## [3.10.0](https://github.com/graasp/graasp-sdk/compare/v3.9.0...v3.10.0) (2024-02-21)
 
 
