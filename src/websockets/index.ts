@@ -41,6 +41,6 @@ export namespace Websocket {
   export type ErrorServerResponse = API.ErrorServerResponse;
   export type ServerResponse = API.ServerResponse;
   export type ServerInfo = API.ServerInfo;
-  export type ServerUpdate = API.ServerUpdate;
+  export type ServerUpdate<T> = API.ServerUpdate<T>;
   export type ServerMessage = API.ServerMessage;
 }
