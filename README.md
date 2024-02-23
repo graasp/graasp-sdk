@@ -8,7 +8,7 @@
 
 This repository contains all shared utils and types for the Graasp ecosystem.
 
-# Installation
+## Installation
 
 Run yarn to install the packages.
 
@@ -16,11 +16,29 @@ Run yarn to install the packages.
 yarn
 ```
 
-# Testing
+## Testing
+
+This project uses [vitest](https://vitest.dev/) as the test runner. It is fast, supports ESM and has an API similar to Jest (which was used previously).
+
+To start the tests run:
 
 ```sh
 yarn test
 ```
+
+The tests will run in watch mode, meaning that when you edit a file, the tests in that file (or any test file depending on that file) will be re-run. This allows for a fast feedback loop.
+
+## Building
+
+This package exposes a ESM and a CommonJS build as well as type declarations for Typescript.
+
+The structure is as follows:
+
+- `esm` contains the javascript files to use with ECMAScript Modules (ESM) it is built with the [`tsconfig.esm.json`](./tsconfig.esm.json) file.
+- `cjs` contains the javascript files to use with CommonJS it is built with the [`tsconfig.cjs.json`](./tsconfig.cjs.json) file.
+- `types` contains the type declarations for Typescript it is built with the [`tsconfig.types.json`](./tsconfig.types.json) file.
+
+The last bit of the build process is to add a single line `package.json` file in `esm` and `cjs` with the correct value for the `type` key (`commonjs` for `cjs` and `module` for `esm`).
 
 ## Contributors
 

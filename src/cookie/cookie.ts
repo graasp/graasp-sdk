@@ -2,6 +2,11 @@ import * as jsCookies from 'js-cookie';
 
 import { UUID } from '@/types.js';
 
+// this is necessary to do because we do not want to use the `esModuleInterop` flag
+// as it forces all downstream packages to also use it. This should actually work, but typescript does not really like it.
+// Also to note that the js-cookie package provides type declarations as a separate package which
+// is structures with namespaces and other not so simple structures ...
+// It would be better if the package would expose declarations itself.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const { default: Cookies } = jsCookies;

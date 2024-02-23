@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "./types",
     "noEmit": false,
+    // only emit declarations
     "declaration": true,
     "emitDeclarationOnly": true,
     "target": "ES2015",
