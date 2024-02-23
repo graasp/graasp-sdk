@@ -19,6 +19,8 @@ Thumbs.db
 # Ignore built js files
 dist
 build
+cjs
+esm
 
 # Ignore generated .d.ts files
 types

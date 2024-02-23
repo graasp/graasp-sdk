@@ -1,6 +1,10 @@
-import Cookies from 'js-cookie';
+import * as jsCookies from 'js-cookie';
 
 import { UUID } from '@/types.js';
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const { default: Cookies } = jsCookies;
 
 const IFRAME_RESIZE_HEIGHT_COOKIE_EXPIRATION_DAYS = 365; // 365 days
 
