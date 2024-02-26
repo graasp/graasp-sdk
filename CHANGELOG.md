@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.1](https://github.com/graasp/graasp-sdk/compare/v4.0.0...v4.0.1) (2024-02-26)
+
+
+### Bug Fixes
+
+* add exports for nodejs ([0bd2080](https://github.com/graasp/graasp-sdk/commit/0bd20807bdd74f23d0310f6737d560fa2f81a9e1))
+* **build:** exports issues ([#426](https://github.com/graasp/graasp-sdk/issues/426)) ([07d32f8](https://github.com/graasp/graasp-sdk/commit/07d32f8c751be1a5de602077421430a43d72f493))
+
 ## [4.0.0](https://github.com/graasp/graasp-sdk/compare/v3.10.0...v4.0.0) (2024-02-23)
 
 
