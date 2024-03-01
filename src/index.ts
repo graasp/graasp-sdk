@@ -101,6 +101,11 @@ export { ClientHostManager } from './hostManager/hostManager.js';
 export * from './invitation/invitation.js';
 
 /**
+ * DescriptionPlacement enum
+ */
+export * from './enums/descriptionPlacement.js';
+
+/**
  * Item
  */
 export { type DiscriminatedItem, getMimetype } from './item/item.js';
