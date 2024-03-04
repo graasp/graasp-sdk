@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.0](https://github.com/graasp/graasp-sdk/compare/v4.0.1...v4.1.0) (2024-03-04)
+
+
+### Features
+
+* add descriptionPlacement in itemSettings ([#431](https://github.com/graasp/graasp-sdk/issues/431)) ([c3334d8](https://github.com/graasp/graasp-sdk/commit/c3334d86f941305ebc6d3e98705c3754ce275208))
+
 ## [4.0.1](https://github.com/graasp/graasp-sdk/compare/v4.0.0...v4.0.1) (2024-02-26)
 
 
