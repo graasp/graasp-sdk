@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.0](https://github.com/graasp/graasp-sdk/compare/v4.1.0...v4.2.0) (2024-03-13)
+
+
+### Features
+
+* add helperlabel to geoloc ([#436](https://github.com/graasp/graasp-sdk/issues/436)) ([a406324](https://github.com/graasp/graasp-sdk/commit/a40632492c9c27fa1a2fbc2ee1f30a6919f3b5bc))
+
 ## [4.1.0](https://github.com/graasp/graasp-sdk/compare/v4.0.1...v4.1.0) (2024-03-04)
 
 
