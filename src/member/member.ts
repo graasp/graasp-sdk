@@ -13,9 +13,9 @@ export type PublicProfile = {
   id: UUID;
   member: Member;
   bio: string;
-  facebookId: string;
-  linkedinId: string;
-  twitterId: string;
+  facebookID: string;
+  linkedinID: string;
+  twitterID: string;
   createdAt: string;
   updatedAt: string;
 };
