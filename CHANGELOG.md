@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.1](https://github.com/graasp/graasp-sdk/compare/v4.2.0...v4.2.1) (2024-03-18)
+
+
+### Bug Fixes
+
+* add public profile type ([#440](https://github.com/graasp/graasp-sdk/issues/440)) ([e87d662](https://github.com/graasp/graasp-sdk/commit/e87d662dc3f5228346ab655d30a24fdb74fddf8b))
+
 ## [4.2.0](https://github.com/graasp/graasp-sdk/compare/v4.1.0...v4.2.0) (2024-03-13)
 
 
