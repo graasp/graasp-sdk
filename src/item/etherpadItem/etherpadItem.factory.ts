@@ -4,7 +4,9 @@ import {
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
+import { PackedInformation } from '../packedItem.js';
 import { EtherpadItemType } from './etherpadItem.js';
+import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { faker } from '@faker-js/faker';
 
 export const EtherpadItemFactory = (
@@ -22,5 +24,19 @@ export const EtherpadItemFactory = (
         groupID: faker.string.uuid(),
       },
     },
+  };
+};
+
+export const PackedEtherpadItemFactory = (
+  item: ItemFactoryInputType<EtherpadItemType> = {},
+  packedInfo: Partial<PackedInformation>,
+): ItemFactoryOutputType<EtherpadItemType> => {
+  const newItem = EtherpadItemFactory(item);
+  return {
+    ...newItem,
+
+    // default packed info
+    permission: PermissionLevel.Admin,
+    ...packedInfo,
   };
 };

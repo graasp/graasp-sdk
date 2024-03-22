@@ -4,7 +4,9 @@ import {
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
+import { PackedInformation } from '../packedItem.js';
 import { DocumentItemType } from './documentItem.js';
+import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { faker } from '@faker-js/faker';
 
 export const DocumentItemFactory = (
@@ -21,5 +23,19 @@ export const DocumentItemFactory = (
         content: `<div>${faker.lorem.text()}</div>`,
       },
     },
+  };
+};
+
+export const PackedDocumentItemFactory = (
+  item: ItemFactoryInputType<DocumentItemType> = {},
+  packedInfo: Partial<PackedInformation>,
+): ItemFactoryOutputType<DocumentItemType> => {
+  const newItem = DocumentItemFactory(item);
+  return {
+    ...newItem,
+
+    // default packed info
+    permission: PermissionLevel.Admin,
+    ...packedInfo,
   };
 };

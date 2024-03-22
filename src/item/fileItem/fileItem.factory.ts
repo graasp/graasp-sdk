@@ -4,7 +4,9 @@ import {
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
+import { PackedInformation } from '../packedItem.js';
 import { LocalFileItemType, S3FileItemType } from './fileItem.js';
+import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { faker } from '@faker-js/faker';
 
 export const LocalFileItemFactory = (
@@ -29,6 +31,20 @@ export const LocalFileItemFactory = (
   };
 };
 
+export const PackedLocalFileItemFactory = (
+  item: ItemFactoryInputType<LocalFileItemType> = {},
+  packedInfo: Partial<PackedInformation>,
+): ItemFactoryOutputType<LocalFileItemType> => {
+  const newItem = LocalFileItemFactory(item);
+  return {
+    ...newItem,
+
+    // default packed info
+    permission: PermissionLevel.Admin,
+    ...packedInfo,
+  };
+};
+
 export const S3FileItemFactory = (
   item: ItemFactoryInputType<S3FileItemType> = {},
 ): ItemFactoryOutputType<S3FileItemType> => {
@@ -48,5 +64,19 @@ export const S3FileItemFactory = (
         content: faker.lorem.text(),
       },
     },
+  };
+};
+
+export const PackedS3FileItemFactory = (
+  item: ItemFactoryInputType<S3FileItemType> = {},
+  packedInfo: Partial<PackedInformation>,
+): ItemFactoryOutputType<S3FileItemType> => {
+  const newItem = S3FileItemFactory(item);
+  return {
+    ...newItem,
+
+    // default packed info
+    permission: PermissionLevel.Admin,
+    ...packedInfo,
   };
 };

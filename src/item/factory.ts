@@ -1,6 +1,7 @@
 import { MemberFactory } from '../member/factory.js';
 import { DiscriminatedItem } from './item.js';
 import { buildPathFromIds } from './itemUtils.js';
+import { PackedInformation } from './packedItem.js';
 import { CCLicenseAdaptions } from '@/enums/ccLicenses.js';
 import { faker } from '@faker-js/faker';
 
@@ -18,6 +19,9 @@ export type ItemFactoryOutputType<IT extends DiscriminatedItem> = Pick<
   | 'createdAt'
   | 'updatedAt'
 >;
+
+export type PackedItemFactoryOutputType<IT extends DiscriminatedItem> =
+  ItemFactoryOutputType<IT> & PackedInformation;
 
 export type ItemFactoryInputType<IT extends DiscriminatedItem> = Partial<IT> & {
   parentItem?: Pick<IT, 'path'>;

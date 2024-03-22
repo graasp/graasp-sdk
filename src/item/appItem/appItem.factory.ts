@@ -4,7 +4,9 @@ import {
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
+import { PackedInformation } from '../packedItem.js';
 import { AppItemType } from './appItem.js';
+import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { faker } from '@faker-js/faker';
 
 export const AppItemFactory = (
@@ -20,5 +22,19 @@ export const AppItemFactory = (
         settings: {},
       },
     },
+  };
+};
+
+export const PackedAppItemFactory = (
+  item: ItemFactoryInputType<AppItemType> = {},
+  packedInfo: Partial<PackedInformation>,
+): ItemFactoryOutputType<AppItemType> => {
+  const newItem = AppItemFactory(item);
+  return {
+    ...newItem,
+
+    // default packed info
+    permission: PermissionLevel.Admin,
+    ...packedInfo,
   };
 };
