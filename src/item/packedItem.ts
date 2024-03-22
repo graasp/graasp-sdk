@@ -3,7 +3,7 @@ import { DiscriminatedItem } from './item.js';
 import { ItemSettings } from './itemSettings.js';
 
 export type PackedInformation = {
-  permission: ItemMembership['permission'];
+  permission: ItemMembership['permission'] | null;
 };
 
 /**
