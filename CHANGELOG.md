@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.1](https://github.com/graasp/graasp-sdk/compare/v4.3.0...v4.3.1) (2024-03-25)
+
+
+### Bug Fixes
+
+* add redirection Url in sign in path ([#450](https://github.com/graasp/graasp-sdk/issues/450)) ([263dc08](https://github.com/graasp/graasp-sdk/commit/263dc087be193679c26b5e59ac852ca64a46a04a))
+
 ## [4.3.0](https://github.com/graasp/graasp-sdk/compare/v4.2.1...v4.3.0) (2024-03-25)
 
 
