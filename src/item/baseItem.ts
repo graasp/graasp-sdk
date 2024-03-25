@@ -8,6 +8,7 @@ import { Member } from '@/member/member.js';
 export interface Item<S = ItemSettings> {
   id: string;
   name: string;
+  displayName: string;
   description: string | null;
   path: string;
   settings: S;
