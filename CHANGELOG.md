@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.3.0](https://github.com/graasp/graasp-sdk/compare/v4.2.1...v4.3.0) (2024-03-25)
+
+
+### Features
+
+* add packed item and change to item geolocation ([#448](https://github.com/graasp/graasp-sdk/issues/448)) ([6661e3c](https://github.com/graasp/graasp-sdk/commit/6661e3c18568b42a77071063c8462c3784d22470))
+
+
+### Bug Fixes
+
+* upadte lock file ([c675162](https://github.com/graasp/graasp-sdk/commit/c67516203d2663f6dd7b2b3e3addb5a864893b9a))
+
 ## [4.2.1](https://github.com/graasp/graasp-sdk/compare/v4.2.0...v4.2.1) (2024-03-18)
 
 
