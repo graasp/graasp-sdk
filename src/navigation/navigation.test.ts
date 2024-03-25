@@ -73,8 +73,17 @@ describe('Navigation Util Tests', () => {
 
   describe('buildSignInPath', () => {
     it('build sign in path', () => {
-      const res = buildSignInPath({ host: MOCK_HOST });
-      expect(res).toContain(MOCK_HOST);
+      const res = buildSignInPath({ host: MOCK_HOST_WITH_PROTOCOL });
+      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
+    });
+    it('build sign in path with redirection url', () => {
+      const redirectionUrl = 'https://test.com';
+      const res = buildSignInPath({
+        host: MOCK_HOST_WITH_PROTOCOL,
+        redirectionUrl,
+      });
+      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
+      expect(res).toContain(`?url=${encodeURIComponent(redirectionUrl)}`);
     });
   });
 
