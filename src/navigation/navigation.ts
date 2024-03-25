@@ -63,7 +63,19 @@ export const redirectToSavedUrl = (
  * @param  {string} host authentication host (Graasp Auth)
  * @returns {string} absolute url for the sign in path
  */
-export const buildSignInPath = ({ host }: { host: string }) => `${host}/signin`;
+export const buildSignInPath = ({
+  host,
+  redirectionUrl,
+}: {
+  host: string;
+  redirectionUrl?: string;
+}) => {
+  const url = new URL('/signin', host);
+  if (redirectionUrl) {
+    url.searchParams.set('url', redirectionUrl);
+  }
+  return url.toString();
+};
 
 /**
  * Build the absolute url to view an item in the builder with optional parameter to specify whether the chat is open
