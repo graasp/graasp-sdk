@@ -9,6 +9,7 @@ export type ItemFactoryOutputType<IT extends DiscriminatedItem> = Pick<
   IT,
   | 'id'
   | 'name'
+  | 'displayName'
   | 'description'
   | 'path'
   | 'settings'
@@ -45,6 +46,7 @@ export const PartialItemFactory = <IT extends DiscriminatedItem>(
     updatedAt,
     path,
     name: item.name ?? faker.helpers.multiple(faker.lorem.word).join(' '),
+    displayName: item.name ?? faker.helpers.multiple(faker.lorem.word).join(' '),
     description: item.description ?? faker.lorem.text(),
     settings:
       item.settings ??
