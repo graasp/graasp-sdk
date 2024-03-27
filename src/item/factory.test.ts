@@ -39,4 +39,10 @@ describe('Base Item Factory', () => {
     const item1 = PartialItemFactory({});
     expect(item1.settings.hasThumbnail).toBeFalsy();
   });
+
+  it('Returns correct default displayName', () => {
+    const item = PartialItemFactory({});
+    expect(item.displayName).toBeDefined();
+    expect(typeof item.displayName).toBe('string');
+  });
 });
