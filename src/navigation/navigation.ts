@@ -106,9 +106,34 @@ export const buildItemLinkForBuilder = (args: {
 };
 
 /**
+ * @deprecated Use `buildPdfViewerURL` instead
  * Return a link to display a pdf, embedded in a custom pdf viewer if provided
  * @param assetsUrl assets url where the pdf viewer is hosted
  * @returns embedded link to display a pdf
  */
 export const buildPdfViewerLink = (assetsUrl?: string) =>
   assetsUrl ? `https://${assetsUrl}/pdf-viewer/web/viewer.html?file=` : '';
+
+/**
+ * Returns the URL object of the resource that hosts a pdf viewer
+ * If url contains protocol and path, it needs to end with a trailing
+ * slash otherwise the last segment will be dropped
+ * @param assetsUrl assets url where the pdf viewer is hosted
+ * @returns embedded link to display a pdf
+ */
+export const buildPdfViewerURL = (assetsUrl?: string): URL | undefined => {
+  if (!assetsUrl) {
+    console.debug('No assets url provided');
+    return undefined;
+  }
+
+  let baseUrl = '';
+  // check if input contains protocol
+  try {
+    baseUrl = new URL(assetsUrl).href;
+  } catch {
+    // is not a valid url, so we should append the protocol
+    baseUrl = `https://${assetsUrl}`;
+  }
+  return new URL('pdf-viewer/web/viewer.html', baseUrl);
+};
