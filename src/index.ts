@@ -109,6 +109,7 @@ export * from './enums/descriptionPlacement.js';
  * Item
  */
 export { type DiscriminatedItem, getMimetype } from './item/item.js';
+export * from './item/itemSettings.js';
 export { type PackedItem } from './item/packedItem.js';
 export * from './item/itemType.js';
 export * from './item/itemUtils.js';
