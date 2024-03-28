@@ -223,6 +223,7 @@ export {
   redirectToSavedUrl,
   buildSignInPath,
   buildPdfViewerLink,
+  buildPdfViewerURL,
   buildItemLinkForBuilder,
 } from './navigation/navigation.js';
 
