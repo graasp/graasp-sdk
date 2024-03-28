@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.4.0](https://github.com/graasp/graasp-sdk/compare/v4.3.1...v4.4.0) (2024-03-28)
+
+
+### Features
+
+* export settings ([#458](https://github.com/graasp/graasp-sdk/issues/458)) ([c385684](https://github.com/graasp/graasp-sdk/commit/c38568494468daa3af63ff8c9fd9a79892e80024))
+
+
+### Bug Fixes
+
+* add visibility to public profile type ([#460](https://github.com/graasp/graasp-sdk/issues/460)) ([e453743](https://github.com/graasp/graasp-sdk/commit/e45374314bbf37b0ea46ca9ec5eb6167c9a6982a))
+
 ## [4.3.1](https://github.com/graasp/graasp-sdk/compare/v4.3.0...v4.3.1) (2024-03-25)
 
 
