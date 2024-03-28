@@ -16,6 +16,7 @@ export type PublicProfile = {
   facebookID: string;
   linkedinID: string;
   twitterID: string;
+  visibility: boolean;
   createdAt: string;
   updatedAt: string;
 };
