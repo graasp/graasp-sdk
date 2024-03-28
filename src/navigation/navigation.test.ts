@@ -5,6 +5,7 @@ import { DEFAULT_PROTOCOL } from './constants.js';
 import {
   buildItemLinkForBuilder,
   buildPdfViewerLink,
+  buildPdfViewerURL,
   buildSignInPath,
   redirect,
   redirectToSavedUrl,
@@ -178,6 +179,35 @@ describe('Navigation Util Tests', () => {
     it('build url with asset url', () => {
       const res = buildPdfViewerLink(assetsUrl);
       expect(res).toContain(assetsUrl);
+    });
+  });
+
+  describe('buildPdfViewerURL', () => {
+    const assetsUrl = 'localhost';
+    const assetsUrlWithProtocol = 'http://localhost';
+    const assetsUrlWithProtocolAndPath = 'http://localhost/assets/';
+
+    it('undefined if url is not provided', () => {
+      const res = buildPdfViewerURL();
+      expect(res).toBeUndefined();
+    });
+    it('undefined if url is empty', () => {
+      const res = buildPdfViewerURL('');
+      expect(res).toBeUndefined();
+    });
+    it('build url with asset url being just a domain', () => {
+      const res = buildPdfViewerURL(assetsUrl);
+      expect(res?.toString()).toMatch(/https:\/\/localhost\/pdf-viewer*/i);
+    });
+    it('build url with asset url containing protocol', () => {
+      const res = buildPdfViewerURL(assetsUrlWithProtocol);
+      expect(res?.toString()).toMatch(/http:\/\/localhost\/pdf-viewer*/i);
+    });
+    it('build url with asset url containing protocol and path', () => {
+      const res = buildPdfViewerURL(assetsUrlWithProtocolAndPath);
+      expect(res?.toString()).toMatch(
+        /http:\/\/localhost\/assets\/pdf-viewer*/i,
+      );
     });
   });
 });
