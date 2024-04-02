@@ -7,4 +7,13 @@ export enum ActionTriggers {
   ItemUnlike = 'item-unlike',
   ItemEmbed = 'item-embed',
   ItemSearch = 'item-search',
+  Move = 'move',
+  Create = 'create',
+  Copy = 'copy',
+  Update = 'update',
+  Delete = 'delete',
+  ChatCreate = 'chat_create',
+  ChatUpdate = 'chat_update',
+  ChatDelete = 'chat_delete',
+  ChatClear = 'chat_clear',
 }
