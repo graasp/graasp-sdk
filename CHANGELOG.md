@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.5.0](https://github.com/graasp/graasp-sdk/compare/v4.4.0...v4.5.0) (2024-04-03)
+
+
+### Features
+
+* add missing triggers ([#464](https://github.com/graasp/graasp-sdk/issues/464)) ([62305ae](https://github.com/graasp/graasp-sdk/commit/62305aea946df221e6420616e7a70430b5c31c15))
+
+
+### Bug Fixes
+
+* add better pdf viewer building function ([#457](https://github.com/graasp/graasp-sdk/issues/457)) ([636109b](https://github.com/graasp/graasp-sdk/commit/636109ba58dcbc01b321bf7203ab609786f6a154))
+
 ## [4.4.0](https://github.com/graasp/graasp-sdk/compare/v4.3.1...v4.4.0) (2024-03-28)
 
 
