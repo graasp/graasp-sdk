@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.6.0](https://github.com/graasp/graasp-sdk/compare/v4.5.0...v4.6.0) (2024-04-04)
+
+
+### Features
+
+* add `displayName` to base item ([#454](https://github.com/graasp/graasp-sdk/issues/454)) ([aeb9279](https://github.com/graasp/graasp-sdk/commit/aeb9279f6d8c3b5a11a8cc0d0e2a8e5c3d47244c))
+
 ## [4.5.0](https://github.com/graasp/graasp-sdk/compare/v4.4.0...v4.5.0) (2024-04-03)
 
 
