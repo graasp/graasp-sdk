@@ -51,6 +51,8 @@ export type Member = {
 export type CompleteMember = Member & {
   type: `${MemberType}` | MemberType;
   extra: MemberExtra;
+  enableSaveActions?: boolean;
+  userAgreements?: string;
   createdAt: string;
   updatedAt: string;
 };
