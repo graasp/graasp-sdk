@@ -5,8 +5,8 @@ import { ItemTag } from '@/itemTag/itemTag.js';
 
 export type PackedInformation = {
   permission: ItemMembership['permission'] | null;
-  hidden: ItemTag;
-  public: ItemTag;
+  hidden?: ItemTag;
+  public?: ItemTag;
 };
 
 /**
