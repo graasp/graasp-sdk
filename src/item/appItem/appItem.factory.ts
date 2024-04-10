@@ -27,7 +27,7 @@ export const AppItemFactory = (
 
 export const PackedAppItemFactory = (
   item: ItemFactoryInputType<AppItemType> = {},
-  packedInfo: Partial<PackedInformation>,
+  packedInfo: Partial<PackedInformation> = {},
 ): ItemFactoryOutputType<AppItemType> => {
   const newItem = AppItemFactory(item);
   return {

@@ -33,7 +33,7 @@ export const LocalFileItemFactory = (
 
 export const PackedLocalFileItemFactory = (
   item: ItemFactoryInputType<LocalFileItemType> = {},
-  packedInfo: Partial<PackedInformation>,
+  packedInfo: Partial<PackedInformation> = {},
 ): ItemFactoryOutputType<LocalFileItemType> => {
   const newItem = LocalFileItemFactory(item);
   return {
@@ -69,7 +69,7 @@ export const S3FileItemFactory = (
 
 export const PackedS3FileItemFactory = (
   item: ItemFactoryInputType<S3FileItemType> = {},
-  packedInfo: Partial<PackedInformation>,
+  packedInfo: Partial<PackedInformation> = {},
 ): ItemFactoryOutputType<S3FileItemType> => {
   const newItem = S3FileItemFactory(item);
   return {

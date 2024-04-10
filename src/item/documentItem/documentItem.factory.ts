@@ -28,7 +28,7 @@ export const DocumentItemFactory = (
 
 export const PackedDocumentItemFactory = (
   item: ItemFactoryInputType<DocumentItemType> = {},
-  packedInfo: Partial<PackedInformation>,
+  packedInfo: Partial<PackedInformation> = {},
 ): ItemFactoryOutputType<DocumentItemType> => {
   const newItem = DocumentItemFactory(item);
   return {

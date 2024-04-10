@@ -29,7 +29,7 @@ export const EtherpadItemFactory = (
 
 export const PackedEtherpadItemFactory = (
   item: ItemFactoryInputType<EtherpadItemType> = {},
-  packedInfo: Partial<PackedInformation>,
+  packedInfo: Partial<PackedInformation> = {},
 ): ItemFactoryOutputType<EtherpadItemType> => {
   const newItem = EtherpadItemFactory(item);
   return {
