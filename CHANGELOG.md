@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.7.0](https://github.com/graasp/graasp-sdk/compare/v4.6.0...v4.7.0) (2024-04-11)
+
+
+### Features
+
+* add save actions and user agreements in complete member ([#468](https://github.com/graasp/graasp-sdk/issues/468)) ([57e0beb](https://github.com/graasp/graasp-sdk/commit/57e0beb322fc07fbf49104d92fac280494504902))
+
 ## [4.6.0](https://github.com/graasp/graasp-sdk/compare/v4.5.0...v4.6.0) (2024-04-04)
 
 
