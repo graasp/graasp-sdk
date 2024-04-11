@@ -1,6 +1,6 @@
 # Changelog
 
-## [4.8.0](https://github.com/graasp/graasp-sdk/compare/v4.7.0...v4.8.0) (2024-04-11)
+## [4.7.1](https://github.com/graasp/graasp-sdk/compare/v4.7.0...v4.7.1) (2024-04-11)
 
 
 ### Features
