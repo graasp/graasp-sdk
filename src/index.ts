@@ -193,6 +193,7 @@ export * from './itemPublished/itemPublished.js';
  * Item Recycled
  */
 export * from './itemRecycled/itemRecycled.js';
+export * from './itemRecycled/itemRecycled.factory.js';
 
 /**
  * Item Tag
