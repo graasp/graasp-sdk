@@ -7,11 +7,13 @@ import { MemberFactory } from '@/member/factory.js';
 import { Member } from '@/member/member.js';
 import { faker } from '@faker-js/faker';
 
-export const RecycledItemDataFactory = (args: {
-  creator?: Member;
-  createdAt?: string;
-  item?: FolderItemType;
-}) => {
+export const RecycledItemDataFactory = (
+  args: {
+    creator?: Member;
+    createdAt?: string;
+    item?: FolderItemType;
+  } = {},
+) => {
   const createdAt: string =
     args.createdAt ?? faker.date.anytime().toISOString();
   return {
@@ -22,11 +24,13 @@ export const RecycledItemDataFactory = (args: {
   };
 };
 
-export const PackedRecycledItemDataFactory = (args: {
-  creator?: Member;
-  createdAt?: string;
-  item?: FolderItemType;
-}) => {
+export const PackedRecycledItemDataFactory = (
+  args: {
+    creator?: Member;
+    createdAt?: string;
+    item?: FolderItemType;
+  } = {},
+) => {
   const createdAt: string =
     args.createdAt ?? faker.date.anytime().toISOString();
   return {
