@@ -158,6 +158,7 @@ export * from './item/shortcutItem/shortcutItem.factory.js';
  * Item Bookmark
  */
 export * from './itemBookmark/itemBookmark.js';
+export * from './itemBookmark/itemBookmark.factory.js';
 
 /**
  * Item Flag

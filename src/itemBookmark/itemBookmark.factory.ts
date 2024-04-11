@@ -4,13 +4,10 @@ import {
   PackedFolderItemFactory,
 } from '@/item/folderItem/folderItem.factory.js';
 import { FolderItemType } from '@/item/folderItem/folderItem.js';
-import { MemberFactory } from '@/member/factory.js';
-import { Member } from '@/member/member.js';
 import { faker } from '@faker-js/faker';
 
-export const RecycledItemDataFactory = (
+export const ItemBookmarkFactory = (
   args: {
-    creator?: Member;
     createdAt?: string;
     item?: ItemFactoryInputType<FolderItemType>;
   } = {},
@@ -19,15 +16,13 @@ export const RecycledItemDataFactory = (
     args.createdAt ?? faker.date.anytime().toISOString();
   return {
     id: faker.string.uuid(),
-    creator: MemberFactory(args.creator),
     createdAt,
     item: FolderItemFactory(args.item),
   };
 };
 
-export const PackedRecycledItemDataFactory = (
+export const PackedItemBookmarkFactory = (
   args: {
-    creator?: Member;
     createdAt?: string;
     item?: ItemFactoryInputType<FolderItemType>;
   } = {},
@@ -36,7 +31,6 @@ export const PackedRecycledItemDataFactory = (
     args.createdAt ?? faker.date.anytime().toISOString();
   return {
     id: faker.string.uuid(),
-    creator: MemberFactory(args.creator),
     createdAt,
     item: PackedFolderItemFactory(args.item),
   };
