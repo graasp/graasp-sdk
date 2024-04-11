@@ -49,7 +49,7 @@ export type Member = {
 export type CompleteMember = Member & {
   type: `${MemberType}` | MemberType;
   extra: MemberExtra;
-  enableSaveActions?: boolean;
+  enableSaveActions: boolean;
   userAgreementsDate?: string;
   createdAt: string;
   updatedAt: string;
