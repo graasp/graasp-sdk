@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.8.0](https://github.com/graasp/graasp-sdk/compare/v4.7.0...v4.8.0) (2024-04-11)
+
+
+### Features
+
+* set enableSaveActions not null for Member ([#475](https://github.com/graasp/graasp-sdk/issues/475)) ([68a6e24](https://github.com/graasp/graasp-sdk/commit/68a6e246a03cfd4d9bc17e70eaaa9ed07bc43c50))
+
 ## [4.7.0](https://github.com/graasp/graasp-sdk/compare/v4.6.0...v4.7.0) (2024-04-11)
 
 
