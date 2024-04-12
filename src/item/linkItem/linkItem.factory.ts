@@ -41,7 +41,7 @@ export const PackedLinkItemFactory = (
   packedInfo: PackedInformationFactoryInput = {},
 ): PackedItemFactoryOutputType<LinkItemType> => {
   const newItem = LinkItemFactory(item);
-  const packed = PackedInformationFactory(packedInfo);
+  const packed = PackedInformationFactory(packedInfo, newItem);
   return {
     ...newItem,
     ...packed,

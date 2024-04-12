@@ -79,13 +79,17 @@ export type PackedInformationFactoryInput = {
   hidden?: Partial<ItemTag>;
 };
 
-export const PackedInformationFactory = ({
-  permission = PermissionLevel.Admin,
-  hidden,
-}: PackedInformationFactoryInput) => {
+export const PackedInformationFactory = (
+  { permission = PermissionLevel.Admin, hidden }: PackedInformationFactoryInput,
+  item: DiscriminatedItem,
+) => {
   let hiddenItemTag;
   if (hidden) {
-    hiddenItemTag = ItemTagFactory({ type: ItemTagType.Hidden, ...hidden });
+    hiddenItemTag = ItemTagFactory({
+      type: ItemTagType.Hidden,
+      item,
+      ...hidden,
+    });
   }
 
   return {

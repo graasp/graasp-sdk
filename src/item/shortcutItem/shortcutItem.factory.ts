@@ -32,7 +32,7 @@ export const PackedShortcutItemFactory = (
   packedInfo: PackedInformationFactoryInput = {},
 ): PackedItemFactoryOutputType<ShortcutItemType> => {
   const newItem = ShortcutItemFactory(item);
-  const packed = PackedInformationFactory(packedInfo);
+  const packed = PackedInformationFactory(packedInfo, newItem);
   return {
     ...newItem,
     ...packed,

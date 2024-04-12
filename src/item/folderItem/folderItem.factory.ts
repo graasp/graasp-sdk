@@ -29,7 +29,7 @@ export const PackedFolderItemFactory = (
   packedInfo: PackedInformationFactoryInput = {},
 ): PackedItemFactoryOutputType<FolderItemType> => {
   const newItem = FolderItemFactory(item);
-  const packed = PackedInformationFactory(packedInfo);
+  const packed = PackedInformationFactory(packedInfo, newItem);
   return {
     ...newItem,
     ...packed,
