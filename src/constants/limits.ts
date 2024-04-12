@@ -74,4 +74,4 @@ export const MAX_USERNAME_LENGTH = 100 as const;
 /**
  * Minimum username length
  */
-export const MIN_USERNAME_LENGTH = 1 as const;
+export const MIN_USERNAME_LENGTH = 3 as const;
