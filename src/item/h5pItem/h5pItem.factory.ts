@@ -1,13 +1,13 @@
 import {
   ItemFactoryInputType,
   ItemFactoryOutputType,
+  PackedInformationFactory,
+  PackedInformationFactoryInput,
   PackedItemFactoryOutputType,
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
-import { PackedInformation } from '../packedItem.js';
 import { H5PItemType } from './h5pItem.js';
-import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { faker } from '@faker-js/faker';
 
 export const H5PItemFactory = (
@@ -31,14 +31,12 @@ export const H5PItemFactory = (
 
 export const PackedH5PItemFactory = (
   item: ItemFactoryInputType<H5PItemType> = {},
-  packedInfo: Partial<PackedInformation> = {},
+  packedInfo: PackedInformationFactoryInput = {},
 ): PackedItemFactoryOutputType<H5PItemType> => {
   const newItem = H5PItemFactory(item);
+  const packed = PackedInformationFactory(packedInfo);
   return {
     ...newItem,
-
-    // default packed info
-    permission: PermissionLevel.Admin,
-    ...packedInfo,
+    ...packed,
   };
 };

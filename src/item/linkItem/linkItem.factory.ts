@@ -1,13 +1,13 @@
 import {
   ItemFactoryInputType,
   ItemFactoryOutputType,
+  PackedInformationFactory,
+  PackedInformationFactoryInput,
   PackedItemFactoryOutputType,
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
-import { PackedInformation } from '../packedItem.js';
 import { LinkItemType } from './linkItem.js';
-import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { faker } from '@faker-js/faker';
 
 export const LinkItemFactory = (
@@ -38,14 +38,12 @@ export const LinkItemFactory = (
 
 export const PackedLinkItemFactory = (
   item: ItemFactoryInputType<LinkItemType> = {},
-  packedInfo: Partial<PackedInformation> = {},
+  packedInfo: PackedInformationFactoryInput = {},
 ): PackedItemFactoryOutputType<LinkItemType> => {
   const newItem = LinkItemFactory(item);
+  const packed = PackedInformationFactory(packedInfo);
   return {
     ...newItem,
-
-    // default packed info
-    permission: PermissionLevel.Admin,
-    ...packedInfo,
+    ...packed,
   };
 };

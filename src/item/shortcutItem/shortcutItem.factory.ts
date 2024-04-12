@@ -1,13 +1,13 @@
 import {
   ItemFactoryInputType,
   ItemFactoryOutputType,
+  PackedInformationFactory,
+  PackedInformationFactoryInput,
   PackedItemFactoryOutputType,
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
-import { PackedInformation } from '../packedItem.js';
 import { ShortcutItemType } from './shortcutItem.js';
-import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { faker } from '@faker-js/faker';
 
 export const ShortcutItemFactory = (
@@ -29,14 +29,12 @@ export const ShortcutItemFactory = (
 
 export const PackedShortcutItemFactory = (
   item: ItemFactoryInputType<ShortcutItemType> = {},
-  packedInfo: Partial<PackedInformation> = {},
+  packedInfo: PackedInformationFactoryInput = {},
 ): PackedItemFactoryOutputType<ShortcutItemType> => {
   const newItem = ShortcutItemFactory(item);
+  const packed = PackedInformationFactory(packedInfo);
   return {
     ...newItem,
-
-    // default packed info
-    permission: PermissionLevel.Admin,
-    ...packedInfo,
+    ...packed,
   };
 };

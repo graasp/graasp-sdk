@@ -1,12 +1,12 @@
 import {
   ItemFactoryInputType,
   ItemFactoryOutputType,
+  PackedInformationFactory,
+  PackedInformationFactoryInput,
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
-import { PackedInformation } from '../packedItem.js';
 import { LocalFileItemType, S3FileItemType } from './fileItem.js';
-import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { faker } from '@faker-js/faker';
 
 export const LocalFileItemFactory = (
@@ -33,15 +33,13 @@ export const LocalFileItemFactory = (
 
 export const PackedLocalFileItemFactory = (
   item: ItemFactoryInputType<LocalFileItemType> = {},
-  packedInfo: Partial<PackedInformation> = {},
+  packedInfo: PackedInformationFactoryInput = {},
 ): ItemFactoryOutputType<LocalFileItemType> => {
   const newItem = LocalFileItemFactory(item);
+  const packed = PackedInformationFactory(packedInfo);
   return {
     ...newItem,
-
-    // default packed info
-    permission: PermissionLevel.Admin,
-    ...packedInfo,
+    ...packed,
   };
 };
 
@@ -69,14 +67,12 @@ export const S3FileItemFactory = (
 
 export const PackedS3FileItemFactory = (
   item: ItemFactoryInputType<S3FileItemType> = {},
-  packedInfo: Partial<PackedInformation> = {},
+  packedInfo: PackedInformationFactoryInput = {},
 ): ItemFactoryOutputType<S3FileItemType> => {
   const newItem = S3FileItemFactory(item);
+  const packed = PackedInformationFactory(packedInfo);
   return {
     ...newItem,
-
-    // default packed info
-    permission: PermissionLevel.Admin,
-    ...packedInfo,
+    ...packed,
   };
 };

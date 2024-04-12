@@ -3,6 +3,9 @@ import { DiscriminatedItem } from './item.js';
 import { buildPathFromIds } from './itemUtils.js';
 import { PackedInformation } from './packedItem.js';
 import { CCLicenseAdaptions } from '@/enums/ccLicenses.js';
+import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
+import { ItemTagFactory } from '@/itemTag/itemTag.factory.js';
+import { ItemTag, ItemTagType } from '@/itemTag/itemTag.js';
 import { faker } from '@faker-js/faker';
 
 export type ItemFactoryOutputType<IT extends DiscriminatedItem> = Pick<
@@ -68,5 +71,25 @@ export const PartialItemFactory = <IT extends DiscriminatedItem>(
     // allow null creator
     creator: item.creator === undefined ? MemberFactory() : item.creator,
     lang: item.lang ?? faker.helpers.arrayElement(['fr', 'en']),
+  };
+};
+
+export type PackedInformationFactoryInput = {
+  permission?: PermissionLevel;
+  hidden?: Partial<ItemTag>;
+};
+
+export const PackedInformationFactory = ({
+  permission = PermissionLevel.Admin,
+  hidden,
+}: PackedInformationFactoryInput) => {
+  let hiddenItemTag;
+  if (hidden) {
+    hiddenItemTag = ItemTagFactory({ type: ItemTagType.Hidden, ...hidden });
+  }
+
+  return {
+    permission,
+    ...(hiddenItemTag ? { hidden: hiddenItemTag } : {}),
   };
 };

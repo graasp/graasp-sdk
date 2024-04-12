@@ -1,12 +1,12 @@
 import {
   ItemFactoryInputType,
   ItemFactoryOutputType,
+  PackedInformationFactory,
+  PackedInformationFactoryInput,
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
-import { PackedInformation } from '../packedItem.js';
 import { DocumentItemType } from './documentItem.js';
-import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { faker } from '@faker-js/faker';
 
 export const DocumentItemFactory = (
@@ -28,14 +28,12 @@ export const DocumentItemFactory = (
 
 export const PackedDocumentItemFactory = (
   item: ItemFactoryInputType<DocumentItemType> = {},
-  packedInfo: Partial<PackedInformation> = {},
+  packedInfo: PackedInformationFactoryInput = {},
 ): ItemFactoryOutputType<DocumentItemType> => {
   const newItem = DocumentItemFactory(item);
+  const packed = PackedInformationFactory(packedInfo);
   return {
     ...newItem,
-
-    // default packed info
-    permission: PermissionLevel.Admin,
-    ...packedInfo,
+    ...packed,
   };
 };
