@@ -32,7 +32,7 @@ export const PackedEtherpadItemFactory = (
   packedInfo: PackedInformationFactoryInput = {},
 ): ItemFactoryOutputType<EtherpadItemType> => {
   const newItem = EtherpadItemFactory(item);
-  const packed = PackedInformationFactory(packedInfo, newItem);
+  const packed = PackedInformationFactory(packedInfo, newItem, item.parentItem);
   return {
     ...newItem,
     ...packed,

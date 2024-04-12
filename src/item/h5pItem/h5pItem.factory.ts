@@ -34,7 +34,7 @@ export const PackedH5PItemFactory = (
   packedInfo: PackedInformationFactoryInput = {},
 ): PackedItemFactoryOutputType<H5PItemType> => {
   const newItem = H5PItemFactory(item);
-  const packed = PackedInformationFactory(packedInfo, newItem);
+  const packed = PackedInformationFactory(packedInfo, newItem, item.parentItem);
   return {
     ...newItem,
     ...packed,

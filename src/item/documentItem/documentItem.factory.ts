@@ -31,7 +31,7 @@ export const PackedDocumentItemFactory = (
   packedInfo: PackedInformationFactoryInput = {},
 ): ItemFactoryOutputType<DocumentItemType> => {
   const newItem = DocumentItemFactory(item);
-  const packed = PackedInformationFactory(packedInfo, newItem);
+  const packed = PackedInformationFactory(packedInfo, newItem, item.parentItem);
   return {
     ...newItem,
     ...packed,

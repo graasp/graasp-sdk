@@ -36,7 +36,7 @@ export const PackedLocalFileItemFactory = (
   packedInfo: PackedInformationFactoryInput = {},
 ): ItemFactoryOutputType<LocalFileItemType> => {
   const newItem = LocalFileItemFactory(item);
-  const packed = PackedInformationFactory(packedInfo, newItem);
+  const packed = PackedInformationFactory(packedInfo, newItem, item.parentItem);
   return {
     ...newItem,
     ...packed,
@@ -70,7 +70,7 @@ export const PackedS3FileItemFactory = (
   packedInfo: PackedInformationFactoryInput = {},
 ): ItemFactoryOutputType<S3FileItemType> => {
   const newItem = S3FileItemFactory(item);
-  const packed = PackedInformationFactory(packedInfo, newItem);
+  const packed = PackedInformationFactory(packedInfo, newItem, item.parentItem);
   return {
     ...newItem,
     ...packed,

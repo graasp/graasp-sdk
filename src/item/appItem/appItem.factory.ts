@@ -30,7 +30,7 @@ export const PackedAppItemFactory = (
   packedInfo: PackedInformationFactoryInput = {},
 ): ItemFactoryOutputType<AppItemType> => {
   const newItem = AppItemFactory(item);
-  const packed = PackedInformationFactory(packedInfo, newItem);
+  const packed = PackedInformationFactory(packedInfo, newItem, item.parentItem);
   return {
     ...newItem,
     ...packed,
