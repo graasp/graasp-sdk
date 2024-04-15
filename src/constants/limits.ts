@@ -70,8 +70,8 @@ export const MAX_ITEM_NAME_LENGTH = 500 as const;
 /**
  * Maximum username length
  */
-export const MAX_USERNAME_LENGTH = 100 as const;
+export const MAX_USERNAME_LENGTH = 60 as const;
 /**
  * Minimum username length
  */
-export const MIN_USERNAME_LENGTH = 3 as const;
+export const MIN_USERNAME_LENGTH = 2 as const;
