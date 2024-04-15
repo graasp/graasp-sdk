@@ -574,7 +574,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:19.1.0"
     "@faker-js/faker": "npm:8.4.1"
     "@trivago/prettier-plugin-sort-imports": "npm:4.3.0"
-    "@types/eslint": "npm:8.56.7"
+    "@types/eslint": "npm:8.56.9"
     "@types/js-cookie": "npm:3.0.6"
     "@types/uuid": "npm:9.0.8"
     "@types/validator": "npm:13.11.9"
@@ -1004,13 +1004,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:8.56.7":
-  version: 8.56.7
-  resolution: "@types/eslint@npm:8.56.7"
+"@types/eslint@npm:8.56.9":
+  version: 8.56.9
+  resolution: "@types/eslint@npm:8.56.9"
   dependencies:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
-  checksum: 10c0/159bb5ae2f78d905b9263240c75d07b60c26e1bcaecee8c775a7bb0cf7362f5dcdd286259ba6289ab62f989b87048090b2420619f7170a0abbd83cb68b5e0699
+  checksum: 10c0/a800e3d10bd12fc837773101c35a65c189528e306bc41eca9f30176f5ede4d35944a0c0e16b668971db3521df2f2bef62ab2471740eadc72aeb39dbaba6c9101
   languageName: node
   linkType: hard
 
