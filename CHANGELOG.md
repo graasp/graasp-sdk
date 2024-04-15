@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.7.2](https://github.com/graasp/graasp-sdk/compare/v4.7.1...v4.7.2) (2024-04-15)
+
+
+### Bug Fixes
+
+* add username constants ([#479](https://github.com/graasp/graasp-sdk/issues/479)) ([69cc49b](https://github.com/graasp/graasp-sdk/commit/69cc49b10198f2fdf1d8f12a752c1d1311017169))
+
 ## [4.7.1](https://github.com/graasp/graasp-sdk/compare/v4.7.0...v4.7.1) (2024-04-11)
 
 
