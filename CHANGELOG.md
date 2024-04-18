@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.7.3](https://github.com/graasp/graasp-sdk/compare/v4.7.2...v4.7.3) (2024-04-18)
+
+
+### Bug Fixes
+
+* add xs to image size ([#484](https://github.com/graasp/graasp-sdk/issues/484)) ([2b067c1](https://github.com/graasp/graasp-sdk/commit/2b067c15728432b4732c0e679c3ae9b4ea860049))
+
 ## [4.7.2](https://github.com/graasp/graasp-sdk/compare/v4.7.1...v4.7.2) (2024-04-15)
 
 
