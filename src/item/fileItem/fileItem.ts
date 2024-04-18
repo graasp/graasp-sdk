@@ -61,6 +61,7 @@ export interface FileItemSettings extends ItemSettings {
 }
 
 export enum MaxWidth {
+  ExtraSmall = 'xs',
   Small = 'sm',
   Medium = 'md',
   Large = 'lg',
