@@ -583,6 +583,7 @@ __metadata:
     date-fns: "npm:3.6.0"
     eslint: "npm:8.57.0"
     eslint-config-prettier: "npm:9.1.0"
+    filesize: "npm:10.1.1"
     husky: "npm:9.0.11"
     js-cookie: "npm:3.0.5"
     jsdom: "npm:24.0.0"
@@ -2318,6 +2319,13 @@ __metadata:
   dependencies:
     flat-cache: "npm:^3.0.4"
   checksum: 10c0/58473e8a82794d01b38e5e435f6feaf648e3f36fdb3a56e98f417f4efae71ad1c0d4ebd8a9a7c50c3ad085820a93fc7494ad721e0e4ebc1da3573f4e1c3c7cdd
+  languageName: node
+  linkType: hard
+
+"filesize@npm:10.1.1":
+  version: 10.1.1
+  resolution: "filesize@npm:10.1.1"
+  checksum: 10c0/440f873dbf39fb934041cbc2cb6cc9425b0aae6faf465e1c84facaf4120e80638b779890f07a1ca76f47ddc7fba3e328498b4869454fb6e067777e806b9a4755
   languageName: node
   linkType: hard
 

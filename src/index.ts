@@ -91,6 +91,11 @@ export { ErrorFactory, isError } from './errors/errors.js';
 export type { Etherpad } from './etherpad/etherpad.js';
 
 /**
+ * File Size formatting utils
+ */
+export { formatFileSize } from './fileSize/fileSize.js';
+
+/**
  * Client Host Manager
  */
 export { ClientHostManager } from './hostManager/hostManager.js';
