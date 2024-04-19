@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.7.5](https://github.com/graasp/graasp-sdk/compare/v4.7.4...v4.7.5) (2024-04-19)
+
+
+### Bug Fixes
+
+* use item's displayName instead of name in PartialItemFactory ([#489](https://github.com/graasp/graasp-sdk/issues/489)) ([012c688](https://github.com/graasp/graasp-sdk/commit/012c68837c8c75f54e9770e509ecc8fce173b044))
+
 ## [4.7.4](https://github.com/graasp/graasp-sdk/compare/v4.7.3...v4.7.4) (2024-04-19)
 
 
