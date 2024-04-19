@@ -53,6 +53,26 @@ export const buildS3FileExtra = (
 });
 
 /**
+ *
+ * @param fileName Name of the file to get the extension from
+ * @param options Options object, currently contains `includeDot` to return the extension with a leading dot, for easy concatenation, this option is true by default
+ * @returns
+ */
+export const getFileExtension = (
+  fileName: string,
+  { includeDot = true } = {},
+): string | undefined => {
+  const extensionRegex = /(?:\.([^.]+))?$/;
+  const extension = extensionRegex.exec(fileName)?.[1];
+  if (extension) {
+    if (includeDot) {
+      return `.${extension}`;
+    }
+    return extension;
+  }
+};
+
+/**
  * File Settings
  */
 
