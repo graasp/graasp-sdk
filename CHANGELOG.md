@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.7.4](https://github.com/graasp/graasp-sdk/compare/v4.7.3...v4.7.4) (2024-04-19)
+
+
+### Bug Fixes
+
+* add file extension util ([#488](https://github.com/graasp/graasp-sdk/issues/488)) ([1f04dd9](https://github.com/graasp/graasp-sdk/commit/1f04dd9834de453d003d46bdbe5a9c7e7a55a9a5))
+* add fileSize utils ([#487](https://github.com/graasp/graasp-sdk/issues/487)) ([147d8d2](https://github.com/graasp/graasp-sdk/commit/147d8d298a0fd1701e3b1c2a1e2e43e874451603))
+
 ## [4.7.3](https://github.com/graasp/graasp-sdk/compare/v4.7.2...v4.7.3) (2024-04-18)
 
 
