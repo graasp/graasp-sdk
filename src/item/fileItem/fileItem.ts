@@ -53,7 +53,7 @@ export const buildS3FileExtra = (
 });
 
 /**
- *
+ * Extract extension from filename.
  * @param fileName Name of the file to get the extension from
  * @param options Options object, currently contains `includeDot` to return the extension with a leading dot, for easy concatenation, this option is true by default
  * @returns
@@ -62,6 +62,7 @@ export const getFileExtension = (
   fileName: string,
   { includeDot = true } = {},
 ): string | undefined => {
+  // this code has been adapted from https://stackoverflow.com/a/680982
   const extensionRegex = /(?:\.([^.]+))?$/;
   const extension = extensionRegex.exec(fileName)?.[1];
   if (extension) {
