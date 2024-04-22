@@ -66,3 +66,12 @@ export const MAX_THUMBNAIL_SIZE = 10 * 1024 * 1024;
  * Maximum item name length
  */
 export const MAX_ITEM_NAME_LENGTH = 500 as const;
+
+/**
+ * Maximum username length
+ */
+export const MAX_USERNAME_LENGTH = 60 as const;
+/**
+ * Minimum username length
+ */
+export const MIN_USERNAME_LENGTH = 2 as const;

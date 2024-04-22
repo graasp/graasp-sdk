@@ -15,5 +15,6 @@ export const MemberFactory = (
   ]),
   // todo: handle other member type when useful in backend
   type: MemberType.Individual,
+  enableSaveActions: m.enableSaveActions ?? true,
   ...m,
 });

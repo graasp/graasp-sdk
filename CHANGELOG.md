@@ -1,5 +1,48 @@
 # Changelog
 
+## [4.7.5](https://github.com/graasp/graasp-sdk/compare/v4.7.4...v4.7.5) (2024-04-19)
+
+
+### Bug Fixes
+
+* use item's displayName instead of name in PartialItemFactory ([#489](https://github.com/graasp/graasp-sdk/issues/489)) ([012c688](https://github.com/graasp/graasp-sdk/commit/012c68837c8c75f54e9770e509ecc8fce173b044))
+
+## [4.7.4](https://github.com/graasp/graasp-sdk/compare/v4.7.3...v4.7.4) (2024-04-19)
+
+
+### Bug Fixes
+
+* add file extension util ([#488](https://github.com/graasp/graasp-sdk/issues/488)) ([1f04dd9](https://github.com/graasp/graasp-sdk/commit/1f04dd9834de453d003d46bdbe5a9c7e7a55a9a5))
+* add fileSize utils ([#487](https://github.com/graasp/graasp-sdk/issues/487)) ([147d8d2](https://github.com/graasp/graasp-sdk/commit/147d8d298a0fd1701e3b1c2a1e2e43e874451603))
+
+## [4.7.3](https://github.com/graasp/graasp-sdk/compare/v4.7.2...v4.7.3) (2024-04-18)
+
+
+### Bug Fixes
+
+* add xs to image size ([#484](https://github.com/graasp/graasp-sdk/issues/484)) ([2b067c1](https://github.com/graasp/graasp-sdk/commit/2b067c15728432b4732c0e679c3ae9b4ea860049))
+
+## [4.7.2](https://github.com/graasp/graasp-sdk/compare/v4.7.1...v4.7.2) (2024-04-15)
+
+
+### Bug Fixes
+
+* add username constants ([#479](https://github.com/graasp/graasp-sdk/issues/479)) ([69cc49b](https://github.com/graasp/graasp-sdk/commit/69cc49b10198f2fdf1d8f12a752c1d1311017169))
+
+## [4.7.1](https://github.com/graasp/graasp-sdk/compare/v4.7.0...v4.7.1) (2024-04-11)
+
+
+### Features
+
+* set enableSaveActions not null for Member ([#475](https://github.com/graasp/graasp-sdk/issues/475)) ([68a6e24](https://github.com/graasp/graasp-sdk/commit/68a6e246a03cfd4d9bc17e70eaaa9ed07bc43c50))
+
+## [4.7.0](https://github.com/graasp/graasp-sdk/compare/v4.6.0...v4.7.0) (2024-04-11)
+
+
+### Features
+
+* add save actions and user agreements in complete member ([#468](https://github.com/graasp/graasp-sdk/issues/468)) ([57e0beb](https://github.com/graasp/graasp-sdk/commit/57e0beb322fc07fbf49104d92fac280494504902))
+
 ## [4.6.0](https://github.com/graasp/graasp-sdk/compare/v4.5.0...v4.6.0) (2024-04-04)
 
 

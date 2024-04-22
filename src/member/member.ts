@@ -29,14 +29,12 @@ export enum MemberType {
 type MemberExtra = {
   hasAvatar?: boolean;
   lang?: string;
-  enableSaveActions?: boolean;
   emailFreq?: `${EmailFrequency}` | EmailFrequency;
   hasCompletedTour?: boolean;
 };
 
 export const buildMemberExtra = (extra: Partial<MemberExtra>) => ({
   hasAvatar: false,
-  enableSaveActions: true,
   emailFreq: EmailFrequency.Always,
   hasCompletedTour: false,
   ...extra,
@@ -51,6 +49,8 @@ export type Member = {
 export type CompleteMember = Member & {
   type: `${MemberType}` | MemberType;
   extra: MemberExtra;
+  enableSaveActions: boolean;
+  userAgreementsDate?: string;
   createdAt: string;
   updatedAt: string;
 };
