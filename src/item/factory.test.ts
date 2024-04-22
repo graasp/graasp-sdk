@@ -6,7 +6,6 @@ import {
   PackedFolderItemFactory,
 } from './folderItem/folderItem.factory.js';
 import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
-import { ItemTagFactory } from '@/itemTag/itemTag.factory.js';
 import { ItemTagType } from '@/itemTag/itemTag.js';
 
 describe('Base Item Factory', () => {
