@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.7.6](https://github.com/graasp/graasp-sdk/compare/v4.7.5...v4.7.6) (2024-04-23)
+
+
+### Bug Fixes
+
+* add gpt enum ([#494](https://github.com/graasp/graasp-sdk/issues/494)) ([80b2169](https://github.com/graasp/graasp-sdk/commit/80b2169c5a49fbcd3843869ddd53476b29464781))
+
 ## [4.7.5](https://github.com/graasp/graasp-sdk/compare/v4.7.4...v4.7.5) (2024-04-19)
 
 
