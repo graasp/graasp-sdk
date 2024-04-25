@@ -16,4 +16,5 @@ export enum ActionTriggers {
   ChatUpdate = 'chat_update',
   ChatDelete = 'chat_delete',
   ChatClear = 'chat_clear',
+  MemberLogin = 'member-login',
 }
