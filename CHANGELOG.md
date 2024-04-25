@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.8.0](https://github.com/graasp/graasp-sdk/compare/v4.7.6...v4.8.0) (2024-04-25)
+
+
+### Features
+
+* add bookmark, like, recycled, published packed item ([#470](https://github.com/graasp/graasp-sdk/issues/470)) ([32a2710](https://github.com/graasp/graasp-sdk/commit/32a2710b83438ab2498d3d4dc9b0e803c44fbbca))
+* add member login action trigger ([#499](https://github.com/graasp/graasp-sdk/issues/499)) ([e0d04df](https://github.com/graasp/graasp-sdk/commit/e0d04df2455ba2eb1f604a867858db1ba7c9b7a6))
+
 ## [4.7.6](https://github.com/graasp/graasp-sdk/compare/v4.7.5...v4.7.6) (2024-04-23)
 
 
