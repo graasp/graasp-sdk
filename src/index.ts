@@ -281,4 +281,8 @@ export {
 /**
  * Chatbot related types
  */
-export { ChatbotRole, type ChatBotMessage } from './chatbot/chatbot.js';
+export {
+  ChatbotRole,
+  type ChatBotMessage,
+  GPTVersion,
+} from './chatbot/chatbot.js';
