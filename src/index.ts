@@ -286,3 +286,8 @@ export {
   type ChatBotMessage,
   GPTVersion,
 } from './chatbot/chatbot.js';
+
+/**
+ * string utils
+ */
+export * from './string/string.js';
