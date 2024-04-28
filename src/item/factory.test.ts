@@ -33,6 +33,15 @@ describe('Base Item Factory', () => {
       '3d11f9d9_fbbe_4e0a_9a13_0999ca20bebc.2d11f9d9_fbbe_4e0a_9a13_0999ca20bebc',
     );
   });
+  it('Return path supplied', () => {
+    const itemPath =
+      '2d11f9d9_fbbe_4e0a_9a13_0999ca20bebc.2d11f9d9_fbbe_4e0a_9a13_0999ca20beba';
+    const item = PartialItemFactory({
+      id: '2d11f9d9-fbbe-4e0a-9a13-0999ca20bebc',
+      path: itemPath,
+    });
+    expect(item.path).toEqual(itemPath);
+  });
 
   it('Allow null creator', () => {
     const item1 = PartialItemFactory({

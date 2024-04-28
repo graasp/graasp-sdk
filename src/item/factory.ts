@@ -42,6 +42,7 @@ export const PartialItemFactory = <IT extends DiscriminatedItem>(
     item.updatedAt ?? faker.date.anytime().toISOString();
 
   const path =
+    item.path ??
     (item.parentItem ? item.parentItem.path + '.' : '') + buildPathFromIds(id);
 
   return {
