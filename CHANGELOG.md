@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.8.1](https://github.com/graasp/graasp-sdk/compare/v4.8.0...v4.8.1) (2024-04-29)
+
+
+### Bug Fixes
+
+* update factory to use path supplied ([#502](https://github.com/graasp/graasp-sdk/issues/502)) ([f4b15eb](https://github.com/graasp/graasp-sdk/commit/f4b15eb4916c0cf1a02e8a79a91b6f3aac0d0083))
+
 ## [4.8.0](https://github.com/graasp/graasp-sdk/compare/v4.7.6...v4.8.0) (2024-04-25)
 
 
