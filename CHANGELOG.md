@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.9.0](https://github.com/graasp/graasp-sdk/compare/v4.8.1...v4.9.0) (2024-05-01)
+
+
+### Features
+
+* add ItemFeedbackOpEvent types ([#505](https://github.com/graasp/graasp-sdk/issues/505)) ([6f8c0fd](https://github.com/graasp/graasp-sdk/commit/6f8c0fd38f7a9a0b90284257e5bb5dba5504092d))
+
 ## [4.8.1](https://github.com/graasp/graasp-sdk/compare/v4.8.0...v4.8.1) (2024-04-29)
 
 
