@@ -1,4 +1,4 @@
-export const FeedBackOP = {
+export const FeedBackOperation = {
   UPDATE: 'update',
   DELETE: 'delete',
   MOVE: 'move',
@@ -8,19 +8,20 @@ export const FeedBackOP = {
   RESTORE: 'restore',
   VALIDATE: 'validate',
 } as const;
-export type FeedBackOPType = `${(typeof FeedBackOP)[keyof typeof FeedBackOP]}`;
+export type FeedBackOperationType =
+  `${(typeof FeedBackOperation)[keyof typeof FeedBackOperation]}`;
 export type ItemOpFeedbackResult<T> = {
-  [FeedBackOP.UPDATE]: { [itemId: string]: T };
-  [FeedBackOP.DELETE]: { [itemId: string]: T };
-  [FeedBackOP.MOVE]: { items: T[]; moved: T[] };
-  [FeedBackOP.COPY]: {
+  [FeedBackOperation.UPDATE]: { [itemId: string]: T };
+  [FeedBackOperation.DELETE]: { [itemId: string]: T };
+  [FeedBackOperation.MOVE]: { items: T[]; moved: T[] };
+  [FeedBackOperation.COPY]: {
     items: T[];
     copies: T[];
   };
-  [FeedBackOP.EXPORT]: { [itemId: string]: T };
-  [FeedBackOP.RECYCLE]: { [itemId: string]: T };
-  [FeedBackOP.RESTORE]: { [itemId: string]: T };
-  [FeedBackOP.VALIDATE]: { [itemId: string]: T };
+  [FeedBackOperation.EXPORT]: { [itemId: string]: T };
+  [FeedBackOperation.RECYCLE]: { [itemId: string]: T };
+  [FeedBackOperation.RESTORE]: { [itemId: string]: T };
+  [FeedBackOperation.VALIDATE]: { [itemId: string]: T };
 };
 
 /**
@@ -28,7 +29,7 @@ export type ItemOpFeedbackResult<T> = {
  */
 export interface ItemOpFeedbackEvent<
   T extends { id: string },
-  OP extends FeedBackOPType = FeedBackOPType,
+  OP extends FeedBackOperationType = FeedBackOperationType,
 > {
   kind: 'feedback';
   op: OP;
@@ -39,7 +40,7 @@ export interface ItemOpFeedbackEvent<
 
 export const isOperationEvent = <
   T extends { id: string },
-  OP extends FeedBackOPType,
+  OP extends FeedBackOperationType,
 >(
   event: ItemOpFeedbackEvent<T>,
   type: OP,
