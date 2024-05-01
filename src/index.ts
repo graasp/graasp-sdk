@@ -118,7 +118,7 @@ export * from './item/itemSettings.js';
 export { type PackedItem } from './item/packedItem.js';
 export * from './item/itemType.js';
 export * from './item/itemUtils.js';
-export * from './item/events/itemFeedbackOpEvent.js';
+export * from './item/events/itemFeedbackOperationEvent.js';
 /**
  * App Item
  */
