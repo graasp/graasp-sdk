@@ -17,4 +17,6 @@ export enum ActionTriggers {
   ChatDelete = 'chat_delete',
   ChatClear = 'chat_clear',
   MemberLogin = 'member-login',
+  AskResetPassword = 'ask-reset-password',
+  ResetPassword = 'reset-password',
 }

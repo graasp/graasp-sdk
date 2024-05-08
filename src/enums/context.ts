@@ -4,5 +4,6 @@ export enum Context {
   Library = 'library',
   Analytics = 'analytics',
   Account = 'account',
+  Auth = 'auth',
   Unknown = 'unknown',
 }
