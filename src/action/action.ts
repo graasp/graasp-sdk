@@ -26,3 +26,8 @@ export type ActionData = {
     requestedSampleSize: number;
   };
 };
+
+export enum ExportActionsFormatting {
+  JSON = 'json',
+  CSV = 'csv',
+}
