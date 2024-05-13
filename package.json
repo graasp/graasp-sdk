@@ -73,5 +73,5 @@
     "vite-plugin-dts": "3.9.1",
     "vitest": "1.6.0"
   },
-  "packageManager": "yarn@4.2.1"
+  "packageManager": "yarn@4.2.2"
 }
