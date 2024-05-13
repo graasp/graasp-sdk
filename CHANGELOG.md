@@ -6,7 +6,7 @@
 ### Features
 
 * create export action formatting ([#517](https://github.com/graasp/graasp-sdk/issues/517)) ([c168252](https://github.com/graasp/graasp-sdk/commit/c168252da812e9d9f966c806429efe37c72942a1))
-
+* add reset password enums
 ## [4.9.0](https://github.com/graasp/graasp-sdk/compare/v4.8.1...v4.9.0) (2024-05-01)
 
 
