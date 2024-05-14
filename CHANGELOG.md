@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.10.1](https://github.com/graasp/graasp-sdk/compare/v4.10.0...v4.10.1) (2024-05-14)
+
+
+### Bug Fixes
+
+* add GPT4O option to chatbot model enum ([#522](https://github.com/graasp/graasp-sdk/issues/522)) ([524f692](https://github.com/graasp/graasp-sdk/commit/524f692e2c741482b4ac23b7a364850152756dc1))
+* **deps:** update dependency filesize to v10.1.2 ([#518](https://github.com/graasp/graasp-sdk/issues/518)) ([e903974](https://github.com/graasp/graasp-sdk/commit/e90397423d15a1753cbeee17c0903d5ad55638b4))
+* **deps:** update dependency validator to v13.12.0 ([#514](https://github.com/graasp/graasp-sdk/issues/514)) ([fa74fec](https://github.com/graasp/graasp-sdk/commit/fa74fec5e286db7faaae6927ade04b07d56ccd81))
+
 ## [4.10.0](https://github.com/graasp/graasp-sdk/compare/v4.9.0...v4.10.0) (2024-05-13)
 
 
