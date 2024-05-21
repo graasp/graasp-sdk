@@ -3,6 +3,7 @@ import {
   OldCCLicenseAdaptations,
 } from '@/enums/ccLicenses.js';
 import { DescriptionPlacementType } from '@/enums/descriptionPlacement.js';
+import { Nullable } from '@/typeUtils.js';
 
 export interface ItemSettings {
   /** @deprecated use item.lang */
@@ -15,10 +16,12 @@ export interface ItemSettings {
   enableSaveActions?: boolean;
   tags?: string[];
   displayCoEditors?: boolean;
-  ccLicenseAdaption?:
+  // allow null to delete setting in the backend
+  ccLicenseAdaption?: Nullable<
     | `${CCLicenseAdaptions}`
     | CCLicenseAdaptions
     // TODO: these are the old licenses, we might remove them at some point.
-    | `${OldCCLicenseAdaptations}`;
+    | `${OldCCLicenseAdaptations}`
+  >;
   descriptionPlacement?: DescriptionPlacementType;
 }

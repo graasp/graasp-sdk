@@ -29,9 +29,23 @@ export type AnyOf<T> = {
   [K in keyof T]: Pick<T, K>;
 }[keyof T];
 
-// TODO: add usage informations
-
 /**
  * This allow to define a type with at least one attribute of T that is not a key in E.
+ *
+ * The following type add usage informations about:
+ * `type ShortLinkPatchPayload = AnyOfExcept<ShortLinkPostPayload, 'itemId'>;`
+ * - The `itemId` is not allowed.
+ * - All other attributes of ShortLinkPostPayload are allowed and optional.
+ * - At least of attribute is required.
  */
 export type AnyOfExcept<T, E extends keyof T> = AnyOf<Omit<T, E>>;
+
+/**
+ * The type is T or null.
+ *
+ * - `type NullableString = Nullable<string>`:
+ *   - `const nullableString: NullableString<string> = "my string";`
+ *   - `const nullableString: NullableString<string> = null;`
+ * - `type NullableMultipleType = Nullable<string | boolean | number>`:
+ */
+export type Nullable<T> = T | null;
