@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.10.2](https://github.com/graasp/graasp-sdk/compare/v4.10.1...v4.10.2) (2024-05-22)
+
+
+### Bug Fixes
+
+* add description on link extra properties ([#527](https://github.com/graasp/graasp-sdk/issues/527)) ([79f6d05](https://github.com/graasp/graasp-sdk/commit/79f6d050c655ec9fab1bd7d6928427cdab736c0b))
+
 ## [4.10.1](https://github.com/graasp/graasp-sdk/compare/v4.10.0...v4.10.1) (2024-05-14)
 
 
