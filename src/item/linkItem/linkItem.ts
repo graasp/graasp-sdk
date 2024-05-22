@@ -13,7 +13,7 @@ export type LinkItemType<S = ItemSettings> = {
  */
 export type LinkItemExtraProperties = {
   /**
-   * Link URl
+   * Link URL
    */
   url: string;
   /**
