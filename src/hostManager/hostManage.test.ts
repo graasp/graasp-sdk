@@ -12,7 +12,7 @@ describe('Client Host Manager', () => {
 
   it('Add query strings for context', () => {
     const manager = ClientHostManager.getInstance();
-    manager.addHost(Context.Builder, 'http://localhost.com');
+    manager.addHost(Context.Builder, new URL('http://localhost.com'));
     manager.addPrefix(Context.Builder, '');
     expect(
       manager.getItemLink(Context.Builder, v4(), { mode: 'grid' }),
