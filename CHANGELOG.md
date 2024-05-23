@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.12.0](https://github.com/graasp/graasp-sdk/compare/v4.11.0...v4.12.0) (2024-05-23)
+
+
+### Features
+
+* set item's license setting nullable ([#525](https://github.com/graasp/graasp-sdk/issues/525)) ([2009888](https://github.com/graasp/graasp-sdk/commit/2009888656c55fedc0a980402856aba38aa43a12))
+
 ## [4.11.0](https://github.com/graasp/graasp-sdk/compare/v4.10.2...v4.11.0) (2024-05-23)
 
 
