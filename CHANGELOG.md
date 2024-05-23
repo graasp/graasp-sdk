@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.11.0](https://github.com/graasp/graasp-sdk/compare/v4.10.2...v4.11.0) (2024-05-23)
+
+
+### Features
+
+* add qs to client host manager ([#528](https://github.com/graasp/graasp-sdk/issues/528)) ([ab7329f](https://github.com/graasp/graasp-sdk/commit/ab7329f398dd43c03916e427a065e424faa039d4))
+
 ## [4.10.2](https://github.com/graasp/graasp-sdk/compare/v4.10.1...v4.10.2) (2024-05-22)
 
 
