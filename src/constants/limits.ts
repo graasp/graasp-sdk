@@ -23,7 +23,7 @@ export const MAX_DESCENDANTS_FOR_MOVE = 130 as const;
 /**
  * Maximum number of descendants (in the item's subtree) for a `copy`
  */
-export const MAX_DESCENDANTS_FOR_COPY = 130 as const;
+export const MAX_DESCENDANTS_FOR_COPY = 400 as const;
 
 /**
  * Maximum number of item memberships when deleting all "under" an item
