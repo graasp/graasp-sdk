@@ -36,6 +36,10 @@ describe('Item Utils', () => {
   });
 
   describe('getIdsFromPath', () => {
+    it('Return empty array if path is undefined', () => {
+      const empty = getIdsFromPath(undefined);
+      expect(empty).toEqual([]);
+    });
     it('Get one id', () => {
       const pathWithOneId = 'cc7ad362_c220_4232_a474_decae17371ad';
       const oneId = getIdsFromPath(pathWithOneId);

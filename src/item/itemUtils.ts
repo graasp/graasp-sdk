@@ -14,8 +14,12 @@ export const buildPathFromIds = (...ids: string[]): string => {
  * @param  {string} path item's path
  * @returns ids array
  */
-export const getIdsFromPath = (path: string): string[] =>
-  path.replace(/_/g, '-').split('.');
+export const getIdsFromPath = (path?: string): string[] => {
+  if (!path) {
+    return [];
+  }
+  return path.replace(/_/g, '-').split('.');
+};
 
 /**
  * Returns the parent id given an item path
