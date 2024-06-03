@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.12.1](https://github.com/graasp/graasp-sdk/compare/v4.12.0...v4.12.1) (2024-06-03)
+
+
+### Bug Fixes
+
+* allow path to be undefined in getIdsFromPath util ([#539](https://github.com/graasp/graasp-sdk/issues/539)) ([6570e73](https://github.com/graasp/graasp-sdk/commit/6570e7311c0b76f3774eda4492847589a6996f02))
+* increase copy limit to 400 ([#536](https://github.com/graasp/graasp-sdk/issues/536)) ([f2d14e9](https://github.com/graasp/graasp-sdk/commit/f2d14e91203f26b4163f8b618655c87aebfdbe9d))
+
 ## [4.12.0](https://github.com/graasp/graasp-sdk/compare/v4.11.0...v4.12.0) (2024-05-23)
 
 
