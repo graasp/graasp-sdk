@@ -32,6 +32,11 @@ describe('Array utils', () => {
       expect(result).toEqual([mockArray]);
     });
 
+    it('Return empty array when input is empty array', () => {
+      const result = spliceIntoChunks([], 3);
+      expect(result).toHaveLength(0);
+    });
+
     it('Split array in half', () => {
       const result = spliceIntoChunks(mockArray, mockArray.length / 2);
       expect(result).toEqual([
