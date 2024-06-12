@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.12.2](https://github.com/graasp/graasp-sdk/compare/v4.12.1...v4.12.2) (2024-06-12)
+
+
+### Bug Fixes
+
+* ensure empty array ([#549](https://github.com/graasp/graasp-sdk/issues/549)) ([f989c9a](https://github.com/graasp/graasp-sdk/commit/f989c9a1f53c3ed124639f152c484bba134a506e))
+
 ## [4.12.1](https://github.com/graasp/graasp-sdk/compare/v4.12.0...v4.12.1) (2024-06-03)
 
 
