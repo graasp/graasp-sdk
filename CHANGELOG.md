@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.13.0](https://github.com/graasp/graasp-sdk/compare/v4.12.2...v4.13.0) (2024-06-13)
+
+
+### Features
+
+* implement PublishableItemTypeChecker to check if type is publishable ([#548](https://github.com/graasp/graasp-sdk/issues/548)) ([323834c](https://github.com/graasp/graasp-sdk/commit/323834ccea857a899359cb210b92333a15302082))
+
+
+### Bug Fixes
+
+* udpate release-please action ([#552](https://github.com/graasp/graasp-sdk/issues/552)) ([2ebee02](https://github.com/graasp/graasp-sdk/commit/2ebee024ac5ae95a8ba5a52fa046139f3d8d563a))
+
 ## [4.12.2](https://github.com/graasp/graasp-sdk/compare/v4.12.1...v4.12.2) (2024-06-12)
 
 
