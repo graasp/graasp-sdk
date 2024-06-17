@@ -23,6 +23,18 @@ export interface PackedItemPublished {
   totalViews: number;
 }
 
+export enum PublicationStatus {
+  Unpublished = 'unpublished',
+  Published = 'published',
+  PublishedChildren = 'publishedChildren',
+  ReadyToPublish = 'readyToPublish',
+  Pending = 'pending',
+  Invalid = 'invalid',
+  Outdated = 'outdated',
+  NotPublic = 'notPublic',
+  ItemTypeNotAllowed = 'itemTypeNotAllowed',
+}
+
 export class PublishableItemTypeChecker {
   private static readonly ALLOWED_PUBLISHING_TYPES: ItemTypeUnion[] = [
     ItemType.FOLDER,
