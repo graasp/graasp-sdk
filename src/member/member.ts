@@ -53,6 +53,8 @@ export type CompleteMember = Member & {
   userAgreementsDate?: string;
   createdAt: string;
   updatedAt: string;
+  lastAuthenticatedAt?: string;
+  isValidated: boolean;
 };
 
 export const isPseudoMember = (member: { email: string }) =>
