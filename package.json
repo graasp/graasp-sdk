@@ -13,21 +13,23 @@
   "sideEffects": false,
   "files": [
     "esm",
-    "cjs",
-    "types"
+    "cjs"
   ],
-  "main": "./cjs/index.js",
-  "module": "./esm/index.js",
-  "types": "./types/index.d.ts",
   "exports": {
-    "types": "./types/index.d.ts",
-    "import": "./esm/index.js",
-    "require": "./cjs/index.js",
-    "default": "./esm/index.js"
+    ".": {
+      "import": {
+        "types": "./esm/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "require": {
+        "types": "./cjs/index.d.ts",
+        "default": "./cjs/index.js"
+      }
+    }
   },
   "scripts": {
     "build": "yarn build:cjs && yarn build:esm && yarn build:types",
-    "build:cjs": "tsc -p tsconfig.cjs.json && tsc-alias -p tsconfig.cjs.json && echo '{\"type\": \"commonjs\"}' > cjs/package.json",
+    "build:cjs": "unbuild && echo '{\"type\": \"commonjs\"}' > cjs/package.json",
     "build:esm": "tsc -p tsconfig.esm.json && tsc-alias -p tsconfig.esm.json && echo '{\"type\": \"module\"}' > esm/package.json",
     "build:types": "tsc -p tsconfig.types.json && tsc-alias -p tsconfig.types.json",
     "test": "vitest",
@@ -69,6 +71,7 @@
     "prettier": "3.3.2",
     "tsc-alias": "1.8.10",
     "typescript": "5.4.5",
+    "unbuild": "2.0.0",
     "uuid": "10.0.0",
     "vite-plugin-dts": "3.9.1",
     "vitest": "1.6.0"
