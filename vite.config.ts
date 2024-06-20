@@ -1,10 +1,10 @@
 import { fileURLToPath } from 'url';
 
-import { defineConfig } from 'vitest/config';
+import { defaultExclude, defineConfig } from 'vitest/config';
 
 export default () => {
   return defineConfig({
-    test: {},
+    test: { exclude: [...defaultExclude, 'cjs/**', 'esm/**'] },
     resolve: {
       alias: [
         {
