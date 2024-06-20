@@ -1,17 +1,16 @@
-import { Context } from '@/enums/context.js';
-import { AnyOfExcept } from '@/typeUtils.js';
+import { AnyOfExcept, UnionOfConst } from '@/typeUtils.js';
 
 // This const is used to define the allowed Platforms.
 // It is used in schema or database enums.
 export const ShortLinkPlatform = {
-  [Context.Builder]: Context.Builder,
-  [Context.Player]: Context.Player,
-  [Context.Library]: Context.Library,
+  Builder: 'builder',
+  Player: 'player',
+  Library: 'library',
 } as const;
 
 export type ShortLink = {
   alias: string;
-  platform: keyof typeof ShortLinkPlatform;
+  platform: UnionOfConst<typeof ShortLinkPlatform>;
   item: { id: string };
   createdAt: string;
 };
