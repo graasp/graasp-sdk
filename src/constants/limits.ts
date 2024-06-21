@@ -60,7 +60,7 @@ export const MAX_FILE_SIZE = 1024 * 1024 * 1024; // 1GB
 /**
  * Maximum number of files one can upload in parallel
  */
-export const MAX_NUMBER_OF_FILES_UPLOAD = 20;
+export const MAX_NUMBER_OF_FILES_UPLOAD = 20 as const;
 
 /**
  * Maximum size for a thumbnail
