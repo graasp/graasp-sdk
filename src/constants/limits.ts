@@ -58,7 +58,7 @@ export const MAX_ZIP_FILE_SIZE = 1024 * 1024 * 250; // 250MB
 export const MAX_FILE_SIZE = 1024 * 1024 * 1024; // 1GB
 
 /**
- * Maximum size for an uploaded file
+ * Maximum number of files one can upload in parallel
  */
 export const MAX_NUMBER_OF_FILES_UPLOAD = 20;
 
