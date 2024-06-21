@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.14.1](https://github.com/graasp/graasp-sdk/compare/v4.14.0...v4.14.1) (2024-06-21)
+
+
+### Bug Fixes
+
+* **build:** dual package ([1d9ee78](https://github.com/graasp/graasp-sdk/commit/1d9ee7840107550bd6ef56913ed09575bc7a5064))
+
 ## [4.14.0](https://github.com/graasp/graasp-sdk/compare/v4.13.0...v4.14.0) (2024-06-21)
 
 
