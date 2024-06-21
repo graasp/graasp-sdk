@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.14.0](https://github.com/graasp/graasp-sdk/compare/v4.13.0...v4.14.0) (2024-06-21)
+
+
+### Features
+
+* add MAX_NUMBER_OF_FILES_UPLOAD ([#562](https://github.com/graasp/graasp-sdk/issues/562)) ([6f78780](https://github.com/graasp/graasp-sdk/commit/6f7878048a86237e4e0e38777a98f3fbfa9b7642))
+
 ## [4.13.0](https://github.com/graasp/graasp-sdk/compare/v4.12.2...v4.13.0) (2024-06-13)
 
 
