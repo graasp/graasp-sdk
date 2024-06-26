@@ -20,3 +20,5 @@ export const getAlignItemsFromAlignmentSetting = (
       return 'flex-start';
   }
 };
+
+export const DEFAULT_ALIGNMENT_SETTING = Alignment.Center;
