@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.15.0](https://github.com/graasp/graasp-sdk/compare/v4.14.1...v4.15.0) (2024-06-26)
+
+
+### Features
+
+* add alignment enum ([#566](https://github.com/graasp/graasp-sdk/issues/566)) ([d4c983f](https://github.com/graasp/graasp-sdk/commit/d4c983fab5ec7517af95bbb118e31da6443adb1f))
+
 ## [4.14.1](https://github.com/graasp/graasp-sdk/compare/v4.14.0...v4.14.1) (2024-06-21)
 
 
