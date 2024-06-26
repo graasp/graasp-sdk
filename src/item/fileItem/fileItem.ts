@@ -1,6 +1,7 @@
 import { Item } from '../baseItem.js';
 import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
+import { AlignmentType } from '@/enums/alignment.js';
 
 export type LocalFileItemType = {
   type: typeof ItemType.LOCAL_FILE;
@@ -79,6 +80,7 @@ export const getFileExtension = (
 
 export interface FileItemSettings extends ItemSettings {
   maxWidth?: MaxWidth;
+  alignment?: AlignmentType;
 }
 
 export enum MaxWidth {
@@ -88,3 +90,5 @@ export enum MaxWidth {
   Large = 'lg',
   ExtraLarge = 'xl',
 }
+
+export const DEFAULT_IMAGE_SIZING_SETTING = MaxWidth.Medium;

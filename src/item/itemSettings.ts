@@ -1,4 +1,3 @@
-import { AlignmentType } from '@/enums/alignment.js';
 import {
   CCLicenseAdaptions,
   OldCCLicenseAdaptations,
@@ -25,5 +24,4 @@ export type ItemSettings = {
     | `${OldCCLicenseAdaptations}`
   >;
   descriptionPlacement?: DescriptionPlacementType;
-  alignment?: AlignmentType;
 };
