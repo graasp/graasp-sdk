@@ -5,7 +5,7 @@ import { Member } from '@/member/member.js';
  * This is an internal type do not use it !
  * @inner DiscriminatedItem
  */
-export interface Item<S = ItemSettings> {
+export type Item<S = ItemSettings> = {
   id: string;
   name: string;
   displayName: string;
@@ -16,4 +16,4 @@ export interface Item<S = ItemSettings> {
   createdAt: string;
   updatedAt: string;
   lang: string;
-}
+};

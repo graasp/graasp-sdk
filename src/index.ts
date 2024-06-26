@@ -111,6 +111,11 @@ export * from './invitation/invitation.js';
 export * from './enums/descriptionPlacement.js';
 
 /**
+ * Alignment enum
+ */
+export * from './enums/alignment.js';
+
+/**
  * Item
  */
 export { type DiscriminatedItem, getMimetype } from './item/item.js';
