@@ -91,4 +91,4 @@ export enum MaxWidth {
   ExtraLarge = 'xl',
 }
 
-export const DEFAULT_IMAGE_SIZING_SETTING = MaxWidth.Medium;
+export const DEFAULT_FILE_MAX_WIDTH_SETTING = MaxWidth.Medium;
