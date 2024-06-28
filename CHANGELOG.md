@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.15.1](https://github.com/graasp/graasp-sdk/compare/v4.15.0...v4.15.1) (2024-06-28)
+
+
+### Bug Fixes
+
+* remove UI functions ([#569](https://github.com/graasp/graasp-sdk/issues/569)) ([6d6ec7e](https://github.com/graasp/graasp-sdk/commit/6d6ec7ef0514d2abf710329f5e8a852e4de4d5fb))
+
 ## [4.15.0](https://github.com/graasp/graasp-sdk/compare/v4.14.1...v4.15.0) (2024-06-26)
 
 
