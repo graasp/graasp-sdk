@@ -6,18 +6,3 @@ export const Alignment = {
   Right: 'right',
 } as const;
 export type AlignmentType = UnionOfConst<typeof Alignment>;
-
-export const DEFAULT_FILE_ALIGNMENT_SETTING = Alignment.Center;
-
-export const getAlignItemsFromAlignmentSetting = (
-  alignment: AlignmentType = DEFAULT_FILE_ALIGNMENT_SETTING,
-): 'flex-start' | 'flex-end' | 'center' => {
-  switch (alignment) {
-    case Alignment.Right:
-      return 'flex-end';
-    case Alignment.Left:
-      return 'flex-start';
-    case Alignment.Center:
-      return 'center';
-  }
-};
