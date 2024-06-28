@@ -24,6 +24,7 @@ export type PublicProfile = {
 export enum MemberType {
   Individual = 'individual',
   Group = 'group',
+  Guest = 'guest',
 }
 
 type MemberExtra = {
