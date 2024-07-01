@@ -1,5 +1,4 @@
 import { DiscriminatedItem } from '@/item/item.js';
-import { Member } from '@/member/member.js';
 import { UUID } from '@/types.js';
 
 export enum ItemLoginSchemaType {
@@ -17,12 +16,3 @@ export interface ItemLoginSchema {
   createdAt: string;
   updatedAt: string;
 }
-
-export type ItemLogin = {
-  id: UUID;
-  member: Member;
-  itemLoginSchema: ItemLoginSchema;
-  password?: string;
-  createdAt: string;
-  updatedAt: string;
-};
