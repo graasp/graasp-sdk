@@ -77,7 +77,7 @@ export const PartialItemFactory = <IT extends DiscriminatedItem>(
 };
 
 export type PackedInformationFactoryInput = {
-  permission?: PermissionLevel;
+  permission?: PermissionLevel | null;
   hiddenTag?: Partial<ItemTag>;
   publicTag?: Partial<ItemTag>;
 };
