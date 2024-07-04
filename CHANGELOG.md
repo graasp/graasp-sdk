@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.16.0](https://github.com/graasp/graasp-sdk/compare/v4.15.1...v4.16.0) (2024-07-04)
+
+
+### Features
+
+* add last authenticated and validated member property ([#557](https://github.com/graasp/graasp-sdk/issues/557)) ([c56bf73](https://github.com/graasp/graasp-sdk/commit/c56bf73085f70e8f379d9a812049a54bc3d626f6))
+
+
+### Bug Fixes
+
+* allow permission null for packed ([#574](https://github.com/graasp/graasp-sdk/issues/574)) ([177c7d4](https://github.com/graasp/graasp-sdk/commit/177c7d48940fc9487b27d1f1fce29c00a376c495))
+
 ## [4.15.1](https://github.com/graasp/graasp-sdk/compare/v4.15.0...v4.15.1) (2024-06-28)
 
 
