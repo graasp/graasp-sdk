@@ -13,7 +13,7 @@ describe('FolderItemFactory', () => {
 
   it('Create folder item', () => {
     const item = FolderItemFactory();
-    expect(item.extra.folder).toEqual({ childrenOrder: [] });
+    expect(item.extra.folder).toEqual({});
     expect(item.type).toEqual(ItemType.FOLDER);
   });
 
@@ -23,13 +23,13 @@ describe('FolderItemFactory', () => {
       creator,
       name: 'name',
       description: 'description',
-      extra: { folder: { childrenOrder: ['uuid'] } },
+      extra: { folder: {} },
       settings: { enableSaveActions: true },
     });
     expect(item.name).toEqual('name');
     expect(item.creator!.id).toEqual(creator.id);
     expect(item.description).toEqual('description');
-    expect(item.extra.folder).toEqual({ childrenOrder: ['uuid'] });
+    expect(item.extra.folder).toEqual({});
     expect(item.settings.enableSaveActions).toEqual(true);
     expect(item.type).toEqual(ItemType.FOLDER);
   });

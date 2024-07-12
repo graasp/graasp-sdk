@@ -17,9 +17,7 @@ export const FolderItemFactory = (
     ...newItem,
     type: ItemType.FOLDER,
     extra: item.extra ?? {
-      [ItemType.FOLDER]: {
-        childrenOrder: [],
-      },
+      [ItemType.FOLDER]: {},
     },
   };
 };

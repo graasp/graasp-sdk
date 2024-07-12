@@ -11,7 +11,6 @@ export type FolderItemType<S = ItemSettings> = {
  * Folder Extra
  */
 export type FolderItemExtraProperties = {
-  childrenOrder: string[];
   isRoot?: boolean;
 };
 export interface FolderItemExtra {
