@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.17.0](https://github.com/graasp/graasp-sdk/compare/v4.16.0...v4.17.0) (2024-07-12)
+
+
+### Features
+
+* remove children order in folders ([#579](https://github.com/graasp/graasp-sdk/issues/579)) ([ce197d1](https://github.com/graasp/graasp-sdk/commit/ce197d1b243c1919d6a82c39b9987e8c0eb101f0))
+
+
+### Bug Fixes
+
+* **deps:** update dependency filesize to v10.1.4 ([#577](https://github.com/graasp/graasp-sdk/issues/577)) ([587d75f](https://github.com/graasp/graasp-sdk/commit/587d75f67471632e5cf6f8369699ec741ac5de84))
+
 ## [4.16.0](https://github.com/graasp/graasp-sdk/compare/v4.15.1...v4.16.0) (2024-07-04)
 
 
