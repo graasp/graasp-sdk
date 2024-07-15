@@ -47,6 +47,20 @@ export const getLinkExtra = <U extends LinkItemExtra>(
   extra: U,
 ): U[typeof ItemType.LINK] => extra[ItemType.LINK];
 
+export const getLinkThumbnailUrl = <U extends LinkItemExtra>(
+  extra: U,
+): string | undefined => {
+  const { thumbnails, icons } = getLinkExtra(extra);
+
+  if (thumbnails && thumbnails.length > 0) {
+    return thumbnails[0];
+  }
+  if (icons && icons.length > 0) {
+    return icons[0];
+  }
+  return;
+};
+
 export const buildLinkExtra = (
   extra: LinkItemExtraProperties,
 ): LinkItemExtra => ({
