@@ -1,5 +1,5 @@
-import { PSEUDO_USER_MAIL_REGEX } from './constants.js';
 import { EmailFrequency } from '@/chat/mentions.js';
+import { ItemLoginSchema } from '@/itemLogin/itemLogin.js';
 import { UUID } from '@/types.js';
 
 export type Password = string;
@@ -36,6 +36,7 @@ export type PublicProfile = {
 export enum MemberType {
   Individual = 'individual',
   Group = 'group',
+  Guest = 'guest',
 }
 
 type MemberExtra = {
@@ -52,22 +53,39 @@ export const buildMemberExtra = (extra: Partial<MemberExtra>) => ({
   ...extra,
 });
 
-export type Member = {
+export type BaseAccount = {
   id: UUID;
   name: string;
-  email: string;
-};
-
-export type CompleteMember = Member & {
   type: `${MemberType}` | MemberType;
-  extra: MemberExtra;
-  enableSaveActions: boolean;
-  userAgreementsDate?: string;
   createdAt: string;
   updatedAt: string;
   lastAuthenticatedAt?: string;
-  isValidated: boolean;
 };
 
-export const isPseudoMember = (member: { email: string }) =>
-  PSEUDO_USER_MAIL_REGEX.test(member.email.toLowerCase());
+export type CompleteAccount = CompleteMember | CompleteGuest;
+
+export type Account = {
+  id: UUID;
+  name: string;
+};
+
+export type Member = Account & {
+  email: string;
+};
+export type CompleteMember = BaseAccount & {
+  type: MemberType.Individual;
+  email: string;
+  extra: MemberExtra;
+  enableSaveActions: boolean;
+  userAgreementsDate?: string;
+
+  isValidated: boolean;
+};
+export type CompleteGuest = BaseAccount & {
+  type: MemberType.Guest;
+  itemLoginSchema: ItemLoginSchema;
+};
+
+export function isPseudoMember(member: { type: MemberType }) {
+  return member.type === MemberType.Guest;
+}

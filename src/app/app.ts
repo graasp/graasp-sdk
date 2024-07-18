@@ -1,6 +1,6 @@
 import { Publisher } from './publisher.js';
 import { DiscriminatedItem } from '@/item/item.js';
-import { Member } from '@/member/member.js';
+import { Account, Member } from '@/member/member.js';
 import { UUID } from '@/types.js';
 
 export type AppExtra = {
@@ -24,7 +24,7 @@ export interface AppIdentification {
 }
 
 export type AuthTokenSubject = {
-  memberId?: Member['id'];
+  accountId?: Account['id'];
   itemId: DiscriminatedItem['id'];
   origin: string;
 } & AppIdentification; // from the graasp client/app wrapper // from the app itself
@@ -34,7 +34,7 @@ type Data = { [key: string]: unknown };
 export type AppAction<T extends Data = Data> = {
   id: string;
   item: DiscriminatedItem;
-  member: Member;
+  account: Account;
   type: string;
   data: T;
   createdAt: string;
@@ -49,7 +49,7 @@ export type AppData<T extends Data = Data> = {
   id: string;
   item: DiscriminatedItem;
   creator: Member | null;
-  member: Member;
+  account: Account;
   type: string;
   visibility: `${AppDataVisibility}` | AppDataVisibility;
   data: T;
