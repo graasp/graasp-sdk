@@ -53,16 +53,16 @@ export const getLinkExtra = <U extends LinkItemExtra>(
  * Prioritize icons for small size
  * @param {LinkItemExtra} extra
  * @param {ThumbnailSizeType} [size=ThumbnailSize.Medium] size
- * @returns url if exists, null otherwise
+ * @returns url if exists, undefined otherwise
  */
 export const getLinkThumbnailUrl = (
   extra: LinkItemExtra,
   size: ThumbnailSizeType = ThumbnailSize.Medium,
-): string | null => {
+): string | undefined => {
   const { thumbnails, icons } = getLinkExtra(extra);
 
-  const thumbnailUrl = thumbnails?.length ? thumbnails[0] : null;
-  const iconUrl = icons?.length ? icons[0] : null;
+  const thumbnailUrl = thumbnails?.[0];
+  const iconUrl = icons?.[0];
 
   // prioritize icons for small size
   if (size === ThumbnailSize.Small) {

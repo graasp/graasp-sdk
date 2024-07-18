@@ -58,21 +58,21 @@ describe('getLinkThumbnailUrl', () => {
         icons: ['icon'],
       },
     };
-    expect(getLinkThumbnailUrl(extra1)).to.eq(extra1[ItemType.LINK].icons![0]);
+    expect(getLinkThumbnailUrl(extra1)).to.eq(extra1[ItemType.LINK].icons[0]);
   });
 
-  it('return undefined when nothing is defined', () => {
+  it('return null when nothing is defined', () => {
     const extra = buildLinkExtra({
       url: 'string',
       thumbnails: [],
       icons: [],
     });
-    expect(getLinkThumbnailUrl(extra)).to.be.null;
+    expect(getLinkThumbnailUrl(extra)).to.be.undefined;
     const extra1 = buildLinkExtra({ url: 'string', thumbnails: [] });
-    expect(getLinkThumbnailUrl(extra1)).to.be.null;
+    expect(getLinkThumbnailUrl(extra1)).to.be.undefined;
     const extra2 = buildLinkExtra({ url: 'string' });
-    expect(getLinkThumbnailUrl(extra2)).to.be.null;
+    expect(getLinkThumbnailUrl(extra2)).to.be.undefined;
     const extra3 = buildLinkExtra({ url: 'string', icons: [] });
-    expect(getLinkThumbnailUrl(extra3)).to.be.null;
+    expect(getLinkThumbnailUrl(extra3)).to.be.undefined;
   });
 });
