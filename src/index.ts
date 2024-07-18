@@ -191,6 +191,7 @@ export * from './itemLike/itemLike.js';
  * Item Login
  */
 export * from './itemLogin/itemLogin.js';
+export * from './itemLogin/factory.js';
 
 /**
  * Item Memberships

@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker';
 export const ActionFactory = (a: Partial<Action> = {}): Action => ({
   id: faker.string.uuid(),
   // member and item default to null
-  member: null,
+  account: null,
   item: null,
   view: faker.helpers.arrayElement(Object.values(Context)),
   type: faker.lorem.word(),
