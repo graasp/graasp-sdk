@@ -2,7 +2,6 @@ import { describe, expect, it } from 'vitest';
 
 import { ItemType } from '../itemType.js';
 import { buildLinkExtra, getLinkThumbnailUrl } from './linkItem.js';
-import { ThumbnailSize } from '@/enums/thumbnailSizes.js';
 
 describe('getLinkThumbnailUrl', () => {
   it('return thumbnail over icon', () => {
@@ -13,35 +12,6 @@ describe('getLinkThumbnailUrl', () => {
     });
     expect(getLinkThumbnailUrl(extra)).to.eq(
       extra[ItemType.LINK].thumbnails![0],
-    );
-  });
-
-  it('return icon for small size', () => {
-    const extra = buildLinkExtra({
-      url: 'url',
-      thumbnails: ['thumbnail'],
-      icons: ['icon'],
-    });
-    expect(getLinkThumbnailUrl(extra, ThumbnailSize.Small)).to.eq(
-      extra[ItemType.LINK].icons![0],
-    );
-  });
-
-  it('return thumbnail for small size if icon is not defined', () => {
-    const extra = buildLinkExtra({
-      url: 'url',
-      thumbnails: ['thumbnail'],
-    });
-    expect(getLinkThumbnailUrl(extra, ThumbnailSize.Small)).to.eq(
-      extra[ItemType.LINK].thumbnails![0],
-    );
-    const extra1 = buildLinkExtra({
-      url: 'url',
-      thumbnails: ['thumbnail'],
-      icons: [],
-    });
-    expect(getLinkThumbnailUrl(extra1, ThumbnailSize.Small)).to.eq(
-      extra1[ItemType.LINK].thumbnails![0],
     );
   });
 

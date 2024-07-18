@@ -1,7 +1,6 @@
 import { Item } from '../baseItem.js';
 import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
-import { ThumbnailSize, ThumbnailSizeType } from '@/enums/thumbnailSizes.js';
 
 export type LinkItemType<S = ItemSettings> = {
   type: typeof ItemType.LINK;
@@ -57,19 +56,9 @@ export const getLinkExtra = <U extends LinkItemExtra>(
  */
 export const getLinkThumbnailUrl = (
   extra: LinkItemExtra,
-  size: ThumbnailSizeType = ThumbnailSize.Medium,
 ): string | undefined => {
   const { thumbnails, icons } = getLinkExtra(extra);
-
-  const thumbnailUrl = thumbnails?.[0];
-  const iconUrl = icons?.[0];
-
-  // prioritize icons for small size
-  if (size === ThumbnailSize.Small) {
-    return iconUrl ?? thumbnailUrl;
-  }
-
-  return thumbnailUrl ?? iconUrl;
+  return thumbnails?.[0] ?? icons?.[0];
 };
 
 export const buildLinkExtra = (
