@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.19.0](https://github.com/graasp/graasp-sdk/compare/v4.18.0...v4.19.0) (2024-07-18)
+
+
+### Features
+
+* add PublicationStatus to use it in the backend and builder ([#555](https://github.com/graasp/graasp-sdk/issues/555)) ([30b53f4](https://github.com/graasp/graasp-sdk/commit/30b53f4b70b56ad2b3eb106d90947e6df60fb711))
+
 ## [4.18.0](https://github.com/graasp/graasp-sdk/compare/v4.17.0...v4.18.0) (2024-07-18)
 
 
