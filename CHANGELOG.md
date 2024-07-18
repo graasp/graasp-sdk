@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.18.0](https://github.com/graasp/graasp-sdk/compare/v4.17.0...v4.18.0) (2024-07-18)
+
+
+### Features
+
+* add get link thumbnail function ([#582](https://github.com/graasp/graasp-sdk/issues/582)) ([7ec207f](https://github.com/graasp/graasp-sdk/commit/7ec207fb669f13f8a3522dc70934f92ff5b0c346))
+
 ## [4.17.0](https://github.com/graasp/graasp-sdk/compare/v4.16.0...v4.17.0) (2024-07-12)
 
 
