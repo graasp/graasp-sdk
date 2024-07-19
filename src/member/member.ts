@@ -24,7 +24,7 @@ export type MemberStorageItem = {
 export type Pagination = {
   totalItems: number;
   totalPages: number;
-  page: number;
+  currentPage: number;
   pageSize: number;
 };
 
