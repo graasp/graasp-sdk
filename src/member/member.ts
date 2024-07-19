@@ -9,12 +9,11 @@ export type MemberStorage = {
   maximum: number;
 };
 
-
 export type MemberStorageItem = {
   id: UUID;
   name: string;
   size: number;
-  createdAt: string;
+  updatedAt: string;
   path: string;
   parent?: {
     id: UUID;
@@ -23,15 +22,15 @@ export type MemberStorageItem = {
 };
 
 export type Pagination = {
-  totalItems: number;    
-  totalPages: number;    
-  page: number;   
-  pageSize: number;      
+  totalItems: number;
+  totalPages: number;
+  page: number;
+  pageSize: number;
 };
 
 export type MemberStorageItemsResponse = {
-  data: MemberStorageItem[];  
-  pagination: Pagination;    
+  items: MemberStorageItem[];
+  pagination: Pagination;
 };
 
 export type PublicProfile = {
