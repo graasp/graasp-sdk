@@ -9,6 +9,31 @@ export type MemberStorage = {
   maximum: number;
 };
 
+
+export type MemberStorageItem = {
+  id: UUID;
+  name: string;
+  size: number;
+  createdAt: string;
+  path: string;
+  parent?: {
+    id: UUID;
+    name: string;
+  };
+};
+
+export type Pagination = {
+  totalItems: number;    
+  totalPages: number;    
+  page: number;   
+  pageSize: number;      
+};
+
+export type MemberStorageItemsResponse = {
+  data: MemberStorageItem[];  
+  pagination: Pagination;    
+};
+
 export type PublicProfile = {
   id: UUID;
   member: Member;
