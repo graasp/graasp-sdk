@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.20.0](https://github.com/graasp/graasp-sdk/compare/v4.19.0...v4.20.0) (2024-07-19)
+
+
+### Features
+
+* add new member storage items type ([#589](https://github.com/graasp/graasp-sdk/issues/589)) ([e016076](https://github.com/graasp/graasp-sdk/commit/e016076d598a62db930712a5c0ba94d4eb62c381))
+
 ## [4.19.0](https://github.com/graasp/graasp-sdk/compare/v4.18.0...v4.19.0) (2024-07-18)
 
 
