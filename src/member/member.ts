@@ -23,13 +23,12 @@ export type MemberStorageItem = {
 
 export type Pagination = {
   totalItems: number;
-  totalPages: number;
-  currentPage: number;
+  page: number;
   pageSize: number;
 };
 
 export type MemberStorageItemsResponse = {
-  items: MemberStorageItem[];
+  data: MemberStorageItem[];
   pagination: Pagination;
 };
 
