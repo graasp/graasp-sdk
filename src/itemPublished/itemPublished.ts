@@ -24,14 +24,21 @@ export interface PackedItemPublished {
 }
 
 export enum PublicationStatus {
+  /** Indicates that the item is not published. */
   Unpublished = 'unpublished',
+  /** Indicates that the item is valid and published. */
   Published = 'published',
+  /** Indicates that the item is published because it's a child of a published parent. */
   PublishedChildren = 'publishedChildren',
+  /** Indicates that the item is valid and ready to be published. */
   ReadyToPublish = 'readyToPublish',
+  /** Indicates that the item is currently subject to validation checks. */
   Pending = 'pending',
+  /** Indicates that the item failed validation and cannot be published. */
   Invalid = 'invalid',
+  /** Indicates that the item is published but the validation is outdated. */
   Outdated = 'outdated',
-  NotPublic = 'notPublic',
+  /** Indicates that the item's type is not authorised for publication. */
   ItemTypeNotAllowed = 'itemTypeNotAllowed',
 }
 
