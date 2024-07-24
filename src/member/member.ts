@@ -22,7 +22,7 @@ export type MemberStorageItem = {
 };
 
 export type Pagination = {
-  totalItems: number;
+  totalCounts: number;
   page: number;
   pageSize: number;
 };
