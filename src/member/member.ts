@@ -21,18 +21,6 @@ export type MemberStorageItem = {
   };
 };
 
-export type Pagination = {
-  totalItems: number;
-  totalPages: number;
-  currentPage: number;
-  pageSize: number;
-};
-
-export type MemberStorageItemsResponse = {
-  items: MemberStorageItem[];
-  pagination: Pagination;
-};
-
 export type PublicProfile = {
   id: UUID;
   member: Member;

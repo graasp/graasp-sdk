@@ -277,6 +277,11 @@ export type {
 export type { UUID } from './types.js';
 
 /**
+ * Pagination types
+ */
+export type * from './pagination/pagination.js';
+
+/**
  * RecaptchaActions
  */
 export {
