@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.21.0](https://github.com/graasp/graasp-sdk/compare/v4.20.0...v4.21.0) (2024-07-24)
+
+
+### Features
+
+* remove status NotPublic from PublicationStatus ([#595](https://github.com/graasp/graasp-sdk/issues/595)) ([82b4498](https://github.com/graasp/graasp-sdk/commit/82b4498e3561f912562c6e285eec651f3bc29a26))
+
+
+### Bug Fixes
+
+* add pagination types ([#598](https://github.com/graasp/graasp-sdk/issues/598)) ([a16eb20](https://github.com/graasp/graasp-sdk/commit/a16eb20d5db55725365a8850b4dd588aaec24093))
+
 ## [4.20.0](https://github.com/graasp/graasp-sdk/compare/v4.19.0...v4.20.0) (2024-07-19)
 
 
