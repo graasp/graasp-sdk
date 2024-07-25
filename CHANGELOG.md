@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.22.0](https://github.com/graasp/graasp-sdk/compare/v4.21.0...v4.22.0) (2024-07-25)
+
+
+### Features
+
+* add get file name from item ([#600](https://github.com/graasp/graasp-sdk/issues/600)) ([5dc4184](https://github.com/graasp/graasp-sdk/commit/5dc41847afcbabed07f64557cc3aa07075c64cd8))
+
 ## [4.21.0](https://github.com/graasp/graasp-sdk/compare/v4.20.0...v4.21.0) (2024-07-24)
 
 
