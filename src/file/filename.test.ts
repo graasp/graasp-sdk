@@ -3,100 +3,61 @@ import { describe, expect, it } from 'vitest';
 import { getFilenameFromItem } from './filename.js';
 import { AppItemFactory } from '@/item/appItem/appItem.factory.js';
 import { DocumentItemFactory } from '@/item/documentItem/documentItem.factory.js';
-import {
-  LocalFileItemFactory,
-  S3FileItemFactory,
-} from '@/item/fileItem/fileItem.factory.js';
 import { FolderItemFactory } from '@/item/folderItem/folderItem.factory.js';
 import { H5PItemFactory } from '@/item/h5pItem/h5pItem.factory.js';
+import { ItemType } from '@/item/itemType.js';
 import { LinkItemFactory } from '@/item/linkItem/linkItem.factory.js';
 
 describe('File name', () => {
   it('get file name from local file item', () => {
-    const item = LocalFileItemFactory({
-      name: 'myfile',
-      extra: {
-        file: {
-          mimetype: 'image/png',
-          content: '',
-          name: 'name',
-          path: 'path',
-          size: 30,
-        },
-      },
-    });
-    expect(getFilenameFromItem(item)).toEqual('myfile.png');
+    expect(
+      getFilenameFromItem({
+        name: 'myfile',
+        type: ItemType.LOCAL_FILE,
+        mimetype: 'image/png',
+      }),
+    ).toEqual('myfile.png');
 
-    const item1 = LocalFileItemFactory({
-      name: 'myfile.png',
-      extra: {
-        file: {
-          mimetype: 'image/png',
-          content: '',
-          name: 'name',
-          path: 'path',
-          size: 30,
-        },
-      },
-    });
-    expect(getFilenameFromItem(item1)).toEqual('myfile.png');
+    expect(
+      getFilenameFromItem({
+        name: 'myfile.png',
+        type: ItemType.LOCAL_FILE,
+        mimetype: 'image/png',
+      }),
+    ).toEqual('myfile.png');
 
-    const item2 = LocalFileItemFactory({
-      name: 'myfile',
-      extra: {
-        file: {
-          mimetype: 'image/jpeg',
-          content: '',
-          name: 'name',
-          path: 'path',
-          size: 30,
-        },
-      },
-    });
-    expect(getFilenameFromItem(item2)).toEqual('myfile.jpeg');
+    expect(
+      getFilenameFromItem({
+        name: 'myfile',
+        type: ItemType.LOCAL_FILE,
+        mimetype: 'image/jpeg',
+      }),
+    ).toEqual('myfile.jpeg');
   });
   it('get file name from s3 file item', () => {
-    const item = S3FileItemFactory({
-      name: 'myfile',
-      extra: {
-        s3File: {
-          mimetype: 'image/png',
-          content: '',
-          name: 'name',
-          path: 'path',
-          size: 30,
-        },
-      },
-    });
-    expect(getFilenameFromItem(item)).toEqual('myfile.png');
+    expect(
+      getFilenameFromItem({
+        name: 'myfile',
+        type: ItemType.S3_FILE,
+        mimetype: 'image/png',
+      }),
+    ).toEqual('myfile.png');
 
-    const item1 = S3FileItemFactory({
-      name: 'myfile.png',
-      extra: {
-        s3File: {
-          mimetype: 'image/png',
-          content: '',
-          name: 'name',
-          path: 'path',
-          size: 30,
-        },
-      },
-    });
-    expect(getFilenameFromItem(item1)).toEqual('myfile.png');
+    expect(
+      getFilenameFromItem({
+        name: 'myfile.png',
+        type: ItemType.S3_FILE,
+        mimetype: 'image/png',
+      }),
+    ).toEqual('myfile.png');
 
-    const item2 = S3FileItemFactory({
-      name: 'myfile',
-      extra: {
-        s3File: {
-          mimetype: 'image/jpeg',
-          content: '',
-          name: 'name',
-          path: 'path',
-          size: 30,
-        },
-      },
-    });
-    expect(getFilenameFromItem(item2)).toEqual('myfile.jpeg');
+    expect(
+      getFilenameFromItem({
+        name: 'myfile',
+        type: ItemType.S3_FILE,
+        mimetype: 'image/jpeg',
+      }),
+    ).toEqual('myfile.jpeg');
   });
   it('get file name from h5p item', () => {
     const item = H5PItemFactory({

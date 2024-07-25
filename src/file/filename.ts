@@ -1,10 +1,14 @@
 import mime from 'mime-types';
 import path from 'path';
 
-import { DiscriminatedItem } from '@/item/item.js';
-import { ItemType } from '@/item/itemType.js';
+import { ItemType, ItemTypeUnion } from '@/item/itemType.js';
 
-export const getFilenameFromItem = (item: DiscriminatedItem): string => {
+// use partial of item to be usable in backend
+export const getFilenameFromItem = (item: {
+  name: string;
+  type: ItemTypeUnion;
+  mimetype?: string;
+}): string => {
   switch (item.type) {
     case ItemType.APP: {
       return `${path.basename(item.name, '.app')}${'.app'}`;
@@ -14,17 +18,11 @@ export const getFilenameFromItem = (item: DiscriminatedItem): string => {
     }
     case ItemType.S3_FILE:
     case ItemType.LOCAL_FILE: {
-      const s3Extra =
-        item.type === ItemType.S3_FILE ? item.extra.s3File : undefined;
-      const localFileExtra =
-        item.type === ItemType.LOCAL_FILE ? item.extra.file : undefined;
-      const { mimetype } = { ...s3Extra, ...localFileExtra };
-
       // build filename with extension if does not exist
       let ext = path.extname(item.name);
-      if (!ext && mimetype) {
+      if (!ext && item.mimetype) {
         // only add a dot in case of building file name with mimetype, otherwise there will be two dots in file name
-        ext = `.${mime.extension(mimetype)}`;
+        ext = `.${mime.extension(item.mimetype)}`;
       }
       return `${path.basename(item.name, ext)}${ext}`;
     }
