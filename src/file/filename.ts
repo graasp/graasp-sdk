@@ -3,6 +3,27 @@ import path from 'path';
 
 import { ItemType, ItemTypeUnion } from '@/item/itemType.js';
 
+const extractFileName = (itemName: string, extension: string) => {
+  const fullExtension = `.${extension}`;
+  const fileName = `${path.basename(itemName, fullExtension)}`;
+  return `${fileName}${fullExtension}`;
+};
+
+const extractExtension = ({
+  name,
+  mimetype,
+}: {
+  name: string;
+  mimetype?: string;
+}): string => {
+  // slice to remove . character
+  const ext = path.extname(name).slice(1);
+  if (!ext && mimetype) {
+    return mime.extension(mimetype) || '';
+  }
+  return ext;
+};
+
 // use partial of item to be usable in backend
 export const getFilenameFromItem = (item: {
   name: string;
@@ -11,29 +32,26 @@ export const getFilenameFromItem = (item: {
 }): string => {
   switch (item.type) {
     case ItemType.APP: {
-      return `${path.basename(item.name, '.app')}${'.app'}`;
+      return extractFileName(item.name, 'app');
     }
     case ItemType.DOCUMENT: {
-      return `${path.basename(item.name, '.graasp')}${'.graasp'}`;
+      return extractFileName(item.name, 'graasp');
     }
     case ItemType.S3_FILE:
     case ItemType.LOCAL_FILE: {
-      // build filename with extension if does not exist
-      let ext = path.extname(item.name);
-      if (!ext && item.mimetype) {
-        // only add a dot in case of building file name with mimetype, otherwise there will be two dots in file name
-        ext = `.${mime.extension(item.mimetype)}`;
-      }
-      return `${path.basename(item.name, ext)}${ext}`;
+      return extractFileName(
+        item.name,
+        extractExtension({ name: item.name, mimetype: item.mimetype }),
+      );
     }
     case ItemType.FOLDER: {
-      return `${item.name}.zip`;
+      return extractFileName(item.name, 'zip');
     }
     case ItemType.H5P: {
-      return `${path.basename(item.name, '.h5p')}${'.h5p'}`;
+      return extractFileName(item.name, 'h5p');
     }
     case ItemType.LINK: {
-      return `${path.basename(item.name, '.url')}${'.url'}`;
+      return extractFileName(item.name, 'url');
     }
     default:
       return item.name;
