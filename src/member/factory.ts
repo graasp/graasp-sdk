@@ -1,4 +1,5 @@
 import {
+  Account,
   BaseAccount,
   CompleteGuest,
   CompleteMember,
@@ -6,12 +7,15 @@ import {
 } from './member.js';
 import { faker } from '@faker-js/faker';
 
+export function AccountFactory(account: Partial<Account> = {}): Account {
+  return { id: faker.string.uuid(), name: faker.person.fullName(), ...account };
+}
+
 function baseAccountFactory<T extends MemberType>(
   baseAccount: Partial<BaseAccount> & { type: T },
 ): BaseAccount & { type: T } {
   return {
-    id: faker.string.uuid(),
-    name: faker.person.fullName(),
+    ...AccountFactory(baseAccount),
     createdAt: faker.date.anytime().toISOString(),
     updatedAt: faker.date.anytime().toISOString(),
     ...baseAccount,
