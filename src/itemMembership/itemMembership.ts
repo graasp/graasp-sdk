@@ -1,6 +1,6 @@
 import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 import { DiscriminatedItem } from '@/item/item.js';
-import { Account, Member } from '@/member/member.js';
+import { Account } from '@/member/member.js';
 import { UUID } from '@/types.js';
 
 export interface ItemMembership {
@@ -8,7 +8,7 @@ export interface ItemMembership {
   account: Account;
   item: DiscriminatedItem;
   permission: PermissionLevel;
-  creator?: Member | null;
+  creator?: Account | null;
   createdAt: string;
   updatedAt: string;
 }
