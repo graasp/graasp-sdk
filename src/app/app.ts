@@ -48,7 +48,7 @@ export enum AppDataVisibility {
 export type AppData<T extends Data = Data> = {
   id: string;
   item: DiscriminatedItem;
-  creator: Member | null;
+  creator: Account | null;
   account: Account;
   type: string;
   visibility: `${AppDataVisibility}` | AppDataVisibility;
