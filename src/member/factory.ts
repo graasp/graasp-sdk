@@ -1,9 +1,9 @@
 import {
   Account,
-  BaseAccount,
+  AccountType,
+  CompleteAccount,
   CompleteGuest,
   CompleteMember,
-  MemberType,
 } from './member.js';
 import { faker } from '@faker-js/faker';
 
@@ -11,9 +11,9 @@ export function AccountFactory(account: Partial<Account> = {}): Account {
   return { id: faker.string.uuid(), name: faker.person.fullName(), ...account };
 }
 
-function baseAccountFactory<T extends MemberType>(
-  baseAccount: Partial<BaseAccount> & { type: T },
-): BaseAccount & { type: T } {
+function BaseAccountFactory<T extends AccountType>(
+  baseAccount: Partial<CompleteAccount> & { type: T },
+): CompleteAccount & { type: T } {
   return {
     ...AccountFactory(baseAccount),
     createdAt: faker.date.anytime().toISOString(),
@@ -32,13 +32,13 @@ export const MemberFactory = (
   ]),
   enableSaveActions: m.enableSaveActions ?? true,
   isValidated: m.isValidated ?? true,
-  ...baseAccountFactory({ type: MemberType.Individual }),
+  ...BaseAccountFactory({ type: AccountType.Individual }),
   ...m,
 });
 
 export const GuestFactory = (
   g: Partial<CompleteGuest> & Pick<CompleteGuest, 'itemLoginSchema'>,
 ): CompleteGuest => ({
-  ...baseAccountFactory({ type: MemberType.Guest }),
+  ...BaseAccountFactory({ type: AccountType.Guest }),
   ...g,
 });

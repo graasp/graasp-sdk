@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { MemberType, isPseudoMember } from './member.js';
+import { AccountType, isPseudoMember } from './member.js';
 
 describe('Member Util Tests', () => {
   beforeEach(() => {
@@ -9,14 +9,14 @@ describe('Member Util Tests', () => {
 
   describe('isPseudoMember', () => {
     it('check successfully member is pseudonymized for false values', () => {
-      const res1 = isPseudoMember({ type: MemberType.Individual });
+      const res1 = isPseudoMember({ type: AccountType.Individual });
       expect(res1).toBeFalsy();
-      const res2 = isPseudoMember({ type: MemberType.Group });
+      const res2 = isPseudoMember({ type: AccountType.Group });
       expect(res2).toBeFalsy();
     });
 
     it('check successfully member is pseudonymized for true values', () => {
-      const res3 = isPseudoMember({ type: MemberType.Guest });
+      const res3 = isPseudoMember({ type: AccountType.Guest });
       expect(res3).toBeTruthy();
     });
   });

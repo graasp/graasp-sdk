@@ -33,7 +33,7 @@ export type PublicProfile = {
   updatedAt: string;
 };
 
-export enum MemberType {
+export enum AccountType {
   Individual = 'individual',
   Group = 'group',
   Guest = 'guest',
@@ -58,33 +58,19 @@ export type Account = {
   name: string;
 };
 
-type AccountTypeProperty = {
-  type: `${MemberType}` | MemberType;
-};
-
 export type Member = Account & {
   email: string;
 };
 
-export type Guest = Account;
+export type CompleteAccount = Account & {
+  type: `${AccountType}` | AccountType;
+  createdAt: string;
+  updatedAt: string;
+  lastAuthenticatedAt?: string;
+};
 
-export type AugmentedAccount =
-  | (Member & {
-      type: MemberType.Individual;
-    })
-  | (Guest & {
-      type: MemberType.Guest;
-    });
-
-export type BaseAccount = Account &
-  AccountTypeProperty & {
-    createdAt: string;
-    updatedAt: string;
-    lastAuthenticatedAt?: string;
-  };
-
-export type CompleteMember = BaseAccount & {
-  type: MemberType.Individual;
+export type CompleteMember = CompleteAccount & {
+  type: AccountType.Individual;
   email: string;
   extra: MemberExtra;
   enableSaveActions: boolean;
@@ -93,13 +79,13 @@ export type CompleteMember = BaseAccount & {
   isValidated: boolean;
 };
 
-export type CompleteGuest = BaseAccount & {
-  type: MemberType.Guest;
+export type CompleteGuest = CompleteAccount & {
+  type: AccountType.Guest;
   itemLoginSchema: ItemLoginSchema;
 };
 
-export type CompleteAccount = CompleteMember | CompleteGuest;
+export type CurrentAccount = CompleteMember | CompleteGuest;
 
-export function isPseudoMember(member: { type: MemberType }) {
-  return member.type === MemberType.Guest;
+export function isPseudoMember(member: { type: AccountType }) {
+  return member.type === AccountType.Guest;
 }

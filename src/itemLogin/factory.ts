@@ -1,7 +1,7 @@
 import { ItemLoginSchema, ItemLoginSchemaType } from './itemLogin.js';
 import { faker } from '@faker-js/faker';
 
-export function itemLoginSchemaFactory(
+export function ItemLoginSchemaFactory(
   itemLoginSchema: Partial<ItemLoginSchema> & Pick<ItemLoginSchema, 'item'>,
 ): ItemLoginSchema {
   return {
