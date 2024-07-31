@@ -12,7 +12,7 @@ export const ItemMembershipFactory = (
   id: faker.string.uuid(),
   createdAt: faker.date.anytime().toISOString(),
   updatedAt: faker.date.anytime().toISOString(),
-  account: im.account || MemberFactory(),
+  account: im.account ?? MemberFactory(),
   permission: faker.helpers.enumValue(PermissionLevel),
   ...im,
 });
