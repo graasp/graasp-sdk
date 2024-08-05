@@ -94,7 +94,6 @@ export type { Etherpad } from './etherpad/etherpad.js';
  * File Size formatting utils
  */
 export { formatFileSize } from './file/fileSize.js';
-export { getFilenameFromItem } from './file/filename.js';
 
 /**
  * Client Host Manager
