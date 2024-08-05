@@ -20,5 +20,5 @@ export enum ActionTriggers {
   AskResetPassword = 'ask-reset-password',
   ResetPassword = 'reset-password',
   CollapseItem = 'collapse_item',
-  UnCollapseItem = 'uncollapse_item'
+  UnCollapseItem = 'uncollapse_item',
 }
