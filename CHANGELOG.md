@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.23.0](https://github.com/graasp/graasp-sdk/compare/v4.22.0...v4.23.0) (2024-08-06)
+
+
+### Features
+
+* add fileitemmetadata type ([#612](https://github.com/graasp/graasp-sdk/issues/612)) ([382a785](https://github.com/graasp/graasp-sdk/commit/382a785dbb1f906760904100c8a32619c27a182b))
+* add un/collapse item action trigger ([#608](https://github.com/graasp/graasp-sdk/issues/608)) ([5ad983a](https://github.com/graasp/graasp-sdk/commit/5ad983a7c19f3bd67219bf662ce849579c05e804))
+
+
+### Reverts
+
+* remove filename files ([#603](https://github.com/graasp/graasp-sdk/issues/603)) ([ba5a40f](https://github.com/graasp/graasp-sdk/commit/ba5a40f05a20a600ac63bdb61e45e42895dcd464))
+
 ## [4.22.0](https://github.com/graasp/graasp-sdk/compare/v4.21.0...v4.22.0) (2024-07-25)
 
 
