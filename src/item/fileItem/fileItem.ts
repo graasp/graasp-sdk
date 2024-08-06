@@ -25,6 +25,19 @@ export type FileItemProperties = {
   altText?: string;
   content: string;
 };
+
+export type FileItemMetadata = {
+  id: string;
+  name: string;
+  path: string;
+  size: number;
+  updatedAt: string;
+  parent?: {
+    id: string;
+    name: string;
+  };
+};
+
 export interface LocalFileItemExtra {
   [ItemType.LOCAL_FILE]: FileItemProperties;
 }
