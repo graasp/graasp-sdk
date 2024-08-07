@@ -1,4 +1,4 @@
-const Image = {
+export const Image = {
   JPG: 'image/jpg',
   JPEG: 'image/jpeg',
   PNG: 'image/png',
