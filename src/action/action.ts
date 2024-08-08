@@ -1,12 +1,12 @@
 import { Context } from '@/enums/context.js';
 import { DiscriminatedItem } from '@/item/item.js';
 import { ItemMembership } from '@/itemMembership/itemMembership.js';
-import { Member } from '@/member/member.js';
+import { Account, Member } from '@/member/member.js';
 
 export type Action = {
   id: string;
   item?: DiscriminatedItem | null;
-  member?: Member | null;
+  account?: Account | null;
   view: Context | 'Unknown';
   type: string;
   extra: { [key: string]: unknown };
