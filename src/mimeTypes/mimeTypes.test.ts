@@ -17,4 +17,18 @@ describe('MimeTypes', () => {
     expect(MimeTypes.isAudio(MimeTypes.Audio.MP3)).toBeTruthy();
     expect(MimeTypes.isAudio('audio/mp3')).toBeTruthy();
   });
+  it('is a Document', () => {
+    expect(MimeTypes.isDocument(MimeTypes.Document.DOCX)).toBeTruthy();
+    expect(MimeTypes.isDocument('application/msword')).toBeTruthy();
+  });
+  it('is a Presentation', () => {
+    expect(MimeTypes.isPresentation(MimeTypes.Presentation.PPTX)).toBeTruthy();
+    expect(
+      MimeTypes.isPresentation('application/vnd.ms-powerpoint'),
+    ).toBeTruthy();
+  });
+  it('is a Spreadsheet', () => {
+    expect(MimeTypes.isSpreadsheet(MimeTypes.Spreadsheet.XLSX)).toBeTruthy();
+    expect(MimeTypes.isSpreadsheet('application/vnd.ms-excel')).toBeTruthy();
+  });
 });
