@@ -23,7 +23,9 @@ describe('MimeTypes', () => {
   });
   it('is a Presentation', () => {
     expect(MimeTypes.isPresentation(MimeTypes.Presentation.PPTX)).toBeTruthy();
-    expect(MimeTypes.isPresentation('application/vnd.ms-powerpoint')).toBeTruthy();
+    expect(
+      MimeTypes.isPresentation('application/vnd.ms-powerpoint'),
+    ).toBeTruthy();
   });
   it('is a Spreadsheet', () => {
     expect(MimeTypes.isAudio(MimeTypes.Spreadsheet.XLSX)).toBeTruthy();
