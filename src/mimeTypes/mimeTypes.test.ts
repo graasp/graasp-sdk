@@ -28,7 +28,7 @@ describe('MimeTypes', () => {
     ).toBeTruthy();
   });
   it('is a Spreadsheet', () => {
-    expect(MimeTypes.isAudio(MimeTypes.Spreadsheet.XLSX)).toBeTruthy();
-    expect(MimeTypes.isAudio('application/vnd.ms-excel')).toBeTruthy();
+    expect(MimeTypes.isSpreadsheet(MimeTypes.Spreadsheet.XLSX)).toBeTruthy();
+    expect(MimeTypes.isSpreadsheet('application/vnd.ms-excel')).toBeTruthy();
   });
 });
