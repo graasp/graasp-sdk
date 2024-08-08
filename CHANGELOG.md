@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.24.0](https://github.com/graasp/graasp-sdk/compare/v4.23.0...v4.24.0) (2024-08-08)
+
+
+### Features
+
+* add docs mime types ([#617](https://github.com/graasp/graasp-sdk/issues/617)) ([12ba43e](https://github.com/graasp/graasp-sdk/commit/12ba43ed818f8d971e2167d1a3af93f5eb214648))
+
 ## [4.23.0](https://github.com/graasp/graasp-sdk/compare/v4.22.0...v4.23.0) (2024-08-06)
 
 
