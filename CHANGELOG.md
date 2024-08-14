@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.25.0](https://github.com/graasp/graasp-sdk/compare/v4.24.0...v4.25.0) (2024-08-14)
+
+
+### Features
+
+* **membership request:** data transfert objects ([#620](https://github.com/graasp/graasp-sdk/issues/620)) ([896f02d](https://github.com/graasp/graasp-sdk/commit/896f02df8e02f4d0da763cfe8f280f28acea0248))
+
 ## [4.24.0](https://github.com/graasp/graasp-sdk/compare/v4.23.0...v4.24.0) (2024-08-08)
 
 
