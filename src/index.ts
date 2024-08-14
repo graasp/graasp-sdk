@@ -195,9 +195,10 @@ export * from './itemLogin/itemLogin.js';
  * Item Memberships
  */
 export * from './itemMembership/itemMembership.js';
+export * from './membershipRequest/membershipRequest.js';
 
 /**
- * Item Memberships
+ * Item Published
  */
 export * from './itemPublished/itemPublished.js';
 
