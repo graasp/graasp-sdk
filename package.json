@@ -73,7 +73,7 @@
     "typescript": "5.5.4",
     "unbuild": "2.0.0",
     "uuid": "10.0.0",
-    "vite-plugin-dts": "3.9.1",
+    "vite-plugin-dts": "4.0.3",
     "vitest": "2.0.4"
   },
   "packageManager": "yarn@4.3.1"
