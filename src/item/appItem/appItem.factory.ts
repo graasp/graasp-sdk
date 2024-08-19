@@ -19,7 +19,6 @@ export const AppItemFactory = (
     extra: item.extra ?? {
       [ItemType.APP]: {
         url: faker.internet.url(),
-        settings: {},
       },
     },
   };

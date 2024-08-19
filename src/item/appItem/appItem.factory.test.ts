@@ -12,7 +12,6 @@ describe('AppItemFactory', () => {
   it('Create app item', () => {
     const item = AppItemFactory();
     expect(item.extra.app.url).toContain('http');
-    expect(item.extra.app.settings).toBeDefined();
     expect(item.type).toEqual(ItemType.APP);
   });
   it('Create app item with args', () => {

@@ -12,12 +12,10 @@ export type AppItemType<S = ItemSettings> = {
  */
 export type AppItemExtraProperties = {
   url: string;
-  // todo: there currently is nothing stored in the settings. this might change later
-  settings?: unknown;
 };
-export interface AppItemExtra {
+export type AppItemExtra = {
   [ItemType.APP]: AppItemExtraProperties;
-}
+};
 
 export const getAppExtra = <U extends AppItemExtra>(
   extra: U,
@@ -25,9 +23,8 @@ export const getAppExtra = <U extends AppItemExtra>(
 
 export const buildAppExtra = ({
   url,
-  settings = {},
 }: AppItemExtraProperties): AppItemExtra => ({
-  [ItemType.APP]: { url, settings },
+  [ItemType.APP]: { url },
 });
 
 /**
