@@ -1,3 +1,7 @@
+/**
+ * Build file for the Common JS bundle of sdk.
+ * Uses the "unbuild" tool to produce a correct common js bundle
+ */
 import { defineBuildConfig } from 'unbuild';
 import { fileURLToPath } from 'url';
 
