@@ -37,12 +37,15 @@ describe('getLinkThumbnailUrl', () => {
       thumbnails: [],
       icons: [],
     });
-    expect(getLinkThumbnailUrl(extra)).to.be.undefined;
+    expect(getLinkThumbnailUrl(extra)).toBeUndefined();
+
     const extra1 = buildLinkExtra({ url: 'string', thumbnails: [] });
-    expect(getLinkThumbnailUrl(extra1)).to.be.undefined;
+    expect(getLinkThumbnailUrl(extra1)).toBeUndefined();
+
     const extra2 = buildLinkExtra({ url: 'string' });
-    expect(getLinkThumbnailUrl(extra2)).to.be.undefined;
+    expect(getLinkThumbnailUrl(extra2)).toBeUndefined();
+
     const extra3 = buildLinkExtra({ url: 'string', icons: [] });
-    expect(getLinkThumbnailUrl(extra3)).to.be.undefined;
+    expect(getLinkThumbnailUrl(extra3)).toBeUndefined();
   });
 });
