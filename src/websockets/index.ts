@@ -8,7 +8,6 @@ export * from './ws-client.js';
 /**
  * Re-export types and utility classes within the Websocket namespace
  */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-namespace */
 export namespace Websocket {
   /* Errors */

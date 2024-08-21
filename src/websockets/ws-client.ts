@@ -185,7 +185,6 @@ export const configureWebsocketClient = (wsHost: string): WebsocketClient => {
 
     remove: (channel: Channel, handler: UpdateHandlerFn): boolean => {
       // helper to remove from a subscription map
-      // eslint-disable-next-line no-underscore-dangle
       const _remove = (
         map: Map<string, Array<UpdateHandlerFn>>,
         channelKey: string,
@@ -198,7 +197,6 @@ export const configureWebsocketClient = (wsHost: string): WebsocketClient => {
         return false;
       };
       // helper to cleanup mapped array if it is empty
-      // eslint-disable-next-line no-underscore-dangle
       const _cleanup = (
         map: Map<string, Array<UpdateHandlerFn>>,
         channelKey: string,
