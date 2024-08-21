@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.25.1](https://github.com/graasp/graasp-sdk/compare/v4.25.0...v4.25.1) (2024-08-21)
+
+
+### Bug Fixes
+
+* remove extra.app.settings key in item ([#623](https://github.com/graasp/graasp-sdk/issues/623)) ([b4de950](https://github.com/graasp/graasp-sdk/commit/b4de950fee5a60db263c447bd590babc706691e5))
+
 ## [4.25.0](https://github.com/graasp/graasp-sdk/compare/v4.24.0...v4.25.0) (2024-08-14)
 
 
