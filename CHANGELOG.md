@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.26.0](https://github.com/graasp/graasp-sdk/compare/v4.25.1...v4.26.0) (2024-08-22)
+
+
+### Features
+
+* add guest and account types ([#585](https://github.com/graasp/graasp-sdk/issues/585)) ([d320bff](https://github.com/graasp/graasp-sdk/commit/d320bff319b3df108c9609b9a741292b93187700))
+
 ## [4.25.1](https://github.com/graasp/graasp-sdk/compare/v4.25.0...v4.25.1) (2024-08-21)
 
 
