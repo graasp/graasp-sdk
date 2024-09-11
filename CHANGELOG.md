@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.27.0](https://github.com/graasp/graasp-sdk/compare/v4.26.0...v4.27.0) (2024-09-11)
+
+
+### Features
+
+* add support for AAC, FLAC, OGG and m4a ([#643](https://github.com/graasp/graasp-sdk/issues/643)) ([2c22148](https://github.com/graasp/graasp-sdk/commit/2c221481823ec3ce829aac572a0bb710386f107b))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @faker-js/faker to v9 ([#641](https://github.com/graasp/graasp-sdk/issues/641)) ([bae89fd](https://github.com/graasp/graasp-sdk/commit/bae89fdc27dfb8e2ee6ed20320180164c0b337f3))
+* **deps:** update dependency filesize to v10.1.6 ([#640](https://github.com/graasp/graasp-sdk/issues/640)) ([c0b596a](https://github.com/graasp/graasp-sdk/commit/c0b596a3438084ea83af2a0316ef706dd73f831f))
+
 ## [4.26.0](https://github.com/graasp/graasp-sdk/compare/v4.25.1...v4.26.0) (2024-08-22)
 
 
