@@ -71,6 +71,8 @@ export type AppSetting<T extends Data = Data> = {
 
 export type LocalContext = {
   accountId: UUID;
+  /** @deprecated use accountId */
+  memberId?: UUID;
   apiHost: string;
   context: 'standalone' | `${Context}`;
   dev?: boolean;
