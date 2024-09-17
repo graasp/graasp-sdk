@@ -70,7 +70,7 @@ export type AppSetting<T extends Data = Data> = {
 };
 
 export type LocalContext = {
-  accountId: UUID;
+  accountId?: UUID;
   /** @deprecated use accountId */
   memberId?: UUID;
   apiHost: string;
