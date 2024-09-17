@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.29.0](https://github.com/graasp/graasp-sdk/compare/v4.28.0...v4.29.0) (2024-09-17)
+
+
+### Features
+
+* add legacy member key in app types ([#657](https://github.com/graasp/graasp-sdk/issues/657)) ([da3a66e](https://github.com/graasp/graasp-sdk/commit/da3a66e829d9bf385d7ba6206ecd35ffb5d096a6))
+
 ## [4.28.0](https://github.com/graasp/graasp-sdk/compare/v4.27.0...v4.28.0) (2024-09-13)
 
 
