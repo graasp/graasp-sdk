@@ -44,15 +44,14 @@ export const PartialItemFactory = <IT extends DiscriminatedItem>(
   const path =
     item.path ??
     (item.parentItem ? item.parentItem.path + '.' : '') + buildPathFromIds(id);
-
+  const name = item.name ?? faker.lorem.words({ min: 2, max: 12 });
   return {
     id,
     createdAt,
     updatedAt,
     path,
-    name: item.name ?? faker.helpers.multiple(faker.lorem.word).join(' '),
-    displayName:
-      item.displayName ?? faker.helpers.multiple(faker.lorem.word).join(' '),
+    name,
+    displayName: item.displayName ?? name,
     description: item.description ?? faker.lorem.text(),
     settings:
       item.settings ??
@@ -65,14 +64,16 @@ export const PartialItemFactory = <IT extends DiscriminatedItem>(
           isResizable: faker.datatype.boolean(),
           isCollapsible: faker.datatype.boolean(),
           enableSaveActions: faker.datatype.boolean(),
-          tags: faker.helpers.multiple(faker.lorem.word),
+          tags: faker.lorem.words({ min: 1, max: 10 }).split(' '),
           displayCoEditors: faker.datatype.boolean(),
           ccLicenseAdaption: faker.helpers.enumValue(CCLicenseAdaptions),
         },
       ]),
     // allow null creator
     creator: item.creator === undefined ? MemberFactory() : item.creator,
-    lang: item.lang ?? faker.helpers.arrayElement(['fr', 'en']),
+    lang:
+      item.lang ??
+      faker.helpers.arrayElement(['fr', 'en', 'it', 'es', 'ar', 'de']),
   };
 };
 
