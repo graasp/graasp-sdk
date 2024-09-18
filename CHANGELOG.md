@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.29.1](https://github.com/graasp/graasp-sdk/compare/v4.29.0...v4.29.1) (2024-09-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @faker-js/faker to v9.0.1 ([#653](https://github.com/graasp/graasp-sdk/issues/653)) ([8f513b3](https://github.com/graasp/graasp-sdk/commit/8f513b3f2be4b29667c221ee682a2a1c8d849f67))
+
 ## [4.29.0](https://github.com/graasp/graasp-sdk/compare/v4.28.0...v4.29.0) (2024-09-17)
 
 
