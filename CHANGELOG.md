@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.30.0](https://github.com/graasp/graasp-sdk/compare/v4.29.1...v4.30.0) (2024-09-24)
+
+
+### Features
+
+* includes the item's thumbnails in PackedItem ([#660](https://github.com/graasp/graasp-sdk/issues/660)) ([433d047](https://github.com/graasp/graasp-sdk/commit/433d047af594e9023d7305b3218bc19a88c037a6))
+
 ## [4.29.1](https://github.com/graasp/graasp-sdk/compare/v4.29.0...v4.29.1) (2024-09-18)
 
 
