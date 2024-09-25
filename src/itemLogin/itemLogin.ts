@@ -9,10 +9,17 @@ export enum ItemLoginSchemaType {
   AnonymousAndPassword = 'anonymous+password',
 }
 
+export enum ItemLoginSchemaStatus {
+  Active = 'active', // Guests can register and log in
+  Disabled = 'disabled', // Guests can't register or log in
+  Freeze = 'freeze', // Guests can only register
+}
+
 export interface ItemLoginSchema {
   id: UUID;
   item: DiscriminatedItem;
   type: `${ItemLoginSchemaType}` | ItemLoginSchemaType;
+  status: `${ItemLoginSchemaStatus}` | ItemLoginSchemaStatus;
   createdAt: string;
   updatedAt: string;
 }
