@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.31.0](https://github.com/graasp/graasp-sdk/compare/v4.30.0...v4.31.0) (2024-09-25)
+
+
+### Features
+
+* itemlogin schema state ([#666](https://github.com/graasp/graasp-sdk/issues/666)) ([825175f](https://github.com/graasp/graasp-sdk/commit/825175f967efee01d0e3edb9340c320026087f40))
+
+
+### Bug Fixes
+
+* **type:** move ThumbnailSizeInPackedItem in thumbnailSizes to avoid any ([#667](https://github.com/graasp/graasp-sdk/issues/667)) ([ca5f279](https://github.com/graasp/graasp-sdk/commit/ca5f2796074145a61735821e9273e07179a22331))
+
 ## [4.30.0](https://github.com/graasp/graasp-sdk/compare/v4.29.1...v4.30.0) (2024-09-24)
 
 
