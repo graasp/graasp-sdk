@@ -73,6 +73,8 @@ export { MentionStatus, EmailFrequency } from './chat/mentions.js';
 export {
   ThumbnailSize,
   type ThumbnailSizeType,
+  ThumbnailSizeInPackedItem,
+  type ThumbnailsBySize,
 } from './enums/thumbnailSizes.js';
 
 /**
@@ -120,11 +122,7 @@ export * from './enums/alignment.js';
  */
 export { type DiscriminatedItem, getMimetype } from './item/item.js';
 export * from './item/itemSettings.js';
-export {
-  type PackedItem,
-  ThumbnailSizeInPackedItem,
-  type ThumbnailsBySize,
-} from './item/packedItem.js';
+export { type PackedItem } from './item/packedItem.js';
 export * from './item/itemType.js';
 export * from './item/itemUtils.js';
 export * from './item/events/itemFeedbackOperationEvent.js';
