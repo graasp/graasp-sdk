@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.32.0](https://github.com/graasp/graasp-sdk/compare/v4.31.0...v4.32.0) (2024-10-04)
+
+
+### Features
+
+* add global username regexes ([#669](https://github.com/graasp/graasp-sdk/issues/669)) ([219717f](https://github.com/graasp/graasp-sdk/commit/219717fae2fd6a11ef251efeb0d85698b5a2040c))
+
 ## [4.31.0](https://github.com/graasp/graasp-sdk/compare/v4.30.0...v4.31.0) (2024-09-25)
 
 
