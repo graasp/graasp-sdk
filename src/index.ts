@@ -227,6 +227,7 @@ export * from './itemValidation/itemValidation.js';
 export * from './member/member.js';
 export * from './member/password.js';
 export * from './member/factory.js';
+export * from './member/constants.js';
 
 /**
  * MimeTypes values and functions to detect the mimetype of an item
