@@ -89,3 +89,23 @@ export type CurrentAccount = CompleteMember | CompleteGuest;
 export function isPseudoMember(member: { type: AccountType }) {
   return member.type === AccountType.Guest;
 }
+
+/**
+ * A utils function to get the current member language
+ * @param account an object that has a type property and an optional extra property when the type is 'individual'
+ * @param defaultValue then default language to use when the user does not have one set
+ * @returns a string that represents the language of the member
+ */
+export const getCurrentAccountLang = <
+  T extends
+    | { type: AccountType.Individual; extra: MemberExtra }
+    | { type: Exclude<`${AccountType}`, `${AccountType.Individual}`> },
+>(
+  account: T | null | undefined,
+  defaultValue?: string,
+): string | undefined => {
+  if (account?.type === AccountType.Individual) {
+    return account.extra.lang;
+  }
+  return defaultValue;
+};

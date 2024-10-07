@@ -65,7 +65,7 @@ export const MAX_NUMBER_OF_FILES_UPLOAD = 20 as const;
 /**
  * Maximum size for a thumbnail
  */
-export const MAX_THUMBNAIL_SIZE = 10 * 1024 * 1024;
+export const MAX_THUMBNAIL_SIZE = 10 * 1024 * 1024; // 10MB
 
 /**
  * Maximum item name length
