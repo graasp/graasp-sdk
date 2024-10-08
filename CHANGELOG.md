@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.32.1](https://github.com/graasp/graasp-sdk/compare/v4.32.0...v4.32.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* add member utils ([#671](https://github.com/graasp/graasp-sdk/issues/671)) ([dc5fad2](https://github.com/graasp/graasp-sdk/commit/dc5fad2c5ac8bb4c9bc9dd3c4b2e77e354065607))
+* **deps:** update dependency @faker-js/faker to v9.0.3 ([#663](https://github.com/graasp/graasp-sdk/issues/663)) ([b323bc2](https://github.com/graasp/graasp-sdk/commit/b323bc2aba7dd7f9a4abfc6d16875cb64196b62e))
+
 ## [4.32.0](https://github.com/graasp/graasp-sdk/compare/v4.31.0...v4.32.0) (2024-10-04)
 
 
