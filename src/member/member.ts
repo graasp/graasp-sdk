@@ -70,17 +70,16 @@ export type CompleteAccount = Account & {
 };
 
 export type CompleteMember = CompleteAccount & {
-  type: AccountType.Individual;
+  type: `${AccountType.Individual}`;
   email: string;
   extra: MemberExtra;
   enableSaveActions: boolean;
   userAgreementsDate?: string;
-
   isValidated: boolean;
 };
 
 export type CompleteGuest = CompleteAccount & {
-  type: AccountType.Guest;
+  type: `${AccountType.Guest}`;
   itemLoginSchema: ItemLoginSchema;
 };
 

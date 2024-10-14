@@ -5,10 +5,10 @@ import { UUID } from '@/types.js';
 
 type AugmentedAccount =
   | (Member & {
-      type: AccountType.Individual;
+      type: `${AccountType.Individual}`;
     })
   | (Account & {
-      type: AccountType.Guest;
+      type: `${AccountType.Guest}`;
     });
 
 export interface ItemMembership {
