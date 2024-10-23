@@ -19,6 +19,7 @@ export type IndexItem = {
   isHidden: boolean;
   createdAt: string;
   updatedAt: string;
+  lang: string;
 };
 
 // TODO: get type from meilisearch library?
