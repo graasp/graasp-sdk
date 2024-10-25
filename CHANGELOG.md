@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.33.0](https://github.com/graasp/graasp-sdk/compare/v4.32.1...v4.33.0) (2024-10-25)
+
+
+### Features
+
+* add lang to index item ([#678](https://github.com/graasp/graasp-sdk/issues/678)) ([df931c9](https://github.com/graasp/graasp-sdk/commit/df931c9bbc2a22c4ce744d09460f2a903261bf79))
+
 ## [4.32.1](https://github.com/graasp/graasp-sdk/compare/v4.32.0...v4.32.1) (2024-10-08)
 
 
