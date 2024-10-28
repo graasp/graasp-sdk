@@ -66,13 +66,18 @@ export const redirectToSavedUrl = (
 export const buildSignInPath = ({
   host,
   redirectionUrl,
+  lang,
 }: {
   host: string;
   redirectionUrl?: string;
+  lang?: string;
 }) => {
   const url = new URL('/signin', host);
   if (redirectionUrl) {
     url.searchParams.set('url', redirectionUrl);
+  }
+  if (lang) {
+    url.searchParams.set('lang', lang);
   }
   return url.toString();
 };
