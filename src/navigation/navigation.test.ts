@@ -86,6 +86,14 @@ describe('Navigation Util Tests', () => {
       expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
       expect(res).toContain(`?url=${encodeURIComponent(redirectionUrl)}`);
     });
+    it('build sign in path with lang parameter', () => {
+      const res = buildSignInPath({
+        host: MOCK_HOST_WITH_PROTOCOL,
+        lang: 'ru',
+      });
+      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
+      expect(res).toContain('?lang=ru');
+    });
   });
 
   describe('buildItemLinkForBuilder', () => {
