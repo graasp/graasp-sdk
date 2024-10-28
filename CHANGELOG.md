@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.33.1](https://github.com/graasp/graasp-sdk/compare/v4.33.0...v4.33.1) (2024-10-28)
+
+
+### Bug Fixes
+
+* add lang in signin url ([#682](https://github.com/graasp/graasp-sdk/issues/682)) ([64c98fd](https://github.com/graasp/graasp-sdk/commit/64c98fdb78eb53092ba9a6ae2daa2ccca4f53cb6))
+* **deps:** update dependency @faker-js/faker to v9.1.0 ([#680](https://github.com/graasp/graasp-sdk/issues/680)) ([947545a](https://github.com/graasp/graasp-sdk/commit/947545a9d078a673ae0f310ba51a97f9b97f90f0))
+* update deps ([e5fe110](https://github.com/graasp/graasp-sdk/commit/e5fe11087213fbf2b101cb415c9e53cee065df0c))
+
 ## [4.33.0](https://github.com/graasp/graasp-sdk/compare/v4.32.1...v4.33.0) (2024-10-25)
 
 
