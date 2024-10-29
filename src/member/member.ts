@@ -90,6 +90,9 @@ export function isPseudoMember(member: { type: AccountType }) {
   return member.type === AccountType.Guest;
 }
 
+type SomeAccount =
+  | { type: AccountType.Individual; extra: MemberExtra }
+  | { type: Exclude<`${AccountType}`, `${AccountType.Individual}`> };
 /**
  * A utils function to get the current member language
  * @param account an object that has a type property and an optional extra property when the type is 'individual'
@@ -97,15 +100,17 @@ export function isPseudoMember(member: { type: AccountType }) {
  * @returns a string that represents the language of the member
  */
 export const getCurrentAccountLang = <
-  T extends
-    | { type: AccountType.Individual; extra: MemberExtra }
-    | { type: Exclude<`${AccountType}`, `${AccountType.Individual}`> },
+  T extends SomeAccount | undefined | null,
+  R = T extends NonNullable<SomeAccount> ? string | undefined : undefined,
 >(
-  account: T | null | undefined,
-  defaultValue?: string,
-): string | undefined => {
-  if (account?.type === AccountType.Individual) {
-    return account.extra.lang;
+  account: T,
+  defaultValue: string,
+): R => {
+  if (account) {
+    if (account.type === AccountType.Individual) {
+      return account.extra.lang as R;
+    }
+    return defaultValue as R;
   }
-  return defaultValue;
+  return undefined as R;
 };

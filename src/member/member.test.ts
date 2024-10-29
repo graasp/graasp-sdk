@@ -31,19 +31,19 @@ describe('Member Util Tests', () => {
       { input: { extra: { lang: undefined } }, res: undefined },
     ])('returns a member language', ({ input, res }) => {
       expect(
-        getCurrentAccountLang({
-          type: AccountType.Individual,
-          ...input,
-        }),
+        getCurrentAccountLang(
+          {
+            type: AccountType.Individual,
+            ...input,
+          },
+          'fr',
+        ),
       ).toEqual(res);
     });
 
     it('returns default', () => {
-      expect(
-        getCurrentAccountLang({
-          type: AccountType.Guest,
-        }),
-      ).toBeUndefined();
+      const res = getCurrentAccountLang(undefined, 'fr');
+      expect(res).toBeUndefined();
       expect(
         getCurrentAccountLang(
           {
