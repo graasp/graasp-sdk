@@ -26,32 +26,36 @@ describe('Member Util Tests', () => {
   });
 
   describe('getCurrentAccountLang', () => {
+    const defaultValue = 'fr (default)';
     it.each([
-      { input: { extra: { lang: 'ru' } }, res: 'ru' },
-      { input: { extra: { lang: undefined } }, res: undefined },
-    ])('returns a member language', ({ input, res }) => {
-      expect(
-        getCurrentAccountLang(
-          {
-            type: AccountType.Individual,
-            ...input,
-          },
-          'fr',
-        ),
-      ).toEqual(res);
+      {
+        input: { extra: { lang: 'ru' }, type: AccountType.Individual as const },
+        res: 'ru',
+      },
+      {
+        input: {
+          extra: { lang: undefined },
+          type: AccountType.Individual as const,
+        },
+        res: defaultValue,
+      },
+      {
+        input: { type: AccountType.Guest as const },
+        res: defaultValue,
+      },
+    ])('returns $res when $input.type', ({ input, res }) => {
+      expect(getCurrentAccountLang(input, defaultValue)).toEqual(res);
     });
 
-    it('returns default', () => {
-      const res = getCurrentAccountLang(undefined, 'fr');
-      expect(res).toBeUndefined();
-      expect(
-        getCurrentAccountLang(
-          {
-            type: AccountType.Guest,
-          },
-          'test',
-        ),
-      ).toEqual('test');
+    it.each([
+      {
+        input: undefined,
+      },
+      {
+        input: null,
+      },
+    ])('returns undefined when $input', ({ input }) => {
+      expect(getCurrentAccountLang(input, defaultValue)).toBeUndefined();
     });
   });
 });
