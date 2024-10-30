@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.33.2](https://github.com/graasp/graasp-sdk/compare/v4.33.1...v4.33.2) (2024-10-30)
+
+
+### Bug Fixes
+
+* make lang return undefined when the account is not defined ([#685](https://github.com/graasp/graasp-sdk/issues/685)) ([bde0a32](https://github.com/graasp/graasp-sdk/commit/bde0a32145dece3d6d5e10aee65201ebff7377ef))
+
 ## [4.33.1](https://github.com/graasp/graasp-sdk/compare/v4.33.0...v4.33.1) (2024-10-28)
 
 
