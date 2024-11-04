@@ -1019,7 +1019,6 @@ __metadata:
     "@types/eslint": "npm:^9.6.1"
     "@types/js-cookie": "npm:3.0.6"
     "@types/uuid": "npm:10.0.0"
-    "@types/validator": "npm:13.12.2"
     "@typescript-eslint/eslint-plugin": "npm:8.11.0"
     "@typescript-eslint/parser": "npm:8.11.0"
     date-fns: "npm:4.1.0"
@@ -1034,7 +1033,6 @@ __metadata:
     typescript: "npm:5.6.3"
     unbuild: "npm:2.0.0"
     uuid: "npm:11.0.2"
-    validator: "npm:13.12.0"
     vite-plugin-dts: "npm:4.3.0"
     vitest: "npm:2.1.4"
   peerDependencies:
@@ -1635,13 +1633,6 @@ __metadata:
   version: 10.0.0
   resolution: "@types/uuid@npm:10.0.0"
   checksum: 10c0/9a1404bf287164481cb9b97f6bb638f78f955be57c40c6513b7655160beb29df6f84c915aaf4089a1559c216557dc4d2f79b48d978742d3ae10b937420ddac60
-  languageName: node
-  linkType: hard
-
-"@types/validator@npm:13.12.2":
-  version: 13.12.2
-  resolution: "@types/validator@npm:13.12.2"
-  checksum: 10c0/64f1326c768947d756ab5bcd73f3f11a6f07dc76292aea83890d0390a9b9acb374f8df6b24af2c783271f276d3d613b78fc79491fe87edee62108d54be2e3c31
   languageName: node
   linkType: hard
 
@@ -6347,13 +6338,6 @@ __metadata:
   bin:
     uuid: dist/esm/bin/uuid
   checksum: 10c0/bd0670a0d6f77f1932da7544c51c32ceb467f3835382df2265f3275c4981d32c136a08a4369fb027ecfffd0b2ae48f19a28266ef636c7347264d5720e85d5ba0
-  languageName: node
-  linkType: hard
-
-"validator@npm:13.12.0":
-  version: 13.12.0
-  resolution: "validator@npm:13.12.0"
-  checksum: 10c0/21d48a7947c9e8498790550f56cd7971e0e3d724c73388226b109c1bac2728f4f88caddfc2f7ed4b076f9b0d004316263ac786a17e9c4edf075741200718cd32
   languageName: node
   linkType: hard
 
