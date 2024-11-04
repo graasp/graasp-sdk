@@ -303,3 +303,7 @@ export {
   type ChatBotMessage,
   GPTVersion,
 } from './chatbot/chatbot.js';
+
+export { isEmail } from './validation/isEmail.js';
+export { isFQDN } from './validation/isFQDN.js';
+export { isIP } from './validation/isIP.js';
