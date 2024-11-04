@@ -1,3 +1,7 @@
+/**
+ * This code was adapted from the `validator.js` package
+ * https://github.com/validatorjs/validator.js/tree/master
+ */
 import { countChars, merge } from './utils.js';
 
 const upperCaseRegex = /^[A-Z]$/;
