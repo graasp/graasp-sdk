@@ -269,12 +269,7 @@ export * from './websockets/index.js';
 /**
  * Type utils
  */
-export type {
-  UnionOfConst,
-  ResultOf,
-  AnyOf,
-  AnyOfExcept,
-} from './typeUtils.js';
+export type { UnionOfConst, ResultOf } from './typeUtils.js';
 
 /**
  * Custom types

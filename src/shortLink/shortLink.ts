@@ -1,7 +1,8 @@
-import { AnyOfExcept, UnionOfConst } from '@/typeUtils.js';
+import { UnionOfConst } from '@/typeUtils.js';
 
-// This const is used to define the allowed Platforms.
-// It is used in schema or database enums.
+/**
+ * Represents the allowed platforms for which short links can be generated.
+ */
 export const ShortLinkPlatform = {
   Builder: 'builder',
   Player: 'player',
@@ -9,21 +10,17 @@ export const ShortLinkPlatform = {
 } as const;
 
 export type ShortLink = {
+  itemId: string;
   alias: string;
   platform: UnionOfConst<typeof ShortLinkPlatform>;
-  item: { id: string };
-  createdAt: string;
 };
 
-export type ShortLinkItemId = {
-  itemId: string;
-};
+export type UpdateShortLink = Pick<ShortLink, 'alias'>;
 
-export type ShortLinkPayload = Omit<ShortLink, 'createdAt' | 'item'> &
-  ShortLinkItemId;
-export type ShortLinkPostPayload = ShortLinkPayload;
-export type ShortLinkPatchPayload = AnyOfExcept<ShortLinkPostPayload, 'itemId'>;
-export type ShortLinkPutPayload = Omit<ShortLinkPayload, 'itemId'>;
 export type ShortLinkAvailable = {
   available: boolean;
+};
+
+export type ShortLinksOfItem = {
+  [K in (typeof ShortLinkPlatform)[keyof typeof ShortLinkPlatform]]?: ShortLink['alias'];
 };
