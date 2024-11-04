@@ -2,10 +2,19 @@ import { DiscriminatedItem } from '@/item/item.js';
 import { Member } from '@/member/member.js';
 import { UUID } from '@/types.js';
 
+/**
+ * @deprecated use TagType
+ */
 export enum CategoryType {
   Level = 'level',
   Discipline = 'discipline',
   Language = 'language',
+  ResourceType = 'resource-type',
+}
+
+export enum TagType {
+  Level = 'level',
+  Discipline = 'discipline',
   ResourceType = 'resource-type',
 }
 
