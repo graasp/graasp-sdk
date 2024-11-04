@@ -1,3 +1,8 @@
+/**
+ * This code was adapted from the `validator.js` package
+ * https://github.com/validatorjs/validator.js/tree/master
+ */
+
 export function isByteLength(
   str: string,
   options?: Partial<{ min: number; max: number }>,

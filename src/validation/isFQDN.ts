@@ -1,3 +1,7 @@
+/**
+ * This code was adapted from the `validator.js` package
+ * https://github.com/validatorjs/validator.js/tree/master
+ */
 import { merge } from './utils.js';
 
 const DEFAULT_FQDN_OPTIONS = {

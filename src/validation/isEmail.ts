@@ -1,3 +1,7 @@
+/**
+ * This code was adapted from the `validator.js` package
+ * https://github.com/validatorjs/validator.js/tree/master
+ */
 import { isByteLength } from './isByteLength.js';
 import { isFQDN } from './isFQDN.js';
 import { isIP } from './isIP.js';

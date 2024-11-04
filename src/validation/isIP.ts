@@ -1,4 +1,8 @@
 /**
+ * This code was adapted from the `validator.js` package
+ * https://github.com/validatorjs/validator.js/tree/master
+ */
+/**
 11.3.  Examples
 
    The following addresses
