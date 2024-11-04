@@ -6,8 +6,8 @@ import { countChars, merge } from './utils.js';
 
 const upperCaseRegex = /^[A-Z]$/;
 const lowerCaseRegex = /^[a-z]$/;
-const numberRegex = /^[0-9]$/;
-const symbolRegex = /^[-#!$@£%^&*()_+|~=`{}\[\]:";'<>?,.\/\\ ]$/;
+const numberRegex = /^\d$/;
+const symbolRegex = /^[-#!$@£%^&*()_+|~=`{}[\]:";'<>?,./\\ ]$/;
 
 const defaultOptions = {
   minLength: 8,

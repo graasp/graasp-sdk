@@ -17,11 +17,11 @@ export function merge<T extends Record<string, unknown>>(
  */
 export function countChars(str: string) {
   const result: Record<string, number> = {};
-  for (let i = 0; i < str.length; i++) {
-    if (result[str[i]]) {
-      result[str[i]] += 1;
+  for (const char of Array.from(str)) {
+    if (result[char]) {
+      result[char] += 1;
     } else {
-      result[str[i]] = 1;
+      result[char] = 1;
     }
   }
   return result;
