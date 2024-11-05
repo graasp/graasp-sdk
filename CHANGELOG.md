@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.34.0](https://github.com/graasp/graasp-sdk/compare/v4.33.2...v4.34.0) (2024-11-05)
+
+
+### Features
+
+* add item regex name ([#692](https://github.com/graasp/graasp-sdk/issues/692)) ([b35ab26](https://github.com/graasp/graasp-sdk/commit/b35ab26a52cf98be66057ffa71f3627dc978d198))
+* make own validation for password ([#688](https://github.com/graasp/graasp-sdk/issues/688)) ([2046f76](https://github.com/graasp/graasp-sdk/commit/2046f76b4f477889494fb2c5245742f052db6044))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @faker-js/faker to v9.2.0 ([#687](https://github.com/graasp/graasp-sdk/issues/687)) ([ab21e35](https://github.com/graasp/graasp-sdk/commit/ab21e35358e6cf992312679c7d0343fc6f536616))
+
 ## [4.33.2](https://github.com/graasp/graasp-sdk/compare/v4.33.1...v4.33.2) (2024-10-30)
 
 
