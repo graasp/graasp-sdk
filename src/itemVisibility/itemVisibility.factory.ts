@@ -1,11 +1,11 @@
-import { ItemTag } from './itemTag.js';
+import { ItemVisibility } from './itemVisibility.js';
 import { FolderItemFactory } from '@/item/folderItem/folderItem.factory.js';
 import { MemberFactory } from '@/member/factory.js';
 import { faker } from '@faker-js/faker';
 
-export const ItemTagFactory = (
-  it: Partial<ItemTag> & Pick<ItemTag, 'type'>,
-): ItemTag => ({
+export const ItemVisibilityFactory = (
+  it: Partial<ItemVisibility> & Pick<ItemVisibility, 'type'>,
+): ItemVisibility => ({
   id: it.id ?? faker.string.uuid(),
   createdAt: faker.date.anytime().toISOString(),
   item: it.item ?? FolderItemFactory(),

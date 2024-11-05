@@ -2,15 +2,15 @@ import { DiscriminatedItem } from '@/item/item.js';
 import { Member } from '@/member/member.js';
 import { UUID } from '@/types.js';
 
-export enum ItemTagType {
+export enum ItemVisibilityType {
   Public = 'public',
   Hidden = 'hidden',
 }
 
-export type ItemTag = {
+export type ItemVisibility = {
   id: UUID;
   item: DiscriminatedItem;
-  type: `${ItemTagType}` | ItemTagType;
+  type: `${ItemVisibilityType}` | ItemVisibilityType;
   createdAt: string;
   creator: Member;
 };

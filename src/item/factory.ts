@@ -4,8 +4,11 @@ import { buildPathFromIds } from './itemUtils.js';
 import { PackedInformation, PackedItem } from './packedItem.js';
 import { CCLicenseAdaptions } from '@/enums/ccLicenses.js';
 import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
-import { ItemTagFactory } from '@/itemTag/itemTag.factory.js';
-import { ItemTag, ItemTagType } from '@/itemTag/itemTag.js';
+import { ItemVisibilityFactory } from '@/itemVisibility/itemVisibility.factory.js';
+import {
+  ItemVisibility,
+  ItemVisibilityType,
+} from '@/itemVisibility/itemVisibility.js';
 import { faker } from '@faker-js/faker';
 
 export type ItemFactoryOutputType<IT extends DiscriminatedItem> = Pick<
@@ -79,44 +82,44 @@ export const PartialItemFactory = <IT extends DiscriminatedItem>(
 
 export type PackedInformationFactoryInput = {
   permission?: PermissionLevel | null;
-  hiddenTag?: Partial<ItemTag>;
-  publicTag?: Partial<ItemTag>;
+  hiddenVisibility?: Partial<ItemVisibility>;
+  publicVisibility?: Partial<ItemVisibility>;
 };
 
 export const PackedInformationFactory = (
   {
     permission = PermissionLevel.Admin,
-    hiddenTag,
-    publicTag,
+    hiddenVisibility,
+    publicVisibility,
   }: PackedInformationFactoryInput,
   item: DiscriminatedItem,
   parentItem: Partial<Pick<PackedItem, 'hidden' | 'public'>> = {},
 ): PackedInformation => {
-  // use parent tag if exists
-  let hiddenItemTag = parentItem.hidden;
-  // use given hidden tag
-  if (hiddenTag) {
-    hiddenItemTag = ItemTagFactory({
-      type: ItemTagType.Hidden,
+  // use parent visibility if exists
+  let hiddenItemVisibility = parentItem.hidden;
+  // use given hidden visibility
+  if (hiddenVisibility) {
+    hiddenItemVisibility = ItemVisibilityFactory({
+      type: ItemVisibilityType.Hidden,
       item,
-      ...hiddenTag,
+      ...hiddenVisibility,
     });
   }
 
-  // use parent tag if exists
-  let publicItemTag = parentItem.public;
-  // use given hidden tag
-  if (publicTag) {
-    publicItemTag = ItemTagFactory({
-      type: ItemTagType.Hidden,
+  // use parent visibility if exists
+  let publicItemVisibility = parentItem.public;
+  // use given hidden visibility
+  if (publicVisibility) {
+    publicItemVisibility = ItemVisibilityFactory({
+      type: ItemVisibilityType.Hidden,
       item,
-      ...publicTag,
+      ...publicVisibility,
     });
   }
 
   return {
     permission,
-    ...(hiddenItemTag ? { hidden: hiddenItemTag } : {}),
-    ...(publicItemTag ? { public: publicItemTag } : {}),
+    ...(hiddenItemVisibility ? { hidden: hiddenItemVisibility } : {}),
+    ...(publicItemVisibility ? { public: publicItemVisibility } : {}),
   };
 };

@@ -6,7 +6,7 @@ import {
   PackedFolderItemFactory,
 } from './folderItem/folderItem.factory.js';
 import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
-import { ItemTagType } from '@/itemTag/itemTag.js';
+import { ItemVisibilityType } from '@/itemVisibility/itemVisibility.js';
 
 describe('Base Item Factory', () => {
   it('Returns correct path for id', () => {
@@ -70,46 +70,52 @@ describe('Packed Item Factory', () => {
     expect(info.hidden).toBeUndefined();
     expect(info.public).toBeUndefined();
   });
-  it('Returns correct packed info with given hidden tag', () => {
+  it('Returns correct packed info with given hidden visibility', () => {
     const item = FolderItemFactory();
-    const hiddenTag = { type: ItemTagType.Hidden, item };
+    const hiddenVisibility = { type: ItemVisibilityType.Hidden, item };
 
-    const info = PackedInformationFactory({ hiddenTag: hiddenTag }, item);
+    const info = PackedInformationFactory(
+      { hiddenVisibility: hiddenVisibility },
+      item,
+    );
     expect(info.permission).toEqual(PermissionLevel.Admin);
-    expect(info.hidden).toEqual(expect.objectContaining(hiddenTag));
+    expect(info.hidden).toEqual(expect.objectContaining(hiddenVisibility));
     expect(info.public).toBeUndefined();
   });
-  it('Returns correct packed info inheriting parent hidden tag', () => {
+  it('Returns correct packed info inheriting parent hidden visibility', () => {
     const parent = FolderItemFactory();
-    const hiddenTag = { type: ItemTagType.Hidden, item: parent };
+    const hiddenVisibility = { type: ItemVisibilityType.Hidden, item: parent };
     const parentItem = PackedFolderItemFactory(parent, {
-      hiddenTag: hiddenTag,
+      hiddenVisibility: hiddenVisibility,
     });
     const item = FolderItemFactory({ parentItem });
     const info = PackedInformationFactory({}, item, parentItem);
     expect(info.permission).toEqual(PermissionLevel.Admin);
-    expect(info.hidden).toEqual(expect.objectContaining(hiddenTag));
+    expect(info.hidden).toEqual(expect.objectContaining(hiddenVisibility));
     expect(info.public).toBeUndefined();
   });
-  it('Returns correct packed info with given public tag', () => {
+  it('Returns correct packed info with given public visibility', () => {
     const item = FolderItemFactory();
-    const publicTag = { type: ItemTagType.Public, item };
+    const publicVisibility = { type: ItemVisibilityType.Public, item };
 
-    const info = PackedInformationFactory({ publicTag: publicTag }, item);
+    const info = PackedInformationFactory(
+      { publicVisibility: publicVisibility },
+      item,
+    );
     expect(info.permission).toEqual(PermissionLevel.Admin);
-    expect(info.public).toEqual(expect.objectContaining(publicTag));
+    expect(info.public).toEqual(expect.objectContaining(publicVisibility));
     expect(info.hidden).toBeUndefined();
   });
-  it('Returns correct packed info inheriting parent public tag', () => {
+  it('Returns correct packed info inheriting parent public visibility', () => {
     const parent = FolderItemFactory();
-    const publicTag = { type: ItemTagType.Public, item: parent };
+    const publicVisibility = { type: ItemVisibilityType.Public, item: parent };
     const parentItem = PackedFolderItemFactory(parent, {
-      publicTag: publicTag,
+      publicVisibility: publicVisibility,
     });
     const item = FolderItemFactory({ parentItem });
     const info = PackedInformationFactory({}, item, parentItem);
     expect(info.permission).toEqual(PermissionLevel.Admin);
-    expect(info.public).toEqual(expect.objectContaining(publicTag));
+    expect(info.public).toEqual(expect.objectContaining(publicVisibility));
     expect(info.hidden).toBeUndefined();
   });
 });

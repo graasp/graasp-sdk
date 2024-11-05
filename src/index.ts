@@ -213,9 +213,9 @@ export * from './itemRecycled/itemRecycled.js';
 export * from './itemRecycled/itemRecycled.factory.js';
 
 /**
- * Item Tag
+ * Item Visibility
  */
-export * from './itemTag/itemTag.js';
+export * from './itemVisibility/itemVisibility.js';
 
 /**
  * Item Validation
