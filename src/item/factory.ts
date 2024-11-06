@@ -111,7 +111,7 @@ export const PackedInformationFactory = (
   // use given hidden visibility
   if (publicVisibility) {
     publicItemVisibility = ItemVisibilityFactory({
-      type: ItemVisibilityType.Hidden,
+      type: ItemVisibilityType.Public,
       item,
       ...publicVisibility,
     });

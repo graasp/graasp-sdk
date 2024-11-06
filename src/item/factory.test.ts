@@ -72,7 +72,7 @@ describe('Packed Item Factory', () => {
   });
   it('Returns correct packed info with given hidden visibility', () => {
     const item = FolderItemFactory();
-    const hiddenVisibility = { type: ItemVisibilityType.Hidden, item };
+    const hiddenVisibility = { item };
 
     const info = PackedInformationFactory(
       { hiddenVisibility: hiddenVisibility },
@@ -80,6 +80,7 @@ describe('Packed Item Factory', () => {
     );
     expect(info.permission).toEqual(PermissionLevel.Admin);
     expect(info.hidden).toEqual(expect.objectContaining(hiddenVisibility));
+    expect(info.hidden!.type).toEqual(ItemVisibilityType.Hidden);
     expect(info.public).toBeUndefined();
   });
   it('Returns correct packed info inheriting parent hidden visibility', () => {
@@ -92,11 +93,12 @@ describe('Packed Item Factory', () => {
     const info = PackedInformationFactory({}, item, parentItem);
     expect(info.permission).toEqual(PermissionLevel.Admin);
     expect(info.hidden).toEqual(expect.objectContaining(hiddenVisibility));
+    expect(info.hidden!.type).toEqual(ItemVisibilityType.Hidden);
     expect(info.public).toBeUndefined();
   });
   it('Returns correct packed info with given public visibility', () => {
     const item = FolderItemFactory();
-    const publicVisibility = { type: ItemVisibilityType.Public, item };
+    const publicVisibility = { item };
 
     const info = PackedInformationFactory(
       { publicVisibility: publicVisibility },
@@ -104,6 +106,7 @@ describe('Packed Item Factory', () => {
     );
     expect(info.permission).toEqual(PermissionLevel.Admin);
     expect(info.public).toEqual(expect.objectContaining(publicVisibility));
+    expect(info.public!.type).toEqual(ItemVisibilityType.Public);
     expect(info.hidden).toBeUndefined();
   });
   it('Returns correct packed info inheriting parent public visibility', () => {
@@ -116,6 +119,7 @@ describe('Packed Item Factory', () => {
     const info = PackedInformationFactory({}, item, parentItem);
     expect(info.permission).toEqual(PermissionLevel.Admin);
     expect(info.public).toEqual(expect.objectContaining(publicVisibility));
+    expect(info.public!.type).toEqual(ItemVisibilityType.Public);
     expect(info.hidden).toBeUndefined();
   });
 });
