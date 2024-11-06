@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/graasp/graasp-sdk/compare/v4.35.0...v5.0.0) (2024-11-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename tags to item visibilities ([#694](https://github.com/graasp/graasp-sdk/issues/694))
+
+### Features
+
+* rename tags to item visibilities ([#694](https://github.com/graasp/graasp-sdk/issues/694)) ([1d88253](https://github.com/graasp/graasp-sdk/commit/1d88253aecd4a84b0ea699ed123ffae5601b66e6))
+
 ## [4.35.0](https://github.com/graasp/graasp-sdk/compare/v4.34.0...v4.35.0) (2024-11-06)
 
 
