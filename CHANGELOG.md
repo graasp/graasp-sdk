@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.35.0](https://github.com/graasp/graasp-sdk/compare/v4.34.0...v4.35.0) (2024-11-06)
+
+
+### Features
+
+* **refactor:** simplify the ShortLink types ([#693](https://github.com/graasp/graasp-sdk/issues/693)) ([c6ac831](https://github.com/graasp/graasp-sdk/commit/c6ac831e56ae4a60388224ae19f2ce2c02ec4bda))
+
 ## [4.34.0](https://github.com/graasp/graasp-sdk/compare/v4.33.2...v4.34.0) (2024-11-05)
 
 
