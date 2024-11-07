@@ -22,6 +22,11 @@ export * from './array/array.js';
 export * from './categories/category.js';
 
 /**
+ * Tag
+ */
+export * from './tag/tag.js';
+
+/**
  * Constants
  */
 export * from './constants/paths.js';
