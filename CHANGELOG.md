@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.1.0](https://github.com/graasp/graasp-sdk/compare/v5.0.0...v5.1.0) (2024-11-08)
+
+
+### Features
+
+* add tag type, deprecate category type ([#691](https://github.com/graasp/graasp-sdk/issues/691)) ([c684e64](https://github.com/graasp/graasp-sdk/commit/c684e64a8c7caddea43298a6de390d92a468c634))
+
 ## [5.0.0](https://github.com/graasp/graasp-sdk/compare/v4.35.0...v5.0.0) (2024-11-06)
 
 
