@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.0](https://github.com/graasp/graasp-sdk/compare/v5.1.0...v5.2.0) (2024-11-11)
+
+
+### Features
+
+* add email validation  ([#689](https://github.com/graasp/graasp-sdk/issues/689)) ([7433e84](https://github.com/graasp/graasp-sdk/commit/7433e84d69954e96e4ef77f64488b9c553cc0ed1))
+
 ## [5.1.0](https://github.com/graasp/graasp-sdk/compare/v5.0.0...v5.1.0) (2024-11-08)
 
 
