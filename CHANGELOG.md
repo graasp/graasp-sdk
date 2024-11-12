@@ -8,6 +8,14 @@
 * remove member property from member profile ([#701](https://github.com/graasp/graasp-sdk/issues/701)) ([7596680](https://github.com/graasp/graasp-sdk/commit/7596680b659e5087dd09f364c900f454b0a49ea4))
 * strong password type ([#702](https://github.com/graasp/graasp-sdk/issues/702)) ([04e0759](https://github.com/graasp/graasp-sdk/commit/04e0759c6d69e23d48100bad4f6a387b531fe08b))
 
+## [5.2.1](https://github.com/graasp/graasp-sdk/compare/v5.2.0...v5.2.1) (2024-11-12)
+
+
+### Bug Fixes
+
+* remove member property from member profile ([#701](https://github.com/graasp/graasp-sdk/issues/701)) ([7596680](https://github.com/graasp/graasp-sdk/commit/7596680b659e5087dd09f364c900f454b0a49ea4))
+* strong password type ([#702](https://github.com/graasp/graasp-sdk/issues/702)) ([04e0759](https://github.com/graasp/graasp-sdk/commit/04e0759c6d69e23d48100bad4f6a387b531fe08b))
+
 ## [5.2.0](https://github.com/graasp/graasp-sdk/compare/v5.1.0...v5.2.0) (2024-11-11)
 
 
