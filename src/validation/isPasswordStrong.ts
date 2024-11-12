@@ -15,7 +15,6 @@ const defaultOptions = {
   minUppercase: 1,
   minNumbers: 1,
   minSymbols: 1,
-  returnScore: false,
   pointsPerUnique: 1,
   pointsPerRepeat: 0.5,
   pointsForContainingLower: 10,
@@ -83,15 +82,33 @@ function scorePassword(
   return points;
 }
 
+/**
+ * Score the password based on the requirements
+ * @param str input password string
+ * @param options define password requirements that need to be met
+ * @returns the password score
+ */
+export function getPasswordScore(
+  str: string,
+  options: Partial<PasswordOptions>,
+): number {
+  const analysis = analyzePassword(str);
+  const newOptions = merge(options || {}, defaultOptions);
+  return scorePassword(analysis, newOptions);
+}
+
+/**
+ * Validate if password follows the requirements
+ * @param str input password string
+ * @param options defines requirements to be met by the password
+ * @returns whether the password is strong according to the requirements
+ */
 export function isStrongPassword(
   str: string,
   options: Partial<PasswordOptions>,
 ) {
   const analysis = analyzePassword(str);
   const newOptions = merge(options || {}, defaultOptions);
-  if (newOptions.returnScore) {
-    return scorePassword(analysis, newOptions);
-  }
   return (
     analysis.length >= newOptions.minLength &&
     analysis.lowercaseCount >= newOptions.minLowercase &&
