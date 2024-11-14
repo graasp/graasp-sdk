@@ -6,6 +6,7 @@ describe('TAG_NAME_PATTERN', () => {
   it('alphanumerical', () => {
     expect(new RegExp(TAG_NAME_PATTERN).test('mytag')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('My tag')).toBeTruthy();
+    expect(new RegExp(TAG_NAME_PATTERN).test('MYTAG')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('My wonderful tag')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('tag-with-âccent.')).toBeTruthy();
 
@@ -19,17 +20,21 @@ describe('TAG_NAME_PATTERN', () => {
     expect(new RegExp(TAG_NAME_PATTERN).test('My/tag')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('#My tag')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('#mytag')).toBeTruthy();
+    expect(new RegExp(TAG_NAME_PATTERN).test('my.tag.')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('My,tag')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('!My_tag')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test(',tag')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('my_Wonderful_tag_')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('@mytag@tag')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('my@tag')).toBeTruthy();
+    expect(new RegExp(TAG_NAME_PATTERN).test('2° degrees')).toBeTruthy();
   });
   it('foreign languages', () => {
     expect(new RegExp(TAG_NAME_PATTERN).test('漢')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('漢字')).toBeTruthy();
     expect(new RegExp(TAG_NAME_PATTERN).test('Glück')).toBeTruthy();
+    expect(new RegExp(TAG_NAME_PATTERN).test('Español')).toBeTruthy();
+    expect(new RegExp(TAG_NAME_PATTERN).test('Математика')).toBeTruthy();
   });
   it('one character', () => {
     expect(new RegExp(TAG_NAME_PATTERN).test('.')).toBeFalsy();
