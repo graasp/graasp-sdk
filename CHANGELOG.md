@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.3.0](https://github.com/graasp/graasp-sdk/compare/v5.2.0...v5.3.0) (2024-11-15)
+
+
+### Features
+
+* add tag constraints ([#707](https://github.com/graasp/graasp-sdk/issues/707)) ([e3582c6](https://github.com/graasp/graasp-sdk/commit/e3582c62cd21efae8fe135dc32bd248019157a7b))
+
+
+### Bug Fixes
+
+* remove member property from member profile ([#701](https://github.com/graasp/graasp-sdk/issues/701)) ([7596680](https://github.com/graasp/graasp-sdk/commit/7596680b659e5087dd09f364c900f454b0a49ea4))
+* strong password type ([#702](https://github.com/graasp/graasp-sdk/issues/702)) ([04e0759](https://github.com/graasp/graasp-sdk/commit/04e0759c6d69e23d48100bad4f6a387b531fe08b))
+
 ## [5.2.1](https://github.com/graasp/graasp-sdk/compare/v5.2.0...v5.2.1) (2024-11-12)
 
 
