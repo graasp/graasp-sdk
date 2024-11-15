@@ -3,47 +3,45 @@ import { describe, expect, it } from 'vitest';
 import { TAG_NAME_PATTERN } from './constraints.js';
 
 describe('TAG_NAME_PATTERN', () => {
-  it('alphanumerical', () => {
-    expect(new RegExp(TAG_NAME_PATTERN).test('mytag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('My tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('MYTAG')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('My wonderful tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('tag-with-âccent.')).toBeTruthy();
-
-    expect(new RegExp(TAG_NAME_PATTERN).test('2034')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('my-tag-302')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('a')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('1')).toBeTruthy();
+  it.each([
+    'mytag',
+    'My tag',
+    'MYTAG',
+    'My wonderful tag',
+    'tag-with-âccent.',
+    '2034',
+    'my-tag-302',
+    'a',
+    '1',
+  ])('alphanumerical: %s', (v) => {
+    expect(new RegExp(TAG_NAME_PATTERN).test(v)).toBeTruthy();
   });
-  it('symbols', () => {
-    expect(new RegExp(TAG_NAME_PATTERN).test('my-tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('My/tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('#My tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('#mytag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('my.tag.')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('My,tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('!My_tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test(',tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('my_Wonderful_tag_')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('@mytag@tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('my@tag')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('2° degrees')).toBeTruthy();
+  it.each([
+    'my-tag',
+    'My/tag',
+    '#My tag',
+    '#mytag',
+    'my.tag.',
+    'My,tag',
+    '!My_tag',
+    ',tag',
+    'my_Wonderful_tag_',
+    '@mytag@tag',
+    'my@tag',
+    '2° degrees',
+  ])('symbols: %s', (v) => {
+    expect(new RegExp(TAG_NAME_PATTERN).test(v)).toBeTruthy();
   });
-  it('foreign languages', () => {
-    expect(new RegExp(TAG_NAME_PATTERN).test('漢')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('漢字')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('Glück')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('Español')).toBeTruthy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('Математика')).toBeTruthy();
+  it.each(['漢', '漢字', 'Glück', 'Español', 'Математика'])(
+    'foreign languages: %s',
+    (v) => {
+      expect(new RegExp(TAG_NAME_PATTERN).test(v)).toBeTruthy();
+    },
+  );
+  it.each(['.', ' ', '#'])('one character: "%s"', (v) => {
+    expect(new RegExp(TAG_NAME_PATTERN).test(v)).toBeFalsy();
   });
-  it('one character', () => {
-    expect(new RegExp(TAG_NAME_PATTERN).test('.')).toBeFalsy();
-    expect(new RegExp(TAG_NAME_PATTERN).test(' ')).toBeFalsy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('#')).toBeFalsy();
-  });
-  it('wrong spacing', () => {
-    expect(new RegExp(TAG_NAME_PATTERN).test('    ')).toBeFalsy();
-    expect(new RegExp(TAG_NAME_PATTERN).test('my tag ')).toBeFalsy();
-    expect(new RegExp(TAG_NAME_PATTERN).test(' my tag')).toBeFalsy();
+  it.each(['    ', 'my tag ', ' my tag'])('wrong spacing: "%s"', (v) => {
+    expect(new RegExp(TAG_NAME_PATTERN).test(v)).toBeFalsy();
   });
 });
