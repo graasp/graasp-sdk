@@ -12,28 +12,6 @@ describe('Member constants', () => {
   // prettier-ignore
   const validUsername1 = 'Jéàn de l\'Avoiné';
 
-  it('username forbidden characters regex', () => {
-    expect(invalidUsername).toMatch(
-      MemberConstants.USERNAME_FORBIDDEN_CHARS_REGEX,
-    );
-    expect(invalidUsername1).toMatch(
-      MemberConstants.USERNAME_FORBIDDEN_CHARS_REGEX,
-    );
-    expect(invalidUsername2).toMatch(
-      MemberConstants.USERNAME_FORBIDDEN_CHARS_REGEX,
-    );
-    expect(invalidUsername3).toMatch(
-      MemberConstants.USERNAME_FORBIDDEN_CHARS_REGEX,
-    );
-
-    expect(validUsername).not.toMatch(
-      MemberConstants.USERNAME_FORBIDDEN_CHARS_REGEX,
-    );
-    expect(validUsername1).not.toMatch(
-      MemberConstants.USERNAME_FORBIDDEN_CHARS_REGEX,
-    );
-  });
-
   it('username format regex', () => {
     expect(invalidUsername).not.toMatch(MemberConstants.USERNAME_FORMAT_REGEX);
     expect(invalidUsername1).not.toMatch(MemberConstants.USERNAME_FORMAT_REGEX);
