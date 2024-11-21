@@ -106,7 +106,6 @@ describe('Cookie Util Tests', () => {
   });
 
   describe('getLangCookie', () => {
-    // eslint-disable-next-line quotes
     it("get user's lang in cookie", () => {
       const getCookieSpy = vi.spyOn(Cookies, 'get');
       Cookies.set(CookieKeys.Lang, MOCK_LANG);
@@ -116,7 +115,6 @@ describe('Cookie Util Tests', () => {
   });
 
   describe('setLangCookie', () => {
-    // eslint-disable-next-line quotes
     it("save user's lang in cookie", () => {
       const mock = vi.spyOn(Cookies, 'set');
       setLangCookie(MOCK_LANG, MOCK_DOMAIN);

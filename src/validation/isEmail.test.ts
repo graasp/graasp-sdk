@@ -158,7 +158,6 @@ describe('isEmail', () => {
         'Some Name <hans@m端ller.com>',
         'Some Name <test|123@m端ller.com>',
         'Some Name <test123+ext@gmail.com>',
-        // eslint-disable-next-line quotes
         "'Foo Bar, Esq'<foo@bar.com>",
         'Some Name <some.name.midd.leNa.me+extension@GoogleMail.com>',
         'Some Middle Name <some.name.midd.leNa.me+extension@GoogleMail.com>',
