@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.3.1](https://github.com/graasp/graasp-sdk/compare/v5.3.0...v5.3.1) (2024-11-21)
+
+
+### Bug Fixes
+
+* remove displayName ([#710](https://github.com/graasp/graasp-sdk/issues/710)) ([705efc7](https://github.com/graasp/graasp-sdk/commit/705efc7f7c97d0676e5a50da53681529d3f51cf6))
+
 ## [5.3.0](https://github.com/graasp/graasp-sdk/compare/v5.2.0...v5.3.0) (2024-11-15)
 
 
