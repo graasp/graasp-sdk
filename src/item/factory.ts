@@ -15,7 +15,6 @@ export type ItemFactoryOutputType<IT extends DiscriminatedItem> = Pick<
   IT,
   | 'id'
   | 'name'
-  | 'displayName'
   | 'description'
   | 'path'
   | 'settings'
@@ -54,7 +53,6 @@ export const PartialItemFactory = <IT extends DiscriminatedItem>(
     updatedAt,
     path,
     name,
-    displayName: item.displayName ?? name,
     description: item.description ?? faker.lorem.text(),
     settings:
       item.settings ??

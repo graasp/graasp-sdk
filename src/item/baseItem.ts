@@ -8,7 +8,6 @@ import { Member } from '@/member/member.js';
 export type Item<S = ItemSettings> = {
   id: string;
   name: string;
-  displayName: string;
   description: string | null;
   path: string;
   settings: S;
