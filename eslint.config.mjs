@@ -24,7 +24,6 @@ export default [
 
     rules: {
       semi: ['error', 'always'],
-      quotes: ['error', 'single'],
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
 
