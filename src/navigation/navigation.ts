@@ -45,7 +45,7 @@ export const redirectToSavedUrl = (
   target: TargetType,
   defaultLink?: string,
   options?: RedirectOptions,
-) => {
+): false | void => {
   const link = getUrlForRedirection();
   // prevent / to avoid possible infinite loop
   if (link && link !== '/') {
@@ -59,6 +59,7 @@ export const redirectToSavedUrl = (
 };
 
 /**
+ * @deprecated use `buildLoginPath`
  * Build absolute url to sign in
  * @param  {string} host authentication host (Graasp Auth)
  * @returns {string} absolute url for the sign in path
@@ -71,8 +72,32 @@ export const buildSignInPath = ({
   host: string;
   redirectionUrl?: string;
   lang?: string;
-}) => {
+}): string => {
   const url = new URL('/signin', host);
+  if (redirectionUrl) {
+    url.searchParams.set('url', redirectionUrl);
+  }
+  if (lang) {
+    url.searchParams.set('lang', lang);
+  }
+  return url.toString();
+};
+
+/**
+ * Build absolute url to sign in
+ * @param  {string} host authentication host (unified Graasp)
+ * @returns {string} absolute url for the log in path
+ */
+export const buildLoginPath = ({
+  host,
+  redirectionUrl,
+  lang,
+}: {
+  host: string;
+  redirectionUrl?: string;
+  lang?: string;
+}): string => {
+  const url = new URL('/auth/login', host);
   if (redirectionUrl) {
     url.searchParams.set('url', redirectionUrl);
   }

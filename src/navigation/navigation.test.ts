@@ -4,6 +4,7 @@ import * as cookieUtils from '../cookie/cookie.js';
 import { DEFAULT_PROTOCOL } from './constants.js';
 import {
   buildItemLinkForBuilder,
+  buildLoginPath,
   buildPdfViewerLink,
   buildPdfViewerURL,
   buildSignInPath,
@@ -93,6 +94,33 @@ describe('Navigation Util Tests', () => {
       });
       expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
       expect(res).toContain('?lang=ru');
+    });
+  });
+
+  describe('buildLoginPath', () => {
+    it('build sign in path', () => {
+      const res = buildLoginPath({ host: MOCK_HOST_WITH_PROTOCOL });
+      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
+      expect(res).toEqual('https://myhost.com/auth/login');
+    });
+    it('build sign in path with redirection url', () => {
+      const redirectionUrl = 'https://test.com';
+      const res = buildLoginPath({
+        host: MOCK_HOST_WITH_PROTOCOL,
+        redirectionUrl,
+      });
+      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
+      expect(res).equal(
+        `https://myhost.com/auth/login?url=${encodeURIComponent(redirectionUrl)}`,
+      );
+    });
+    it('build sign in path with lang parameter', () => {
+      const res = buildLoginPath({
+        host: MOCK_HOST_WITH_PROTOCOL,
+        lang: 'ru',
+      });
+      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
+      expect(res).toEqual('https://myhost.com/auth/login?lang=ru');
     });
   });
 
