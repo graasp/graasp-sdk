@@ -245,14 +245,7 @@ export { MimeTypes } from './mimeTypes/mimeTypes.js';
 /**
  * Navigation utils
  */
-export {
-  redirect,
-  redirectToSavedUrl,
-  buildSignInPath,
-  buildPdfViewerLink,
-  buildPdfViewerURL,
-  buildItemLinkForBuilder,
-} from './navigation/navigation.js';
+export * from './navigation/navigation.js';
 
 /**
  * Search
