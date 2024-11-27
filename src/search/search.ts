@@ -20,6 +20,7 @@ export type IndexItem = {
   createdAt: string;
   updatedAt: string;
   lang: string;
+  tags: string[];
 };
 
 // TODO: get type from meilisearch library?
