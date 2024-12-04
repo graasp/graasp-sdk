@@ -60,20 +60,20 @@
     "@types/eslint": "^9.6.1",
     "@types/js-cookie": "3.0.6",
     "@types/uuid": "10.0.0",
-    "@typescript-eslint/eslint-plugin": "8.15.0",
-    "@typescript-eslint/parser": "8.15.0",
+    "@typescript-eslint/eslint-plugin": "8.16.0",
+    "@typescript-eslint/parser": "8.16.0",
     "date-fns": "4.1.0",
     "eslint": "9.15.0",
     "eslint-config-prettier": "9.1.0",
     "husky": "9.1.7",
     "jsdom": "25.0.1",
-    "prettier": "3.3.3",
+    "prettier": "3.4.1",
     "tsc-alias": "1.8.10",
-    "typescript": "5.6.3",
+    "typescript": "5.7.2",
     "unbuild": "2.0.0",
     "uuid": "11.0.3",
     "vite-plugin-dts": "4.3.0",
-    "vitest": "2.1.5"
+    "vitest": "2.1.6"
   },
-  "packageManager": "yarn@4.5.2"
+  "packageManager": "yarn@4.5.3"
 }
