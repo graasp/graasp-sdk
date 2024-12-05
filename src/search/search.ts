@@ -1,8 +1,6 @@
 import { ItemTypeUnion } from '@/item/itemType.js';
 import { TagCategory } from '@/tag/tag.js';
 
-export const INDEX_NAME = 'itemIndex';
-
 type IndexMember = {
   id: string;
   name: string;
