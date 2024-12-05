@@ -14,6 +14,9 @@ export type ItemSettings = {
   isResizable?: boolean;
   isCollapsible?: boolean;
   enableSaveActions?: boolean;
+  /**
+   * @deprecated use entities tags and item tags instead
+   */
   tags?: string[];
   displayCoEditors?: boolean;
   // allow null to delete setting in the backend

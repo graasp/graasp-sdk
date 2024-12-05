@@ -1,6 +1,5 @@
 import { ItemTypeUnion } from '@/item/itemType.js';
-
-export const INDEX_NAME = 'itemIndex';
+import { TagCategory } from '@/tag/tag.js';
 
 type IndexMember = {
   id: string;
@@ -13,14 +12,13 @@ export type IndexItem = {
   creator: IndexMember;
   description: string;
   type: ItemTypeUnion;
-  categories: string[];
   content: string;
   isPublishedRoot: boolean;
   isHidden: boolean;
   createdAt: string;
   updatedAt: string;
   lang: string;
-};
+} & { [key in TagCategory]: string[] };
 
 // TODO: get type from meilisearch library?
 type Hits = IndexItem & {
