@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.4.0](https://github.com/graasp/graasp-sdk/compare/v5.3.1...v5.4.0) (2024-12-10)
+
+
+### Features
+
+* update tag type for search ([#722](https://github.com/graasp/graasp-sdk/issues/722)) ([ddfc05e](https://github.com/graasp/graasp-sdk/commit/ddfc05e7d3d28ee5e920efd64e259fcc72efda0c))
+
+
+### Bug Fixes
+
+* remove duplicated regex from member username ([#712](https://github.com/graasp/graasp-sdk/issues/712)) ([fecd5a4](https://github.com/graasp/graasp-sdk/commit/fecd5a48f9a29c2c9ce8d8841b33d99505ad803a))
+
 ## [5.3.1](https://github.com/graasp/graasp-sdk/compare/v5.3.0...v5.3.1) (2024-11-21)
 
 
