@@ -7,10 +7,3 @@ export enum CCLicenseAdaptions {
   CC_BY_NC_ND = 'CC BY-NC-ND',
   CC0 = 'CC0',
 }
-/**
- * @deprecated old license format that might be removed at some point
- */
-export enum OldCCLicenseAdaptations {
-  allow = 'allow',
-  alike = 'alike',
-}
