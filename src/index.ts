@@ -53,10 +53,7 @@ export * from './enums/permissionLevel/permissionLevel.js';
 /**
  * Creative common licenses
  */
-export {
-  CCLicenseAdaptions,
-  OldCCLicenseAdaptations,
-} from './enums/ccLicenses.js';
+export { CCLicenseAdaptions } from './enums/ccLicenses.js';
 
 /**
  * Graasp Services
