@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.5.0](https://github.com/graasp/graasp-sdk/compare/v5.4.0...v5.5.0) (2024-12-12)
+
+
+### Features
+
+* remove old cc license ([#724](https://github.com/graasp/graasp-sdk/issues/724)) ([c4c95ae](https://github.com/graasp/graasp-sdk/commit/c4c95ae365b5001386ae803b77c35651e5ba60b7))
+
 ## [5.4.0](https://github.com/graasp/graasp-sdk/compare/v5.3.1...v5.4.0) (2024-12-10)
 
 
