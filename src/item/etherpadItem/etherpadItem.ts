@@ -1,6 +1,7 @@
 import { Item } from '../baseItem.js';
 import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
+import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
 
 export type EtherpadItemType<S = ItemSettings> = {
   type: typeof ItemType.ETHERPAD;
@@ -13,6 +14,7 @@ export type EtherpadItemType<S = ItemSettings> = {
 export type EtherpadItemExtraProperties = {
   padID: string;
   groupID: string;
+  readerPermission?: PermissionLevel.Read | PermissionLevel.Write;
 };
 export interface EtherpadItemExtra {
   [ItemType.ETHERPAD]: EtherpadItemExtraProperties;
