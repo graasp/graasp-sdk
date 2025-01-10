@@ -18,6 +18,7 @@ export type IndexItem = {
   createdAt: string;
   updatedAt: string;
   lang: string;
+  likes: number;
 } & { [key in TagCategory]: string[] };
 
 // TODO: get type from meilisearch library?
