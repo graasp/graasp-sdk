@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.6.0](https://github.com/graasp/graasp-sdk/compare/v5.5.0...v5.6.0) (2025-01-10)
+
+
+### Features
+
+* add likes to index item ([#732](https://github.com/graasp/graasp-sdk/issues/732)) ([8ad51da](https://github.com/graasp/graasp-sdk/commit/8ad51dacff4811964fddf94a3ea17d378e178cfe))
+* add readerPermission in etherpad extra ([#730](https://github.com/graasp/graasp-sdk/issues/730)) ([8a8782a](https://github.com/graasp/graasp-sdk/commit/8a8782a91987079030003424e770e294e7ff167c))
+
 ## [5.5.0](https://github.com/graasp/graasp-sdk/compare/v5.4.0...v5.5.0) (2024-12-12)
 
 
