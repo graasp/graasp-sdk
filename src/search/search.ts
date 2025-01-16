@@ -17,8 +17,7 @@ export type IndexItem = {
   isHidden: boolean;
   createdAt: string;
   updatedAt: string;
-  publishedCreatedAt: string;
-  publishedUpdatedAt: string;
+  publicationUpdatedAt: string;
   lang: string;
   likes: number;
 } & { [key in TagCategory]: string[] };
