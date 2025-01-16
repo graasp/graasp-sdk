@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.7.0](https://github.com/graasp/graasp-sdk/compare/v5.6.0...v5.7.0) (2025-01-16)
+
+
+### Features
+
+* add published props to IndexItem ([#734](https://github.com/graasp/graasp-sdk/issues/734)) ([a123daf](https://github.com/graasp/graasp-sdk/commit/a123dafad965e6ba9fdb68cc0a00888c9053573d))
+
 ## [5.6.0](https://github.com/graasp/graasp-sdk/compare/v5.5.0...v5.6.0) (2025-01-10)
 
 
