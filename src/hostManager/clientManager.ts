@@ -121,4 +121,16 @@ export class ClientManager {
   ) {
     return this.getItemAsURL(context, itemId, qs).toString();
   }
+
+  public getContextByLink(link: string) {
+    const { pathname, host } = new URL(link);
+    if (pathname.startsWith('/builder')) {
+      return Context.Builder;
+    } else if (host === this.clientHosts.get(Context.Library)?.origin) {
+      return Context.Library;
+    }
+    // TODO
+
+    return Context.Unknown;
+  }
 }
