@@ -104,7 +104,7 @@ export { formatFileSize } from './file/fileSize.js';
 /**
  * Client Host Manager
  */
-export { ClientHostManager } from './hostManager/hostManager.js';
+export { ClientManager } from './hostManager/clientManager.js';
 
 /**
  * Invitation

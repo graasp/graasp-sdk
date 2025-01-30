@@ -1,29 +1,29 @@
 import { Context } from '@/enums/context.js';
 
-export class ClientHostManager {
-  private static INSTANCE: ClientHostManager | null;
+export class ClientManager {
+  private static INSTANCE: ClientManager | null;
+  private host: URL;
   private clientHosts = new Map<Context, URL>();
   private clientPrefix = new Map<Context, string>();
 
-  private constructor() {}
+  private constructor() {
+    try {
+      this.host = new URL(window.location.href);
+    } catch {
+      this.host = new URL('http://mock.graasp.org');
+    }
+  }
 
   public static getInstance() {
     if (!this.INSTANCE) {
-      this.INSTANCE = new ClientHostManager();
+      this.INSTANCE = new ClientManager();
     }
     return this.INSTANCE;
   }
 
-  public getHost(context: Context) {
-    const host = this.clientHosts.get(context);
-    if (host !== undefined) {
-      // create new URL to keep current host map immutable
-      return new URL(host);
-    }
-
-    throw new Error(
-      `The given context '${context}' is not present in the hosts.`,
-    );
+  public setHost(host: URL) {
+    this.host = host;
+    return this;
   }
 
   public addHost(context: Context, host: URL) {
@@ -61,11 +61,10 @@ export class ClientHostManager {
   }
 
   public getHostAndPrefix(context: Context) {
-    const host = this.getHost(context);
     const prefix = this.getPrefix(context);
 
     // create new URL to keep current host map immutable
-    return { host: new URL(host), prefix };
+    return { host: new URL(this.host), prefix };
   }
 
   public getItemAsURL(
@@ -73,9 +72,20 @@ export class ClientHostManager {
     itemId: string,
     qs: { [key: string]: string | number | boolean } = {},
   ) {
-    const host = this.getHost(context);
+    let host = this.host;
+    if (context === Context.Library) {
+      const libraryHost = this.clientHosts.get(context);
+      if (libraryHost) {
+        host = libraryHost;
+      } else {
+        throw new Error('Library host used before it was defined.');
+      }
+    }
     const prefix = this.getPrefix(context);
-    const url = new URL(`${prefix}/${itemId}`, host.origin);
+    const url =
+      context === Context.Player
+        ? new URL(`${prefix}/${itemId}/${itemId}`, host.origin)
+        : new URL(`${prefix}/${itemId}`, host.origin);
 
     for (const [k, v] of Object.entries(qs)) {
       url.searchParams.set(k, v.toString());
