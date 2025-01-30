@@ -84,9 +84,13 @@ export class ClientManager {
     }
   }
 
-  public getLinkByContext(context: Context, path: string = '') {
+  public getURLByContext(context: Context, path: string = '') {
     const base = this.getBase(context);
     return new URL(path, base).toString();
+  }
+
+  public getLinkByContext(context: Context, path: string = '') {
+    return this.getURLByContext(context, path).toString();
   }
 
   public getItemAsURL(
