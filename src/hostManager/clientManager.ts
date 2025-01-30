@@ -73,6 +73,8 @@ export class ClientManager {
         return this.host.origin + '/analytics';
       case Context.Account:
         return this.host.origin + '/account';
+      case Context.Auth:
+        return this.host.origin + '/auth';
       case Context.Library: {
         const libraryHost = this.clientHosts.get(context);
         if (libraryHost) {
@@ -86,7 +88,7 @@ export class ClientManager {
 
   public getURLByContext(context: Context, path: string = '') {
     const base = this.getBase(context);
-    return new URL(path, base).toString();
+    return new URL(path, base);
   }
 
   public getLinkByContext(context: Context, path: string = '') {
