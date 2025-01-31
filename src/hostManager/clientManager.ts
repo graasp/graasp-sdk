@@ -57,15 +57,15 @@ export class ClientManager {
   private getBase(context: Context) {
     switch (context) {
       case Context.Builder:
-        return this.host.origin + '/builder';
+        return this.host.origin + '/builder/';
       case Context.Player:
-        return this.host.origin + '/player';
+        return this.host.origin + '/player/';
       case Context.Analytics:
-        return this.host.origin + '/analytics';
+        return this.host.origin + '/analytics/';
       case Context.Account:
-        return this.host.origin + '/account';
+        return this.host.origin + '/account/';
       case Context.Auth:
-        return this.host.origin + '/auth';
+        return this.host.origin + '/auth/';
       case Context.Library: {
         const libraryHost = this.clientHosts.get(context);
         if (libraryHost) {
@@ -77,13 +77,32 @@ export class ClientManager {
     }
   }
 
-  public getURLByContext(context: Context, path: string = '') {
+  /**
+   *
+   * @param context
+   * @param path should not start with slash
+   * @returns
+   */
+  public getURLByContext(
+    context: Context,
+    path: string = '',
+    qs: { [key: string]: string | number | boolean } = {},
+  ) {
     const base = this.getBase(context);
-    return new URL(path, base);
+    const url = new URL(path, base);
+
+    for (const [k, v] of Object.entries(qs)) {
+      url.searchParams.set(k, v.toString());
+    }
+    return url;
   }
 
-  public getLinkByContext(context: Context, path: string = '') {
-    return this.getURLByContext(context, path).toString();
+  public getLinkByContext(
+    context: Context,
+    path: string = '',
+    qs: { [key: string]: string | number | boolean } = {},
+  ) {
+    return this.getURLByContext(context, path, qs).toString();
   }
 
   public getItemAsURL(
