@@ -71,6 +71,26 @@ describe('Client Host Manager', () => {
     });
   });
 
+  describe('getURLByContext', () => {
+    it('build link for builder', () => {
+      const url = manager.getURLByContext(Context.Builder);
+      expect(url.toString()).toEqual(MOCK_HOST + 'builder/');
+      expect(MOCK_HOST).toContain(url.origin);
+
+      const url1 = manager.getURLByContext(Context.Builder, 'path');
+      expect(url1.toString()).toEqual(MOCK_HOST + 'builder/path');
+      expect(MOCK_HOST).toContain(url1.origin);
+    });
+    it('build link for library', () => {
+      const url = manager.getURLByContext(Context.Library);
+      expect(url.toString()).toEqual(libraryHost);
+      expect(libraryHost).toContain(url.origin);
+      const url1 = manager.getURLByContext(Context.Library, 'path');
+      expect(url1.toString()).toEqual(libraryHost + 'path');
+      expect(libraryHost).toContain(url1.origin);
+    });
+  });
+
   describe('getItemLink', () => {
     it('build item path with chat open for builder', () => {
       const res = manager.getItemLink(Context.Builder, MOCK_ITEM_ID, {

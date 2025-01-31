@@ -1,9 +1,26 @@
 import { Context } from '@/enums/context.js';
 
+/**
+ * subpath per context
+ * it should not have a trailing slash
+ */
+const CONTEXT_PATHS = new Map<Context, string>([
+  [Context.Builder, '/builder'],
+  [Context.Player, '/player'],
+  [Context.Auth, '/auth'],
+  [Context.Account, '/account'],
+  [Context.Analytics, '/analytics'],
+]);
+
 export class ClientManager {
   private static INSTANCE: ClientManager | null;
   private host: URL;
   private readonly clientHosts = new Map<Context, URL>();
+
+  /**
+   * defined prefixes for items, that should have trailing slash
+   * we need to define library's prefix from the client
+   */
   private readonly itemPrefixes = new Map<Context, string>([
     [Context.Builder, 'items/'],
     [Context.Player, ''],
@@ -29,7 +46,7 @@ export class ClientManager {
 
   /**
    * Define default host
-   * @param host should have trailing slash
+   * @param host URL that should have a trailing slash
    * @returns instance
    */
   public setHost(host: URL) {
@@ -37,6 +54,12 @@ export class ClientManager {
     return this;
   }
 
+  /**
+   * Add a specific host for given context. A context cannot have its host set twice.
+   * @param {Context} context
+   * @param {URL} host
+   * @returns instance
+   */
   public addHost(context: Context, host: URL) {
     if (this.clientHosts.has(context)) {
       throw new Error(
@@ -48,47 +71,25 @@ export class ClientManager {
     return this;
   }
 
-  public addItemPrefix(context: Context, prefix: string) {
-    if (this.itemPrefixes.has(context)) {
-      throw new Error(
-        `The given context '${context}' is already present in the prefix map.`,
-      );
-    }
-
-    this.itemPrefixes.set(context, prefix);
-    return this;
-  }
-
   private getBase(context: Context): string {
-    switch (context) {
-      case Context.Builder:
-        return this.host.origin + '/builder/';
-      case Context.Player:
-        return this.host.origin + '/player/';
-      case Context.Analytics:
-        return this.host.origin + '/analytics/';
-      case Context.Account:
-        return this.host.origin + '/account/';
-      case Context.Auth:
-        return this.host.origin + '/auth/';
-      case Context.Library: {
-        const libraryHost = this.clientHosts.get(context);
-        if (libraryHost) {
-          return libraryHost.toString();
-        } else {
-          throw new Error('Library host used before it was defined.');
-        }
+    if (context === Context.Library) {
+      const libraryHost = this.clientHosts.get(context);
+      if (libraryHost) {
+        return libraryHost.toString();
+      } else {
+        throw new Error('Library host used before it was defined.');
       }
-      default:
-        throw new Error('base for context is not defined');
     }
+
+    return this.host.origin + CONTEXT_PATHS.get(context) + '/';
   }
 
   /**
-   *
-   * @param context
-   * @param path should not start with slash
-   * @returns
+   * Get URL by context
+   * @param {Context} context
+   * @param {string} path subpath, that should not start with slash
+   * @param qs query strings to be added to the url
+   * @returns url
    */
   public getURLByContext(
     context: Context,
@@ -104,6 +105,13 @@ export class ClientManager {
     return url;
   }
 
+  /**
+   * Get link string by context
+   * @param {Context} context
+   * @param {string} path subpath, that should not start with slash
+   * @param qs query strings to be added to the url
+   * @returns url string
+   */
   public getLinkByContext(
     context: Context,
     path: string = '',
@@ -112,6 +120,13 @@ export class ClientManager {
     return this.getURLByContext(context, path, qs).toString();
   }
 
+  /**
+   * Get URL to access an item by context
+   * @param {Context} context
+   * @param {string} itemId id of the item to build the URL for
+   * @param qs query strings to be added to the url
+   * @returns url
+   */
   public getItemAsURL(
     context: Context,
     itemId: string,
@@ -130,6 +145,13 @@ export class ClientManager {
     return url;
   }
 
+  /**
+   * Get link string to access an item by context
+   * @param {Context} context
+   * @param {string} itemId id of the item to build the URL for
+   * @param qs query strings to be added to the url
+   * @returns url string
+   */
   public getItemLink(
     context: Context,
     itemId: string,
@@ -138,26 +160,27 @@ export class ClientManager {
     return this.getItemAsURL(context, itemId, qs).toString();
   }
 
+  /**
+   * Get context given the link string
+   * @param {string} link url to get the context from
+   * @returns context
+   */
   public getContextByLink(link: string) {
     try {
       const { pathname, origin } = new URL(link);
 
-      switch (true) {
-        case pathname.startsWith('/builder'):
-          return Context.Builder;
-        case pathname.startsWith('/player'):
-          return Context.Player;
-        case pathname.startsWith('/auth'):
-          return Context.Auth;
-        case pathname.startsWith('/account'):
-          return Context.Account;
-        case pathname.startsWith('/analytics'):
-          return Context.Analytics;
-        case origin === this.clientHosts.get(Context.Library)?.origin:
-          return Context.Library;
-        default:
-          return Context.Unknown;
+      for (const c of Object.values(Context)) {
+        const subpath = CONTEXT_PATHS.get(c);
+        if (subpath && pathname.startsWith(subpath)) {
+          return c;
+        }
       }
+
+      if (origin === this.clientHosts.get(Context.Library)?.origin) {
+        return Context.Library;
+      }
+
+      return Context.Unknown;
     } catch (e) {
       console.error(e);
       return Context.Unknown;
