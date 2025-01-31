@@ -89,7 +89,7 @@ export class ClientManager {
     qs: { [key: string]: string | number | boolean } = {},
   ) {
     const base = this.getBase(context);
-    const itemPrefix = this.itemPrefixes.get(context);
+    const itemPrefix = this.itemPrefixes.get(context) ?? '';
     const url =
       context === Context.Player
         ? new URL(`${itemPrefix}/${itemId}/${itemId}`, base)
