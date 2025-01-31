@@ -76,6 +76,7 @@ describe('Client Host Manager', () => {
       });
       expect(res).toContain(MOCK_HOST);
       expect(res).toContain(MOCK_ITEM_ID);
+      expect(res).toContain('builder');
       // query string should contain "chat=false" to have the chat closed
       expect(res).toContain('chatOpen=true');
     });
@@ -85,6 +86,7 @@ describe('Client Host Manager', () => {
       });
       expect(res).toContain(MOCK_HOST);
       expect(res).toContain(MOCK_ITEM_ID);
+      expect(res).toContain('builder');
       // query string should contain "chat=false" to have the chat closed
       expect(res).toContain('chatOpen=false');
     });
@@ -94,6 +96,7 @@ describe('Client Host Manager', () => {
       });
       expect(res).toContain(MOCK_HOST);
       expect(res).toContain(MOCK_ITEM_ID);
+      expect(res).toContain('player');
       // query string should contain "chat=false" to have the chat closed
       expect(res).toContain('chatOpen=false');
     });

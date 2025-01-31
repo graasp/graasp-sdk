@@ -5,17 +5,17 @@ export class ClientManager {
   private host: URL;
   private readonly clientHosts = new Map<Context, URL>();
   private readonly itemPrefixes = new Map<Context, string>([
-    [Context.Builder, '/items'],
+    [Context.Builder, 'items'],
     [Context.Player, ''],
-    [Context.Library, '/collections'],
-    [Context.Analytics, '/items'],
+    [Context.Library, 'collections'],
+    [Context.Analytics, 'items'],
   ]);
 
   private constructor() {
     try {
       this.host = new URL(window.location.href);
     } catch {
-      this.host = new URL('http://mock.graasp.org');
+      this.host = new URL('http://mock.graasp.org/');
     }
   }
 
@@ -27,6 +27,11 @@ export class ClientManager {
     return this.INSTANCE;
   }
 
+  /**
+   * Define default host
+   * @param host should have trailing slash
+   * @returns instance
+   */
   public setHost(host: URL) {
     this.host = host;
     return this;
@@ -111,16 +116,15 @@ export class ClientManager {
     qs: { [key: string]: string | number | boolean } = {},
   ) {
     const base = this.getBase(context);
-    const itemPrefix = this.itemPrefixes.get(context) ?? '';
+    const itemPrefix = this.itemPrefixes.get(context) ?? '/';
     const url =
       context === Context.Player
-        ? new URL(`${itemPrefix}/${itemId}/${itemId}`, base)
-        : new URL(`${itemPrefix}/${itemId}`, base);
+        ? new URL(`${itemPrefix}${itemId}/${itemId}`, base)
+        : new URL(`${itemPrefix}${itemId}`, base);
 
     for (const [k, v] of Object.entries(qs)) {
       url.searchParams.set(k, v.toString());
     }
-
     return url;
   }
 
