@@ -5,10 +5,10 @@ export class ClientManager {
   private host: URL;
   private readonly clientHosts = new Map<Context, URL>();
   private readonly itemPrefixes = new Map<Context, string>([
-    [Context.Builder, 'items'],
+    [Context.Builder, 'items/'],
     [Context.Player, ''],
-    [Context.Library, 'collections'],
-    [Context.Analytics, 'items'],
+    [Context.Library, 'collections/'],
+    [Context.Analytics, 'items/'],
   ]);
 
   private constructor() {
@@ -59,7 +59,7 @@ export class ClientManager {
     return this;
   }
 
-  private getBase(context: Context) {
+  private getBase(context: Context): string {
     switch (context) {
       case Context.Builder:
         return this.host.origin + '/builder/';
@@ -74,11 +74,13 @@ export class ClientManager {
       case Context.Library: {
         const libraryHost = this.clientHosts.get(context);
         if (libraryHost) {
-          return libraryHost;
+          return libraryHost.toString();
         } else {
           throw new Error('Library host used before it was defined.');
         }
       }
+      default:
+        throw new Error('base for context is not defined');
     }
   }
 
@@ -116,7 +118,7 @@ export class ClientManager {
     qs: { [key: string]: string | number | boolean } = {},
   ) {
     const base = this.getBase(context);
-    const itemPrefix = this.itemPrefixes.get(context) ?? '/';
+    const itemPrefix = this.itemPrefixes.get(context) ?? '';
     const url =
       context === Context.Player
         ? new URL(`${itemPrefix}${itemId}/${itemId}`, base)
@@ -137,14 +139,28 @@ export class ClientManager {
   }
 
   public getContextByLink(link: string) {
-    const { pathname, host } = new URL(link);
-    if (pathname.startsWith('/builder')) {
-      return Context.Builder;
-    } else if (host === this.clientHosts.get(Context.Library)?.origin) {
-      return Context.Library;
-    }
-    // TODO
+    try {
+      const { pathname, origin } = new URL(link);
 
-    return Context.Unknown;
+      switch (true) {
+        case pathname.startsWith('/builder'):
+          return Context.Builder;
+        case pathname.startsWith('/player'):
+          return Context.Player;
+        case pathname.startsWith('/auth'):
+          return Context.Auth;
+        case pathname.startsWith('/account'):
+          return Context.Account;
+        case pathname.startsWith('/analytics'):
+          return Context.Analytics;
+        case origin === this.clientHosts.get(Context.Library)?.origin:
+          return Context.Library;
+        default:
+          return Context.Unknown;
+      }
+    } catch (e) {
+      console.error(e);
+      return Context.Unknown;
+    }
   }
 }

@@ -9,6 +9,10 @@ const MOCK_HOST = 'https://localhost:1010/';
 const MOCK_ITEM_ID = v4();
 const manager = ClientManager.getInstance().setHost(new URL(MOCK_HOST));
 
+// setup library host once
+const libraryHost = 'https://example.org/';
+manager.addHost(Context.Library, new URL(libraryHost));
+
 describe('Client Host Manager', () => {
   it('Created the Host manager instance', () => {
     expect(ClientManager.getInstance()).toBeTruthy();
@@ -60,8 +64,6 @@ describe('Client Host Manager', () => {
       );
     });
     it('build link for library', () => {
-      const libraryHost = 'https://example.org/';
-      manager.addHost(Context.Library, new URL(libraryHost));
       expect(manager.getLinkByContext(Context.Library)).toEqual(libraryHost);
       expect(manager.getLinkByContext(Context.Library, 'path')).toEqual(
         libraryHost + 'path',
@@ -76,7 +78,7 @@ describe('Client Host Manager', () => {
       });
       expect(res).toContain(MOCK_HOST);
       expect(res).toContain(MOCK_ITEM_ID);
-      expect(res).toContain('builder');
+      expect(res).toContain('builder/');
       // query string should contain "chat=false" to have the chat closed
       expect(res).toContain('chatOpen=true');
     });
@@ -86,7 +88,7 @@ describe('Client Host Manager', () => {
       });
       expect(res).toContain(MOCK_HOST);
       expect(res).toContain(MOCK_ITEM_ID);
-      expect(res).toContain('builder');
+      expect(res).toContain('builder/');
       // query string should contain "chat=false" to have the chat closed
       expect(res).toContain('chatOpen=false');
     });
@@ -96,9 +98,40 @@ describe('Client Host Manager', () => {
       });
       expect(res).toContain(MOCK_HOST);
       expect(res).toContain(MOCK_ITEM_ID);
-      expect(res).toContain('player');
+      expect(res).toContain('player/');
       // query string should contain "chat=false" to have the chat closed
       expect(res).toContain('chatOpen=false');
+    });
+  });
+
+  describe('getContextByLink', () => {
+    it('get builder', () => {
+      const res = manager.getContextByLink('https://graasp.org/builder');
+      expect(res).toEqual(Context.Builder);
+    });
+    it('get player', () => {
+      const res = manager.getContextByLink('https://graasp.org/player');
+      expect(res).toEqual(Context.Player);
+    });
+    it('get account', () => {
+      const res = manager.getContextByLink('https://graasp.org/account');
+      expect(res).toEqual(Context.Account);
+    });
+    it('get analytics', () => {
+      const res = manager.getContextByLink('https://graasp.org/analytics');
+      expect(res).toEqual(Context.Analytics);
+    });
+    it('get auth', () => {
+      const res = manager.getContextByLink('https://graasp.org/auth');
+      expect(res).toEqual(Context.Auth);
+    });
+    it('get library', () => {
+      const res = manager.getContextByLink(libraryHost + 'collections/id');
+      expect(res).toEqual(Context.Library);
+    });
+    it('get unknown for wrong link', () => {
+      const res = manager.getContextByLink('anything');
+      expect(res).toEqual(Context.Unknown);
     });
   });
 });
