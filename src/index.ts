@@ -31,7 +31,6 @@ export * from './tag/factory.js';
 /**
  * Constants
  */
-export * from './constants/paths.js';
 export * from './constants/limits.js';
 export * from './constants/validity.js';
 
@@ -245,10 +244,8 @@ export { MimeTypes } from './mimeTypes/mimeTypes.js';
 export {
   redirect,
   redirectToSavedUrl,
-  buildSignInPath,
   buildPdfViewerLink,
   buildPdfViewerURL,
-  buildItemLinkForBuilder,
 } from './navigation/navigation.js';
 
 /**

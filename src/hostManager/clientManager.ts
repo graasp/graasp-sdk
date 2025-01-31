@@ -40,18 +40,6 @@ export class ClientManager {
     return this;
   }
 
-  public getItemPrefix(context: Context) {
-    const prefix = this.itemPrefixes.get(context);
-
-    if (prefix !== undefined) {
-      return prefix;
-    }
-
-    throw new Error(
-      `The given context '${context}' is not present in the prefix map.`,
-    );
-  }
-
   public addItemPrefix(context: Context, prefix: string) {
     if (this.itemPrefixes.has(context)) {
       throw new Error(
@@ -101,7 +89,7 @@ export class ClientManager {
     qs: { [key: string]: string | number | boolean } = {},
   ) {
     const base = this.getBase(context);
-    const itemPrefix = this.getItemPrefix(context);
+    const itemPrefix = this.itemPrefixes.get(context);
     const url =
       context === Context.Player
         ? new URL(`${itemPrefix}/${itemId}/${itemId}`, base)
