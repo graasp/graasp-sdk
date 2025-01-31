@@ -4,7 +4,12 @@ export class ClientManager {
   private static INSTANCE: ClientManager | null;
   private host: URL;
   private readonly clientHosts = new Map<Context, URL>();
-  private readonly itemPrefixes = new Map<Context, string>();
+  private readonly itemPrefixes = new Map<Context, string>([
+    [Context.Builder, '/items'],
+    [Context.Player, ''],
+    [Context.Library, '/collections'],
+    [Context.Analytics, '/items'],
+  ]);
 
   private constructor() {
     try {
@@ -17,9 +22,7 @@ export class ClientManager {
   public static getInstance() {
     if (!this.INSTANCE) {
       this.INSTANCE = new ClientManager();
-      ClientManager.getInstance()
-        // library still has its own host
-        .addItemPrefix(Context.Library, '/collections');
+      ClientManager.getInstance();
     }
     return this.INSTANCE;
   }
@@ -66,7 +69,7 @@ export class ClientManager {
       case Context.Library: {
         const libraryHost = this.clientHosts.get(context);
         if (libraryHost) {
-          return this.host.origin + libraryHost;
+          return libraryHost;
         } else {
           throw new Error('Library host used before it was defined.');
         }
