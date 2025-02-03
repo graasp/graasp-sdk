@@ -31,7 +31,6 @@ export * from './tag/factory.js';
 /**
  * Constants
  */
-export * from './constants/paths.js';
 export * from './constants/limits.js';
 export * from './constants/validity.js';
 
@@ -104,7 +103,7 @@ export { formatFileSize } from './file/fileSize.js';
 /**
  * Client Host Manager
  */
-export { ClientHostManager } from './hostManager/hostManager.js';
+export { ClientManager } from './hostManager/clientManager.js';
 
 /**
  * Invitation
@@ -245,10 +244,8 @@ export { MimeTypes } from './mimeTypes/mimeTypes.js';
 export {
   redirect,
   redirectToSavedUrl,
-  buildSignInPath,
   buildPdfViewerLink,
   buildPdfViewerURL,
-  buildItemLinkForBuilder,
 } from './navigation/navigation.js';
 
 /**

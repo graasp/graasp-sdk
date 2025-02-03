@@ -1,20 +1,15 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import * as cookieUtils from '../cookie/cookie.js';
-import { DEFAULT_PROTOCOL } from './constants.js';
 import {
-  buildItemLinkForBuilder,
   buildPdfViewerLink,
   buildPdfViewerURL,
-  buildSignInPath,
   redirect,
   redirectToSavedUrl,
 } from './navigation.js';
 
 export const MOCK_ITEM_ID = '1234';
 const MOCK_URL = 'https://example.com';
-const MOCK_HOST = 'myhost';
-const MOCK_HOST_WITH_PROTOCOL = 'https://myhost.com';
 
 const mockTarget = {
   open: vi.fn(),
@@ -69,107 +64,6 @@ describe('Navigation Util Tests', () => {
       const args = { name: 'somename', openInNewTab: true };
       redirectToSavedUrl(mockTarget, MOCK_URL, args);
       expect(mockTarget.open.mock.calls[0]).toEqual([MOCK_URL, args.name]);
-    });
-  });
-
-  describe('buildSignInPath', () => {
-    it('build sign in path', () => {
-      const res = buildSignInPath({ host: MOCK_HOST_WITH_PROTOCOL });
-      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
-    });
-    it('build sign in path with redirection url', () => {
-      const redirectionUrl = 'https://test.com';
-      const res = buildSignInPath({
-        host: MOCK_HOST_WITH_PROTOCOL,
-        redirectionUrl,
-      });
-      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
-      expect(res).toContain(`?url=${encodeURIComponent(redirectionUrl)}`);
-    });
-    it('build sign in path with lang parameter', () => {
-      const res = buildSignInPath({
-        host: MOCK_HOST_WITH_PROTOCOL,
-        lang: 'ru',
-      });
-      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
-      expect(res).toContain('?lang=ru');
-    });
-  });
-
-  describe('buildItemLinkForBuilder', () => {
-    it('build item path without specifying chat status', () => {
-      const res = buildItemLinkForBuilder({
-        origin: {
-          hostName: MOCK_HOST,
-          protocol: DEFAULT_PROTOCOL,
-        },
-        itemId: MOCK_ITEM_ID,
-      });
-      expect(res).toContain(MOCK_HOST);
-      expect(res).toContain(MOCK_ITEM_ID);
-      expect(res).not.toContain('chat=');
-    });
-
-    it('build item path with chat closed', () => {
-      const res = buildItemLinkForBuilder({
-        origin: {
-          hostName: MOCK_HOST,
-          protocol: DEFAULT_PROTOCOL,
-        },
-        itemId: MOCK_ITEM_ID,
-        chatOpen: false,
-      });
-      expect(res).toContain(MOCK_HOST);
-      expect(res).toContain(MOCK_ITEM_ID);
-      // query string should contain "chat=false" to have the chat closed
-      expect(res).toContain('chat=false');
-    });
-
-    it('build item path with chat open', () => {
-      const res = buildItemLinkForBuilder({
-        origin: {
-          hostName: MOCK_HOST,
-          protocol: DEFAULT_PROTOCOL,
-        },
-        itemId: MOCK_ITEM_ID,
-        chatOpen: true,
-      });
-      expect(res).toContain(MOCK_HOST);
-      expect(res).toContain(MOCK_ITEM_ID);
-      // query string should contain "chat=true" to have the chat open
-      expect(res).toContain('chat=true');
-    });
-
-    it('build item path with protocol', () => {
-      const res = buildItemLinkForBuilder({
-        origin: {
-          hostName: MOCK_HOST,
-          protocol: DEFAULT_PROTOCOL,
-        },
-        itemId: MOCK_ITEM_ID,
-      });
-      expect(res).toContain(DEFAULT_PROTOCOL);
-    });
-
-    it('build item path with special protocol', () => {
-      const specialProtocol = 'smb';
-      const res = buildItemLinkForBuilder({
-        origin: {
-          hostName: MOCK_HOST,
-          protocol: specialProtocol,
-        },
-        itemId: MOCK_ITEM_ID,
-      });
-      expect(res).toContain(specialProtocol);
-      expect(res).not.toContain(DEFAULT_PROTOCOL);
-    });
-
-    it('build item path with string origin', () => {
-      const res = buildItemLinkForBuilder({
-        origin: MOCK_HOST_WITH_PROTOCOL,
-        itemId: MOCK_ITEM_ID,
-      });
-      expect(res).toContain(MOCK_HOST_WITH_PROTOCOL);
     });
   });
 

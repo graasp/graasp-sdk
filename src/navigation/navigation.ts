@@ -59,58 +59,6 @@ export const redirectToSavedUrl = (
 };
 
 /**
- * Build absolute url to sign in
- * @param  {string} host authentication host (Graasp Auth)
- * @returns {string} absolute url for the sign in path
- */
-export const buildSignInPath = ({
-  host,
-  redirectionUrl,
-  lang,
-}: {
-  host: string;
-  redirectionUrl?: string;
-  lang?: string;
-}) => {
-  const url = new URL('/signin', host);
-  if (redirectionUrl) {
-    url.searchParams.set('url', redirectionUrl);
-  }
-  if (lang) {
-    url.searchParams.set('lang', lang);
-  }
-  return url.toString();
-};
-
-/**
- * Build the absolute url to view an item in the builder with optional parameter to specify whether the chat is open
- * @param {string | {hostName: string; protocol: string}} origin the full origin for the url (i.e. https://example.com)
- * @param {string} itemId the id of the item you would like to redirect to
- * @param {boolean} chatOpen whether to open the chat in the builder
- * @returns {string} absolute url to item with optional parameters
- */
-export const buildItemLinkForBuilder = (args: {
-  origin: string | { hostName: string; protocol?: string };
-  itemId: string;
-  chatOpen?: boolean;
-}): string => {
-  const { itemId, chatOpen } = args;
-  let origin;
-
-  if (typeof args.origin === 'string') {
-    origin = args.origin;
-  } else {
-    origin = `${args.origin.protocol}://${args.origin.hostName}`;
-  }
-
-  const url = new URL(`/items/${itemId}`, origin);
-  if (chatOpen !== undefined) {
-    url.searchParams.set('chat', chatOpen.toString());
-  }
-  return url.toString();
-};
-
-/**
  * @deprecated Use `buildPdfViewerURL` instead
  * Return a link to display a pdf, embedded in a custom pdf viewer if provided
  * @param assetsUrl assets url where the pdf viewer is hosted
