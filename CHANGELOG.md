@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.8.0](https://github.com/graasp/graasp-sdk/compare/v5.7.0...v5.8.0) (2025-02-03)
+
+
+### Features
+
+* update client manager ([#737](https://github.com/graasp/graasp-sdk/issues/737)) ([9fb70fc](https://github.com/graasp/graasp-sdk/commit/9fb70fcdfe4f9b8ce451ea88e8d28aa923d750be))
+
 ## [5.7.0](https://github.com/graasp/graasp-sdk/compare/v5.6.0...v5.7.0) (2025-01-16)
 
 
