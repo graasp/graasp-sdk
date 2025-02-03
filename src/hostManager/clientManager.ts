@@ -14,8 +14,8 @@ const CONTEXT_PATHS = new Map<Context, string>([
 
 export class ClientManager {
   private static INSTANCE: ClientManager | null;
-  private host: URL;
-  private readonly clientHosts = new Map<Context, URL>();
+  private host: string;
+  private readonly clientHosts = new Map<Context, string>();
 
   /**
    * defined prefixes for items, that should have trailing slash
@@ -30,9 +30,9 @@ export class ClientManager {
 
   private constructor() {
     try {
-      this.host = new URL(window.location.href);
+      this.host = window.location.href;
     } catch {
-      this.host = new URL('http://mock.graasp.org/');
+      this.host = 'http://mock.graasp.org/';
     }
   }
 
@@ -46,11 +46,17 @@ export class ClientManager {
 
   /**
    * Define default host
-   * @param host URL that should have a trailing slash
+   * @param host URL string that should have a trailing slash
    * @returns instance
    */
-  public setHost(host: URL) {
-    this.host = host;
+  public setHost(host: string) {
+    // check host is a valid url
+    const url = new URL(host);
+    if (!url) {
+      throw new Error('host is not valid');
+    }
+
+    this.host = url.origin;
     return this;
   }
 
@@ -60,14 +66,15 @@ export class ClientManager {
    * @param {URL} host
    * @returns instance
    */
-  public addHost(context: Context, host: URL) {
+  public addHost(context: Context, host: string) {
     if (this.clientHosts.has(context)) {
       throw new Error(
         `The given context '${context}' is already present in the hosts.`,
       );
     }
 
-    this.clientHosts.set(context, host);
+    const hostUrl = new URL(host);
+    this.clientHosts.set(context, hostUrl.origin);
     return this;
   }
 
@@ -81,7 +88,7 @@ export class ClientManager {
       }
     }
 
-    return this.host.origin + CONTEXT_PATHS.get(context) + '/';
+    return this.host + CONTEXT_PATHS.get(context) + '/';
   }
 
   /**
@@ -176,7 +183,8 @@ export class ClientManager {
         }
       }
 
-      if (origin === this.clientHosts.get(Context.Library)?.origin) {
+      const libraryHost = this.clientHosts.get(Context.Library);
+      if (libraryHost && origin === new URL(libraryHost)?.origin) {
         return Context.Library;
       }
 

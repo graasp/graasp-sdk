@@ -1,21 +1,30 @@
 import { v4 } from 'uuid';
 import { describe, expect, it } from 'vitest';
 
-import { Context } from '@graasp/sdk';
-
 import { ClientManager } from './clientManager.js';
+import { Context } from '@/enums/context.js';
 
 const MOCK_HOST = 'https://localhost:1010/';
 const MOCK_ITEM_ID = v4();
-const manager = ClientManager.getInstance().setHost(new URL(MOCK_HOST));
+const manager = ClientManager.getInstance().setHost(MOCK_HOST);
 
 // setup library host once
 const libraryHost = 'https://example.org/';
-manager.addHost(Context.Library, new URL(libraryHost));
+manager.addHost(Context.Library, libraryHost);
 
 describe('Client Host Manager', () => {
   it('Created the Host manager instance', () => {
     expect(ClientManager.getInstance()).toBeTruthy();
+  });
+
+  it('setHost throws for invalid host string', () => {
+    expect(() => ClientManager.getInstance().setHost('invalid')).toThrowError();
+  });
+
+  it('addHost throws for invalid host string', () => {
+    expect(() =>
+      ClientManager.getInstance().addHost(Context.Auth, 'invalid'),
+    ).toThrowError();
   });
 
   describe('getLinkByContext', () => {
