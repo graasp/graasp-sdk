@@ -32,7 +32,7 @@ export class ClientManager {
     try {
       this.host = window.location.href;
     } catch {
-      this.host = 'http://mock.graasp.org/';
+      this.host = 'https://mock.graasp.org/';
     }
   }
 
