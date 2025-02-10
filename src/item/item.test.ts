@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { AppItemExtra } from './appItem/appItem.js';
 import { DocumentItemExtra } from './documentItem/documentItem.js';
 import { EtherpadItemExtra } from './etherpadItem/etherpadItem.js';
-import { LocalFileItemExtra, S3FileItemExtra } from './fileItem/fileItem.js';
+import { LocalFileItemExtra } from './fileItem/fileItem.js';
 import { FolderItemExtra } from './folderItem/folderItem.js';
 import { H5PItemExtra } from './h5pItem/h5pItem.js';
 import { getMimetype } from './item.js';
@@ -40,14 +40,9 @@ describe('Extra Utils', () => {
     it('should return mimetype', () => {
       expect(
         getMimetype({
-          [ItemType.LOCAL_FILE]: { mimetype: 'mp3' },
+          [ItemType.FILE]: { mimetype: 'mp3' },
         } as LocalFileItemExtra),
       ).toEqual('mp3');
-      expect(
-        getMimetype({
-          [ItemType.S3_FILE]: { mimetype: 'wave' },
-        } as S3FileItemExtra),
-      ).toEqual('wave');
     });
   });
 });
