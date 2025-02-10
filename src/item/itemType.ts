@@ -5,8 +5,11 @@ export const ItemType = {
   DOCUMENT: 'document',
   FOLDER: 'folder',
   LINK: 'embeddedLink',
+  /**
+   * @deprecated use ItemType.FILE
+   */
   LOCAL_FILE: 'file',
-  S3_FILE: 's3File',
+  FILE: 'file',
   SHORTCUT: 'shortcut',
   H5P: 'h5p',
   ETHERPAD: 'etherpad',
