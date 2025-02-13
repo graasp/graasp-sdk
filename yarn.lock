@@ -1167,10 +1167,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@faker-js/faker@npm:9.2.0":
-  version: 9.2.0
-  resolution: "@faker-js/faker@npm:9.2.0"
-  checksum: 10c0/d711a5d206558f90e3ce9ecafe366e236fbe190b4df9d3968b512ccb87ec625843c919d16050beade88b790ed3df6332f6a837e41fba6de33e7a2f8daa67f08d
+"@faker-js/faker@npm:9.5.0":
+  version: 9.5.0
+  resolution: "@faker-js/faker@npm:9.5.0"
+  checksum: 10c0/97c983e0752e36bd2322fe0bda273e41093ae868452811b3146d33412147a03b343a6720a2e388d4c4a06c5c6ce89cad9e6c2c363008ef061a26c4fce067c22d
   languageName: node
   linkType: hard
 
@@ -1182,7 +1182,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:19.6.0"
     "@eslint/eslintrc": "npm:3.2.0"
     "@eslint/js": "npm:9.15.0"
-    "@faker-js/faker": "npm:9.2.0"
+    "@faker-js/faker": "npm:9.5.0"
     "@trivago/prettier-plugin-sort-imports": "npm:4.3.0"
     "@types/eslint": "npm:^9.6.1"
     "@types/js-cookie": "npm:3.0.6"
