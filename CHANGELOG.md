@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.9.0](https://github.com/graasp/graasp-sdk/compare/v5.8.0...v5.9.0) (2025-02-13)
+
+
+### Features
+
+* add home context ([#740](https://github.com/graasp/graasp-sdk/issues/740)) ([6da5827](https://github.com/graasp/graasp-sdk/commit/6da5827aeb89bafbf551a798577b526bec83498d))
+
 ## [5.8.0](https://github.com/graasp/graasp-sdk/compare/v5.7.0...v5.8.0) (2025-02-03)
 
 
