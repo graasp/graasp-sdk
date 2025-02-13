@@ -78,6 +78,14 @@ describe('Client Host Manager', () => {
         libraryHost + 'path',
       );
     });
+    it('build link for home', () => {
+      expect(manager.getLinkByContext(Context.Home)).toEqual(
+        MOCK_HOST + 'home/',
+      );
+      expect(manager.getLinkByContext(Context.Home, 'path')).toEqual(
+        MOCK_HOST + 'home/path',
+      );
+    });
   });
 
   describe('getURLByContext', () => {

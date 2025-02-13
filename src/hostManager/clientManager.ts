@@ -10,6 +10,7 @@ const CONTEXT_PATHS = new Map<Context, string>([
   [Context.Auth, '/auth'],
   [Context.Account, '/account'],
   [Context.Analytics, '/analytics'],
+  [Context.Home, '/home'],
 ]);
 
 export class ClientManager {
