@@ -1,16 +1,18 @@
 import { DiscriminatedItem } from '@/item/item.js';
 import { Member } from '@/member/member.js';
+import { UnionOfConst } from '@/typeUtils.js';
 import { UUID } from '@/types.js';
 
-export enum ItemVisibilityType {
-  Public = 'public',
-  Hidden = 'hidden',
-}
+export const ItemVisibilityType = {
+  Public: 'public',
+  Hidden: 'hidden',
+} as const;
+export type ItemVisibilityOptionsType = UnionOfConst<typeof ItemVisibilityType>;
 
 export type ItemVisibility = {
   id: UUID;
   item: DiscriminatedItem;
-  type: `${ItemVisibilityType}` | ItemVisibilityType;
+  type: ItemVisibilityOptionsType;
   createdAt: string;
   creator: Member;
 };
