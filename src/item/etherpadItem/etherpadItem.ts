@@ -8,11 +8,13 @@ export type EtherpadItemType<S = ItemSettings> = {
   extra: EtherpadItemExtra;
 } & Item<S>;
 
-export const EtherpadReaderPermission = { Write: 'write', Read: 'read' };
+export const EtherpadReaderPermission = {
+  Write: 'write',
+  Read: 'read',
+} as const;
 export type EtherpadReaderPermissionType = UnionOfConst<
   typeof EtherpadReaderPermission
 >;
-Object.freeze(EtherpadReaderPermission);
 
 /**
  * Etherpad Extra
