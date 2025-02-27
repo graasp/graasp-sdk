@@ -6,8 +6,7 @@ import {
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
-import { EtherpadItemType } from './etherpadItem.js';
-import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
+import { EtherpadItemType, EtherpadReaderPermission } from './etherpadItem.js';
 import { faker } from '@faker-js/faker';
 
 export const EtherpadItemFactory = (
@@ -24,8 +23,8 @@ export const EtherpadItemFactory = (
         padID: faker.string.uuid(),
         groupID: faker.string.uuid(),
         readerPermission: faker.helpers.arrayElement([
-          PermissionLevel.Read,
-          PermissionLevel.Write,
+          EtherpadReaderPermission.Read,
+          EtherpadReaderPermission.Write,
           undefined,
         ]),
       },
