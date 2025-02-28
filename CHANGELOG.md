@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0](https://github.com/graasp/graasp-sdk/compare/v5.9.1...v5.10.0) (2025-02-28)
+
+
+### Features
+
+* add etherpad reader permission type ([#746](https://github.com/graasp/graasp-sdk/issues/746)) ([22f13fa](https://github.com/graasp/graasp-sdk/commit/22f13fa7e9d4706ce5c10a7377b77a6272434d53))
+
 ## [5.9.1](https://github.com/graasp/graasp-sdk/compare/v5.9.0...v5.9.1) (2025-02-13)
 
 
