@@ -8,13 +8,11 @@ export type EtherpadItemType<S = ItemSettings> = {
   extra: EtherpadItemExtra;
 } & Item<S>;
 
-export const EtherpadReaderPermission = {
+export const EtherpadPermission = {
   Write: 'write',
   Read: 'read',
 } as const;
-export type EtherpadReaderPermissionType = UnionOfConst<
-  typeof EtherpadReaderPermission
->;
+export type EtherpadPermissionType = UnionOfConst<typeof EtherpadPermission>;
 
 /**
  * Etherpad Extra
@@ -22,7 +20,7 @@ export type EtherpadReaderPermissionType = UnionOfConst<
 export type EtherpadItemExtraProperties = {
   padID: string;
   groupID: string;
-  readerPermission?: EtherpadReaderPermissionType;
+  readerPermission?: EtherpadPermissionType;
 };
 export interface EtherpadItemExtra {
   [ItemType.ETHERPAD]: EtherpadItemExtraProperties;
