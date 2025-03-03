@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.1](https://github.com/graasp/graasp-sdk/compare/v5.10.0...v5.10.1) (2025-03-03)
+
+
+### Bug Fixes
+
+* rename etherpad permission type ([#748](https://github.com/graasp/graasp-sdk/issues/748)) ([d4f1edb](https://github.com/graasp/graasp-sdk/commit/d4f1edb07366905ede157ddc1a10753bf4150b55))
+
 ## [5.10.0](https://github.com/graasp/graasp-sdk/compare/v5.9.1...v5.10.0) (2025-02-28)
 
 
