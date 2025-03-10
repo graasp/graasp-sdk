@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.2](https://github.com/graasp/graasp-sdk/compare/v5.10.1...v5.10.2) (2025-03-10)
+
+
+### Bug Fixes
+
+* change itemVisibilities to a const ([#744](https://github.com/graasp/graasp-sdk/issues/744)) ([92a4425](https://github.com/graasp/graasp-sdk/commit/92a4425ba3df19af7e0dd5eb36df364a712aae8f))
+
 ## [5.10.1](https://github.com/graasp/graasp-sdk/compare/v5.10.0...v5.10.1) (2025-03-03)
 
 
