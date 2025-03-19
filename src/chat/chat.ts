@@ -11,6 +11,13 @@ export type ChatMessage = {
   body: string;
 };
 
+export type ChatMessageWithCreator = Omit<
+  ChatMessage,
+  'creatorId' | 'itemId'
+> & {
+  creator: Account;
+};
+
 // type of the exported chat message
 // contains the additional "creatorName" key with the plain text name of the user
 export type ExportedChatMessage = {
