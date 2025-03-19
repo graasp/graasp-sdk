@@ -1,12 +1,11 @@
-import { DiscriminatedItem } from '../item/item.js';
 import { Account } from '../member/member.js';
 import { UUID } from '../types.js';
 import { MentionStatus } from './mentions.js';
 
 export type ChatMessage = {
   id: UUID;
-  item: DiscriminatedItem;
-  creator: Account | null;
+  itemId: string;
+  creatorId: string | null;
   createdAt: string;
   updatedAt: string;
   body: string;
@@ -30,17 +29,17 @@ export type ExportedChatMessage = {
 export type MessageBodyType = { body: string; mentions?: string[] };
 
 export type PostChatMessageParamType = {
-  itemId: ChatMessage['item']['id'];
+  itemId: ChatMessage['itemId'];
 } & MessageBodyType;
 
 export type PatchChatMessageParamType = {
   messageId: ChatMessage['id'];
-  itemId: ChatMessage['item']['id'];
+  itemId: ChatMessage['itemId'];
 } & MessageBodyType;
 
 export type DeleteChatMessageParamType = {
   messageId: ChatMessage['id'];
-  itemId: ChatMessage['item']['id'];
+  itemId: ChatMessage['itemId'];
 };
 
 // ********************* Mentions *****************************
