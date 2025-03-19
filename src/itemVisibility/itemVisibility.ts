@@ -1,5 +1,3 @@
-import { DiscriminatedItem } from '@/item/item.js';
-import { Member } from '@/member/member.js';
 import { UnionOfConst } from '@/typeUtils.js';
 import { UUID } from '@/types.js';
 
@@ -11,8 +9,9 @@ export type ItemVisibilityOptionsType = UnionOfConst<typeof ItemVisibilityType>;
 
 export type ItemVisibility = {
   id: UUID;
-  item: DiscriminatedItem;
+  itemPath: string;
   type: ItemVisibilityOptionsType;
   createdAt: string;
-  creator: Member;
+  // FIXME: looks like the creator is not returned when getting item visibility from the backend
+  // creator: Member;
 };

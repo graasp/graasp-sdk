@@ -99,7 +99,7 @@ export const PackedInformationFactory = (
   if (hiddenVisibility) {
     hiddenItemVisibility = ItemVisibilityFactory({
       type: ItemVisibilityType.Hidden,
-      item,
+      itemPath: item.path,
       ...hiddenVisibility,
     });
   }
@@ -110,7 +110,7 @@ export const PackedInformationFactory = (
   if (publicVisibility) {
     publicItemVisibility = ItemVisibilityFactory({
       type: ItemVisibilityType.Public,
-      item,
+      itemPath: item.path,
       ...publicVisibility,
     });
   }

@@ -66,7 +66,7 @@ describe('Packed Item Factory', () => {
   });
   it('Returns correct packed info with given hidden visibility', () => {
     const item = FolderItemFactory();
-    const hiddenVisibility = { item };
+    const hiddenVisibility = { itemPath: item.path };
 
     const info = PackedInformationFactory(
       { hiddenVisibility: hiddenVisibility },
@@ -92,7 +92,7 @@ describe('Packed Item Factory', () => {
   });
   it('Returns correct packed info with given public visibility', () => {
     const item = FolderItemFactory();
-    const publicVisibility = { item };
+    const publicVisibility = { itemPath: item.path };
 
     const info = PackedInformationFactory(
       { publicVisibility: publicVisibility },
