@@ -11,10 +11,7 @@ export type ChatMessage = {
   body: string;
 };
 
-export type ChatMessageWithCreator = Omit<
-  ChatMessage,
-  'creatorId' | 'itemId'
-> & {
+export type ChatMessageWithCreator = ChatMessage & {
   creator: Account;
 };
 
