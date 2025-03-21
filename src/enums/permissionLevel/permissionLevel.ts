@@ -13,7 +13,7 @@ export const PermissionLevel = {
    * Allows to admin item properties, sharing and destructive actions
    */
   Admin: 'admin',
-};
+} as const;
 export type PermissionLevelOptions = UnionOfConst<typeof PermissionLevel>;
 
 export class PermissionLevelCompare {
