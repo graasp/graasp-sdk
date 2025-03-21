@@ -1,6 +1,6 @@
 import { Publisher } from './publisher.js';
 import { Context } from '@/enums/context.js';
-import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
+import { PermissionLevelOptions } from '@/enums/permissionLevel/permissionLevel.js';
 import { DiscriminatedItem } from '@/item/item.js';
 import { Account, Member } from '@/member/member.js';
 import { UUID } from '@/types.js';
@@ -80,7 +80,7 @@ export type LocalContext = {
   lang?: string;
   mobile?: boolean;
   offline?: boolean;
-  permission: PermissionLevel;
+  permission: PermissionLevelOptions;
   settings?: unknown;
   standalone?: boolean;
 };

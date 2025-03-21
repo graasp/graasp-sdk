@@ -1,4 +1,4 @@
-import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
+import { PermissionLevelOptions } from '@/enums/permissionLevel/permissionLevel.js';
 import { DiscriminatedItem } from '@/item/item.js';
 import { Member } from '@/member/member.js';
 import { UUID } from '@/types.js';
@@ -6,7 +6,7 @@ import { UUID } from '@/types.js';
 export type Invitation = {
   id: UUID;
   email: string;
-  permission: PermissionLevel;
+  permission: PermissionLevelOptions;
   name?: string;
   creator?: Member | null;
   item: DiscriminatedItem;
