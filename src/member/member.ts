@@ -24,9 +24,9 @@ export type MemberStorageItem = {
 export type PublicProfile = {
   id: UUID;
   bio: string;
-  facebookID: string;
-  linkedinID: string;
-  twitterID: string;
+  facebookId: string;
+  linkedinId: string;
+  twitterId: string;
   visibility: boolean;
   createdAt: string;
   updatedAt: string;
