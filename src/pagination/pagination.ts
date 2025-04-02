@@ -21,10 +21,6 @@ export type Paginated<T> = {
    */
   data: T[];
   /**
-   * Total number of items
-   */
-  totalCount: number;
-  /**
    * Pagination parameters
    */
   pagination: Pagination;
