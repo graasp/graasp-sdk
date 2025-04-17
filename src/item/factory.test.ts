@@ -66,7 +66,7 @@ describe('Packed Item Factory', () => {
   });
   it('Returns correct packed info with given hidden visibility', () => {
     const item = FolderItemFactory();
-    const hiddenVisibility = { item };
+    const hiddenVisibility = { itemPath: item.path };
 
     const info = PackedInformationFactory(
       { hiddenVisibility: hiddenVisibility },
@@ -79,7 +79,10 @@ describe('Packed Item Factory', () => {
   });
   it('Returns correct packed info inheriting parent hidden visibility', () => {
     const parent = FolderItemFactory();
-    const hiddenVisibility = { type: ItemVisibilityType.Hidden, item: parent };
+    const hiddenVisibility = {
+      type: ItemVisibilityType.Hidden,
+      itemPath: parent.path,
+    };
     const parentItem = PackedFolderItemFactory(parent, {
       hiddenVisibility: hiddenVisibility,
     });
@@ -92,7 +95,7 @@ describe('Packed Item Factory', () => {
   });
   it('Returns correct packed info with given public visibility', () => {
     const item = FolderItemFactory();
-    const publicVisibility = { item };
+    const publicVisibility = { itemPath: item.path };
 
     const info = PackedInformationFactory(
       { publicVisibility: publicVisibility },
@@ -105,7 +108,10 @@ describe('Packed Item Factory', () => {
   });
   it('Returns correct packed info inheriting parent public visibility', () => {
     const parent = FolderItemFactory();
-    const publicVisibility = { type: ItemVisibilityType.Public, item: parent };
+    const publicVisibility = {
+      type: ItemVisibilityType.Public,
+      itemPath: parent.path,
+    };
     const parentItem = PackedFolderItemFactory(parent, {
       publicVisibility: publicVisibility,
     });

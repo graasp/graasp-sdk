@@ -3,7 +3,10 @@ import { DiscriminatedItem } from './item.js';
 import { buildPathFromIds } from './itemUtils.js';
 import { PackedInformation, PackedItem } from './packedItem.js';
 import { CCLicenseAdaptions } from '@/enums/ccLicenses.js';
-import { PermissionLevel } from '@/enums/permissionLevel/permissionLevel.js';
+import {
+  PermissionLevel,
+  PermissionLevelOptions,
+} from '@/enums/permissionLevel/permissionLevel.js';
 import { ItemVisibilityFactory } from '@/itemVisibility/itemVisibility.factory.js';
 import {
   ItemVisibility,
@@ -79,7 +82,7 @@ export const PartialItemFactory = <IT extends DiscriminatedItem>(
 };
 
 export type PackedInformationFactoryInput = {
-  permission?: PermissionLevel | null;
+  permission?: PermissionLevelOptions | null;
   hiddenVisibility?: Partial<ItemVisibility>;
   publicVisibility?: Partial<ItemVisibility>;
 };
@@ -99,7 +102,7 @@ export const PackedInformationFactory = (
   if (hiddenVisibility) {
     hiddenItemVisibility = ItemVisibilityFactory({
       type: ItemVisibilityType.Hidden,
-      item,
+      itemPath: item.path,
       ...hiddenVisibility,
     });
   }
@@ -110,7 +113,7 @@ export const PackedInformationFactory = (
   if (publicVisibility) {
     publicItemVisibility = ItemVisibilityFactory({
       type: ItemVisibilityType.Public,
-      item,
+      itemPath: item.path,
       ...publicVisibility,
     });
   }

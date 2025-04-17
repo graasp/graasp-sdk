@@ -1,6 +1,7 @@
+import { v4 } from 'uuid';
+
 import { ItemVisibility } from './itemVisibility.js';
-import { FolderItemFactory } from '@/item/folderItem/folderItem.factory.js';
-import { MemberFactory } from '@/member/factory.js';
+import { buildPathFromIds } from '@/item/itemUtils.js';
 import { faker } from '@faker-js/faker';
 
 export const ItemVisibilityFactory = (
@@ -8,7 +9,7 @@ export const ItemVisibilityFactory = (
 ): ItemVisibility => ({
   id: it.id ?? faker.string.uuid(),
   createdAt: faker.date.anytime().toISOString(),
-  item: it.item ?? FolderItemFactory(),
+  itemPath: it.itemPath ?? buildPathFromIds(v4()),
   type: it.type,
-  creator: it.creator ?? MemberFactory(),
+  // creator: it.creator ?? MemberFactory(),
 });
