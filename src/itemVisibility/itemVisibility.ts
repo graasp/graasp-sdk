@@ -12,6 +12,4 @@ export type ItemVisibility = {
   itemPath: string;
   type: ItemVisibilityOptionsType;
   createdAt: string;
-  // FIXME: looks like the creator is not returned when getting item visibility from the backend
-  // creator: Member;
 };
