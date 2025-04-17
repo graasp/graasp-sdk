@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.11.0](https://github.com/graasp/graasp-sdk/compare/v5.10.2...v5.11.0) (2025-04-17)
+
+
+### Features
+
+* drizzle changes ([#752](https://github.com/graasp/graasp-sdk/issues/752)) ([20a4736](https://github.com/graasp/graasp-sdk/commit/20a4736ab9958062bf87bdcc4a7e31b81606164d))
+
 ## [5.10.2](https://github.com/graasp/graasp-sdk/compare/v5.10.1...v5.10.2) (2025-03-10)
 
 
