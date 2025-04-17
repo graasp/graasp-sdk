@@ -43,7 +43,7 @@
     "hooks": "husky"
   },
   "dependencies": {
-    "@faker-js/faker": "9.5.0",
+    "@faker-js/faker": "9.7.0",
     "filesize": "10.1.6",
     "js-cookie": "3.0.5"
   },
