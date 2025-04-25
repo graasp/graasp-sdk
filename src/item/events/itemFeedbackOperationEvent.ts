@@ -19,7 +19,7 @@ export type ItemOpFeedbackResult<T> = {
     copies: T[];
   };
   [FeedBackOperation.EXPORT]: { [itemId: string]: T };
-  [FeedBackOperation.RECYCLE]: { [itemId: string]: T };
+  [FeedBackOperation.RECYCLE]: T[];
   [FeedBackOperation.RESTORE]: { [itemId: string]: T };
   [FeedBackOperation.VALIDATE]: { [itemId: string]: T };
 };
