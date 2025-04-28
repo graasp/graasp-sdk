@@ -75,7 +75,7 @@
     "vite-plugin-dts": "4.5.3",
     "vitest": "2.1.6"
   },
-  "packageManager": "yarn@4.5.3",
+  "packageManager": "yarn@4.9.1",
   "volta": {
     "node": "22.14.0"
   }
