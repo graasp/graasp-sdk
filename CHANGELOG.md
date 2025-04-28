@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.12.0](https://github.com/graasp/graasp-sdk/compare/v5.11.0...v5.12.0) (2025-04-28)
+
+
+### Features
+
+* change recycle feedback type ([#755](https://github.com/graasp/graasp-sdk/issues/755)) ([33475a5](https://github.com/graasp/graasp-sdk/commit/33475a5b4e1bcaa6e4c2723345c2cde62cf58c46))
+
 ## [5.11.0](https://github.com/graasp/graasp-sdk/compare/v5.10.2...v5.11.0) (2025-04-17)
 
 
