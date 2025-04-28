@@ -5,7 +5,7 @@ import { AlignmentType } from '@/enums/alignment.js';
 
 export type FileItemType = {
   type: typeof ItemType.FILE;
-  extra: LocalFileItemExtra;
+  extra: FileItemExtra;
 } & Item<FileItemSettings>;
 
 /**
@@ -32,18 +32,15 @@ export type FileItemMetadata = {
   };
 };
 
-export interface LocalFileItemExtra {
+export interface FileItemExtra {
   [ItemType.FILE]: FileItemProperties;
 }
-export type FileItemExtra = LocalFileItemExtra;
 
-export const getFileExtra = <U extends LocalFileItemExtra>(
+export const getFileExtra = <U extends FileItemExtra>(
   extra: U,
 ): U[typeof ItemType.FILE] => extra[ItemType.FILE];
 
-export const buildFileExtra = (
-  extra: FileItemProperties,
-): LocalFileItemExtra => ({
+export const buildFileExtra = (extra: FileItemProperties): FileItemExtra => ({
   [ItemType.FILE]: extra,
 });
 
