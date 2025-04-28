@@ -64,7 +64,6 @@
     "@typescript-eslint/parser": "8.31.0",
     "date-fns": "4.1.0",
     "eslint": "9.25.1",
-    "eslint-config-prettier": "10.1.2",
     "husky": "9.1.7",
     "jsdom": "25.0.1",
     "prettier": "3.5.3",
