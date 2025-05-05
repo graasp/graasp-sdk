@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.13.0](https://github.com/graasp/graasp-sdk/compare/v5.12.0...v5.13.0) (2025-05-05)
+
+
+### Features
+
+* remove s3 item type ([#743](https://github.com/graasp/graasp-sdk/issues/743)) ([2d7c3c8](https://github.com/graasp/graasp-sdk/commit/2d7c3c83fe3fe6b42e40bd7d1de95778f594fb1d))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @faker-js/faker to v9.7.0 ([#753](https://github.com/graasp/graasp-sdk/issues/753)) ([af239d5](https://github.com/graasp/graasp-sdk/commit/af239d5ef3df1aad80ba4c10412b9c473e5f2726))
+
 ## [5.12.0](https://github.com/graasp/graasp-sdk/compare/v5.11.0...v5.12.0) (2025-04-28)
 
 
