@@ -3,16 +3,10 @@ import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
 import { AlignmentType } from '@/enums/alignment.js';
 
-export type LocalFileItemType = {
-  type: typeof ItemType.LOCAL_FILE;
-  extra: LocalFileItemExtra;
+export type FileItemType = {
+  type: typeof ItemType.FILE;
+  extra: FileItemExtra;
 } & Item<FileItemSettings>;
-export type S3FileItemType = {
-  type: typeof ItemType.S3_FILE;
-  extra: S3FileItemExtra;
-} & Item<FileItemSettings>;
-
-export type FileItemType = typeof ItemType.S3_FILE | typeof ItemType.LOCAL_FILE;
 
 /**
  * File Extra
@@ -38,32 +32,16 @@ export type FileItemMetadata = {
   };
 };
 
-export interface LocalFileItemExtra {
-  [ItemType.LOCAL_FILE]: FileItemProperties;
+export interface FileItemExtra {
+  [ItemType.FILE]: FileItemProperties;
 }
-export interface S3FileItemExtra {
-  [ItemType.S3_FILE]: FileItemProperties;
-}
-export type FileItemExtra = S3FileItemExtra | LocalFileItemExtra;
 
-export const getFileExtra = <U extends LocalFileItemExtra>(
+export const getFileExtra = <U extends FileItemExtra>(
   extra: U,
-): U[typeof ItemType.LOCAL_FILE] => extra[ItemType.LOCAL_FILE];
+): U[typeof ItemType.FILE] => extra[ItemType.FILE];
 
-export const getS3FileExtra = <U extends S3FileItemExtra>(
-  extra: U,
-): U[typeof ItemType.S3_FILE] => extra[ItemType.S3_FILE];
-
-export const buildFileExtra = (
-  extra: FileItemProperties,
-): LocalFileItemExtra => ({
-  [ItemType.LOCAL_FILE]: extra,
-});
-
-export const buildS3FileExtra = (
-  extra: FileItemProperties,
-): S3FileItemExtra => ({
-  [ItemType.S3_FILE]: extra,
+export const buildFileExtra = (extra: FileItemProperties): FileItemExtra => ({
+  [ItemType.FILE]: extra,
 });
 
 /**
