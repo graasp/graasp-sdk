@@ -1,10 +1,10 @@
 import { v4 } from 'uuid';
 
-import { Tag, TagCategory } from './tag.js';
+import { Tag, TagCategory, TagCategoryType } from './tag.js';
 import { faker } from '@faker-js/faker';
 
 export function TagFactory(
-  args: { name?: string; category?: TagCategory } = {},
+  args: { name?: string; category?: TagCategoryType } = {},
 ): Tag {
   return {
     id: v4(),
