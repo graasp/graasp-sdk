@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.13.1](https://github.com/graasp/graasp-sdk/compare/v5.13.0...v5.13.1) (2025-05-09)
+
+
+### Bug Fixes
+
+* update TagCategory to use const ([#760](https://github.com/graasp/graasp-sdk/issues/760)) ([f24b2da](https://github.com/graasp/graasp-sdk/commit/f24b2da5b91b048a172e8e9d18ebd812ff4d1107))
+
 ## [5.13.0](https://github.com/graasp/graasp-sdk/compare/v5.12.0...v5.13.0) (2025-05-05)
 
 
