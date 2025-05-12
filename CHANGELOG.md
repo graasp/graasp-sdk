@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.13.2](https://github.com/graasp/graasp-sdk/compare/v5.13.1...v5.13.2) (2025-05-12)
+
+
+### Bug Fixes
+
+* remove localfile case ([#762](https://github.com/graasp/graasp-sdk/issues/762)) ([71af3e4](https://github.com/graasp/graasp-sdk/commit/71af3e4c7e692b437cad3bf19ac3ab584e4acc80))
+
 ## [5.13.1](https://github.com/graasp/graasp-sdk/compare/v5.13.0...v5.13.1) (2025-05-09)
 
 
