@@ -5,10 +5,6 @@ export const ItemType = {
   DOCUMENT: 'document',
   FOLDER: 'folder',
   LINK: 'embeddedLink',
-  /**
-   * @deprecated use ItemType.FILE
-   */
-  LOCAL_FILE: 'file',
   FILE: 'file',
   SHORTCUT: 'shortcut',
   H5P: 'h5p',
