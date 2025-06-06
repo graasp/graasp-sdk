@@ -173,7 +173,7 @@ export class ClientManager {
    * @param {string} link url to get the context from
    * @returns context
    */
-  public getContextByLink(link: string) {
+  public getContextByLink(link: string): `${Context}` {
     try {
       const { pathname, origin } = new URL(link);
 
