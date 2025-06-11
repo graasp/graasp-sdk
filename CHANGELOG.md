@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.13.3](https://github.com/graasp/graasp-sdk/compare/v5.13.2...v5.13.3) (2025-06-11)
+
+
+### Bug Fixes
+
+* add explicit return type to client manager ([#767](https://github.com/graasp/graasp-sdk/issues/767)) ([a2dd7f6](https://github.com/graasp/graasp-sdk/commit/a2dd7f686185d4f349a5da233c7a0fcc99f741dd))
+
 ## [5.13.2](https://github.com/graasp/graasp-sdk/compare/v5.13.1...v5.13.2) (2025-05-12)
 
 
