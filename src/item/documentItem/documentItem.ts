@@ -2,10 +2,10 @@ import { Item } from '../baseItem.js';
 import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
 
-export type DocumentItemType<S = ItemSettings> = {
+export type DocumentItemType<T = Item<ItemSettings>> = {
   type: typeof ItemType.DOCUMENT;
   extra: DocumentItemExtra;
-} & Item<S>;
+} & T;
 
 /**
  * Document style flavor defined according to severity prop of

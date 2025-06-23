@@ -1,11 +1,10 @@
 import { Item } from '../baseItem.js';
-import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
 
-export type H5PItemType<S = ItemSettings> = {
+export type H5PItemType<S = Item> = {
   type: typeof ItemType.H5P;
   extra: H5PItemExtra;
-} & Item<S>;
+} & S;
 
 /**
  * H5P Extra

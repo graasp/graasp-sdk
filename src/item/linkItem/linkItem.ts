@@ -2,11 +2,11 @@ import { Item } from '../baseItem.js';
 import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
 
-export type LinkItemType<S = ItemSettings> = {
+export type LinkItemType<S = Item> = {
   type: typeof ItemType.LINK;
   extra: LinkItemExtra;
   settings: LinkItemSettings;
-} & Item<S>;
+} & S;
 
 /**
  * Link Extra

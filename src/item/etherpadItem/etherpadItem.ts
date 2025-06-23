@@ -1,12 +1,11 @@
 import { Item } from '../baseItem.js';
-import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
 import { UnionOfConst } from '@/typeUtils.js';
 
-export type EtherpadItemType<S = ItemSettings> = {
+export type EtherpadItemType<S = Item> = {
   type: typeof ItemType.ETHERPAD;
   extra: EtherpadItemExtra;
-} & Item<S>;
+} & S;
 
 export const EtherpadPermission = {
   Write: 'write',

@@ -3,10 +3,10 @@ import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
 import { AlignmentType } from '@/enums/alignment.js';
 
-export type FileItemType = {
+export type FileItemType<T = Item<FileItemSettings>> = {
   type: typeof ItemType.FILE;
   extra: FileItemExtra;
-} & Item<FileItemSettings>;
+} & T;
 
 /**
  * File Extra

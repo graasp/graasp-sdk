@@ -1,11 +1,10 @@
 import { Item } from '../baseItem.js';
-import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
 
-export type ShortcutItemType<S = ItemSettings> = {
+export type ShortcutItemType<S = Item> = {
   type: typeof ItemType.SHORTCUT;
   extra: ShortcutItemExtra;
-} & Item<S>;
+} & S;
 
 /**
  * Shortcut Extra

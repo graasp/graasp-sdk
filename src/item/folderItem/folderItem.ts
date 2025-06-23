@@ -1,11 +1,10 @@
 import { Item } from '../baseItem.js';
-import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
 
-export type FolderItemType<S = ItemSettings> = {
+export type FolderItemType<T = Item> = {
   type: typeof ItemType.FOLDER;
   extra: FolderItemExtra;
-} & Item<S>;
+} & T;
 
 /**
  * Folder Extra

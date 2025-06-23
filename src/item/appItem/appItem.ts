@@ -1,11 +1,10 @@
 import { Item } from '../baseItem.js';
-import { ItemSettings } from '../itemSettings.js';
 import { ItemType } from '../itemType.js';
 
-export type AppItemType<S = ItemSettings> = {
+export type AppItemType<T = Item> = {
   type: typeof ItemType.APP;
   extra: AppItemExtra;
-} & Item<S>;
+} & T;
 
 /**
  * App Extra

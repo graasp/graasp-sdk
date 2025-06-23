@@ -1,6 +1,6 @@
 import { ItemMembership } from '../itemMembership/itemMembership.js';
+import { Item } from './baseItem.js';
 import { DiscriminatedItem } from './item.js';
-import { ItemSettings } from './itemSettings.js';
 import { ThumbnailsBySize } from '@/enums/thumbnailSizes.js';
 import { ItemVisibility } from '@/itemVisibility/itemVisibility.js';
 
@@ -15,5 +15,4 @@ export type PackedInformation = {
  * This type is used to define an item with more data such as:
  * - permission
  */
-export type PackedItem<S = ItemSettings> = DiscriminatedItem<S> &
-  PackedInformation;
+export type PackedItem<S = Item> = DiscriminatedItem<S> & PackedInformation;
