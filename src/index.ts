@@ -298,6 +298,7 @@ export {
   ChatbotRole,
   type ChatBotMessage,
   GPTVersion,
+  type GPTVersionType,
 } from './chatbot/chatbot.js';
 
 export { isEmail } from './validation/isEmail.js';
