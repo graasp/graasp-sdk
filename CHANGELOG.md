@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.14.0](https://github.com/graasp/graasp-sdk/compare/v5.13.3...v5.14.0) (2025-06-30)
+
+
+### Features
+
+* upgrade openai models ([#769](https://github.com/graasp/graasp-sdk/issues/769)) ([4aa0c05](https://github.com/graasp/graasp-sdk/commit/4aa0c05ed3450d4b14cf5a7cbd23b9e4beeef0fe))
+
 ## [5.13.3](https://github.com/graasp/graasp-sdk/compare/v5.13.2...v5.13.3) (2025-06-11)
 
 
