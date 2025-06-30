@@ -35,7 +35,7 @@ export const GPTVersion = {
 export type GPTVersionType = UnionOfConst<typeof GPTVersion>;
 
 /**
- * Use this array in your app to war users about deprecated models.
+ * Use this array in your app to warn users about deprecated models.
  * These will be removed in the future and alternatives should be used.
  */
 export const DEPRECATED_GPT_MODELS = [
