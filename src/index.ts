@@ -294,12 +294,7 @@ export {
 /**
  * Chatbot related types
  */
-export {
-  ChatbotRole,
-  type ChatBotMessage,
-  GPTVersion,
-  type GPTVersionType,
-} from './chatbot/chatbot.js';
+export * from './chatbot/chatbot.js';
 
 export { isEmail } from './validation/isEmail.js';
 export { isFQDN } from './validation/isFQDN.js';
