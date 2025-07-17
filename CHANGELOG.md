@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.14.1](https://github.com/graasp/graasp-sdk/compare/v5.14.0...v5.14.1) (2025-07-17)
+
+
+### Bug Fixes
+
+* export everything from the chatbot files ([#772](https://github.com/graasp/graasp-sdk/issues/772)) ([8096728](https://github.com/graasp/graasp-sdk/commit/80967289d8a8779f57e7a810ee94707a343f878e))
+* make changelog available in npm ([f4e61e4](https://github.com/graasp/graasp-sdk/commit/f4e61e450c567e78ad5fbbfe96cec705cbffcb5b))
+
 ## [5.14.0](https://github.com/graasp/graasp-sdk/compare/v5.13.3...v5.14.0) (2025-06-30)
 
 ### Features
