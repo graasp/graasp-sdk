@@ -172,6 +172,11 @@ export * from './item/shortcutItem/shortcutItem.js';
 export * from './item/shortcutItem/shortcutItem.factory.js';
 
 /**
+ * Page Item
+ */
+export * from './item/pageItem/pageItem.js';
+
+/**
  * Item Bookmark
  */
 export * from './itemBookmark/itemBookmark.js';
