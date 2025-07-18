@@ -7,6 +7,7 @@ import { H5PItemType } from './h5pItem/h5pItem.js';
 import { ItemSettings } from './itemSettings.js';
 import { ItemType } from './itemType.js';
 import { LinkItemType } from './linkItem/linkItem.js';
+import { PageItemType } from './pageItem/pageItem.js';
 import { ShortcutItemType } from './shortcutItem/shortcutItem.js';
 
 export const getMimetype = (
@@ -26,4 +27,5 @@ export type DiscriminatedItem<S = ItemSettings> =
   | LinkItemType<S>
   | FileItemType
   | ShortcutItemType<S>
-  | EtherpadItemType<S>;
+  | EtherpadItemType<S>
+  | PageItemType<S>;
