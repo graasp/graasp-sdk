@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.15.0](https://github.com/graasp/graasp-sdk/compare/v5.14.1...v5.15.0) (2025-07-22)
+
+
+### Features
+
+* add page to item types ([#774](https://github.com/graasp/graasp-sdk/issues/774)) ([e771058](https://github.com/graasp/graasp-sdk/commit/e771058d0450f443b0c2ecff4f8a3b68a3b5ec39))
+
 ## [5.14.1](https://github.com/graasp/graasp-sdk/compare/v5.14.0...v5.14.1) (2025-07-17)
 
 
