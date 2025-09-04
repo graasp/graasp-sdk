@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.15.1](https://github.com/graasp/graasp-sdk/compare/v5.15.0...v5.15.1) (2025-09-04)
+
+
+### Bug Fixes
+
+* use thumbnail for app instead of extra image ([#780](https://github.com/graasp/graasp-sdk/issues/780)) ([44636fd](https://github.com/graasp/graasp-sdk/commit/44636fd96b49374fcd8feb750ea36f175a5c853d))
+
 ## [5.15.0](https://github.com/graasp/graasp-sdk/compare/v5.14.1...v5.15.0) (2025-07-22)
 
 
