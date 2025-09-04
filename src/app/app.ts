@@ -5,17 +5,13 @@ import { DiscriminatedItem } from '@/item/item.js';
 import { Account, Member } from '@/member/member.js';
 import { UUID } from '@/types.js';
 
-export type AppExtra = {
-  image?: string;
-};
-
 export interface App {
   id: UUID;
   key: string;
   name: string;
   description: string;
   url: string;
-  extra: AppExtra;
+  thumbnail: string;
   publisher: Publisher;
   createdAt: string;
   updatedAt: string;
