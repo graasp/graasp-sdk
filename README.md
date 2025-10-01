@@ -10,10 +10,10 @@ This repository contains all shared utils and types for the Graasp ecosystem.
 
 ## Installation
 
-Run yarn to install the packages.
+Use `pnpm` to install the packages.
 
 ```sh
-yarn
+pnpm i
 ```
 
 ## Testing
@@ -23,7 +23,7 @@ This project uses [vitest](https://vitest.dev/) as the test runner. It is fast, 
 To start the tests run:
 
 ```sh
-yarn test
+pnpm test
 ```
 
 The tests will run in watch mode, meaning that when you edit a file, the tests in that file (or any test file depending on that file) will be re-run. This allows for a fast feedback loop.
@@ -31,6 +31,12 @@ The tests will run in watch mode, meaning that when you edit a file, the tests i
 ## Building
 
 This package exposes a ESM and a CommonJS build as well as type declarations for Typescript.
+
+To build the package:
+
+```sh
+pnpm build
+```
 
 The structure is as follows:
 

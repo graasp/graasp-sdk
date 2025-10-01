@@ -3,7 +3,7 @@ name: Node CI
 on:
   push:
     branches:
-      - "main"
+      - 'main'
   merge_group:
   pull_request:
 
@@ -15,21 +15,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: Install and Cache dependencies
+        uses: graasp/graasp-deploy/.github/actions/pnpm-install-and-cache@6980aaa98e7f469b426939cd26cd3279b904d48e
 
-      - name: Yarn Install and Cache
-        uses: graasp/graasp-deploy/.github/actions/yarn-install-and-cache@v1
-
-      - name: Check code linting
-        run: yarn check
+      - name: Lint
+        run: pnpm check
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
       - name: Test
-        run: yarn test
+        run: pnpm test
         env:
           CI: true
