@@ -106,6 +106,11 @@ export { formatFileSize } from './file/fileSize.js';
 export { ClientManager } from './hostManager/clientManager.js';
 
 /**
+ * Internationalization
+ */
+export * from './i18n/constants.js';
+
+/**
  * Invitation
  */
 export * from './invitation/invitation.js';
