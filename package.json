@@ -4,10 +4,12 @@
   "description": "Development kit including type definitions and util functions for the Graasp ecosystem.",
   "license": "AGPL-3.0-only",
   "repository": "git@github.com:graasp/graasp-sdk.git",
-  "author": "Graasp",
+  "author": "Graasp Association",
   "contributors": [
     "Kim Lan Phan Hoang",
-    "Basile Spaenlehauer"
+    "Basile Spaenlehauer",
+    "Thibault Reidy",
+    "Jeremy Defferrard"
   ],
   "type": "module",
   "sideEffects": false,
@@ -29,19 +31,18 @@
     }
   },
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm",
+    "build": "pnpm run \"/^build:.*/\"",
     "build:cjs": "unbuild && tsc-alias -p tsconfig.cjs.json && echo '{\"type\": \"commonjs\"}' > cjs/package.json",
     "build:esm": "tsc -p tsconfig.esm.json && tsc-alias -p tsconfig.esm.json && echo '{\"type\": \"module\"}' > esm/package.json",
     "test": "vitest",
-    "type-check": "tsc --noEmit",
-    "lint": "eslint ./src",
-    "prettier:check": "prettier --check src/**/*.ts",
+    "check": "pnpm run \"/^check:.*/\"",
+    "check:type": "tsc --noEmit",
+    "check:lint": "eslint ./src",
+    "check:prettier": "prettier --check src/**/*.ts",
     "prettier:write": "prettier --write src/**/*.ts",
-    "check": "yarn prettier:check && yarn lint && yarn type-check",
-    "pre-commit": "yarn check",
-    "prepack": "yarn build",
-    "prepare": "yarn prepack && yarn hooks",
-    "hooks": "husky"
+    "pre-commit": "pnpm check",
+    "preinstall": "npx only-allow pnpm",
+    "prepack": "pnpm build"
   },
   "dependencies": {
     "@faker-js/faker": "9.7.0",
@@ -75,7 +76,6 @@
     "vite-plugin-dts": "4.5.4",
     "vitest": "2.1.9"
   },
-  "packageManager": "yarn@4.9.4",
   "volta": {
     "node": "22.15.1"
   }
