@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.15.2](https://github.com/graasp/graasp-sdk/compare/v5.15.1...v5.15.2) (2025-10-01)
+
+
+### Bug Fixes
+
+* add i18n constants to the sdk ([#787](https://github.com/graasp/graasp-sdk/issues/787)) ([753462a](https://github.com/graasp/graasp-sdk/commit/753462a32afaaaa8a0685cef4e29c584385972ca))
+* use pnpm instead of yarn ([#785](https://github.com/graasp/graasp-sdk/issues/785)) ([85f4c3d](https://github.com/graasp/graasp-sdk/commit/85f4c3de700f7866a76cfb877d7ba6dcbef846cf))
+
 ## [5.15.1](https://github.com/graasp/graasp-sdk/compare/v5.15.0...v5.15.1) (2025-09-04)
 
 
