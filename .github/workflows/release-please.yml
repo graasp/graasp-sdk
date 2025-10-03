@@ -30,7 +30,7 @@ jobs:
           tag_name: ${{ steps.release.outputs.tag_name }}
 
       - name: Verify installation
-        uses: graasp/graasp-deploy/.github/actions/pnpm-install-and-cache@v1
+        uses: graasp/graasp-deploy/.github/actions/pnpm-install-and-cache@6980aaa98e7f469b426939cd26cd3279b904d48e
 
       - name: Publish to NPM
         if: ${{ steps.release.outputs.releases_created == 'true' }}
