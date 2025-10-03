@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.16.0](https://github.com/graasp/graasp-sdk/compare/v5.15.2...v5.16.0) (2025-10-03)
+
+
+### Features
+
+* add GPT5 generation models ([#788](https://github.com/graasp/graasp-sdk/issues/788)) ([d8c1d6c](https://github.com/graasp/graasp-sdk/commit/d8c1d6cc94a0207f39dfbd321f4f818b44a78022))
+
+
+### Bug Fixes
+
+* use pnpm install workflow ([#790](https://github.com/graasp/graasp-sdk/issues/790)) ([0ac10e8](https://github.com/graasp/graasp-sdk/commit/0ac10e8aca293d6f240ce1b0f72cbd0c12a4bc18))
+
 ## [5.15.2](https://github.com/graasp/graasp-sdk/compare/v5.15.1...v5.15.2) (2025-10-01)
 
 
