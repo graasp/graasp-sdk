@@ -29,12 +29,12 @@ jobs:
           releases_created: ${{ steps.release.outputs.releases_created }}
           tag_name: ${{ steps.release.outputs.tag_name }}
 
-      # -------------------------------------------------------------------------
-      # This section is useful only if you plan on publishing your package to NPM
-      # Remove it if you do not plan to publish to NPM
+      - name: Verify installation
+        uses: graasp/graasp-deploy/.github/actions/pnpm-install-and-cache@v1
+
       - name: Publish to NPM
-        uses: graasp/graasp-deploy/.github/actions/publish-to-npm@v1
-        with:
-          npm-token: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.release.outputs.releases_created == 'true' }}
-      # -------------------------------------------------------------------------
+        run: npm publish
+        shell: bash
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
