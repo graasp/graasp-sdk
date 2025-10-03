@@ -21,15 +21,32 @@ export const GPTVersion = {
    */
   GPT_4_O: 'gpt-4o',
   /**
+   * @deprecated
    * Fast and affordable small model for focused tasks
    * 128k context window
    */
   GPT_4_O_MINI: 'gpt-4o-mini',
   /**
+   * @deprecated
    * Fastest, most cost effective GPT 4.1 model
    * 1M context window
    */
   GPT_4_1_NANO: 'gpt-4.1-nano',
+  /**
+   * The best model for coding and agentic tasks across domains
+   * 400,000 context window
+   */
+  GPT_5: 'gpt-5',
+  /**
+   * Fastest, most cost-efficient version of GPT-5
+   * 400,000 context window
+   */
+  GPT_5_NANO: 'gpt-5-nano',
+  /**
+   * A faster, cost-efficient version of GPT-5 for well-defined tasks
+   * 400,000 context window
+   */
+  GPT_5_MINI: 'gpt-5-mini',
 } as const;
 
 export type GPTVersionType = UnionOfConst<typeof GPTVersion>;
@@ -42,6 +59,8 @@ export const DEPRECATED_GPT_MODELS = [
   GPTVersion.GPT_3_5_TURBO,
   GPTVersion.GPT_4_TURBO,
   GPTVersion.GPT_4_O,
+  GPTVersion.GPT_4_O_MINI,
+  GPTVersion.GPT_4_1_NANO,
 ];
 
 export const ChatbotRole = {
