@@ -68,7 +68,7 @@ export type CompleteAccount = Account & {
   type: `${AccountType}` | AccountType;
   createdAt: string;
   updatedAt: string;
-  lastAuthenticatedAt?: string;
+  lastAuthenticatedAt: string | null;
   lang: string;
 };
 

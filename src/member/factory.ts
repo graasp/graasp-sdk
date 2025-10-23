@@ -19,6 +19,7 @@ function BaseAccountFactory<T extends AccountType>(
     ...AccountFactory(baseAccount),
     createdAt: faker.date.anytime().toISOString(),
     updatedAt: faker.date.anytime().toISOString(),
+    lastAuthenticatedAt: faker.date.past().toISOString(),
     lang: DEFAULT_LANG,
     ...baseAccount,
   };
