@@ -84,6 +84,7 @@ export type CompleteMember = CompleteAccount & {
 
 export type CompleteGuest = CompleteAccount & {
   type: AccountType.Guest;
+  lang: string;
   itemLoginSchema: ItemLoginSchema;
 };
 
