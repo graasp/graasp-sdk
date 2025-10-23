@@ -15,6 +15,13 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          registry-url: 'https://registry.npmjs.org'
+
       - name: Ensure NPM token validity
         run: npm whoami
         env:
@@ -25,8 +32,6 @@ jobs:
         with:
           token: ${{ secrets.RELEASE_PLEASE_PAT }}
           release-type: node
-
-      - uses: actions/checkout@v4
 
       - name: Auto Tag
         uses: graasp/graasp-deploy/.github/actions/auto-tag-after-release@v1
