@@ -77,7 +77,7 @@ export type CompleteMember = CompleteAccount & {
   email: string;
   extra: MemberExtra;
   enableSaveActions: boolean;
-  userAgreementsDate?: string;
+  userAgreementsDate: string | null;
   lang: string;
 
   isValidated: boolean;

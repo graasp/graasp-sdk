@@ -33,6 +33,7 @@ export const MemberFactory = (
     { lang: faker.helpers.arrayElement(['en', 'fr', 'de']) },
     {},
   ]),
+  userAgreementsDate: faker.date.past().toISOString(),
   enableSaveActions: m.enableSaveActions ?? true,
   isValidated: m.isValidated ?? true,
   ...BaseAccountFactory({ type: AccountType.Individual }),
