@@ -15,6 +15,11 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+      - name: Ensure NPM token validity
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - uses: googleapis/release-please-action@v4
         id: release
         with:
