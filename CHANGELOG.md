@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.16.3](https://github.com/graasp/graasp-sdk/compare/v5.16.2...v5.16.3) (2025-10-23)
+
+
+### Bug Fixes
+
+* ensure npm token validity and provenance ([#795](https://github.com/graasp/graasp-sdk/issues/795)) ([50f7084](https://github.com/graasp/graasp-sdk/commit/50f70846f1108fbd5ee6c989eeed0aa08e3cf822))
+
 ## [5.16.2](https://github.com/graasp/graasp-sdk/compare/v5.16.1...v5.16.2) (2025-10-23)
 
 
