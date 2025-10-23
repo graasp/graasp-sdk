@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.16.2](https://github.com/graasp/graasp-sdk/compare/v5.16.1...v5.16.2) (2025-10-23)
+
+
+### Bug Fixes
+
+* republish to NPM ([6ea2c26](https://github.com/graasp/graasp-sdk/commit/6ea2c2663fc6815b5ea44bc3b686ec647d757f14))
+
 ## [5.16.1](https://github.com/graasp/graasp-sdk/compare/v5.16.0...v5.16.1) (2025-10-23)
 
 
