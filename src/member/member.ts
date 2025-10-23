@@ -57,6 +57,9 @@ export type Account = {
   name: string;
 };
 
+/**
+ * @deprecated Use CurrentAccount instead
+ */
 export type Member = Account & {
   email: string;
 };
@@ -66,6 +69,7 @@ export type CompleteAccount = Account & {
   createdAt: string;
   updatedAt: string;
   lastAuthenticatedAt?: string;
+  lang: string;
 };
 
 export type CompleteMember = CompleteAccount & {

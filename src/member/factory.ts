@@ -5,6 +5,7 @@ import {
   CompleteGuest,
   CompleteMember,
 } from './member.js';
+import { DEFAULT_LANG } from '@/i18n/constants.js';
 import { faker } from '@faker-js/faker';
 
 export function AccountFactory(account: Partial<Account> = {}): Account {
@@ -18,6 +19,7 @@ function BaseAccountFactory<T extends AccountType>(
     ...AccountFactory(baseAccount),
     createdAt: faker.date.anytime().toISOString(),
     updatedAt: faker.date.anytime().toISOString(),
+    lang: DEFAULT_LANG,
     ...baseAccount,
   };
 }
