@@ -6,6 +6,7 @@ on:
       - main
 
 permissions:
+  id-token: write # for provenance attestation (NPM)
   contents: write
   pull-requests: write
   # needed for the auto-tag
@@ -44,7 +45,7 @@ jobs:
 
       - name: Publish to NPM
         if: ${{ steps.release.outputs.releases_created == 'true' }}
-        run: npm publish
+        run: npm publish --provenance
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
