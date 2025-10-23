@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.16.1](https://github.com/graasp/graasp-sdk/compare/v5.16.0...v5.16.1) (2025-10-23)
+
+
+### Bug Fixes
+
+* remove recaptcha mobile values ([#792](https://github.com/graasp/graasp-sdk/issues/792)) ([ce22e47](https://github.com/graasp/graasp-sdk/commit/ce22e47101a51d0614fefa18a6916fbf041f1668))
+
 ## [5.16.0](https://github.com/graasp/graasp-sdk/compare/v5.15.2...v5.16.0) (2025-10-03)
 
 
