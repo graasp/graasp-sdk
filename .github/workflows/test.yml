@@ -15,16 +15,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install and Cache dependencies
-        uses: graasp/graasp-deploy/.github/actions/pnpm-install-and-cache@1b76232e9ccddd5500151e4f4ff9acb48e2039fc
+      - name: Install Mise
+        uses: jdx/mise-action@v3
 
       - name: Lint
-        run: pnpm check
+        run: mise run check
 
       - name: Build
-        run: pnpm build
+        run: mise run build
 
       - name: Test
-        run: pnpm test
+        run: mise run test
         env:
           CI: true
