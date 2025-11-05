@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.16.4](https://github.com/graasp/graasp-sdk/compare/v5.16.3...v5.16.4) (2025-11-05)
+
+
+### Bug Fixes
+
+* add mise in release script ([#802](https://github.com/graasp/graasp-sdk/issues/802)) ([956d32a](https://github.com/graasp/graasp-sdk/commit/956d32aa0983ab6d528387f648171ffb2b6cdcd9))
+* **tooling:** add mise ([#800](https://github.com/graasp/graasp-sdk/issues/800)) ([274d627](https://github.com/graasp/graasp-sdk/commit/274d627626fac25eb2032f9d0faaa0400880036d))
+
 ## [5.16.3](https://github.com/graasp/graasp-sdk/compare/v5.16.2...v5.16.3) (2025-10-23)
 
 
