@@ -40,8 +40,11 @@ jobs:
           releases_created: ${{ steps.release.outputs.releases_created }}
           tag_name: ${{ steps.release.outputs.tag_name }}
 
-      - name: Verify installation
-        uses: graasp/graasp-deploy/.github/actions/pnpm-install-and-cache@1b76232e9ccddd5500151e4f4ff9acb48e2039fc
+      - name: Install Mise
+        uses: jdx/mise-action@v3
+
+      - name: Install deps
+        run: mise run pnpm-install
 
       - name: Publish to NPM
         if: ${{ steps.release.outputs.releases_created == 'true' }}
