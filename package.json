@@ -41,7 +41,6 @@
     "check:prettier": "prettier --check src/**/*.ts",
     "prettier:write": "prettier --write src/**/*.ts",
     "pre-commit": "pnpm check",
-    "preinstall": "npx only-allow pnpm",
     "prepack": "pnpm build"
   },
   "dependencies": {
