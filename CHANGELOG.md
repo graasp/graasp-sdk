@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.16.5](https://github.com/graasp/graasp-sdk/compare/v5.16.4...v5.16.5) (2025-11-11)
+
+
+### Bug Fixes
+
+* remove only-allow package from scripts ([65cfaeb](https://github.com/graasp/graasp-sdk/commit/65cfaeb824b1c75c4824c77401a4c2441494d383))
+
 ## [5.16.4](https://github.com/graasp/graasp-sdk/compare/v5.16.3...v5.16.4) (2025-11-05)
 
 
