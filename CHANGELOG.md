@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.17.0](https://github.com/graasp/graasp-sdk/compare/v5.16.5...v5.17.0) (2026-01-06)
+
+
+### Features
+
+* add missing messages ([#806](https://github.com/graasp/graasp-sdk/issues/806)) ([f5f0677](https://github.com/graasp/graasp-sdk/commit/f5f0677e51a46d74f96be42346553325ae954991))
+* update prettier sort import ([#808](https://github.com/graasp/graasp-sdk/issues/808)) ([510be80](https://github.com/graasp/graasp-sdk/commit/510be8062fe536b9c230fb31f7948e5070b90921))
+
 ## [5.16.5](https://github.com/graasp/graasp-sdk/compare/v5.16.4...v5.16.5) (2025-11-11)
 
 
