@@ -11,7 +11,7 @@ export type FolderItemType<S = ItemSettings> = {
  * Folder Extra
  */
 export type FolderItemExtraProperties = {
-  isRoot?: boolean;
+  isCapsule?: boolean;
 };
 export interface FolderItemExtra {
   [ItemType.FOLDER]: FolderItemExtraProperties;
