@@ -11,19 +11,18 @@ describe('CapsuleItemFactory', () => {
     expect(item1).not.toEqual(item2);
   });
 
-  it('Create folder item', () => {
+  it('Create capsule item', () => {
     const item = CapsuleItemFactory();
     expect(item.extra.folder).toEqual({ isCapsule: true });
     expect(item.type).toEqual(ItemType.FOLDER);
   });
 
-  it('Create folder item with args', () => {
+  it('Create capsule item with args', () => {
     const creator = MemberFactory();
     const item = CapsuleItemFactory({
       creator,
       name: 'name',
       description: 'description',
-      extra: { folder: { isCapsule: true } },
       settings: { enableSaveActions: true },
     });
     expect(item.name).toEqual('name');
