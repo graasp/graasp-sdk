@@ -161,6 +161,11 @@ export * from './item/fileItem/fileItem.factory.js';
 export * from './item/folderItem/folderItem.js';
 export * from './item/folderItem/folderItem.factory.js';
 /**
+ * Capsule Item
+ */
+export * from './item/capsuleItem/capsuleItem.js';
+export * from './item/capsuleItem/capsuleItem.factory.js';
+/**
  * H5P Item
  */
 export * from './item/h5pItem/h5pItem.js';
