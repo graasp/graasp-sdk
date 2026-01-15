@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.18.0](https://github.com/graasp/graasp-sdk/compare/v5.17.0...v5.18.0) (2026-01-15)
+
+
+### Features
+
+* rename isRoot to isCapsule ([#809](https://github.com/graasp/graasp-sdk/issues/809)) ([5f56bd5](https://github.com/graasp/graasp-sdk/commit/5f56bd53265f5955bf4ebdb1c0ca6d583fb70780))
+
 ## [5.17.0](https://github.com/graasp/graasp-sdk/compare/v5.16.5...v5.17.0) (2026-01-06)
 
 
