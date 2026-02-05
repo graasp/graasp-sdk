@@ -1,3 +1,4 @@
+import { Item } from '@/item/baseItem.js';
 import { DiscriminatedItem } from '@/item/item.js';
 import { UUID } from '@/types.js';
 
@@ -17,7 +18,7 @@ export enum ItemLoginSchemaStatus {
 
 export interface ItemLoginSchema {
   id: UUID;
-  item: DiscriminatedItem;
+  item: Item;
   type: `${ItemLoginSchemaType}` | ItemLoginSchemaType;
   status: `${ItemLoginSchemaStatus}` | ItemLoginSchemaStatus;
   createdAt: string;
