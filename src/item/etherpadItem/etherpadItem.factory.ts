@@ -3,6 +3,7 @@ import {
   ItemFactoryOutputType,
   PackedInformationFactory,
   PackedInformationFactoryInput,
+  PackedItemFactoryOutputType,
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
@@ -35,7 +36,7 @@ export const EtherpadItemFactory = (
 export const PackedEtherpadItemFactory = (
   item: ItemFactoryInputType<EtherpadItemType> = {},
   packedInfo: PackedInformationFactoryInput = {},
-): ItemFactoryOutputType<EtherpadItemType> => {
+): PackedItemFactoryOutputType<EtherpadItemType> => {
   const newItem = EtherpadItemFactory(item);
   const packed = PackedInformationFactory(packedInfo, newItem, item.parentItem);
   return {
