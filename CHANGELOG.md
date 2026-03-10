@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.18.1](https://github.com/graasp/graasp-sdk/compare/v5.18.0...v5.18.1) (2026-03-10)
+
+
+### Bug Fixes
+
+* update factories ([#815](https://github.com/graasp/graasp-sdk/issues/815)) ([a0a309b](https://github.com/graasp/graasp-sdk/commit/a0a309b2e9dacc494525bf3e2cdf35c6afc1da9a))
+
 ## [5.18.0](https://github.com/graasp/graasp-sdk/compare/v5.17.0...v5.18.0) (2026-01-15)
 
 
