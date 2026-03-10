@@ -3,6 +3,7 @@ import {
   ItemFactoryOutputType,
   PackedInformationFactory,
   PackedInformationFactoryInput,
+  PackedItemFactoryOutputType,
   PartialItemFactory,
 } from '../factory.js';
 import { ItemType } from '../itemType.js';
@@ -29,7 +30,7 @@ export const DocumentItemFactory = (
 export const PackedDocumentItemFactory = (
   item: ItemFactoryInputType<DocumentItemType> = {},
   packedInfo: PackedInformationFactoryInput = {},
-): ItemFactoryOutputType<DocumentItemType> => {
+): PackedItemFactoryOutputType<DocumentItemType> => {
   const newItem = DocumentItemFactory(item);
   const packed = PackedInformationFactory(packedInfo, newItem, item.parentItem);
   return {
