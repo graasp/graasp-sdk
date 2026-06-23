@@ -18,6 +18,7 @@ describe('FileItemFactory', () => {
       expect(item.extra.file.altText.length).toBeGreaterThan(1);
     }
     expect(item.extra.file.content.length).toBeGreaterThan(3);
+    expect(item.extra.file.url?.length).toBeGreaterThan(3);
     expect(item.type).toEqual(ItemType.FILE);
     expect(item.extra.file.size).toBeGreaterThanOrEqual(1);
   });
@@ -30,6 +31,7 @@ describe('FileItemFactory', () => {
           mimetype: 'mimetype',
           path: 'path',
           size: 1,
+          url: 'url',
         },
       },
     });
@@ -38,6 +40,7 @@ describe('FileItemFactory', () => {
     expect(item.extra.file.path).toEqual('path');
     expect(item.extra.file.altText).toBeUndefined();
     expect(item.extra.file.content).toEqual('content');
+    expect(item.extra.file.url).toEqual('url');
     expect(item.type).toEqual(ItemType.FILE);
     expect(item.extra.file.size).toEqual(1);
   });

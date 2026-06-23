@@ -18,6 +18,7 @@ export type FileItemProperties = {
   size: number;
   altText?: string;
   content: string;
+  url?: string;
 };
 
 export type FileItemMetadata = {
