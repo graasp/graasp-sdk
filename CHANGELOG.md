@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.18.2](https://github.com/graasp/graasp-sdk/compare/v5.18.1...v5.18.2) (2026-06-26)
+
+
+### Bug Fixes
+
+* add url to file item properties ([#824](https://github.com/graasp/graasp-sdk/issues/824)) ([16b150a](https://github.com/graasp/graasp-sdk/commit/16b150a6fe3b596eebbbfaf646a8ad576e99516d))
+
 ## [5.18.1](https://github.com/graasp/graasp-sdk/compare/v5.18.0...v5.18.1) (2026-03-10)
 
 
