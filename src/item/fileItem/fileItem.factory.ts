@@ -27,6 +27,7 @@ export const FileItemFactory = (
         size: faker.number.int({ max: 100, min: 1 }),
         altText: faker.helpers.arrayElement([undefined, faker.lorem.word()]),
         content: faker.lorem.text(),
+        url: faker.internet.url(),
       },
     },
   };
