@@ -46,7 +46,7 @@
   "dependencies": {
     "@faker-js/faker": "9.9.0",
     "filesize": "10.1.6",
-    "js-cookie": "3.0.5"
+    "js-cookie": "3.0.7"
   },
   "peerDependencies": {
     "date-fns": "^4.0.0",
